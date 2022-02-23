@@ -1,33 +1,32 @@
 package org.fairgenomes.generator.datastructures;
 
-import javax.management.relation.Relation;
 import java.util.List;
 import java.util.Map;
 
-public class Module {
+public class Table {
 
     /*
     Variables mapped to the YAML file
     */
     public String name;
     public String description;
-    public String ontology;
+    public String tags;
     public List<RelationWith> relationWith;
-    public List<Element> elements;
+    public List<Column> columns;
 
     /*
     Variables that may be loaded afterwards
     */
     public String technicalName;
     public Ontology parsedOntology;
-    public Map<String, Element> elementMap;
+    public Map<String, Column> elementMap;
 
     @Override
     public String toString() {
         return "Module{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", elements=" + elements +
+                ", elements=" + columns +
                 '}';
     }
 

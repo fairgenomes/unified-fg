@@ -4,7 +4,7 @@ import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.vocabulary.OWL;
 import org.fairgenomes.generator.AbstractGenerator;
 import org.fairgenomes.generator.datastructures.*;
-import org.fairgenomes.generator.datastructures.Module;
+import org.fairgenomes.generator.datastructures.Table;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -31,15 +31,15 @@ public class ToRDFResources extends AbstractGenerator {
     @Override
     public void start() throws Exception {
 
-        for (Module m : fg.modules) {
+        for (Table m : fg.tables) {
 
-            if(m.ontology.startsWith("FG:")){
+            if(m.tags.startsWith("FG:")){
                 throw new Exception("Not implemented yet!");
             }
 
-                for(Element e : m.elements) {
+                for(Column e : m.columns) {
 
-                if(e.ontology.startsWith("FG:")){
+                if(e.tags.startsWith("FG:")){
 
                     String term = e.parsedOntology.codeSystem + "_" + e.parsedOntology.code;
                     if(uniqueTerms.contains(term))

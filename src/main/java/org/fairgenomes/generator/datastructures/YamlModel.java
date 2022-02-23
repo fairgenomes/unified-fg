@@ -1,7 +1,5 @@
 package org.fairgenomes.generator.datastructures;
 
-import org.yaml.snakeyaml.Yaml;
-
 import java.io.File;
 import java.time.LocalDate;
 import java.util.*;
@@ -22,7 +20,7 @@ public class YamlModel {
     public Copyright copyright;
     public License license;
     public Technical technical;
-    public List<Module> modules;
+    public List<Table> tables;
 
     /*
     Variables loaded afterwards
@@ -30,7 +28,7 @@ public class YamlModel {
     public String fileName;
     public LookupList lookupGlobalOptionsInstance;
     public int totalNrOfLookupsWithoutGlobals;
-    public Map<String, Module> moduleMap;
+    public Map<String, Table> moduleMap;
     public Set<Ontology> allElementOntologies;
     public Set<Ontology> allModuleOntologies;
 
@@ -50,14 +48,14 @@ public class YamlModel {
      * @throws Exception
      */
     public void parseElementValueTypes() throws Exception {
-        for(Module m: modules)
+        for(Table m: tables)
         {
-            for(Element e : m.elements)
+            for(Column e : m.columns)
             {
-                int whiteSpaceIndex = e.values.indexOf(" ");
-                String vt = whiteSpaceIndex > 0 ? e.values.substring(0, whiteSpaceIndex) : e.values;
-                ValueType valueType = ValueType.valueOf(vt);
-                e.valueTypeEnum = valueType;
+                int whiteSpaceIndex = e.dataType.indexOf(" ");
+                String vt = whiteSpaceIndex > 0 ? e.dataType.substring(0, whiteSpaceIndex) : e.dataType;
+                DataType dataType = DataType.valueOf(vt);
+                e.dataTypeEnum = dataType;
             }
         }
     }
@@ -67,9 +65,9 @@ public class YamlModel {
      * @throws Exception
      */
     public void parseElementUnits() throws Exception {
-        for(Module m: modules)
+        for(Table m: tables)
         {
-            for(Element e : m.elements)
+            for(Column e : m.columns)
             {
                 if(e.unit != null)
                 {
@@ -84,7 +82,7 @@ public class YamlModel {
      * @throws Exception
      */
     public void parseModuleRelations() throws Exception {
-        for(Module m: modules)
+        for(Table m: tables)
         {
            if(m.relationWith != null)
            {
@@ -102,20 +100,20 @@ public class YamlModel {
      */
     public void loadElementLookups() throws Exception {
         totalNrOfLookupsWithoutGlobals = 0;
-        moduleMap = new HashMap<String, Module>();
-        for(Module m: modules)
+        moduleMap = new HashMap<String, Table>();
+        for(Table m: tables)
         {
             moduleMap.put(m.technicalName, m);
-            m.elementMap = new HashMap<String, Element>();
-            for(Element e : m.elements)
+            m.elementMap = new HashMap<String, Column>();
+            for(Column e : m.columns)
             {
                 m.elementMap.put(e.technicalName, e);
                 if(e.isLookup())
                 {
-                    int whiteSpaceIndex = e.values.indexOf(" ");
-                    int commaIndex = e.values.indexOf(",");
-                    String vt = whiteSpaceIndex > 0 ? e.values.substring(whiteSpaceIndex, commaIndex > 0 ? commaIndex : e.values.length()) : e.values;
-                    e.type = commaIndex > 0 ? e.values.substring(commaIndex).replace(", ofType [", "").replace("]", "").trim() : null;
+                    int whiteSpaceIndex = e.dataType.indexOf(" ");
+                    int commaIndex = e.dataType.indexOf(",");
+                    String vt = whiteSpaceIndex > 0 ? e.dataType.substring(whiteSpaceIndex, commaIndex > 0 ? commaIndex : e.dataType.length()) : e.dataType;
+                    e.type = commaIndex > 0 ? e.dataType.substring(commaIndex).replace(", ofType [", "").replace("]", "").trim() : null;
                     vt = vt.replace("[", "").replace("]", "").trim();
                     LookupList ll = new LookupList(new File(vt));
                     e.lookup = ll;
@@ -125,14 +123,14 @@ public class YamlModel {
                     /*
                     Add the global lookups unless NoGlobals is specified
                     */
-                    if(!(e.valueTypeEnum.equals(ValueType.LookupOne_NoGlobals) || e.valueTypeEnum.equals(ValueType.LookupMany_NoGlobals))) {
+                    if(!(e.dataTypeEnum.equals(DataType.LookupOne_NoGlobals) || e.dataTypeEnum.equals(DataType.LookupMany_NoGlobals))) {
                         e.lookup.lookups.putAll(lookupGlobalOptionsInstance.lookups);
                     }
                 }
                 else if(e.isReference())
                 {
                     boolean found = false;
-                    for(Module mm : modules)
+                    for(Table mm : tables)
                     {
                         if(mm.name.equals(e.referenceTo))
                         {
@@ -162,11 +160,11 @@ public class YamlModel {
     public void parseOntologies() throws Exception {
         allModuleOntologies = new HashSet<Ontology>();
         allElementOntologies = new HashSet<Ontology>();
-        for (Module m : modules) {
-            m.parsedOntology = new Ontology(m.ontology);
+        for (Table m : tables) {
+            m.parsedOntology = new Ontology(m.tags);
             allModuleOntologies.add(m.parsedOntology);
-            for (Element e : m.elements) {
-                e.parsedOntology = new Ontology(e.ontology);
+            for (Column e : m.columns) {
+                e.parsedOntology = new Ontology(e.tags);
                 allElementOntologies.add(e.parsedOntology);
             }
         }
@@ -177,8 +175,8 @@ public class YamlModel {
      * @throws Exception
      */
     public void parseMatches() throws Exception {
-        for(Module m: modules) {
-            for (Element e : m.elements) {
+        for(Table m: tables) {
+            for (Column e : m.columns) {
                 if(e.exactMatch != null) { addMatches(Match.exactMatch, e, e.exactMatch); }
                 if(e.closeMatch != null) { addMatches(Match.closeMatch, e, e.closeMatch); }
                 if(e.relatedMatch != null) { addMatches(Match.relatedMatch, e, e.relatedMatch); }
@@ -203,7 +201,7 @@ public class YamlModel {
         }
     }
 
-    private void addMatches(Match m, Element e, String value) throws Exception {
+    private void addMatches(Match m, Column e, String value) throws Exception {
         if(e.matches == null)
         {
             e.matches = new HashMap<Match, List<Ontology>>();
@@ -227,9 +225,9 @@ public class YamlModel {
      * @return
      */
     public void createElementTechnicalNames() throws Exception {
-        for (Module m : modules) {
+        for (Table m : tables) {
             m.technicalName = toTechName(m.name);
-            for (Element e : m.elements) {
+            for (Column e : m.columns) {
                 e.technicalName = toTechName(e.name);
             }
         }
@@ -240,12 +238,12 @@ public class YamlModel {
      * @throws Exception
      */
     public void parseReferences() throws Exception {
-        for (Module m : modules) {
-            for (Element e : m.elements) {
+        for (Table m : tables) {
+            for (Column e : m.columns) {
                 if(e.isReference())
                 {
-                    int whiteSpaceIndex = e.values.indexOf(" ");
-                    e.referenceTo = e.values.substring(whiteSpaceIndex).replace("[", "").replace("]", "").trim();
+                    int whiteSpaceIndex = e.dataType.indexOf(" ");
+                    e.referenceTo = e.dataType.substring(whiteSpaceIndex).replace("[", "").replace("]", "").trim();
                 }
             }
         }
@@ -256,8 +254,8 @@ public class YamlModel {
      * @throws Exception
      */
     public void setElementModules() throws Exception {
-        for (Module m : modules) {
-            for (Element e : m.elements) {
+        for (Table m : tables) {
+            for (Column e : m.columns) {
                 e.m = m;
             }
         }
@@ -281,7 +279,7 @@ public class YamlModel {
                 ", version=" + version +
                 ", date=" + date +
                 ", lookupGlobalOptions=" + lookupGlobalOptions +
-                ", modules=" + modules +
+                ", modules=" + tables +
                 ", lookupGlobalOptionsInstance=" + lookupGlobalOptionsInstance +
                 '}';
     }
@@ -296,14 +294,14 @@ public class YamlModel {
         YamlModel intersect = new YamlModel();
         intersect.name = this.name + " intersected with " + y.name;
 
-        for(Module m : y.modules)
+        for(Table m : y.tables)
         {
             if(this.allModuleOntologies.contains(m.parsedOntology))
             {
                 System.out.println("MODULE ONTOLOGY OVERLAP: " + m.parsedOntology);
             }
 
-            for(Element e : m.elements)
+            for(Column e : m.columns)
             {
                 if(this.allElementOntologies.contains(e.parsedOntology))
                 {
@@ -316,9 +314,9 @@ public class YamlModel {
         return intersect;
     }
 
-    public List<Element> findElement(Ontology o)
+    public List<Column> findElement(Ontology o)
     {
-        List<Element> e = new ArrayList<>();
+        List<Column> e = new ArrayList<>();
         // todo ...
         return e;
     }

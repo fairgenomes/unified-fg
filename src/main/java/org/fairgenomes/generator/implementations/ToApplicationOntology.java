@@ -15,7 +15,7 @@ import static org.eclipse.rdf4j.model.util.Values.literal;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.Rio;
 import org.eclipse.rdf4j.model.util.ModelBuilder;
-import org.fairgenomes.generator.datastructures.Module;
+import org.fairgenomes.generator.datastructures.Table;
 
 public class ToApplicationOntology extends AbstractGenerator {
 
@@ -71,7 +71,7 @@ public class ToApplicationOntology extends AbstractGenerator {
         }
 
         // Add modules to builder as moduleClasses
-        for (Module m : fg.modules) {
+        for (Table m : fg.tables) {
             String moduleName = cleanLabel(m.name);
             IRI moduleClass = iri(ontologyURL, cleanLabel(moduleName));
             builder.add(moduleClass, RDF.TYPE, OWL.CLASS);
@@ -81,12 +81,12 @@ public class ToApplicationOntology extends AbstractGenerator {
             if(m.relationWith != null){
                 for(RelationWith rw : m.relationWith)
                 {
-                    builder.add(moduleClass, iri(rw.relationOnto.iri), iri(ontologyURL, cleanLabel(rw.module)));
+                    builder.add(moduleClass, iri(rw.relationOnto.iri), iri(ontologyURL, cleanLabel(rw.table)));
                 }
             }
 
             // Add elements to builder as moduleProperties
-            for(Element e : m.elements) {
+            for(Column e : m.columns) {
                 String elementName = moduleName + "_" + cleanLabel(e.name);
                 IRI moduleProperty = iri(ontologyURL, cleanLabel(elementName));
                 builder.add(moduleProperty, RDF.TYPE, e.isLookup() || e.isReference() ? OWL.OBJECTPROPERTY : OWL.DATATYPEPROPERTY);

@@ -1,8 +1,6 @@
 package org.fairgenomes.resolver;
 
-import org.fairgenomes.generator.datastructures.Lookup;
-import org.fairgenomes.generator.datastructures.Ontology;
-import org.fairgenomes.generator.datastructures.YamlModel;
+import org.fairgenomes.generator.datastructures.*;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -50,8 +48,8 @@ public class TestResolvability {
      * @throws IOException
      */
     public void checkAllLookups(YamlModel FG, int max) throws IOException {
-        for(org.fairgenomes.generator.datastructures.Module m : FG.modules){
-            for(org.fairgenomes.generator.datastructures.Element e : m.elements)
+        for(Table m : FG.tables){
+            for(Column e : m.columns)
             {
                 if(e.isLookup())
                 {

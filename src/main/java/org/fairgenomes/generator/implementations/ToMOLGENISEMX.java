@@ -1,7 +1,7 @@
 package org.fairgenomes.generator.implementations;
 
 import org.fairgenomes.generator.AbstractGenerator;
-import org.fairgenomes.generator.datastructures.Module;
+import org.fairgenomes.generator.datastructures.Table;
 import org.fairgenomes.generator.datastructures.*;
 
 import java.io.BufferedWriter;
@@ -47,8 +47,8 @@ public class ToMOLGENISEMX extends AbstractGenerator {
         /*
         Write attribute metadata for lookups
          */
-        for (Module m : fg.modules) {
-            for (Element e : m.elements) {
+        for (Table m : fg.tables) {
+            for (Column e : m.columns) {
                 if(e.isLookup())
                 {
                     String entityName = m.technicalName + "_" + e.technicalName;
@@ -71,8 +71,8 @@ public class ToMOLGENISEMX extends AbstractGenerator {
         /*
         Write the actual lookups
          */
-        for (Module m : fg.modules) {
-            for (Element e : m.elements) {
+        for (Table m : fg.tables) {
+            for (Column e : m.columns) {
                 if (e.isLookup()) {
 
                     String entityName = m.technicalName + "_" + e.technicalName;
@@ -101,15 +101,15 @@ public class ToMOLGENISEMX extends AbstractGenerator {
         /*
         Write model attributes for the modules (the actual tables that people use to enter data)
          */
-        for (Module m : fg.modules) {
+        for (Table m : fg.tables) {
             String entityName = m.technicalName;
             String fileName = entityName + "_attributes.tsv";
             fw = new FileWriter(new File(outputFolder, fileName));
             bw = new BufferedWriter(fw);
             bw.write("name\tlabel\tdescription\tentity\tdataType\tidAttribute\tlabelAttribute\tvisible\tnillable\trefEntity" + LE);
 
-            for (Element e : m.elements) {
-                if(e.valueTypeEnum.equals(ValueType.UniqueID))
+            for (Column e : m.columns) {
+                if(e.dataTypeEnum.equals(DataType.UniqueID))
                 {
                     bw.write(e.technicalName+"\t"+e.name+"\t"+e.description + " ("+e.parsedOntology.codeSystem+":"+e.parsedOntology.code+")" + "\t"+entityName+"\t"+e.valueTypeToEMX()+"\t"+"TRUE"+"\t"+"TRUE"+"\t"+"TRUE"+"\t"+"FALSE"+"\t"+e.lookupOrReferencetoEMX(PACKAGE_NAME)+ LE);
                 }
