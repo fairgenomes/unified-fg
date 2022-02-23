@@ -1,6 +1,6 @@
-# Unified model YAML format
+# Unified schema YAML format
 
-The model is expressed in a YAML file with a particular structure which is documented below.
+The schema is expressed in a YAML file with a particular structure which is documented below.
 
 ## Root-level attributes
 
@@ -11,12 +11,13 @@ The model is expressed in a YAML file with a particular structure which is docum
 | version                 | Schema version number, in decimal format.                                                                      |
 | releaseType             | Type of project release. SNAPSHOT denotes development, Minor (x.x) or Major (x.0) denotes an official release. |
 | date                    | Date of a Minor or Major release.                                                                              |
+| tags                    | Ontology terms that best describe this schema.                                                                 |
 | lookupGlobalOptions     | Special lookups that are added to every other lookup list in the schema, unless specified otherwise.           |
 | [authors](#authors)     | A list of contributing schema authors.                                                                         |
 | [copyright](#copyright) | A copyright statement about the schema.                                                                        |
 | [license](#license)     | The license under which the schema is released.                                                                |
 | [technical](#technical) | Specialized options required to generate project artifacts.                                                    |
-| [tables](#tables)      | The actual components of the schema, comparable to classes or entities.                                        |
+| [tables](#tables)       | The actual components of the schema, comparable to classes or entities.                                        |
 
 ## Authors attributes <a id='authors'></a>
 
