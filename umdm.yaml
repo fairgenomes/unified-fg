@@ -2,33 +2,10 @@
 # NAME: umdm_emx1.yaml
 # AUTHOR: david ruvolo
 # CREATED: 2021-11-08
-# MODIFIED: 2022-02-17
-# PURPOSE: Unified Molgenis Data Model
+# MODIFIED: 2022-02-23
+# PURPOSE: Unified Molgenis Data Model (umdm)
 # STATUS: maturing
-# COMMENTS:
-# Tags are appended to the model at build time. Usually tags are defined in
-# the `tagDefinitions` object. However, this works if you have smaller or
-# manageable data models. In this model, all tags are defined using roxygen2
-# tags. For example:
-#
-# ````yaml
-# # mymodel.yaml
-#
-# @name clinic
-# @reference http://purl.obolibrary.org/obo/NCIT_C51282
-# name: clinic
-# label: University Medical Clinic
-# description: Record of patients and procedures from 2001 to 2021
-#
-# entities:
-#
-#   # @name clinic_patients
-#   # @references http://purl.obolibrary.org/obo/NCIT_C16960
-#   - name: patients
-#     description: ...
-#     attributes:
-#       ...
-# ```
+# COMMENTS: NA
 #//////////////////////////////////////////////////////////////////////////////
 
 # define package
@@ -64,15 +41,16 @@ defaults:
   labelAttribute: false
   visible: true
 
-# define entities (lookups are dinfed in umdm_lookups_emx1.yaml)
-entities:
+# define entities (lookups are defined in umdm_lookups_emx1.yaml)
+tables:
   
   # @name umdm_subjects
   - name: subjects
     label: Subjects
     description: Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study
     tags: http://purl.obolibrary.org/obo/ExO_0000127, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
+    
       - name: subjectID
         dataType: string
         idAttribute: true
@@ -278,7 +256,7 @@ entities:
     label: Studies
     description: A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.
     tags: http://purl.obolibrary.org/obo/NCIT_C63536, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: studyID
         nillable: false
         idAttribute: true
@@ -393,7 +371,7 @@ entities:
     label: Consent
     description: Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.
     tags: http://purl.obolibrary.org/obo/NCIT_C16735, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: consentID
         idAttribute: true
         nillable: false
@@ -504,7 +482,7 @@ entities:
     label: Clinical
     description: Findings and circumstances relating to the examination and treatment of a patient.
     tags: http://purl.obolibrary.org/obo/NCIT_C25398, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: clinicalID
         idAttribute: true
         description: A unique proper name or character sequence that identifies this particular clinical examination.
@@ -637,7 +615,7 @@ entities:
     label: Samples
     description: A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a material) to be used for testing, analysis, inspection, investigation, demonstration, or trial use.
     tags: http://purl.obolibrary.org/obo/SCDO_0002829, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: sampleID
         idAttribute: true
         nillable: false
@@ -766,7 +744,7 @@ entities:
     label: Sample Preparation
     description: A sample preparation for a nucleic acids sequencing assay.
     tags: http://purl.obolibrary.org/obo/OBI_0001902, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: sampleID
         idAttribute: true
         nillable: false
@@ -882,7 +860,7 @@ entities:
     label: Sequencing
     description: The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.
     tags: http://edamontology.org/topic_3168, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: sequencingID
         idAttribute: true
         nillable: false
@@ -1022,7 +1000,7 @@ entities:
     label: Files
     description: A set of related records (either written or electronic) kept together.
     tags: http://purl.obolibrary.org/obo/NCIT_C42883, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: filename
         idAttribute: true
         nillable: false
@@ -1137,7 +1115,7 @@ entities:
     label: Cohorts
     description: A group of individuals, identified by a common characteristic.
     tags: http://purl.obolibrary.org/obo/NCIT_C61512, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: cohortID
         idAttribute: true
         nillable: false
@@ -1219,7 +1197,7 @@ entities:
     label: Laboratory Procedures
     description: Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.
     tags: http://purl.obolibrary.org/obo/NCIT_C25294, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: code
         idAttribute: true
         nillable: false
@@ -1257,7 +1235,7 @@ entities:
     label: Organizations
     description: Organization information standardized to the Research Organization Registry (ROR)
     tags: http://purl.obolibrary.org/obo/NCIT_C25412, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: value
         idAttribute: true
         nillable: false
@@ -1291,7 +1269,7 @@ entities:
     label: Data Releases
     description: The act of making data or other structured information accessible to the public or to the user group of a database.
     tags: http://purl.obolibrary.org/obo/NCIT_C172217, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: id
         idAttribute: true
         nillable: false
@@ -1339,7 +1317,7 @@ entities:
     label: Sampling Protocols
     description: Describes the procedure whereby biological samples for an experiment are sourced.
     tags: http://www.ebi.ac.uk/efo/EFO_0005518, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
-    attributes:
+    columns:
       - name: id
         idAttribute: true
         nillable: false
