@@ -1,7 +1,7 @@
 package org.fairgenomes.generator.implementations;
 
 import org.fairgenomes.generator.AbstractGenerator;
-import org.fairgenomes.generator.datastructures.Module;
+import org.fairgenomes.generator.datastructures.Table;
 import org.fairgenomes.generator.datastructures.*;
 
 import java.io.BufferedWriter;
@@ -23,8 +23,8 @@ public class ToLaTeXTables extends AbstractGenerator {
     @Override
     public void start() throws IOException {
         int totalNrOfElements = 0;
-        for (Module m : fg.modules) {
-            totalNrOfElements += m.elements.size();
+        for (Table m : fg.tables) {
+            totalNrOfElements += m.columns.size();
         }
         int tableNr = 1;
 
@@ -42,7 +42,7 @@ public class ToLaTeXTables extends AbstractGenerator {
         bw.write("\\textbf{"+fg.name+"}" + LE);
         bw.write("\\newline" + LE);
         bw.write(LE);
-        bw.write(fg.description + " Version "+fg.version + "-" + fg.releaseType + ", "+fg.date+". This model consists of " + fg.modules.size() + " modules that contain " + totalNrOfElements + " metadata elements and " + fg.totalNrOfLookupsWithoutGlobals + " lookups in total (excluding null flavors)." + LE);
+        bw.write(fg.description + " Version "+fg.version + "-" + fg.releaseType + ", "+fg.date+". This model consists of " + fg.tables.size() + " modules that contain " + totalNrOfElements + " metadata elements and " + fg.totalNrOfLookupsWithoutGlobals + " lookups in total (excluding null flavors)." + LE);
         bw.write(LE);
         /**
          * Modules
@@ -51,8 +51,8 @@ public class ToLaTeXTables extends AbstractGenerator {
         bw.write("\\begin{tabular}{lll}"+ LE);
         bw.write("Name & Ontology & Nr. of elements \\\\"+ LE);
         bw.write("\\hline"+ LE);
-        for (Module m : fg.modules) {
-            bw.write(m.name + " & " + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code.replace("_", "\\_") + " & " + m.elements.size() + " \\\\" + LE);
+        for (Table m : fg.tables) {
+            bw.write(m.name + " & " + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code.replace("_", "\\_") + " & " + m.columns.size() + " \\\\" + LE);
         }
         bw.write("\\hline" + LE);
         bw.write("\\end{tabular}" + LE);
@@ -63,12 +63,12 @@ public class ToLaTeXTables extends AbstractGenerator {
         /**
          * Elements
          */
-        for (Module m : fg.modules) {
+        for (Table m : fg.tables) {
             bw.write("\\begin{table}[htb]"+ LE);
             bw.write("\\begin{tabular}{lll}"+ LE);
             bw.write("Name & Ontology & Values \\\\"+ LE);
             bw.write("\\hline"+ LE);
-            for (Element e : m.elements) {
+            for (Column e : m.columns) {
                 bw.write(e.name + " & " + e.parsedOntology.codeSystem + ":" + e.parsedOntology.code.replace("_", "\\_") + " & " + e.valueTypeToLaTeX() + " \\\\" + LE);
             }
             bw.write("\\hline" + LE);
