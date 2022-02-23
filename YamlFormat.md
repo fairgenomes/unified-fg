@@ -1,6 +1,6 @@
-# FAIR Genomes YAML format
+# Unified model YAML format
 
-The FAIR Genomes metadata schema is expressed in a YAML file with a particular structure which is documented below.
+The model is expressed in a YAML file with a particular structure which is documented below.
 
 ## Root-level attributes
 
@@ -16,8 +16,7 @@ The FAIR Genomes metadata schema is expressed in a YAML file with a particular s
 | [copyright](#copyright) | A copyright statement about the schema.                                                                        |
 | [license](#license)     | The license under which the schema is released.                                                                |
 | [technical](#technical) | Specialized options required to generate project artifacts.                                                    |
-| [modules](#modules)     | The actual components of the schema, comparable to classes or tables.                                          |
-
+| [tables](#tables)      | The actual components of the schema, comparable to classes or entities.                                        |
 
 ## Authors attributes <a id='authors'></a>
 
@@ -49,34 +48,36 @@ The FAIR Genomes metadata schema is expressed in a YAML file with a particular s
 | ttlLocation | Hosting location of the application ontology. |
 | gitLocation | GitHub repository location of the project.    |
 
-## Modules attributes <a id='modules'></a>
+## Table attributes <a id='tables'></a>
 
-| Attribute                     | Description                                                                           |
-|-------------------------------|---------------------------------------------------------------------------------------|
-| name                          | Name of this module                                                                   |
-| description                   | Description of this module, usually adapted from an ontology.                         |
-| ontology                      | Ontology term that best described this module.                                        |
-| [relationWith](#relationWith) | Described the relationship with one or more other modules in the schema.              |
-| [elements](#elements)         | The elements contained in this module, comparable to attributes, columns or features. |
+| Attribute                     | Description                                                                      |
+|-------------------------------|----------------------------------------------------------------------------------|
+| name                          | Name of this table. If not provided, it will be derived from the label.          |
+| label                         | Label of this table.                                                             |
+| description                   | Description of this table, usually adapted from an ontology.                     |
+| tags                          | Ontology terms that best describe this table.                                    |
+| [relationWith](#relationWith) | Described the relationship with one or more other tables in the schema.          |
+| [columns](#columns)           | The columns contained in this table, comparable to class attributes or features. |
 
 ## relationWith attributes <a id='relationWith'></a>
 
-| Attribute | Description                                                         |
-|-----------|---------------------------------------------------------------------|
-| module    | The module that this module is related to in some way.              |
-| relation  | Ontology term that best describes the relation between two modules. |
+| Attribute | Description                                                        |
+|-----------|--------------------------------------------------------------------|
+| table     | The table that this table is related to in some way.               |
+| relation  | Ontology term that best describes the relation between two tables. |
 
-## Elements attributes <a id='elements'></a>
+## Columns attributes <a id='columns'></a>
 
-| Attribute    | Description                                                                                                                                                                                                                                                                                  |
-|:-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name         | Name of this element.                                                                                                                                                                                                                                                                        |
-| description  | Description of this element, usually adapted from an ontology.                                                                                                                                                                                                                               |
-| ontology     | Ontology term that best described this element.                                                                                                                                                                                                                                              |
-| values       | Value type of this element. See [ValueType.java](src/main/java/org/fairgenomes/generator/datastructures/ValueType.java) for all options. When using lookups, the additional `ofType` ontology is used to denote lookup type, e.g. lookup options for `Medication` are of type `ATC codes`.   |
-| unit         | Optional ontology term to denote the unit of measurement.                                                                                                                                                                                                                                    |
-| broadMatch   | Optional ontology term to denote a broad match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                          |
-| exactMatch   | Optional ontology term to denote an exact match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                         |
-| relatedMatch | Optional ontology term to denote a related match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                        |
-| closeMatch   | Optional ontology term to denote a close match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                          |
-| narrowMatch  | Optional ontology term to denote a narrow match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                         |
+| Attribute    | Description                                                                                                                                                                                                                                                                               |
+|:-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name         | Name of this column. If not provided, it will be derived from the label.                                                                                                                                                                                                                  |
+| label        | Label of this column.                                                                                                                                                                                                                                                                     |
+| description  | Description of this column, usually adapted from an ontology.                                                                                                                                                                                                                             |
+| tags         | Ontology terms that best describe this column.                                                                                                                                                                                                                                            |
+| dataType     | Data type of this column. See [ValueType.java](src/main/java/org/fairgenomes/generator/datastructures/ValueType.java) for all options. When using lookups, the additional `ofType` ontology is used to denote lookup type, e.g. lookup options for `Medication` are of type `ATC codes`. |
+| unit         | Optional ontology term to denote the unit of measurement.                                                                                                                                                                                                                                 |
+| broadMatch   | Optional ontology term to denote a broad match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                       |
+| exactMatch   | Optional ontology term to denote an exact match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                      |
+| relatedMatch | Optional ontology term to denote a related match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                     |
+| closeMatch   | Optional ontology term to denote a close match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                       |
+| narrowMatch  | Optional ontology term to denote a narrow match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                      |
