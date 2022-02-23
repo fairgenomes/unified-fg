@@ -1,0 +1,25 @@
+{
+  "name": "rd-datamodel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/molgenis/rd-datamodel.git",
+  "author": "dcruvolo",
+  "license": "MIT",
+  "scripts": {
+    "emx:build": "python3 index.py",
+    "build:lookups": "python3 src/data/data_fairgenomes.py",
+    "m:config": "dotenv cross-var mcmd config set host %MOLGENIS_HOST%",
+    "m:predeploy": "mcmd delete -p umdm",
+    "m:deploy": "sh dist/setup.sh",
+    "m:postdeploy": "mcmd make --role ANONYMOUS umdm_VIEWER && mcmd give anonymous view sys_md",
+    "m:demo": "mcmd import -p data/demo/umdm_demo.xlsx --as umdm",
+    "m:refresh-setup": "python3 src/data/refresh-setup-sh.py",
+    "test": "python3 tests/tests_emx_check.py",
+    "zip": "zip -r -j _exclude/umdm.zip dist/umdm.xlsx dist/umdm_lookups_*.csv",
+    "zip:mv": "dotenv cross-var mv _exclude/umdm.zip %ZIP_LOCATION%"
+  },
+  "devDependencies": {
+    "cross-var": "^1.1.0",
+    "dotenv-cli": "^4.1.0"
+  }
+}
