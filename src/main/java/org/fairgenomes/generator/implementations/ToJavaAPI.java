@@ -1,9 +1,9 @@
 package org.fairgenomes.generator.implementations;
 
 import org.fairgenomes.generator.AbstractGenerator;
-import org.fairgenomes.generator.datastructures.Element;
+import org.fairgenomes.generator.datastructures.Column;
 import org.fairgenomes.generator.datastructures.YamlModel;
-import org.fairgenomes.generator.datastructures.Module;
+import org.fairgenomes.generator.datastructures.Table;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -38,7 +38,7 @@ public class ToJavaAPI extends AbstractGenerator{
         bw.write(LE);
         bw.write("public class "+cap(pkg)+"Root {" + LE);
 
-        for (Module m : fg.modules) {
+        for (Table m : fg.tables) {
 
             bw.write("\tpublic Map<String, " + cap(m.technicalName) + "> " + cap(m.technicalName) + ";" + LE);
 
@@ -51,7 +51,7 @@ public class ToJavaAPI extends AbstractGenerator{
             modBw.write(LE);
             modBw.write("public class "+cap(m.technicalName)+" {" + LE);
 
-            for(Element e : m.elements){
+            for(Column e : m.columns){
 
 //                // write lookups to enum
 //                if(e.isLookup())

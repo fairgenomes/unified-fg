@@ -1,19 +1,17 @@
 package org.fairgenomes.generator.datastructures;
 
-import org.fairgenomes.generator.implementations.ToMOLGENISEMX;
-
 import java.util.List;
 import java.util.Map;
 
-public class Element {
+public class Column {
 
     /*
     Variables mapped to the YAML file
     */
     public String name;
     public String description;
-    public String ontology;
-    public String values;
+    public String tags;
+    public String dataType;
     public String unit;
     public String exactMatch;
     public String closeMatch;
@@ -23,9 +21,9 @@ public class Element {
     /*
     Variables that may be loaded afterwards
      */
-    public Module m;
+    public Table m;
     public String technicalName;
-    public ValueType valueTypeEnum;
+    public DataType dataTypeEnum;
     public LookupList lookup;
     public String referenceTo;
     public Ontology parsedOntology;
@@ -39,8 +37,8 @@ public class Element {
         return "Attribute{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", ontology='" + ontology + '\'' +
-                ", values='" + values + '\'' +
+                ", tags='" + tags + '\'' +
+                ", dataType='" + dataType + '\'' +
                 '}';
     }
 
@@ -50,7 +48,7 @@ public class Element {
      * @return
      */
     public boolean isLookup() {
-        switch (valueTypeEnum) {
+        switch (dataTypeEnum) {
             case LookupOne:
                 return true;
             case LookupMany:
@@ -70,7 +68,7 @@ public class Element {
      * @return
      */
     public boolean isReference() {
-        switch (valueTypeEnum) {
+        switch (dataTypeEnum) {
             case ReferenceOne:
                 return true;
             case ReferenceMany:
@@ -91,7 +89,7 @@ public class Element {
         } else if (isReference()) {
             return "Reference to instances of " + referenceTo;
         } else {
-            return valueTypeEnum.toString();
+            return dataTypeEnum.toString();
         }
     }
 
@@ -106,7 +104,7 @@ public class Element {
         } else if (isReference()) {
             return "Reference to " + referenceTo;
         } else {
-            return valueTypeEnum.toString();
+            return dataTypeEnum.toString();
         }
     }
 
@@ -116,7 +114,7 @@ public class Element {
      * @return
      */
     public String valueTypeToArtDecor() {
-        switch (valueTypeEnum) {
+        switch (dataTypeEnum) {
             case String:
                 return "ST";
             case Text:
@@ -156,7 +154,7 @@ public class Element {
      * @return
      */
     public String valueTypeToEMX() {
-        switch (valueTypeEnum) {
+        switch (dataTypeEnum) {
             case String:
                 return "string";
             case Text:
@@ -196,7 +194,7 @@ public class Element {
      * @return
      */
     public String valueTypeToEMX2() {
-        switch (valueTypeEnum) {
+        switch (dataTypeEnum) {
             case String:
                 return "string";
             case Text:
@@ -256,7 +254,7 @@ public class Element {
     }
 
     public String getArtDecorInputType() {
-        switch (valueTypeEnum) {
+        switch (dataTypeEnum) {
             case LookupOne:
                 return "single-select";
             case LookupMany:
@@ -276,7 +274,7 @@ public class Element {
      * @return
      */
     public String valueTypeToRDF() {
-        switch (valueTypeEnum) {
+        switch (dataTypeEnum) {
             case String:
                 return "string";
             case Text:
@@ -316,7 +314,7 @@ public class Element {
      */
     public String valueTypeToJava(String obj)
     {
-        switch(valueTypeEnum) {
+        switch(dataTypeEnum) {
             case String: return "String";
             case Text: return "String";
             case UniqueID: return "String";

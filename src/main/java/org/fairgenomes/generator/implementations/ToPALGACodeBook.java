@@ -2,7 +2,7 @@ package org.fairgenomes.generator.implementations;
 
 import org.fairgenomes.generator.AbstractGenerator;
 import org.fairgenomes.generator.datastructures.*;
-import org.fairgenomes.generator.datastructures.Module;
+import org.fairgenomes.generator.datastructures.Table;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -43,9 +43,9 @@ public class ToPALGACodeBook extends AbstractGenerator {
         bw = new BufferedWriter(fw);
         bw.write("id\tdescription_en\tcodesystem\tcode\tdata_type\tdescription_code\tcodelist_ref\tinput_type\tproperties\tparent\tcomments" + LE);
 
-        for (Module m : fg.modules) {
+        for (Table m : fg.tables) {
             bw.write(m.name + "\t" + m.description + "\t" + m.parsedOntology.codeSystem + "\t" + m.parsedOntology.code + "\t" + "ST" + "\t" + m.name + "\t" + "" + "\t" + "multi-select" + "\t" + "{url="+m.parsedOntology.iri+"}" + "\t" + "" + "\t" + "" + LE);
-            for (Element e : m.elements) {
+            for (Column e : m.columns) {
                 bw.write(e.name + "\t" + e.description + "\t" + e.parsedOntology.codeSystem + "\t" + e.parsedOntology.code + "\t" + e.valueTypeToArtDecor() + "\t" + e.name + "\t" + (e.isLookup()? e.lookup.srcFile.getName().replace(".txt", "") : "") + "\t" + e.getArtDecorInputType() + "\t" + "{url="+e.parsedOntology.iri+"}" + "\t" + m.name + "\t" + "" + LE);
             }
         }
@@ -55,8 +55,8 @@ public class ToPALGACodeBook extends AbstractGenerator {
         /*
         Write each codebook as TSV
          */
-        for (Module m : fg.modules) {
-            for (Element e : m.elements) {
+        for (Table m : fg.tables) {
+            for (Column e : m.columns) {
 
                 if(e.isLookup())
                 {

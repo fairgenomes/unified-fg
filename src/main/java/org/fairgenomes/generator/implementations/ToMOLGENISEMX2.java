@@ -1,7 +1,7 @@
 package org.fairgenomes.generator.implementations;
 
 import org.fairgenomes.generator.AbstractGenerator;
-import org.fairgenomes.generator.datastructures.Module;
+import org.fairgenomes.generator.datastructures.Table;
 import org.fairgenomes.generator.datastructures.*;
 
 import java.io.BufferedWriter;
@@ -36,8 +36,8 @@ public class ToMOLGENISEMX2 extends AbstractGenerator {
         Write attribute metadata for lookups
         We could use one superclass of this if you like??
          */
-        for (Module m : fg.modules) {
-            for (Element e : m.elements) {
+        for (Table m : fg.tables) {
+            for (Column e : m.columns) {
 
                 if (e.isLookup()) {
                     String tableName = e.technicalName;
@@ -55,14 +55,14 @@ public class ToMOLGENISEMX2 extends AbstractGenerator {
         /*
         Write model attributes for the modules (the actual tables that people use to enter data)
          */
-        for (Module m : fg.modules) {
+        for (Table m : fg.tables) {
 
             String entityName = m.technicalName;
             bw.write(entityName + ",,,,,,\"" + m.description + "\"," + m.parsedOntology.iri + LE);
 
-            for (Element e : m.elements) {
-                String key = e.valueTypeEnum.equals(ValueType.UniqueID) ? "1" : "";
-                String required = e.valueTypeEnum.equals(ValueType.UniqueID) ? "TRUE" : "";
+            for (Column e : m.columns) {
+                String key = e.dataTypeEnum.equals(DataType.UniqueID) ? "1" : "";
+                String required = e.dataTypeEnum.equals(DataType.UniqueID) ? "TRUE" : "";
                 bw.write(entityName + "," + e.technicalName + "," + e.valueTypeToEMX2() + "," + key + "," + required + "," + e.lookupOrReferencetoEMX2() + ",\"" + e.description + "\"," + e.parsedOntology.iri + LE);
             }
         }
@@ -75,8 +75,8 @@ public class ToMOLGENISEMX2 extends AbstractGenerator {
         /*
         Write the actual lookups
          */
-        for (Module m : fg.modules) {
-            for (Element e : m.elements) {
+        for (Table m : fg.tables) {
+            for (Column e : m.columns) {
                 if (e.isLookup()) {
 
                     String tableName = e.technicalName;

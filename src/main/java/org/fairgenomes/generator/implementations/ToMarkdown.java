@@ -1,10 +1,10 @@
 package org.fairgenomes.generator.implementations;
 
 import org.fairgenomes.generator.AbstractGenerator;
-import org.fairgenomes.generator.datastructures.Element;
+import org.fairgenomes.generator.datastructures.Column;
 import org.fairgenomes.generator.datastructures.YamlModel;
 import org.fairgenomes.generator.datastructures.Lookup;
-import org.fairgenomes.generator.datastructures.Module;
+import org.fairgenomes.generator.datastructures.Table;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,8 +25,8 @@ public class ToMarkdown extends AbstractGenerator {
     @Override
     public void start() throws IOException {
         int totalNrOfElements = 0;
-        for (Module m : fg.modules) {
-            totalNrOfElements += m.elements.size();
+        for (Table m : fg.tables) {
+            totalNrOfElements += m.columns.size();
         }
 
 
@@ -34,24 +34,24 @@ public class ToMarkdown extends AbstractGenerator {
         FileWriter fw = new FileWriter(new File(outputFolder, mdOutFile));
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write("# " + fg.name + LE + LE);
-        bw.write(fg.description + " Version "+fg.version + "-" + fg.releaseType + ", "+fg.date+". This model consists of __" + fg.modules.size() + " modules__ that contain __" + totalNrOfElements + " metadata elements__ and __" + fg.totalNrOfLookupsWithoutGlobals + " lookups__ in total (excluding null flavors)." + LE + LE);
+        bw.write(fg.description + " Version "+fg.version + "-" + fg.releaseType + ", "+fg.date+". This model consists of __" + fg.tables.size() + " modules__ that contain __" + totalNrOfElements + " metadata elements__ and __" + fg.totalNrOfLookupsWithoutGlobals + " lookups__ in total (excluding null flavors)." + LE + LE);
 
         bw.write("## Module overview" + LE + LE);
         bw.write("| Name | Description | Ontology | Nr. of elements |" + LE);
         bw.write("|---|---|---|---|" + LE);
-        for (Module m : fg.modules) {
-            bw.write("| ["+m.name+"](" + m.toMarkdownAnchor() + ") | " + m.description + " | [" + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code + "](" + m.parsedOntology.iri + ") | " + m.elements.size() + " |" + LE);
+        for (Table m : fg.tables) {
+            bw.write("| ["+m.name+"](" + m.toMarkdownAnchor() + ") | " + m.description + " | [" + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code + "](" + m.parsedOntology.iri + ") | " + m.columns.size() + " |" + LE);
         }
         bw.write(LE);
 
-        for (Module m : fg.modules) {
+        for (Table m : fg.tables) {
             bw.write("## Module: " + m.name + LE);
             bw.write(m.description + " Ontology: " + "[" + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code + "](" + m.parsedOntology.iri + ")." + LE + LE);
 
             bw.write("| Element | Description | Ontology | Values |" + LE);
             bw.write("|---|---|---|---|" + LE);
 
-            for (Element e : m.elements) {
+            for (Column e : m.columns) {
                 bw.write("| " + e.name + " | " + (e.description.length() < DESCRIPTION_LIMIT ? e.description : e.description.substring(0,DESCRIPTION_LIMIT) + "...") + " | " + "[" + e.parsedOntology.codeSystem + ":" + e.parsedOntology.code + "](" + e.parsedOntology.iri + ")" + " | " + e.valueTypeToMarkDown() + " |" + LE);
             }
             bw.write(LE);

@@ -1,7 +1,7 @@
 package org.fairgenomes.generator.datastructures;
 
 public class RelationWith {
-    public String module;
+    public String table;
     public String relation;
 
     /*
