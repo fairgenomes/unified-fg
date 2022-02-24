@@ -41,7 +41,12 @@ public class ToRDFResources extends AbstractGenerator {
 
                 if(e.tags.startsWith("FG:")){
 
-                    String term = e.parsedOntology.codeSystem + "_" + e.parsedOntology.code;
+                    if(e.parsedTags.size() > 1)
+                    {
+                        throw new Exception("new ontology term FG:xxx, but also found other tags, unexpected");
+                    }
+
+                    String term = e.parsedTags.get(0).codeSystem + "_" + e.parsedTags.get(0).code;
                     if(uniqueTerms.contains(term))
                     {
                         throw new Exception("Term already in use: " + term);
@@ -49,9 +54,9 @@ public class ToRDFResources extends AbstractGenerator {
                     uniqueTerms.add(term);
                     FileWriter fw = new FileWriter(new File(outputFolder, term + ".xml"));
                     BufferedWriter bw = new BufferedWriter(fw);
-                    IRI type = e.isLookup() || e.isReference() ? OWL.OBJECTPROPERTY : OWL.DATATYPEPROPERTY;
+                    IRI type = e.isLookup() || e.isTableReference() ? OWL.OBJECTPROPERTY : OWL.DATATYPEPROPERTY;
                     String srcTTL = fg.fileName + ".ttl";
-                    bw.write(toRDF(e.parsedOntology.codeSystem, e.parsedOntology.code, type, e.name, e.description, iri(m.parsedOntology.iri), m.description, srcTTL));
+                    bw.write(toRDF(e.parsedTags.get(0).codeSystem, e.parsedTags.get(0).code, type, e.name, e.description, iri(m.parsedOntology.iri), m.description, srcTTL));
                     bw.flush();
                     bw.close();
                 }

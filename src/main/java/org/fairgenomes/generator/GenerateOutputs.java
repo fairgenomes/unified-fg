@@ -19,7 +19,7 @@ public class GenerateOutputs {
     public void generateResources() throws Exception {
         YamlModel y = readYamlModel();
         System.out.println("Generating other representations...");
-        File outputs = new File(inputF.getParentFile(), "generated");
+        File outputs = new File(inputF.getParentFile(), "generated/unified");
         FileUtils.cleanDirectory(outputs);
         new ToMarkdown(y, new File(outputs, "markdown")).start();
         new ToMOLGENISEMX(y, new File(outputs, "molgenis-emx")).start();

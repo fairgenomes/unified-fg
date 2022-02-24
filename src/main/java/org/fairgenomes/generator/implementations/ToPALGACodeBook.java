@@ -46,7 +46,8 @@ public class ToPALGACodeBook extends AbstractGenerator {
         for (Table m : fg.tables) {
             bw.write(m.name + "\t" + m.description + "\t" + m.parsedOntology.codeSystem + "\t" + m.parsedOntology.code + "\t" + "ST" + "\t" + m.name + "\t" + "" + "\t" + "multi-select" + "\t" + "{url="+m.parsedOntology.iri+"}" + "\t" + "" + "\t" + "" + LE);
             for (Column e : m.columns) {
-                bw.write(e.name + "\t" + e.description + "\t" + e.parsedOntology.codeSystem + "\t" + e.parsedOntology.code + "\t" + e.valueTypeToArtDecor() + "\t" + e.name + "\t" + (e.isLookup()? e.lookup.srcFile.getName().replace(".txt", "") : "") + "\t" + e.getArtDecorInputType() + "\t" + "{url="+e.parsedOntology.iri+"}" + "\t" + m.name + "\t" + "" + LE);
+                // TODO afaik ART-DECOR supports 1 tag, so we grab the first with e.parsedTags.get(0)
+                bw.write(e.name + "\t" + e.description + "\t" + e.parsedTags.get(0).codeSystem + "\t" + e.parsedTags.get(0).code + "\t" + e.valueTypeToArtDecor() + "\t" + e.name + "\t" + (e.isLookup()? e.lookup.srcFile.getName().replace(".txt", "") : "") + "\t" + e.getArtDecorInputType() + "\t" + "{url="+e.parsedTags.get(0).iri+"}" + "\t" + m.name + "\t" + "" + LE);
             }
         }
         bw.flush();

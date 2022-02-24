@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Generate LaTeX tables
@@ -69,7 +70,7 @@ public class ToLaTeXTables extends AbstractGenerator {
             bw.write("Name & Ontology & Values \\\\"+ LE);
             bw.write("\\hline"+ LE);
             for (Column e : m.columns) {
-                bw.write(e.name + " & " + e.parsedOntology.codeSystem + ":" + e.parsedOntology.code.replace("_", "\\_") + " & " + e.valueTypeToLaTeX() + " \\\\" + LE);
+                bw.write(e.name + " & " + printTags(e.parsedTags) + " & " + e.valueTypeToLaTeX() + " \\\\" + LE);
             }
             bw.write("\\hline" + LE);
             bw.write("\\end{tabular}" + LE);
@@ -117,4 +118,18 @@ public class ToLaTeXTables extends AbstractGenerator {
 
 
     }
+
+
+    public String printTags(List<Ontology> tags)
+    {
+        StringBuilder sb = new StringBuilder();
+        for(Ontology o : tags)
+        {
+            sb.append(o.codeSystem + ":" + o.code.replace("_", "\\_") + ", ");
+        }
+        sb.deleteCharAt(sb.length()-2);
+        return sb.toString();
+    }
+
+
 }

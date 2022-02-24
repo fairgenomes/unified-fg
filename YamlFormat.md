@@ -53,8 +53,7 @@ The schema is expressed in a YAML file with a particular structure which is docu
 
 | Attribute                     | Description                                                                      |
 |-------------------------------|----------------------------------------------------------------------------------|
-| name                          | Name of this table. If not provided, it will be derived from the label.          |
-| label                         | Label of this table.                                                             |
+| name                          | Name of this table.                                                              |
 | description                   | Description of this table, usually adapted from an ontology.                     |
 | tags                          | Ontology terms that best describe this table.                                    |
 | [relationWith](#relationWith) | Described the relationship with one or more other tables in the schema.          |
@@ -71,11 +70,10 @@ The schema is expressed in a YAML file with a particular structure which is docu
 
 | Attribute    | Description                                                                                                                                                                                                                                                                               |
 |:-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name         | Name of this column. If not provided, it will be derived from the label.                                                                                                                                                                                                                  |
-| label        | Label of this column.                                                                                                                                                                                                                                                                     |
+| name         | Name of this column.                                                                                                                                                                                                                                                                      |
 | description  | Description of this column, usually adapted from an ontology.                                                                                                                                                                                                                             |
 | tags         | Ontology terms that best describe this column.                                                                                                                                                                                                                                            |
-| dataType     | Data type of this column. See [ValueType.java](src/main/java/org/fairgenomes/generator/datastructures/ValueType.java) for all options. When using lookups, the additional `ofType` ontology is used to denote lookup type, e.g. lookup options for `Medication` are of type `ATC codes`. |
+| dataType     | Data type of this column. See [ValueType.java](src/main/java/org/fairgenomes/generator/datastructures/ValueType.java) for all options. When using lookups, the additional `ofType` ontology is used to denote lookup type, e.g. lookup options for `Medication` are of type `ATC codes`.  |
 | unit         | Optional ontology term to denote the unit of measurement.                                                                                                                                                                                                                                 |
 | broadMatch   | Optional ontology term to denote a broad match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                       |
 | exactMatch   | Optional ontology term to denote an exact match. See explanation at [Match.java](src/main/java/org/fairgenomes/generator/datastructures/Match.java).                                                                                                                                      |

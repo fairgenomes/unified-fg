@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Generate MOLGENIS-EMX database template ready for import
@@ -109,12 +110,12 @@ public class ToMOLGENISEMX extends AbstractGenerator {
             bw.write("name\tlabel\tdescription\tentity\tdataType\tidAttribute\tlabelAttribute\tvisible\tnillable\trefEntity" + LE);
 
             for (Column e : m.columns) {
-                if(e.dataTypeEnum.equals(DataType.UniqueID))
+                if(e.dataTypeEnum.equals(DataType.identifier))
                 {
-                    bw.write(e.technicalName+"\t"+e.name+"\t"+e.description + " ("+e.parsedOntology.codeSystem+":"+e.parsedOntology.code+")" + "\t"+entityName+"\t"+e.valueTypeToEMX()+"\t"+"TRUE"+"\t"+"TRUE"+"\t"+"TRUE"+"\t"+"FALSE"+"\t"+e.lookupOrReferencetoEMX(PACKAGE_NAME)+ LE);
+                    bw.write(e.technicalName+"\t"+e.name+"\t"+e.description + " ("+printTags(e.parsedTags)+")" + "\t"+entityName+"\t"+e.valueTypeToEMX()+"\t"+"TRUE"+"\t"+"TRUE"+"\t"+"TRUE"+"\t"+"FALSE"+"\t"+e.lookupOrReferencetoEMX(PACKAGE_NAME)+ LE);
                 }
                 else{
-                    bw.write(e.technicalName+"\t"+e.name+"\t"+e.description+ " ("+e.parsedOntology.codeSystem+":"+e.parsedOntology.code+")" + "\t"+entityName+"\t"+e.valueTypeToEMX()+"\t"+"FALSE"+"\t"+"FALSE"+"\t"+"TRUE"+"\t"+"TRUE"+"\t"+e.lookupOrReferencetoEMX(PACKAGE_NAME)+ LE);
+                    bw.write(e.technicalName+"\t"+e.name+"\t"+e.description+ " ("+printTags(e.parsedTags)+")" + "\t"+entityName+"\t"+e.valueTypeToEMX()+"\t"+"FALSE"+"\t"+"FALSE"+"\t"+"TRUE"+"\t"+"TRUE"+"\t"+e.lookupOrReferencetoEMX(PACKAGE_NAME)+ LE);
                 }
             }
             bw.flush();
@@ -145,6 +146,17 @@ public class ToMOLGENISEMX extends AbstractGenerator {
         MCMDbw.flush();
         MCMDbw.close();
 
+    }
+
+    public String printTags(List<Ontology> tags)
+    {
+        StringBuilder sb = new StringBuilder();
+        for(Ontology o : tags)
+        {
+            sb.append(o.codeSystem+":"+o.code + ", ");
+        }
+        sb.deleteCharAt(sb.length()-2);
+        return sb.toString();
     }
 
 }

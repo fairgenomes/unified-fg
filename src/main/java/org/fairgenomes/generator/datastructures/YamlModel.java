@@ -11,6 +11,7 @@ public class YamlModel {
      */
     public String name;
     public String description;
+    public String tags;
     public Double version;
     public ReleaseType releaseType;
     public LocalDate date;
@@ -110,12 +111,7 @@ public class YamlModel {
                 m.elementMap.put(e.technicalName, e);
                 if(e.isLookup())
                 {
-                    int whiteSpaceIndex = e.dataType.indexOf(" ");
-                    int commaIndex = e.dataType.indexOf(",");
-                    String vt = whiteSpaceIndex > 0 ? e.dataType.substring(whiteSpaceIndex, commaIndex > 0 ? commaIndex : e.dataType.length()) : e.dataType;
-                    e.type = commaIndex > 0 ? e.dataType.substring(commaIndex).replace(", ofType [", "").replace("]", "").trim() : null;
-                    vt = vt.replace("[", "").replace("]", "").trim();
-                    LookupList ll = new LookupList(new File(vt));
+                    LookupList ll = new LookupList(new File(e.reference));
                     e.lookup = ll;
                     e.nrOfLookupsWithoutGlobals = ll.lookups.size();
                     totalNrOfLookupsWithoutGlobals += ll.lookups.size();
@@ -123,16 +119,16 @@ public class YamlModel {
                     /*
                     Add the global lookups unless NoGlobals is specified
                     */
-                    if(!(e.dataTypeEnum.equals(DataType.LookupOne_NoGlobals) || e.dataTypeEnum.equals(DataType.LookupMany_NoGlobals))) {
+                    if(!(e.dataTypeEnum.equals(DataType.xref_noglobals) || e.dataTypeEnum.equals(DataType.mref_noglobals))) {
                         e.lookup.lookups.putAll(lookupGlobalOptionsInstance.lookups);
                     }
                 }
-                else if(e.isReference())
+                else if(e.isTableReference())
                 {
                     boolean found = false;
                     for(Table mm : tables)
                     {
-                        if(mm.name.equals(e.referenceTo))
+                        if(mm.name.equals(e.reference))
                         {
                             // instances of reference fields (i.e. foreign keys) are typed as the module IRI they refer to
                             // this is not part of any output formats, since these references do not exist yet!
@@ -146,7 +142,7 @@ public class YamlModel {
                     }
                     if(!found)
                     {
-                        throw new Exception("Unable to find module reference '"+e.referenceTo+"' for setting value type");
+                        throw new Exception("Unable to find module reference '"+e.reference+"' for setting value type");
                     }
                 }
             }
@@ -164,8 +160,11 @@ public class YamlModel {
             m.parsedOntology = new Ontology(m.tags);
             allModuleOntologies.add(m.parsedOntology);
             for (Column e : m.columns) {
-                e.parsedOntology = new Ontology(e.tags);
-                allElementOntologies.add(e.parsedOntology);
+                if(e.tags == null){
+                    throw new Exception("empty tags for " + e.name + " in " + m.name);
+                }
+                e.parsedTags = Ontology.toOntoList(e.tags);
+                allElementOntologies.addAll(e.parsedTags);
             }
         }
     }
@@ -234,16 +233,32 @@ public class YamlModel {
     }
 
     /**
+     * check if reference is to a table, otherwise its a file
+     * @param ref
+     * @return
+     */
+    public static boolean isTableReference(String ref)
+    {
+        if(ref.endsWith(".tsv") || ref.endsWith(".csv"))
+        {
+           return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    /**
      * Parse any references to other modules or lookups
      * @throws Exception
      */
     public void parseReferences() throws Exception {
         for (Table m : tables) {
             for (Column e : m.columns) {
-                if(e.isReference())
+                if(e.isTableReference())
                 {
-                    int whiteSpaceIndex = e.dataType.indexOf(" ");
-                    e.referenceTo = e.dataType.substring(whiteSpaceIndex).replace("[", "").replace("]", "").trim();
+                    // validate Module or file existence?
                 }
             }
         }
@@ -303,10 +318,10 @@ public class YamlModel {
 
             for(Column e : m.columns)
             {
-                if(this.allElementOntologies.contains(e.parsedOntology))
+                if(this.allElementOntologies.contains(e.parsedTags))
                 {
-                    System.out.println("ELEMENT ONTOLOGY OVERLAP: " + e.parsedOntology);
-                    List elementInOriginal = findElement(e.parsedOntology);
+                    System.out.println("ELEMENT ONTOLOGY OVERLAP: " + e.parsedTags);
+                    //List elementInOriginal = findElement(e.parsedTags);
                 }
             }
         }
