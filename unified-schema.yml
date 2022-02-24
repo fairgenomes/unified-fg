@@ -1,12 +1,11 @@
 ---
-name: ums
-label: Unified metadata schema
+name: Unified metadata schema
 description: The unified semantic metadata schema to power reuse of NGS data in research and healthcare.
 version: 0.1
 releaseType: SNAPSHOT
 date: 2022-02-23
 tags: https://www.w3.org/TR/vocab-dcat-3/#Class:Catalog
-lookupGlobalOptions: lookups/NullFlavors.txt
+lookupGlobalOptions: lookups/NullFlavors.tsv
 authors:
   - name: David C. Ruvolo
     email: d.c.ruvolo@umcg.nl
@@ -28,161 +27,105 @@ technical:
   ttlLocation: https://fairgenomes.github.io/unified-fg/generated/ontology/
   gitLocation: https://github.com/fairgenomes/unified-fg
 tables:
-  - name: studies
-    label: Studies
+  - name: Studies
     description: A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.
     tags: NCIT:C63536 [http://purl.obolibrary.org/obo/NCIT_C63536]
     columns:
-      -
       - name: Identifier
         description: A unique proper name or character sequence that identifies this particular study.
         tags: OMIABIS:0000006 [http://purl.obolibrary.org/obo/OMIABIS_0000006]
         broadMatch: SIO:000729 [http://semanticscience.org/resource/SIO_000729], IAO:0000577 [http://purl.obolibrary.org/obo/IAO_0000577]
-        dataType: UniqueID
-      - name: studyID
-        nillable: false
-        idAttribute: true
-        dataType: string
-        labelAttribute: true
-        lookupAttribute: true
-        description: A unique proper name or character sequence that identifies this particular study.
-        tags: http://purl.obolibrary.org/obo/OMIABIS_0000006
-
+        dataType: identifier
       - name: Name
         description: A name that designates this study.
         tags: OMIABIS:0000037 [http://purl.obolibrary.org/obo/OMIABIS_0000037]
         exactMatch: OBI:0001622 [http://purl.obolibrary.org/obo/OBI_0001622]
         broadMatch: SIO:000185 [https://semanticscience.org/resource/SIO_000185]
-        dataType: String
-      - name: studyName
-        description: A name that designates this study.
-        tags: http://purl.obolibrary.org/obo/OMIABIS_0000037
-
-      - name: studyAcronym
+        dataType: string
+      - name: Acronym
         description: The non-unique initials or abbreviated name used for identification.
-        tags: http://purl.obolibrary.org/obo/NCIT_C93495
-
+        tags: NCIT:C93495 [http://purl.obolibrary.org/obo/NCIT_C93495]
+        dataType: string
       - name: Description
         description: A statement or piece of writing that provides details on this study.
-        tags: OMIABIS:0000036 [http://purl.obolibrary.org/obo/OMIABIS_0000036]
+        tags: OMIABIS:0000036 [http://purl.obolibrary.org/obo/OMIABIS_0000036], NCIT:C142704 [http://purl.obolibrary.org/obo/NCIT_C142704]
         exactMatch: OBI:0001615 [http://purl.obolibrary.org/obo/OBI_0001615]
         broadMatch: SIO:000136 [https://semanticscience.org/resource/SIO_000136]
-        dataType: Text
-      - name: studyDescription
         dataType: text
-        description: A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of this study.
-        tags: http://purl.obolibrary.org/obo/NCIT_C142704
 
       - name: Inclusion criteria
         description: The conditions which, if met, make an person eligible for participation in this study.
         tags: OBI:0500027 [http://purl.obolibrary.org/obo/OBI_0500027]
-        dataType: LookupMany [lookups/InclusionCriteria.txt], ofType [http://purl.obolibrary.org/obo/OBI_0500027]
-      - name: inclusionCriteria
         dataType: mref
-        refEntity: umdm_lookups_inclusionCriteria
-        description: The conditions which, if met, make an person eligible for participation in this study.
-        tags: http://purl.obolibrary.org/obo/OBI_0500027
+        reference: lookups/InclusionCriteria.tsv
+        referenceTypeTag: OBI:0500027 [http://purl.obolibrary.org/obo/OBI_0500027]
 
       - name: Principal investigator
-        description: The principal investigator or responsible person for this study.
-        tags: OMIABIS:0000100 [http://purl.obolibrary.org/obo/OMIABIS_0000100]
-        broadMatch: SIO:000881 [https://semanticscience.org/resource/SIO_000881], OBI:0000202 [http://purl.obolibrary.org/obo/OBI_0000202]
-        dataType: String
-      - name: principleInvestigator
         description: An investigator who is responsible for all aspects of the conduct of a study.
-        tags: http://purl.obolibrary.org/obo/NCIT_C19924
+        tags: OMIABIS:0000100 [http://purl.obolibrary.org/obo/OMIABIS_0000100], NCIT:C19924 [http://purl.obolibrary.org/obo/NCIT_C19924]
+        broadMatch: SIO:000881 [https://semanticscience.org/resource/SIO_000881], OBI:0000202 [http://purl.obolibrary.org/obo/OBI_0000202]
+        dataType: string
 
-      - name: Contact information
-        description: An email address for the purpose of contacting the study contact person.
-        tags: OMIABIS:0000035 [http://purl.obolibrary.org/obo/OMIABIS_0000035]
-        dataType: String
-      - name: contactEmail
-        dataType: email
-        description: A text string identifier for a location to which e-mail for the study contact can be delivered.
-        tags: http://purl.obolibrary.org/obo/NCIT_C176375
-
-      - name: contactPerson
+      - name: Contact person
         description: Name of study contact.
-        tags: http://purl.obolibrary.org/obo/NCIT_C176373
+        tags: NCIT:C176373 [http://purl.obolibrary.org/obo/NCIT_C176373]
+        dataType: string
+
+      - name: Contact email
+        description: An email address for the purpose of contacting the study contact person.
+        tags: OMIABIS:0000035 [http://purl.obolibrary.org/obo/OMIABIS_0000035], NCIT:C176375 [http://purl.obolibrary.org/obo/NCIT_C176375]
+        dataType: email
 
       - name: Study design
         description: A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of this study.
         tags: OBI:0500000 [http://purl.obolibrary.org/obo/OBI_0500000]
-        dataType: Text
+        dataType: text
 
       - name: Start date
         description: The date on which this study began.
         tags: NCIT:C69208 [http://purl.obolibrary.org/obo/NCIT_C69208]
         broadMatch: SIO:000031 [https://semanticscience.org/resource/SIO_000031], IAO:0000582 [http://purl.obolibrary.org/obo/IAO_0000582]
-        dataType: Date
-      - name: studyStartDate
         dataType: date
-        description: The date on which this study began.
-        tags: http://purl.obolibrary.org/obo/NCIT_C69208
 
       - name: Completion date
         description: The date on which the concluding information for this study is completed. Usually, this is when the last subject has a final visit, or the main analysis has finished, or any other protocol-defined completion date.
         tags: NCIT:C142702 [http://purl.obolibrary.org/obo/NCIT_C142702]
         broadMatch: IAO:0000582 [http://purl.obolibrary.org/obo/IAO_0000582]
         relatedMatch: SIO:001083 [https://semanticscience.org/resource/SIO_001083], SIO:001314 [https://semanticscience.org/resource/SIO_001314]
-        dataType: Date
-      - name: studyCompletionDate
         dataType: date
-        description: The date on which the concluding information for this study is completed. Usually, this is when the last subject has a final visit, or the main analysis has finished, or any other protocol-defined completion date.
-        tags: http://purl.obolibrary.org/obo/NCIT_C142702
 
-      - name: currentStudyStatus
+      - name: Current study status
         dataType: mref
-        refEntity: umdm_lookups_studyStatus
+        reference: lookups/StudyStatus.tsv
         description: The status of a study or trial.
-        tags: http://purl.obolibrary.org/obo/NCIT_C171103
+        tags: NCIT:C171103 [http://purl.obolibrary.org/obo/NCIT_C171103]
 
-      - name: numberOfSubjectsEnrolled
-        dataType: int
+      - name: Number of subjects enrolled
+        dataType: integer
         description: An integer specifying the quantity of study subjects enrolled in the study at the current time.
-        tags: http://purl.obolibrary.org/obo/NCIT_C153145
+        tags: NCIT:C153145 [http://purl.obolibrary.org/obo/NCIT_C153145]
 
-      - name: samplesCollected
-        dataType: int
+      - name: Numer of samples collected
+        dataType: integer
         description: An integer specifying the quantity of samples collected at the current time.
+        tags: KISAO:0000326 [http://www.biomodels.net/kisao/KISAO#KISAO_0000326]
 
       - name: belongsToDataRelease
         dataType: mref
-        refEntity: umdm_releases
+        reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
-        tags: http://purl.obolibrary.org/obo/NCIT_C172217
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
 
-      - name: recordMetadata
-        dataType: compound
-        description: metadata is data that provides information about data.
-        tags: http://semanticscience.org/resource/SIO_001330
+  - name: Data releases
+    description: The act of making data or other structured information accessible to the public or to the user group of a database.
+    tags: http://purl.obolibrary.org/obo/NCIT_C172217, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
+    columns:
+      - name: id
+        dataType: identifier
+        description: One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.
+        tags: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
+      - name: name
+        description: The words or language units by which a thing is known.
+        tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
+        dataType: string
 
-      - name: comments
-        dataType: text
-        description: A written explanation, observation or criticism added to textual material.
-        partOfAttribute: recordMetadata
-        tags: http://purl.obolibrary.org/obo/NCIT_C25393
-
-      - name: dateRecordCreated
-        nillable: false
-        dataType: datetime
-        description: The date on which the activity or entity is created.
-        partOfAttribute: recordMetadata
-        tags: http://purl.obolibrary.org/obo/NCIT_C164483
-
-      - name: recordCreatedBy
-        nillable: false
-        description: Indicates the person or authoritative body who brought the item into existence.
-        partOfAttribute: recordMetadata
-        tags: http://purl.obolibrary.org/obo/NCIT_C42628
-
-      - name: dateRecordUpdated
-        dataType: datetime
-        description: The date (and time) on which report was updated after it had been submitted.
-        partOfAttribute: recordMetadata
-        tags: http://purl.obolibrary.org/obo/NCIT_C93629
-
-      - name: wasUpdatedBy
-        description: An entity which is updated by another entity or an agent.
-        partOfAttribute: recordMetadata
-        tags: https://w3id.org/reproduceme#wasUpdatedBy
