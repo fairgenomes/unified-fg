@@ -61,9 +61,10 @@ public class ToMOLGENISEMX2 extends AbstractGenerator {
             bw.write(entityName + ",,,,,,\"" + m.description + "\"," + m.parsedOntology.iri + LE);
 
             for (Column e : m.columns) {
-                String key = e.dataTypeEnum.equals(DataType.UniqueID) ? "1" : "";
-                String required = e.dataTypeEnum.equals(DataType.UniqueID) ? "TRUE" : "";
-                bw.write(entityName + "," + e.technicalName + "," + e.valueTypeToEMX2() + "," + key + "," + required + "," + e.lookupOrReferencetoEMX2() + ",\"" + e.description + "\"," + e.parsedOntology.iri + LE);
+                String key = e.dataTypeEnum.equals(DataType.identifier) ? "1" : "";
+                String required = e.dataTypeEnum.equals(DataType.identifier) ? "TRUE" : "";
+                // TODO: EMX2 supports 1 tag, so we grab the first with e.parsedTags.get(0).iri
+                bw.write(entityName + "," + e.technicalName + "," + e.valueTypeToEMX2() + "," + key + "," + required + "," + e.lookupOrReferencetoEMX2() + ",\"" + e.description + "\"," + e.parsedTags.get(0).iri + LE);
             }
         }
 

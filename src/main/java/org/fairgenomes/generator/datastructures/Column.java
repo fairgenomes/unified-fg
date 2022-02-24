@@ -11,6 +11,8 @@ public class Column {
     public String name;
     public String description;
     public String tags;
+    public String reference;
+    public String referenceTypeTag;
     public String dataType;
     public String unit;
     public String exactMatch;
@@ -25,8 +27,7 @@ public class Column {
     public String technicalName;
     public DataType dataTypeEnum;
     public LookupList lookup;
-    public String referenceTo;
-    public Ontology parsedOntology;
+    public List<Ontology> parsedTags;
     public Ontology unitOntology;
     public String type;
     public int nrOfLookupsWithoutGlobals;
@@ -49,14 +50,11 @@ public class Column {
      */
     public boolean isLookup() {
         switch (dataTypeEnum) {
-            case LookupOne:
-                return true;
-            case LookupMany:
-                return true;
-            case LookupOne_NoGlobals:
-                return true;
-            case LookupMany_NoGlobals:
-                return true;
+            case xref:
+            case mref:
+            case xref_noglobals:
+            case mref_noglobals:
+                return !YamlModel.isTableReference(reference);
             default:
                 return false;
         }
@@ -67,12 +65,11 @@ public class Column {
      *
      * @return
      */
-    public boolean isReference() {
+    public boolean isTableReference() {
         switch (dataTypeEnum) {
-            case ReferenceOne:
-                return true;
-            case ReferenceMany:
-                return true;
+            case xref:
+            case mref:
+                return YamlModel.isTableReference(reference);
             default:
                 return false;
         }
@@ -86,8 +83,8 @@ public class Column {
     public String valueTypeToMarkDown() {
         if (isLookup()) {
             return "[" + lookup.srcFile.getName().replace(".txt", "") + "](../../lookups/" + lookup.srcFile.getName() + ") lookup (" + nrOfLookupsWithoutGlobals + " choices" + (type == null ? "" : " [of type](" + type + ")") + ")";
-        } else if (isReference()) {
-            return "Reference to instances of " + referenceTo;
+        } else if (isTableReference()) {
+            return "Reference to instances of " + reference;
         } else {
             return dataTypeEnum.toString();
         }
@@ -101,8 +98,8 @@ public class Column {
     public String valueTypeToLaTeX() {
         if (isLookup()) {
             return lookup.srcFile.getName().replace(".txt", "") + " lookup (" + nrOfLookupsWithoutGlobals + " choices)";
-        } else if (isReference()) {
-            return "Reference to " + referenceTo;
+        } else if (isTableReference()) {
+            return "Reference to " + reference;
         } else {
             return dataTypeEnum.toString();
         }
@@ -115,33 +112,29 @@ public class Column {
      */
     public String valueTypeToArtDecor() {
         switch (dataTypeEnum) {
-            case String:
+            case string:
                 return "ST";
-            case Text:
+            case text:
                 return "ST";
-            case UniqueID:
+            case identifier:
                 return "ST";
-            case LookupOne:
+            case xref:
                 return "ST";
-            case LookupMany:
+            case mref:
                 return "ST";
-            case LookupOne_NoGlobals:
+            case xref_noglobals:
                 return "ST";
-            case LookupMany_NoGlobals:
+            case mref_noglobals:
                 return "ST";
-            case Integer:
+            case integer:
                 return "INT";
-            case ReferenceOne:
-                return "ST";
-            case ReferenceMany:
-                return "ST";
-            case Date:
+            case date:
                 return "DATE";
-            case DateTime:
+            case datetime:
                 return "DATE";
-            case Boolean:
+            case bool:
                 return "BOOLEAN";
-            case Decimal:
+            case decimal:
                 return "DECIMAL";
             default:
                 return "ST";
@@ -155,33 +148,29 @@ public class Column {
      */
     public String valueTypeToEMX() {
         switch (dataTypeEnum) {
-            case String:
+            case string:
                 return "string";
-            case Text:
+            case text:
                 return "text";
-            case UniqueID:
+            case identifier:
                 return "string";
-            case LookupOne:
+            case xref:
                 return "xref";
-            case LookupMany:
+            case mref:
                 return "mref";
-            case LookupOne_NoGlobals:
+            case xref_noglobals:
                 return "xref";
-            case LookupMany_NoGlobals:
+            case mref_noglobals:
                 return "mref";
-            case Integer:
+            case integer:
                 return "int";
-            case ReferenceOne:
-                return "xref";
-            case ReferenceMany:
-                return "mref";
-            case Date:
+            case date:
                 return "date";
-            case DateTime:
+            case datetime:
                 return "datetime";
-            case Boolean:
+            case bool:
                 return "bool";
-            case Decimal:
+            case decimal:
                 return "decimal";
             default:
                 return "string";
@@ -195,33 +184,29 @@ public class Column {
      */
     public String valueTypeToEMX2() {
         switch (dataTypeEnum) {
-            case String:
+            case string:
                 return "string";
-            case Text:
+            case text:
                 return "text";
-            case UniqueID:
+            case identifier:
                 return "string";
-            case LookupOne:
+            case xref:
                 return "ref";
-            case LookupMany:
+            case mref:
                 return "ref_array";
-            case LookupOne_NoGlobals:
+            case xref_noglobals:
                 return "ref";
-            case LookupMany_NoGlobals:
+            case mref_noglobals:
                 return "ref_array";
-            case Integer:
+            case integer:
                 return "int";
-            case ReferenceOne:
-                return "ref";
-            case ReferenceMany:
-                return "ref_array";
-            case Date:
+            case date:
                 return "date";
-            case DateTime:
+            case datetime:
                 return "datetime";
-            case Boolean:
+            case bool:
                 return "bool";
-            case Decimal:
+            case decimal:
                 return "decimal";
             default:
                 return "string";
@@ -234,8 +219,8 @@ public class Column {
      * @return
      */
     public String lookupOrReferencetoEMX(String pkgName) {
-        if (isReference()) {
-            return pkgName + "_" + YamlModel.toTechName(referenceTo);
+        if (isTableReference()) {
+            return pkgName + "_" + YamlModel.toTechName(reference);
         } else if (isLookup()) {
             return pkgName + "_" + m.technicalName + "_" + technicalName;
         } else {
@@ -244,8 +229,8 @@ public class Column {
     }
 
     public String lookupOrReferencetoEMX2() {
-        if (isReference()) {
-            return YamlModel.toTechName(referenceTo);
+        if (isTableReference()) {
+            return YamlModel.toTechName(reference);
         } else if (isLookup()) {
             return technicalName;
         } else {
@@ -255,13 +240,13 @@ public class Column {
 
     public String getArtDecorInputType() {
         switch (dataTypeEnum) {
-            case LookupOne:
+            case xref:
                 return "single-select";
-            case LookupMany:
+            case mref:
                 return "multi-select";
-            case LookupOne_NoGlobals:
+            case xref_noglobals:
                 return "single-select";
-            case LookupMany_NoGlobals:
+            case mref_noglobals:
                 return "multi-select";
             default:
                 return "text";
@@ -275,33 +260,29 @@ public class Column {
      */
     public String valueTypeToRDF() {
         switch (dataTypeEnum) {
-            case String:
+            case string:
                 return "string";
-            case Text:
+            case text:
                 return "string";
-            case UniqueID:
+            case identifier:
                 return "string";
-            case LookupOne:
+            case xref:
                 return "string";
-            case LookupMany:
+            case mref:
                 return "list";
-            case LookupOne_NoGlobals:
+            case xref_noglobals:
                 return "string";
-            case LookupMany_NoGlobals:
+            case mref_noglobals:
                 return "list";
-            case Integer:
+            case integer:
                 return "integer";
-            case ReferenceOne:
-                return "string";
-            case ReferenceMany:
-                return "list";
-            case Date:
+            case date:
                 return "date";
-            case DateTime:
+            case datetime:
                 return "datetime";
-            case Boolean:
+            case bool:
                 return "boolean";
-            case Decimal:
+            case decimal:
                 return "decimal";
             default:
                 return "string";
@@ -315,20 +296,20 @@ public class Column {
     public String valueTypeToJava(String obj)
     {
         switch(dataTypeEnum) {
-            case String: return "String";
-            case Text: return "String";
-            case UniqueID: return "String";
-            case LookupOne: return "String";
-            case LookupMany: return "List<String>";
-            case LookupOne_NoGlobals: return "String";
-            case LookupMany_NoGlobals: return "List<String>";
-            case Integer: return "int";
-            case ReferenceOne: return obj;
-            case ReferenceMany: return "List<"+obj+">";
-            case Date: return "String";
-            case DateTime: return "String";
-            case Boolean: return "boolean";
-            case Decimal: return "double";
+            case string: return "String";
+            case text: return "String";
+            case identifier: return "String";
+            case xref: return "String";
+            case mref: return "List<String>";
+            case xref_noglobals: return "String";
+            case mref_noglobals: return "List<String>";
+            case integer: return "int";
+            //case ReferenceOne: return obj;
+            //case ReferenceMany: return "List<"+obj+">";
+            case date: return "String";
+            case datetime: return "String";
+            case bool: return "boolean";
+            case decimal: return "double";
             default: return "String";
         }
     }

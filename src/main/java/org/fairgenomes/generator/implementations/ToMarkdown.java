@@ -1,15 +1,13 @@
 package org.fairgenomes.generator.implementations;
 
 import org.fairgenomes.generator.AbstractGenerator;
-import org.fairgenomes.generator.datastructures.Column;
-import org.fairgenomes.generator.datastructures.YamlModel;
-import org.fairgenomes.generator.datastructures.Lookup;
-import org.fairgenomes.generator.datastructures.Table;
+import org.fairgenomes.generator.datastructures.*;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Generate Markdown documentation of the model
@@ -52,7 +50,7 @@ public class ToMarkdown extends AbstractGenerator {
             bw.write("|---|---|---|---|" + LE);
 
             for (Column e : m.columns) {
-                bw.write("| " + e.name + " | " + (e.description.length() < DESCRIPTION_LIMIT ? e.description : e.description.substring(0,DESCRIPTION_LIMIT) + "...") + " | " + "[" + e.parsedOntology.codeSystem + ":" + e.parsedOntology.code + "](" + e.parsedOntology.iri + ")" + " | " + e.valueTypeToMarkDown() + " |" + LE);
+                bw.write("| " + e.name + " | " + (e.description.length() < DESCRIPTION_LIMIT ? e.description : e.description.substring(0,DESCRIPTION_LIMIT) + "...") + " | " + printTags(e.parsedTags) + " | " + e.valueTypeToMarkDown() + " |" + LE);
             }
             bw.write(LE);
         }
@@ -71,5 +69,16 @@ public class ToMarkdown extends AbstractGenerator {
         bw.flush();
         bw.close();
 
+    }
+
+    public String printTags(List<Ontology> tags)
+    {
+        StringBuilder sb = new StringBuilder();
+        for(Ontology o : tags)
+        {
+            sb.append("[" + o.codeSystem + ":" + o.code + "](" + o.iri + "), ");
+        }
+        sb.deleteCharAt(sb.length()-2);
+        return sb.toString();
     }
 }

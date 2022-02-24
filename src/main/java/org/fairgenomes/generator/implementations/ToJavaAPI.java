@@ -72,7 +72,7 @@ public class ToJavaAPI extends AbstractGenerator{
 //
 //                }
 
-                modBw.write("\tpublic " + e.valueTypeToJava(e.isReference() ? cap(YamlModel.toTechName(e.referenceTo)) : null) + " " + e.technicalName + ";" + LE);
+                modBw.write("\tpublic " + e.valueTypeToJava(e.isTableReference() ? cap(YamlModel.toTechName(e.reference)) : null) + " " + e.technicalName + ";" + LE);
             }
 
             modBw.write("}" + LE);

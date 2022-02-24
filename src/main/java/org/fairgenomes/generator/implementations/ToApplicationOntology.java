@@ -89,16 +89,19 @@ public class ToApplicationOntology extends AbstractGenerator {
             for(Column e : m.columns) {
                 String elementName = moduleName + "_" + cleanLabel(e.name);
                 IRI moduleProperty = iri(ontologyURL, cleanLabel(elementName));
-                builder.add(moduleProperty, RDF.TYPE, e.isLookup() || e.isReference() ? OWL.OBJECTPROPERTY : OWL.DATATYPEPROPERTY);
+                builder.add(moduleProperty, RDF.TYPE, e.isLookup() || e.isTableReference() ? OWL.OBJECTPROPERTY : OWL.DATATYPEPROPERTY);
                 builder.add(moduleProperty, RDFS.LABEL, literal(e.name));
                 if(e.unitOntology != null) {builder.add(moduleProperty, iri(prefixToNamespace.get("sio"),"SIO_000074"), iri(e.unitOntology.iri));}
                 builder.add(moduleProperty, RDFS.DOMAIN, moduleClass);
-                builder.add(moduleProperty, RDFS.ISDEFINEDBY, iri(e.parsedOntology.iri));
+                for(Ontology o : e.parsedTags){
+                    builder.add(moduleProperty, RDFS.ISDEFINEDBY, iri(o.iri));
+                }
                 builder.add(moduleProperty, DC.DESCRIPTION, literal(e.description));
                 // We need to check this annotation // TODO value type annotation
                 //bw.write("\t\trdfs:Datatype xsd:" + e.valueTypeToRDF() + " ;" + LE);
 
                 if(e.isLookup()){
+                    System.out.println("e = " + e.toString());
                     builder.add(moduleProperty, RDFS.RANGE, iri(e.type));
 
                     // Group together elements with the same lookup list

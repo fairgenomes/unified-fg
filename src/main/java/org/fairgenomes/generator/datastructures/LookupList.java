@@ -10,7 +10,8 @@ public class LookupList {
     public String name;
     public String technicalName;
     public LinkedHashMap<String, Lookup> lookups; // LinkedHashMap preserves order so that global options are last
-    private static final String HEADER = "value\tdescription\tcodesystem\tcode\tiri";
+    private static final String TSV_HEADER = "value\tdescription\tcodesystem\tcode\tiri";
+    private static final String CSV_HEADER = "value,description,codesystem,code,iri";
 
     /**
      * Checks:
@@ -19,6 +20,7 @@ public class LookupList {
      */
     public LookupList(File lookupListFile) throws Exception {
         this.srcFile = lookupListFile;
+        System.out.println("lookupListFile = " + lookupListFile);
         this.name = this.srcFile.getName().substring(0,this.srcFile.getName().indexOf("."));
         this.technicalName = YamlModel.toTechName(this.name);
         lookups = new LinkedHashMap<>();
@@ -30,9 +32,9 @@ public class LookupList {
             if(firstLine)
             {
                 String firstLineStr = s.nextLine();
-                if(!firstLineStr.equals(HEADER))
+                if(!(firstLineStr.equals(TSV_HEADER)))
                 {
-                    throw new Exception("At "+srcFile +", bad lookup file header: " + firstLineStr + "must be: " + HEADER);
+                    throw new Exception("At "+srcFile +", bad lookup file header: " + firstLineStr + "must be: " + TSV_HEADER + " or " + CSV_HEADER);
                 }
                 firstLine = false;
                 continue;

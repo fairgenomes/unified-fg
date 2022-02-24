@@ -1,5 +1,7 @@
 package org.fairgenomes.generator.datastructures;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -17,6 +19,17 @@ public class Ontology {
     public String codeSystem;
     public String code;
     public String iri;
+
+    public static List<Ontology> toOntoList(String raw) throws Exception {
+        ArrayList<Ontology> res = new ArrayList<>();
+        String[] split = raw.split(",", -1);
+        for(String s : split)
+        {
+            Ontology o = new Ontology(s);
+            res.add(o);
+        }
+        return res;
+    }
 
     public Ontology(String raw) throws Exception {
         raw = raw.trim();
