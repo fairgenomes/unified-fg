@@ -99,6 +99,8 @@ tables:
         reference: lookups/StudyStatus.tsv
         description: The status of a study or trial.
         tags: NCIT:C171103 [http://purl.obolibrary.org/obo/NCIT_C171103]
+        referenceTypeTag: NCIT:C171103 [http://purl.obolibrary.org/obo/NCIT_C171103]
+
 
       - name: Number of subjects enrolled
         dataType: integer
@@ -118,7 +120,7 @@ tables:
 
   - name: Data releases
     description: The act of making data or other structured information accessible to the public or to the user group of a database.
-    tags: http://purl.obolibrary.org/obo/NCIT_C172217, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
+    tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
     columns:
       - name: id
         dataType: identifier
