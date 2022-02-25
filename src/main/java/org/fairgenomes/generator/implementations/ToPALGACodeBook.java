@@ -44,9 +44,10 @@ public class ToPALGACodeBook extends AbstractGenerator {
         bw.write("id\tdescription_en\tcodesystem\tcode\tdata_type\tdescription_code\tcodelist_ref\tinput_type\tproperties\tparent\tcomments" + LE);
 
         for (Table m : fg.tables) {
-            bw.write(m.name + "\t" + m.description + "\t" + m.parsedOntology.codeSystem + "\t" + m.parsedOntology.code + "\t" + "ST" + "\t" + m.name + "\t" + "" + "\t" + "multi-select" + "\t" + "{url="+m.parsedOntology.iri+"}" + "\t" + "" + "\t" + "" + LE);
+            // TODO afaik ART-DECOR supports table 1 tag, so we grab the first with m.parsedTags.get(0)
+            bw.write(m.name + "\t" + m.description + "\t" + m.parsedTags.get(0).codeSystem + "\t" + m.parsedTags.get(0).code + "\t" + "ST" + "\t" + m.name + "\t" + "" + "\t" + "multi-select" + "\t" + "{url="+m.parsedTags.get(0).iri+"}" + "\t" + "" + "\t" + "" + LE);
             for (Column e : m.columns) {
-                // TODO afaik ART-DECOR supports 1 tag, so we grab the first with e.parsedTags.get(0)
+                // TODO afaik ART-DECOR supports column 1 tag, so we grab the first with e.parsedTags.get(0)
                 bw.write(e.name + "\t" + e.description + "\t" + e.parsedTags.get(0).codeSystem + "\t" + e.parsedTags.get(0).code + "\t" + e.valueTypeToArtDecor() + "\t" + e.name + "\t" + (e.isLookup()? e.lookup.srcFile.getName().replace(".txt", "") : "") + "\t" + e.getArtDecorInputType() + "\t" + "{url="+e.parsedTags.get(0).iri+"}" + "\t" + m.name + "\t" + "" + LE);
             }
         }

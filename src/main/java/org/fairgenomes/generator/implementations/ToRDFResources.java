@@ -56,7 +56,8 @@ public class ToRDFResources extends AbstractGenerator {
                     BufferedWriter bw = new BufferedWriter(fw);
                     IRI type = e.isLookup() || e.isTableReference() ? OWL.OBJECTPROPERTY : OWL.DATATYPEPROPERTY;
                     String srcTTL = fg.fileName + ".ttl";
-                    bw.write(toRDF(e.parsedTags.get(0).codeSystem, e.parsedTags.get(0).code, type, e.name, e.description, iri(m.parsedOntology.iri), m.description, srcTTL));
+                    //fixme: support multiple tags for table
+                    bw.write(toRDF(e.parsedTags.get(0).codeSystem, e.parsedTags.get(0).code, type, e.name, e.description, iri(m.parsedTags.get(0).iri), m.description, srcTTL));
                     bw.flush();
                     bw.close();
                 }

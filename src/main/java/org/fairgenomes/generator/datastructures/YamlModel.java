@@ -116,6 +116,13 @@ public class YamlModel {
                     e.nrOfLookupsWithoutGlobals = ll.lookups.size();
                     totalNrOfLookupsWithoutGlobals += ll.lookups.size();
 
+                    // type the lookup
+                    if(e.referenceTypeTag == null)
+                    {
+                        throw new Exception("No reference type tag specified for " + e.toString());
+                    }
+                    e.type = new Ontology(e.referenceTypeTag).iri;
+
                     /*
                     Add the global lookups unless NoGlobals is specified
                     */
@@ -135,7 +142,8 @@ public class YamlModel {
                             // this instance type is different from the field type, i.e.
                             // 'Belongs to sequencing' has type NCIT_C25683 (Source), while instances refer to the
                             // Sequencing module, and are therefore types as EDAM:topic_3168 (Sequencing)
-                            e.type = m.parsedOntology.iri;
+                            // FIXME: limit to first tag because referenceTypeTag has 1 value
+                            e.type = m.parsedTags.get(0).iri;
                             found = true;
                             break;
                         }
@@ -157,8 +165,8 @@ public class YamlModel {
         allModuleOntologies = new HashSet<Ontology>();
         allElementOntologies = new HashSet<Ontology>();
         for (Table m : tables) {
-            m.parsedOntology = new Ontology(m.tags);
-            allModuleOntologies.add(m.parsedOntology);
+            m.parsedTags = Ontology.toOntoList(m.tags);
+            allModuleOntologies.addAll(m.parsedTags);
             for (Column e : m.columns) {
                 if(e.tags == null){
                     throw new Exception("empty tags for " + e.name + " in " + m.name);
@@ -311,9 +319,9 @@ public class YamlModel {
 
         for(Table m : y.tables)
         {
-            if(this.allModuleOntologies.contains(m.parsedOntology))
+            if(this.allModuleOntologies.contains(m.parsedTags))
             {
-                System.out.println("MODULE ONTOLOGY OVERLAP: " + m.parsedOntology);
+                System.out.println("MODULE ONTOLOGY OVERLAP: " + m.parsedTags);
             }
 
             for(Column e : m.columns)

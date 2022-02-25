@@ -75,7 +75,9 @@ public class ToApplicationOntology extends AbstractGenerator {
             String moduleName = cleanLabel(m.name);
             IRI moduleClass = iri(ontologyURL, cleanLabel(moduleName));
             builder.add(moduleClass, RDF.TYPE, OWL.CLASS);
-            builder.add(moduleClass, RDFS.ISDEFINEDBY, iri(m.parsedOntology.iri));
+            for(Ontology o : m.parsedTags){
+                builder.add(moduleClass, RDFS.ISDEFINEDBY, iri(o.iri));
+            }
             builder.add(moduleClass, RDFS.LABEL, literal(m.name));
             builder.add(moduleClass, DC.DESCRIPTION, literal(m.description));
             if(m.relationWith != null){

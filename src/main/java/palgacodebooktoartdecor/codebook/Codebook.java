@@ -371,7 +371,7 @@ class Codebook {
             conceptMap.put(id, concept);
             // if the codebook item has a codelist add it as well
             if (!codelist_ref.equalsIgnoreCase("")) {
-                File codelistRefFile = new File(srcDir, codelist_ref + ".tsv");
+                File codelistRefFile = new File(srcDir, codelist_ref + ""); //fixme used to append ".tsv" here, not sure why
                 if(!codelistRefFile.exists())
                 {
                     throw new Exception("Codelist file does not exist: " + codelistRefFile.getAbsolutePath());
