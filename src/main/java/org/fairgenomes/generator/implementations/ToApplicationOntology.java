@@ -19,7 +19,7 @@ import org.fairgenomes.generator.datastructures.Table;
 
 public class ToApplicationOntology extends AbstractGenerator {
 
-    public ToApplicationOntology(YamlModel fg, File outputFolder) {
+    public ToApplicationOntology(YamlModel fg, File outputFolder) throws IOException {
         super(fg, outputFolder);
     }
 

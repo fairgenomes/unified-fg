@@ -9,6 +9,7 @@ import org.fairgenomes.generator.datastructures.Table;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 
 import static org.eclipse.rdf4j.model.util.Values.iri;
@@ -21,8 +22,7 @@ public class ToRDFResources extends AbstractGenerator {
     private HashSet<String> uniqueTerms;
     private HashSet<String> uniqueLookups;
 
-    public ToRDFResources(YamlModel fg, File outputFolder)
-    {
+    public ToRDFResources(YamlModel fg, File outputFolder) throws IOException {
         super(fg, outputFolder);
         uniqueTerms = new HashSet<>();
         uniqueLookups = new HashSet<>();
