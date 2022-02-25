@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	subjects_resourcesinotherinstitutes	Value (English)	String	TRUE	FALSE
+description	subjects_resourcesinotherinstitutes	Description (English)	Text	FALSE	TRUE
+codesystem	subjects_resourcesinotherinstitutes	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	subjects_resourcesinotherinstitutes	The code within the code system	String	FALSE	TRUE
+iri	subjects_resourcesinotherinstitutes	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

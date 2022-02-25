@@ -1,0 +1,210 @@
+@prefix fg: <https://w3id.org/fair-genomes/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sio: <https://semanticscience.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ordo: <http://www.orpha.net/ORDO/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+fg:Studies_Current_study_status_Active_Study a obo:NCIT_C171103;
+  rdfs:label "Active Study";
+  dc:description "A clinical study status designating the study open to accrual.";
+  rdfs:isDefinedBy obo:NCIT_C70747 .
+
+fg:Studies_Current_study_status_Approved_Protocol a obo:NCIT_C171103;
+  rdfs:label "Approved Protocol";
+  dc:description "Protocol is approved by the review board.";
+  rdfs:isDefinedBy obo:NCIT_C70745 .
+
+fg:Studies_Current_study_status_Blinded_Status_at_SDTM_Dataset_Generation a obo:NCIT_C171103;
+  rdfs:label "Blinded Status at SDTM Dataset Generation";
+  dc:description "The blinding status of the trial at the point in time when the SDTM datasets are generated.";
+  rdfs:isDefinedBy obo:NCIT_C139272 .
+
+fg:Studies_Current_study_status_Clinical_Trial_Suspension a obo:NCIT_C171103;
+  rdfs:label "Clinical Trial Suspension";
+  dc:description "An interruption in some or all clinical trial activities.";
+  rdfs:isDefinedBy obo:NCIT_C156631 .
+
+fg:Studies_Current_study_status_Clinical_Trial_Temporary_Halt a obo:NCIT_C171103;
+  rdfs:label "Clinical Trial Temporary Halt";
+  dc:description "An interruption in clinical trial activity by the sponsor that is not in the clinical protocol with an intention to resume the study.";
+  rdfs:isDefinedBy obo:NCIT_C156630 .
+
+fg:Studies_Current_study_status_Open_To_Enrollment a obo:NCIT_C171103;
+  rdfs:label "Open To Enrollment";
+  dc:description "An indication that a study is able to add subjects.";
+  rdfs:isDefinedBy obo:NCIT_C142621 .
+
+fg:Studies_Current_study_status_Performed_Clinical_Study a obo:NCIT_C171103;
+  rdfs:label "Performed Clinical Study";
+  dc:description "A business process status of a clinical study that refers to the study that started the execution of activities specified by the study protocol. The data associated with the performed study describes quantitatively and qualitatively actual observations and events occurring in the study after its approval such as actual accrual numbers dates of subject enrollment  etc.";
+  rdfs:isDefinedBy obo:NCIT_C70759 .
+
+fg:Studies_Current_study_status_Planned_Clinical_Study a obo:NCIT_C171103;
+  rdfs:label "Planned Clinical Study";
+  dc:description "A business process status of a clinical study which occurs before the study starts. A study plan on which the clinical trial is based focuses on several priority parameters that include but are not limited to the types of subjects eligible to participate in the study targeted accrual numbers schedules and durations of interventions the length of the study and the planned duration of a subject participation. These outlines are a part of a study protocol which is more a detailed and comprehensive study document.";
+  rdfs:isDefinedBy obo:NCIT_C70704 .
+
+fg:Studies_Current_study_status_Protocol_Administratively_Withdrawn a obo:NCIT_C171103;
+  rdfs:label "Protocol Administratively Withdrawn";
+  dc:description "A clinical study protocol status designating the protocol that has been withdrawn prior to the complete review.";
+  rdfs:isDefinedBy obo:NCIT_C70778 .
+
+fg:Studies_Current_study_status_Protocol_Approved_with_Modifications a obo:NCIT_C171103;
+  rdfs:label "Protocol Approved with Modifications";
+  dc:description "Protocol Approved with Modifications";
+  rdfs:isDefinedBy obo:NCIT_C70746 .
+
+fg:Studies_Current_study_status_Protocol_Conditionally_Approved a obo:NCIT_C171103;
+  rdfs:label "Protocol Conditionally Approved";
+  dc:description "Protocol Conditionally Approved";
+  rdfs:isDefinedBy obo:NCIT_C70779 .
+
+fg:Studies_Current_study_status_Protocol_Deferred a obo:NCIT_C171103;
+  rdfs:label "Protocol Deferred";
+  dc:description "A clinical study protocol review status designating the protocol that was deferred pending additional information or/and action(s).";
+  rdfs:isDefinedBy obo:NCIT_C70750 .
+
+fg:Studies_Current_study_status_Protocol_Disapproved a obo:NCIT_C171103;
+  rdfs:label "Protocol Disapproved";
+  dc:description "A clinical study protocol review status designating the protocol that was denied the approval.";
+  rdfs:isDefinedBy obo:NCIT_C70748 .
+
+fg:Studies_Current_study_status_Study_Closed_to_Accrual a obo:NCIT_C171103;
+  rdfs:label "Study Closed to Accrual";
+  dc:description "A clinical study status designating the study that stopped patient accrual; other study activities specified by the study protocol might continue.";
+  rdfs:isDefinedBy obo:NCIT_C70751 .
+
+fg:Studies_Current_study_status_Study_Closed_to_Accrual_and_Treatment a obo:NCIT_C171103;
+  rdfs:label "Study Closed to Accrual and Treatment";
+  dc:description "A clinical study status designating the study that stopped further patient accrual as well as the treatment of the subjects already enrolled in the trial.";
+  rdfs:isDefinedBy obo:NCIT_C70752 .
+
+fg:Studies_Current_study_status_Study_Completed a obo:NCIT_C171103;
+  rdfs:label "Study Completed";
+  dc:description "A clinical study status designating the study has been completed normally according to the protocol. Subject enrollment stopped. No participants are treated or being followed up.";
+  rdfs:isDefinedBy obo:NCIT_C70756 .
+
+fg:Studies_Current_study_status_Study_Enrollment_Closure a obo:NCIT_C171103;
+  rdfs:label "Study Enrollment Closure";
+  dc:description "Refers to the closing of a study to further enrollment.";
+  rdfs:isDefinedBy obo:NCIT_C25366 .
+
+fg:Studies_Current_study_status_Study_on_Hold a obo:NCIT_C171103;
+  rdfs:label "Study on Hold";
+  dc:description "A clinical study status designating that an order has been issued to a study sponsor to delay a proposed investigation or to suspend an ongoing one. When a proposed study is placed on clinical hold subjects may not be given the investigational product as part of the study. When an ongoing study is placed on clinical hold no new subjects may be recruited to the study and placed on the investigational product. Subjects already in the study have to stop receiving therapy involving the investigational agent unless the FDA specifically permits it.";
+  rdfs:isDefinedBy obo:NCIT_C70755 .
+
+fg:Studies_Current_study_status_Study_Terminated a obo:NCIT_C171103;
+  rdfs:label "Study Terminated";
+  dc:description "A clinical study status designating the study has been stopped prematurely and will not resume. Subject enrollment stopped. No participants are treated or being followed up.";
+  rdfs:isDefinedBy obo:NCIT_C70757 .
+
+fg:Studies_Current_study_status_Study_Withdrawn a obo:NCIT_C171103;
+  rdfs:label "Study Withdrawn";
+  dc:description "A clinical study status designating the study that has been stopped prematurely: Subject enrollment never started. Study will not resume.";
+  rdfs:isDefinedBy obo:NCIT_C70758 .
+
+fg:Studies_Current_study_status_Trial_Termination a obo:NCIT_C171103;
+  rdfs:label "Trial Termination";
+  dc:description "The discontinuation of a clinical trial prior to the planned end date.";
+  rdfs:isDefinedBy obo:NCIT_C142739 .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_NoInformation_(NI,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "NoInformation (NI, nullflavor)";
+  dc:description "The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Invalid_(INV,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Invalid (INV, nullflavor)";
+  dc:description "The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Derived_(DER,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Derived (DER, nullflavor)";
+  dc:description "An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Other_(OTH,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Other (OTH, nullflavor)";
+  dc:description "The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Negative_infinity_(NINF,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Negative infinity (NINF, nullflavor)";
+  dc:description "Negative infinity of numbers.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NINF> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Positive_infinity_(PINF,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Positive infinity (PINF, nullflavor)";
+  dc:description "Positive infinity of numbers.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#PINF> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Un-encoded_(UNC,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Un-encoded (UNC, nullflavor)";
+  dc:description "The actual value has not yet been encoded within the approved value domain.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNC> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Masked_(MSK,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Masked (MSK, nullflavor)";
+  dc:description "There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons. There may be an alternate mechanism for gaining access to this information.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#MSK> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Not_applicable_(NA,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Not applicable (NA, nullflavor)";
+  dc:description "Known to have no proper value (e.g., last menstrual period for a male).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Unknown_(UNK,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Unknown (UNK, nullflavor)";
+  dc:description "A proper value is applicable, but not known.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Asked_but_unknown_(ASKU,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Asked but unknown (ASKU, nullflavor)";
+  dc:description "Information was sought but not found (e.g., patient was asked but didn't know)";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Temporarily_unavailable_(NAV,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Temporarily unavailable (NAV, nullflavor)";
+  dc:description "Information is not available at this time but it is expected that it will be available later.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAV> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Not_asked_(NASK,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Not asked (NASK, nullflavor)";
+  dc:description "This information has not been sought. (e.g., patient was not asked)";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NASK> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Not_available_(NAVU,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Not available (NAVU, nullflavor)";
+  dc:description "Information is not available at this time (with no expectation regarding whether it will or will not be available in the future).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAVU> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Sufficient_quantity_(QS,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Sufficient quantity (QS, nullflavor)";
+  dc:description "The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material. e.g. 'Add 10mg of ingredient X, 50mg of ingredient Y, and sufficient quantity of water to 100mL.' The null flavor would be used to express the quantity of water.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#QS> .
+
+<https://w3id.org/fair-genomes/ontology/Studies_Current_study_status_Trace_(TRC,_nullflavor)>
+  a obo:NCIT_C171103;
+  rdfs:label "Trace (TRC, nullflavor)";
+  dc:description "The content is greater than zero, but too small to be quantified.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#TRC> .
