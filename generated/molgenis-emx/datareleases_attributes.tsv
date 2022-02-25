@@ -1,0 +1,3 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+id	id	One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing. (NCIT:C25364 )	datareleases	string	TRUE	TRUE	TRUE	FALSE	
+name	name	The words or language units by which a thing is known. (NCIT:C42614 )	datareleases	string	FALSE	FALSE	TRUE	TRUE	

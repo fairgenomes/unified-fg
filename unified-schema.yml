@@ -52,73 +52,62 @@ tables:
         exactMatch: OBI:0001615 [http://purl.obolibrary.org/obo/OBI_0001615]
         broadMatch: SIO:000136 [https://semanticscience.org/resource/SIO_000136]
         dataType: text
-
       - name: Inclusion criteria
         description: The conditions which, if met, make an person eligible for participation in this study.
         tags: OBI:0500027 [http://purl.obolibrary.org/obo/OBI_0500027]
         dataType: mref
         reference: lookups/InclusionCriteria.tsv
         referenceTypeTag: OBI:0500027 [http://purl.obolibrary.org/obo/OBI_0500027]
-
       - name: Principal investigator
         description: An investigator who is responsible for all aspects of the conduct of a study.
         tags: OMIABIS:0000100 [http://purl.obolibrary.org/obo/OMIABIS_0000100], NCIT:C19924 [http://purl.obolibrary.org/obo/NCIT_C19924]
         broadMatch: SIO:000881 [https://semanticscience.org/resource/SIO_000881], OBI:0000202 [http://purl.obolibrary.org/obo/OBI_0000202]
         dataType: string
-
       - name: Contact person
         description: Name of study contact.
         tags: NCIT:C176373 [http://purl.obolibrary.org/obo/NCIT_C176373]
         dataType: string
-
       - name: Contact email
         description: An email address for the purpose of contacting the study contact person.
         tags: OMIABIS:0000035 [http://purl.obolibrary.org/obo/OMIABIS_0000035], NCIT:C176375 [http://purl.obolibrary.org/obo/NCIT_C176375]
         dataType: email
-
       - name: Study design
         description: A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of this study.
         tags: OBI:0500000 [http://purl.obolibrary.org/obo/OBI_0500000]
         dataType: text
-
       - name: Start date
         description: The date on which this study began.
         tags: NCIT:C69208 [http://purl.obolibrary.org/obo/NCIT_C69208]
         broadMatch: SIO:000031 [https://semanticscience.org/resource/SIO_000031], IAO:0000582 [http://purl.obolibrary.org/obo/IAO_0000582]
         dataType: date
-
       - name: Completion date
         description: The date on which the concluding information for this study is completed. Usually, this is when the last subject has a final visit, or the main analysis has finished, or any other protocol-defined completion date.
         tags: NCIT:C142702 [http://purl.obolibrary.org/obo/NCIT_C142702]
         broadMatch: IAO:0000582 [http://purl.obolibrary.org/obo/IAO_0000582]
         relatedMatch: SIO:001083 [https://semanticscience.org/resource/SIO_001083], SIO:001314 [https://semanticscience.org/resource/SIO_001314]
         dataType: date
-
       - name: Current study status
         dataType: mref
         reference: lookups/StudyStatus.tsv
         description: The status of a study or trial.
         tags: NCIT:C171103 [http://purl.obolibrary.org/obo/NCIT_C171103]
-
+        referenceTypeTag: NCIT:C171103 [http://purl.obolibrary.org/obo/NCIT_C171103]
       - name: Number of subjects enrolled
         dataType: integer
         description: An integer specifying the quantity of study subjects enrolled in the study at the current time.
         tags: NCIT:C153145 [http://purl.obolibrary.org/obo/NCIT_C153145]
-
       - name: Numer of samples collected
         dataType: integer
         description: An integer specifying the quantity of samples collected at the current time.
         tags: KISAO:0000326 [http://www.biomodels.net/kisao/KISAO#KISAO_0000326]
-
       - name: belongsToDataRelease
         dataType: mref
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
-
   - name: Data releases
     description: The act of making data or other structured information accessible to the public or to the user group of a database.
-    tags: http://purl.obolibrary.org/obo/NCIT_C172217, https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset
+    tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
     columns:
       - name: id
         dataType: identifier
@@ -128,4 +117,158 @@ tables:
         description: The words or language units by which a thing is known.
         tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
         dataType: string
-
+  - name: Subjects
+    description: Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study.
+    tags: NCIT:C90492 [http://purl.obolibrary.org/obo/NCIT_C90492], ExO:0000127 [http://purl.obolibrary.org/obo/ExO_0000127], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+    relationWith:
+      - table: Studies
+        relation: RO:0000056 [http://purl.obolibrary.org/obo/RO_0000056]
+    columns:
+      - name: Identifier
+        description: A unique proper name or character sequence that identifies this particular individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
+        tags: NCIT:C164337 [http://purl.obolibrary.org/obo/NCIT_C164337], NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495]
+        dataType: identifier
+      - name: Alternative identifiers
+        description: A backup sequence of characters used to identify an entity.
+        tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
+        dataType: string
+      - name: Gender identity
+        description: A person's concept of self as being male and masculine or female and feminine, or ambivalent, based in part on physical characteristics, parental responses, and psychological and social pressures. It is the internal experience of gender role. For practical reasons the lookups are limited to first and second-level entries, but can be expanded when needed. Note that 'Gender at birth', 'Genotypic sex' and any (gender-related) hormone therapies in 'Medication' are usually medically more relevant than this term.
+        tags: MESH:D005783 [http://purl.bioontology.org/ontology/MESH/D005783]
+        dataType: xref
+        reference: lookups/GenderIdentity.tsv
+        referenceTypeTag: MESH:D005783 [http://purl.bioontology.org/ontology/MESH/D005783]
+      - name: Gender at birth
+        description: Assigned gender is one's gender which was assigned at birth, typically by a medical and/or legal organization, and then later registered with other organizations. Such a designation is typically based off of the superficial appearance of external genitalia present at birth.
+        tags: GSSO:009418 [http://purl.obolibrary.org/obo/GSSO_009418]
+        dataType: xref
+        reference: lookups/GenderAtBirth.tsv
+        referenceTypeTag: GSSO:009418 [http://purl.obolibrary.org/obo/GSSO_009418]
+      - name: Genotypic sex
+        description: A biological sex quality inhering in an individual based upon genotypic composition of sex chromosomes.
+        tags: PATO:0020000 [http://purl.obolibrary.org/obo/PATO_0020000]
+        dataType: xref
+        reference: lookups/GenotypicSex.tsv
+        referenceTypeTag: NCIT:C168871 [http://purl.obolibrary.org/obo/NCIT_C168871]
+      - name: Country of residence
+        description: Country of residence at enrollment.
+        tags: NCIT:C171105 [http://purl.obolibrary.org/obo/NCIT_C171105]
+        dataType: xref
+        reference: lookups/Countries.tsv
+        referenceTypeTag: GENEPIO:0001830 [http://purl.obolibrary.org/obo/GENEPIO_0001830]
+      - name: Ancestry
+        description: Population category defined using ancestry informative markers (AIMs) based on genetic/genomic data.
+        tags: NCIT:C176763 [http://purl.obolibrary.org/obo/NCIT_C176763]
+        dataType: xref
+        reference: lookups/Ancestry.tsv
+        referenceTypeTag: HANCESTRO:0004 [http://purl.obolibrary.org/obo/HANCESTRO_0004]
+      - name: Country of birth
+        description: The country that this person was born in.
+        tags: GENEPIO:0001094 [http://purl.obolibrary.org/obo/GENEPIO_0001094]
+        dataType: xref
+        reference: lookups/Countries.tsv
+        referenceTypeTag: GENEPIO:0001830 [http://purl.obolibrary.org/obo/GENEPIO_0001830]
+      - name: Year of birth
+        description: The year in which this person was born.
+        tags: NCIT:C83164 [http://purl.obolibrary.org/obo/NCIT_C83164]
+        dataType: integer
+        unit: NCIT:C159612 [http://purl.obolibrary.org/obo/NCIT_C159612]
+      - name: Date of birth
+        dataType: date
+        description: The calendar date on which a person was born.
+        tags: NCIT:C68615 [http://purl.obolibrary.org/obo/NCIT_C68615]
+      - name: Inclusion status
+        description: A findings domain that contains general subject characteristics that are evaluated periodically to determine if they have changed.
+        #description: An indicator that provides information on the current health status of this person.
+        tags: NCIT:C166244 [http://purl.obolibrary.org/obo/NCIT_C166244], NCIT:C117655 [http://purl.obolibrary.org/obo/NCIT_C117655]
+        dataType: xref
+        reference: lookups/InclusionStatus.tsv
+        referenceTypeTag: NCIT:C19332 [http://purl.obolibrary.org/obo/NCIT_C19332]
+      - name: Age at death
+        description: The age at which death occurred.
+        tags: NCIT:C135383 [http://purl.obolibrary.org/obo/NCIT_C135383]
+        dataType: integer
+        unit: UO:0000036 [http://purl.obolibrary.org/obo/UO_0000036]
+      - name: Date of death
+        dataType: date
+        description: The calendar date of subject's death.
+        tags: NCIT:C70810 [http://purl.obolibrary.org/obo/NCIT_C70810]
+      - name: Year of death
+        dataType: integer
+        description: The year in which an individual derived.
+        tags: NCIT:C156426 [http://purl.obolibrary.org/obo/NCIT_C156426]
+      - name: Primary affiliated institute
+        description: The most significant institute for medical consultation and/or study inclusion in context of the genetic disease of this person.
+        tags: NCIT:C25412 [http://purl.obolibrary.org/obo/NCIT_C25412]
+        dataType: xref
+        reference: lookups/Institutes.tsv
+        referenceTypeTag: SIO:000688 [http://semanticscience.org/resource/SIO_000688]
+      - name: Affiliated institute contact person
+        description: A person acting as a channel for communication between groups or on behalf of a group.
+        tags: NCIT:C25461 [http://purl.obolibrary.org/obo/NCIT_C25461]
+        dataType: string
+      - name: Affiliated institute contact email
+        dataType: email
+        description: Email address of the contact person or organization
+        tags: MS:1000589 [http://purl.obolibrary.org/obo/MS_1000589]
+      - name: Resources in other institutes
+        description: Material or data related to this person that is not captured by this system though known to be available in other institutes such as biobanks or hospitals.
+        tags: NCIT:C19012 [http://purl.obolibrary.org/obo/NCIT_C19012]
+        dataType: mref
+        reference: lookups/Institutes.tsv
+        referenceTypeTag: SIO:000688 [http://semanticscience.org/resource/SIO_000688]
+      - name: Participates in study
+        description: Reference to the study or studies in which this person participates.
+        tags: RO:0000056 [http://purl.obolibrary.org/obo/RO_0000056]
+        dataType: mref
+        reference: Studies
+      - name: Belongs to family
+        description: A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption.
+        tags: NCIT:C25173 [http://purl.obolibrary.org/obo/NCIT_C25173]
+        dataType: string
+      - name: Belongs to mother
+        dataType: xref
+        reference: Subjects
+        description: A designation that has some relationship to motherhood.
+        tags: NCIT:C89336 [http://purl.obolibrary.org/obo/NCIT_C89336]
+      - name: Belongs to father
+        dataType: xref
+        reference: Subjects
+        description: Having to do with the father, coming from the father, or related through the father.
+        tags: NCIT:C94324 [http://purl.obolibrary.org/obo/NCIT_C94324]
+      - name: Belongs with family members
+        dataType: mref
+        reference: Subjects
+        description: Any individual related biologically or legally to another individual.
+        tags: NCIT:C21480 [http://purl.obolibrary.org/obo/NCIT_C21480]
+      - name: Belongs with twin
+        dataType: bool
+        description: Either of two offspring born from the same pregnancy.
+        tags: NCIT:C73427 [http://purl.obolibrary.org/obo/NCIT_C73427]
+      - name: First visit date
+        dataType: date
+        description: The date for the first patient visit.
+        tags: NCIT:C164021 [http://purl.obolibrary.org/obo/NCIT_C164021]
+      - name: Fetal status
+        dataType: bool
+        description: Any tissue from a fetus.
+        tags: NCIT:C17730 [http://purl.obolibrary.org/obo/NCIT_C17730]
+      - name: Consanguinity
+        dataType: bool
+        description: Genetic relatedness between individuals who are descendants of at least one common ancestor.
+        tags: NCIT:C71384 [http://purl.obolibrary.org/obo/NCIT_C71384]
+      - name: Belongs to study
+        dataType: mref
+        reference: Studies
+        description: Reference to the study or studies in which this person participates.
+        tags: RO:0000056 [http://purl.obolibrary.org/obo/RO_0000056]
+      - name: Belongs to data release
+        dataType: mref
+        reference: Data releases
+        description: The act of making data or other structured information accessible to the public or to the user group of a database.
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+      #      - name: belongsToCohort
+      #        dataType: mref
+      #        reference: umdm_cohorts
+      #        description: A group of individuals, identified by a common characteristic.
+      #        tags: http://purl.obolibrary.org/obo/NCIT_C61512

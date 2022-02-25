@@ -9,6 +9,7 @@ import org.fairgenomes.generator.datastructures.Table;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 
 import static org.eclipse.rdf4j.model.util.Values.iri;
@@ -21,8 +22,7 @@ public class ToRDFResources extends AbstractGenerator {
     private HashSet<String> uniqueTerms;
     private HashSet<String> uniqueLookups;
 
-    public ToRDFResources(YamlModel fg, File outputFolder)
-    {
+    public ToRDFResources(YamlModel fg, File outputFolder) throws IOException {
         super(fg, outputFolder);
         uniqueTerms = new HashSet<>();
         uniqueLookups = new HashSet<>();
@@ -56,7 +56,8 @@ public class ToRDFResources extends AbstractGenerator {
                     BufferedWriter bw = new BufferedWriter(fw);
                     IRI type = e.isLookup() || e.isTableReference() ? OWL.OBJECTPROPERTY : OWL.DATATYPEPROPERTY;
                     String srcTTL = fg.fileName + ".ttl";
-                    bw.write(toRDF(e.parsedTags.get(0).codeSystem, e.parsedTags.get(0).code, type, e.name, e.description, iri(m.parsedOntology.iri), m.description, srcTTL));
+                    //fixme: support multiple tags for table
+                    bw.write(toRDF(e.parsedTags.get(0).codeSystem, e.parsedTags.get(0).code, type, e.name, e.description, iri(m.parsedTags.get(0).iri), m.description, srcTTL));
                     bw.flush();
                     bw.close();
                 }

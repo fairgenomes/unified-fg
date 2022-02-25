@@ -1,0 +1,337 @@
+@prefix fg: <https://w3id.org/fair-genomes/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sio: <https://semanticscience.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ordo: <http://www.orpha.net/ORDO/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/fair-genomes/ontology/> a owl:Ontology;
+  dc:title "Unified metadata schema";
+  dc:description "The unified semantic metadata schema to power reuse of NGS data in research and healthcare.";
+  dc:date "2022-02-23";
+  owl:versionInfo "0.1-SNAPSHOT";
+  dc:language "en";
+  dc:rights "This ontology is distributed under a Attribution 4.0 International (CC BY 4.0) License - https://creativecommons.org/licenses/by/4.0/. Copyright: University Medical Center Groningen (2022).";
+  dc:publisher <https://github.com/fairgenomes/unified-fg>;
+  <http://purl.org/dc/terms/license> "Attribution 4.0 International (CC BY 4.0)";
+  <http://purl.org/dc/terms/LicenseDocument> <https://creativecommons.org/licenses/by/4.0/>;
+  dc:creator "David C. Ruvolo <d.c.ruvolo@umcg.nl>", <https://orcid.org/0000-0002-5745-5298>,
+    "K. Joeri van der Velde <k.j.van.der.velde@umcg.nl>", <https://orcid.org/0000-0002-0934-8375>,
+    "Morris A. Swertz <m.a.swertz@umcg.nl>", <https://orcid.org/0000-0002-0979-3401>;
+  dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-countries.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-institutes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderatbirth.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genotypicsex.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ancestry.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderidentity.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusionstatus.ttl> .
+
+fg:Studies a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C63536;
+  rdfs:label "Studies";
+  dc:description "A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts." .
+
+fg:Studies_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:OMIABIS_0000006;
+  dc:description "A unique proper name or character sequence that identifies this particular study." .
+
+fg:Studies_Name a owl:DatatypeProperty;
+  rdfs:label "Name";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:OMIABIS_0000037;
+  dc:description "A name that designates this study." .
+
+fg:Studies_Acronym a owl:DatatypeProperty;
+  rdfs:label "Acronym";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:NCIT_C93495;
+  dc:description "The non-unique initials or abbreviated name used for identification." .
+
+fg:Studies_Description a owl:DatatypeProperty;
+  rdfs:label "Description";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:OMIABIS_0000036, obo:NCIT_C142704;
+  dc:description "A statement or piece of writing that provides details on this study." .
+
+fg:Studies_Inclusion_criteria a owl:ObjectProperty;
+  rdfs:label "Inclusion criteria";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:OBI_0500027;
+  dc:description "The conditions which, if met, make an person eligible for participation in this study.";
+  rdfs:range obo:OBI_0500027 .
+
+fg:Studies_Principal_investigator a owl:DatatypeProperty;
+  rdfs:label "Principal investigator";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:OMIABIS_0000100, obo:NCIT_C19924;
+  dc:description "An investigator who is responsible for all aspects of the conduct of a study." .
+
+fg:Studies_Contact_person a owl:DatatypeProperty;
+  rdfs:label "Contact person";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:NCIT_C176373;
+  dc:description "Name of study contact." .
+
+fg:Studies_Contact_email a owl:DatatypeProperty;
+  rdfs:label "Contact email";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:OMIABIS_0000035, obo:NCIT_C176375;
+  dc:description "An email address for the purpose of contacting the study contact person." .
+
+fg:Studies_Study_design a owl:DatatypeProperty;
+  rdfs:label "Study design";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:OBI_0500000;
+  dc:description "A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of this study." .
+
+fg:Studies_Start_date a owl:DatatypeProperty;
+  rdfs:label "Start date";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:NCIT_C69208;
+  dc:description "The date on which this study began." .
+
+fg:Studies_Completion_date a owl:DatatypeProperty;
+  rdfs:label "Completion date";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:NCIT_C142702;
+  dc:description "The date on which the concluding information for this study is completed. Usually, this is when the last subject has a final visit, or the main analysis has finished, or any other protocol-defined completion date." .
+
+fg:Studies_Current_study_status a owl:ObjectProperty;
+  rdfs:label "Current study status";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:NCIT_C171103;
+  dc:description "The status of a study or trial.";
+  rdfs:range obo:NCIT_C171103 .
+
+fg:Studies_Number_of_subjects_enrolled a owl:DatatypeProperty;
+  rdfs:label "Number of subjects enrolled";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:NCIT_C153145;
+  dc:description "An integer specifying the quantity of study subjects enrolled in the study at the current time." .
+
+fg:Studies_Numer_of_samples_collected a owl:DatatypeProperty;
+  rdfs:label "Numer of samples collected";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy <http://www.biomodels.net/kisao/KISAO#KISAO_0000326>;
+  dc:description "An integer specifying the quantity of samples collected at the current time." .
+
+fg:Studies_belongsToDataRelease a owl:ObjectProperty;
+  rdfs:label "belongsToDataRelease";
+  rdfs:domain fg:Studies;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Data_releases a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C172217, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Data releases";
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Data_releases_id a owl:DatatypeProperty;
+  rdfs:label "id";
+  rdfs:domain fg:Data_releases;
+  rdfs:isDefinedBy obo:NCIT_C25364;
+  dc:description "One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing." .
+
+fg:Data_releases_name a owl:DatatypeProperty;
+  rdfs:label "name";
+  rdfs:domain fg:Data_releases;
+  rdfs:isDefinedBy obo:NCIT_C42614;
+  dc:description "The words or language units by which a thing is known." .
+
+fg:Subjects a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C90492, obo:ExO_0000127, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Subjects";
+  dc:description "Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study.";
+  obo:RO_0000056 fg:Studies .
+
+fg:Subjects_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C164337, obo:NCIT_C142495;
+  dc:description "A unique proper name or character sequence that identifies this particular individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored." .
+
+fg:Subjects_Alternative_identifiers a owl:DatatypeProperty;
+  rdfs:label "Alternative identifiers";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C90353;
+  dc:description "A backup sequence of characters used to identify an entity." .
+
+fg:Subjects_Gender_identity a owl:ObjectProperty;
+  rdfs:label "Gender identity";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy <http://purl.bioontology.org/ontology/MESH/D005783>;
+  dc:description "A person's concept of self as being male and masculine or female and feminine, or ambivalent, based in part on physical characteristics, parental responses, and psychological and social pressures. It is the internal experience of gender role. For practical reasons the lookups are limited to first and second-level entries, but can be expanded when needed. Note that 'Gender at birth', 'Genotypic sex' and any (gender-related) hormone therapies in 'Medication' are usually medically more relevant than this term.";
+  rdfs:range <http://purl.bioontology.org/ontology/MESH/D005783> .
+
+fg:Subjects_Gender_at_birth a owl:ObjectProperty;
+  rdfs:label "Gender at birth";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:GSSO_009418;
+  dc:description "Assigned gender is one's gender which was assigned at birth, typically by a medical and/or legal organization, and then later registered with other organizations. Such a designation is typically based off of the superficial appearance of external genitalia present at birth.";
+  rdfs:range obo:GSSO_009418 .
+
+fg:Subjects_Genotypic_sex a owl:ObjectProperty;
+  rdfs:label "Genotypic sex";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:PATO_0020000;
+  dc:description "A biological sex quality inhering in an individual based upon genotypic composition of sex chromosomes.";
+  rdfs:range obo:NCIT_C168871 .
+
+fg:Subjects_Country_of_residence a owl:ObjectProperty;
+  rdfs:label "Country of residence";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C171105;
+  dc:description "Country of residence at enrollment.";
+  rdfs:range obo:GENEPIO_0001830 .
+
+fg:Subjects_Ancestry a owl:ObjectProperty;
+  rdfs:label "Ancestry";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C176763;
+  dc:description "Population category defined using ancestry informative markers (AIMs) based on genetic/genomic data.";
+  rdfs:range obo:HANCESTRO_0004 .
+
+fg:Subjects_Country_of_birth a owl:ObjectProperty;
+  rdfs:label "Country of birth";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:GENEPIO_0001094;
+  dc:description "The country that this person was born in.";
+  rdfs:range obo:GENEPIO_0001830 .
+
+fg:Subjects_Year_of_birth a owl:DatatypeProperty;
+  rdfs:label "Year of birth";
+  sio:SIO_000074 obo:NCIT_C159612;
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C83164;
+  dc:description "The year in which this person was born." .
+
+fg:Subjects_Date_of_birth a owl:DatatypeProperty;
+  rdfs:label "Date of birth";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C68615;
+  dc:description "The calendar date on which a person was born." .
+
+fg:Subjects_Inclusion_status a owl:ObjectProperty;
+  rdfs:label "Inclusion status";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C166244, obo:NCIT_C117655;
+  dc:description "A findings domain that contains general subject characteristics that are evaluated periodically to determine if they have changed.";
+  rdfs:range obo:NCIT_C19332 .
+
+fg:Subjects_Age_at_death a owl:DatatypeProperty;
+  rdfs:label "Age at death";
+  sio:SIO_000074 obo:UO_0000036;
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C135383;
+  dc:description "The age at which death occurred." .
+
+fg:Subjects_Date_of_death a owl:DatatypeProperty;
+  rdfs:label "Date of death";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C70810;
+  dc:description "The calendar date of subject's death." .
+
+fg:Subjects_Year_of_death a owl:DatatypeProperty;
+  rdfs:label "Year of death";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C156426;
+  dc:description "The year in which an individual derived." .
+
+fg:Subjects_Primary_affiliated_institute a owl:ObjectProperty;
+  rdfs:label "Primary affiliated institute";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C25412;
+  dc:description "The most significant institute for medical consultation and/or study inclusion in context of the genetic disease of this person.";
+  rdfs:range <http://semanticscience.org/resource/SIO_000688> .
+
+fg:Subjects_Affiliated_institute_contact_person a owl:DatatypeProperty;
+  rdfs:label "Affiliated institute contact person";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C25461;
+  dc:description "A person acting as a channel for communication between groups or on behalf of a group." .
+
+fg:Subjects_Affiliated_institute_contact_email a owl:DatatypeProperty;
+  rdfs:label "Affiliated institute contact email";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:MS_1000589;
+  dc:description "Email address of the contact person or organization" .
+
+fg:Subjects_Resources_in_other_institutes a owl:ObjectProperty;
+  rdfs:label "Resources in other institutes";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C19012;
+  dc:description "Material or data related to this person that is not captured by this system though known to be available in other institutes such as biobanks or hospitals.";
+  rdfs:range <http://semanticscience.org/resource/SIO_000688> .
+
+fg:Subjects_Participates_in_study a owl:ObjectProperty;
+  rdfs:label "Participates in study";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:RO_0000056;
+  dc:description "Reference to the study or studies in which this person participates." .
+
+fg:Subjects_Belongs_to_family a owl:DatatypeProperty;
+  rdfs:label "Belongs to family";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C25173;
+  dc:description "A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption." .
+
+fg:Subjects_Belongs_to_mother a owl:ObjectProperty;
+  rdfs:label "Belongs to mother";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C89336;
+  dc:description "A designation that has some relationship to motherhood." .
+
+fg:Subjects_Belongs_to_father a owl:ObjectProperty;
+  rdfs:label "Belongs to father";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C94324;
+  dc:description "Having to do with the father, coming from the father, or related through the father." .
+
+fg:Subjects_Belongs_with_family_members a owl:ObjectProperty;
+  rdfs:label "Belongs with family members";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C21480;
+  dc:description "Any individual related biologically or legally to another individual." .
+
+fg:Subjects_Belongs_with_twin a owl:DatatypeProperty;
+  rdfs:label "Belongs with twin";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C73427;
+  dc:description "Either of two offspring born from the same pregnancy." .
+
+fg:Subjects_First_visit_date a owl:DatatypeProperty;
+  rdfs:label "First visit date";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C164021;
+  dc:description "The date for the first patient visit." .
+
+fg:Subjects_Fetal_status a owl:DatatypeProperty;
+  rdfs:label "Fetal status";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C17730;
+  dc:description "Any tissue from a fetus." .
+
+fg:Subjects_Consanguinity a owl:DatatypeProperty;
+  rdfs:label "Consanguinity";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C71384;
+  dc:description "Genetic relatedness between individuals who are descendants of at least one common ancestor." .
+
+fg:Subjects_Belongs_to_study a owl:ObjectProperty;
+  rdfs:label "Belongs to study";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:RO_0000056;
+  dc:description "Reference to the study or studies in which this person participates." .
+
+fg:Subjects_Belongs_to_data_release a owl:ObjectProperty;
+  rdfs:label "Belongs to data release";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .

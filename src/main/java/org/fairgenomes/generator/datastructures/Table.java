@@ -18,7 +18,7 @@ public class Table {
     Variables that may be loaded afterwards
     */
     public String technicalName;
-    public Ontology parsedOntology;
+    public List<Ontology> parsedTags;
     public Map<String, Column> elementMap;
 
     @Override

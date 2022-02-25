@@ -1,0 +1,30 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+identifier	Identifier	A unique proper name or character sequence that identifies this particular individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. (NCIT:C164337, NCIT:C142495 )	subjects	string	TRUE	TRUE	TRUE	FALSE	
+alternativeidentifiers	Alternative identifiers	A backup sequence of characters used to identify an entity. (NCIT:C90353 )	subjects	string	FALSE	FALSE	TRUE	TRUE	
+genderidentity	Gender identity	A person's concept of self as being male and masculine or female and feminine, or ambivalent, based in part on physical characteristics, parental responses, and psychological and social pressures. It is the internal experience of gender role. For practical reasons the lookups are limited to first and second-level entries, but can be expanded when needed. Note that 'Gender at birth', 'Genotypic sex' and any (gender-related) hormone therapies in 'Medication' are usually medically more relevant than this term. (MESH:D005783 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_genderidentity
+genderatbirth	Gender at birth	Assigned gender is one's gender which was assigned at birth, typically by a medical and/or legal organization, and then later registered with other organizations. Such a designation is typically based off of the superficial appearance of external genitalia present at birth. (GSSO:009418 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_genderatbirth
+genotypicsex	Genotypic sex	A biological sex quality inhering in an individual based upon genotypic composition of sex chromosomes. (PATO:0020000 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_genotypicsex
+countryofresidence	Country of residence	Country of residence at enrollment. (NCIT:C171105 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_countryofresidence
+ancestry	Ancestry	Population category defined using ancestry informative markers (AIMs) based on genetic/genomic data. (NCIT:C176763 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_ancestry
+countryofbirth	Country of birth	The country that this person was born in. (GENEPIO:0001094 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_countryofbirth
+yearofbirth	Year of birth	The year in which this person was born. (NCIT:C83164 )	subjects	int	FALSE	FALSE	TRUE	TRUE	
+dateofbirth	Date of birth	The calendar date on which a person was born. (NCIT:C68615 )	subjects	date	FALSE	FALSE	TRUE	TRUE	
+inclusionstatus	Inclusion status	A findings domain that contains general subject characteristics that are evaluated periodically to determine if they have changed. (NCIT:C166244, NCIT:C117655 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_inclusionstatus
+ageatdeath	Age at death	The age at which death occurred. (NCIT:C135383 )	subjects	int	FALSE	FALSE	TRUE	TRUE	
+dateofdeath	Date of death	The calendar date of subject's death. (NCIT:C70810 )	subjects	date	FALSE	FALSE	TRUE	TRUE	
+yearofdeath	Year of death	The year in which an individual derived. (NCIT:C156426 )	subjects	int	FALSE	FALSE	TRUE	TRUE	
+primaryaffiliatedinstitute	Primary affiliated institute	The most significant institute for medical consultation and/or study inclusion in context of the genetic disease of this person. (NCIT:C25412 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_primaryaffiliatedinstitute
+affiliatedinstitutecontactperson	Affiliated institute contact person	A person acting as a channel for communication between groups or on behalf of a group. (NCIT:C25461 )	subjects	string	FALSE	FALSE	TRUE	TRUE	
+affiliatedinstitutecontactemail	Affiliated institute contact email	Email address of the contact person or organization (MS:1000589 )	subjects	string	FALSE	FALSE	TRUE	TRUE	
+resourcesinotherinstitutes	Resources in other institutes	Material or data related to this person that is not captured by this system though known to be available in other institutes such as biobanks or hospitals. (NCIT:C19012 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_resourcesinotherinstitutes
+participatesinstudy	Participates in study	Reference to the study or studies in which this person participates. (RO:0000056 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_studies
+belongstofamily	Belongs to family	A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption. (NCIT:C25173 )	subjects	string	FALSE	FALSE	TRUE	TRUE	
+belongstomother	Belongs to mother	A designation that has some relationship to motherhood. (NCIT:C89336 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects
+belongstofather	Belongs to father	Having to do with the father, coming from the father, or related through the father. (NCIT:C94324 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects
+belongswithfamilymembers	Belongs with family members	Any individual related biologically or legally to another individual. (NCIT:C21480 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects
+belongswithtwin	Belongs with twin	Either of two offspring born from the same pregnancy. (NCIT:C73427 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
+firstvisitdate	First visit date	The date for the first patient visit. (NCIT:C164021 )	subjects	date	FALSE	FALSE	TRUE	TRUE	
+fetalstatus	Fetal status	Any tissue from a fetus. (NCIT:C17730 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
+consanguinity	Consanguinity	Genetic relatedness between individuals who are descendants of at least one common ancestor. (NCIT:C71384 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
+belongstostudy	Belongs to study	Reference to the study or studies in which this person participates. (RO:0000056 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_studies
+belongstodatarelease	Belongs to data release	The act of making data or other structured information accessible to the public or to the user group of a database. (NCIT:C172217 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_datareleases

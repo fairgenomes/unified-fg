@@ -19,15 +19,14 @@ public class GenerateOutputs {
     public void generateResources() throws Exception {
         YamlModel y = readYamlModel();
         System.out.println("Generating other representations...");
-        File outputs = new File(inputF.getParentFile(), "generated/unified");
-        FileUtils.cleanDirectory(outputs);
+        File outputs = new File(inputF.getParentFile(), "generated");
         new ToMarkdown(y, new File(outputs, "markdown")).start();
         new ToMOLGENISEMX(y, new File(outputs, "molgenis-emx")).start();
         new ToMOLGENISEMX2(y, new File(outputs, "molgenis-emx2")).start();
         new ToApplicationOntology(y, new File(outputs, "ontology")).start();
         new ToPALGACodeBook(y, new File(outputs, "palga-codebook")).start();
         new ToARTDECOR(y, new File(outputs, "art-decor")).start();
-        new ToRDFResources(y, new File(outputs, "resource")).start();
+        //new ToRDFResources(y, new File(outputs, "resource")).start(); TODO: disabled for now since creating different RDF fragments messes up the ontological structure
         new ToLaTeXTables(y, new File(outputs, "latex")).start();
         new ToJavaAPI(y, new File(outputs, "java")).start();
     }

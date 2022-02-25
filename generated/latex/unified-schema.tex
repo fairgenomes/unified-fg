@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\setlength\parindent{0pt}
+
+\textbf{Unified metadata schema}
+\newline
+
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 3 modules that contain 46 metadata elements and 1318 lookups in total (excluding null flavors).
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Nr. of elements \\
+\hline
+Studies & NCIT:C63536  & 15 \\
+Data releases & NCIT:C172217, dcat:Dataset  & 2 \\
+Subjects & NCIT:C90492, ExO:0000127, dcat:Dataset  & 29 \\
+\hline
+\end{tabular}
+\caption[Module overview]{\label{table:table1} Unified metadata schema v0.1-SNAPSHOT overview of all modules.}
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Identifier & OMIABIS:0000006  & identifier \\
+Name & OMIABIS:0000037  & string \\
+Acronym & NCIT:C93495  & string \\
+Description & OMIABIS:0000036, NCIT:C142704  & text \\
+Inclusion criteria & OBI:0500027  & InclusionCriteria.tsv lookup (14 choices) \\
+Principal investigator & OMIABIS:0000100, NCIT:C19924  & string \\
+Contact person & NCIT:C176373  & string \\
+Contact email & OMIABIS:0000035, NCIT:C176375  & email \\
+Study design & OBI:0500000  & text \\
+Start date & NCIT:C69208  & date \\
+Completion date & NCIT:C142702  & date \\
+Current study status & NCIT:C171103  & StudyStatus.tsv lookup (21 choices) \\
+Number of subjects enrolled & NCIT:C153145  & integer \\
+Numer of samples collected & KISAO:0000326  & integer \\
+belongsToDataRelease & NCIT:C172217  & Reference to Data releases \\
+\hline
+\end{tabular}
+\caption[Module: Studies]{\label{table:table2} Module: Studies. A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: NCIT:C63536 . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+id & NCIT:C25364  & identifier \\
+name & NCIT:C42614  & string \\
+\hline
+\end{tabular}
+\caption[Module: Data releases]{\label{table:table3} Module: Data releases. The act of making data or other structured information accessible to the public or to the user group of a database. Ontology: NCIT:C172217, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Identifier & NCIT:C164337, NCIT:C142495  & identifier \\
+Alternative identifiers & NCIT:C90353  & string \\
+Gender identity & MESH:D005783  & GenderIdentity.tsv lookup (15 choices) \\
+Gender at birth & GSSO:009418  & GenderAtBirth.tsv lookup (13 choices) \\
+Genotypic sex & PATO:0020000  & GenotypicSex.tsv lookup (12 choices) \\
+Country of residence & NCIT:C171105  & Countries.tsv lookup (249 choices) \\
+Ancestry & NCIT:C176763  & Ancestry.tsv lookup (305 choices) \\
+Country of birth & GENEPIO:0001094  & Countries.tsv lookup (249 choices) \\
+Year of birth & NCIT:C83164  & integer \\
+Date of birth & NCIT:C68615  & date \\
+Inclusion status & NCIT:C166244, NCIT:C117655  & InclusionStatus.tsv lookup (4 choices) \\
+Age at death & NCIT:C135383  & integer \\
+Date of death & NCIT:C70810  & date \\
+Year of death & NCIT:C156426  & integer \\
+Primary affiliated institute & NCIT:C25412  & Institutes.tsv lookup (218 choices) \\
+Affiliated institute contact person & NCIT:C25461  & string \\
+Affiliated institute contact email & MS:1000589  & email \\
+Resources in other institutes & NCIT:C19012  & Institutes.tsv lookup (218 choices) \\
+Participates in study & RO:0000056  & Reference to Studies \\
+Belongs to family & NCIT:C25173  & string \\
+Belongs to mother & NCIT:C89336  & Reference to Subjects \\
+Belongs to father & NCIT:C94324  & Reference to Subjects \\
+Belongs with family members & NCIT:C21480  & Reference to Subjects \\
+Belongs with twin & NCIT:C73427  & bool \\
+First visit date & NCIT:C164021  & date \\
+Fetal status & NCIT:C17730  & bool \\
+Consanguinity & NCIT:C71384  & bool \\
+Belongs to study & RO:0000056  & Reference to Studies \\
+Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+\hline
+\end{tabular}
+\caption[Module: Subjects]{\label{table:table4} Module: Subjects. Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. Ontology: NCIT:C90492, ExO:0000127, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{ll}
+Value & Ontology \\
+\hline
+NoInformation & HL7:NI \\
+Invalid & HL7:INV \\
+Derived & HL7:DER \\
+Other & HL7:OTH \\
+Negative infinity & HL7:NINF \\
+Positive infinity & HL7:PINF \\
+Un-encoded & HL7:UNC \\
+Masked & HL7:MSK \\
+Not applicable & HL7:NA \\
+Unknown & HL7:UNK \\
+Asked but unknown & HL7:ASKU \\
+Temporarily unavailable & HL7:NAV \\
+Not asked & HL7:NASK \\
+Not available & HL7:NAVU \\
+Sufficient quantity & HL7:QS \\
+Trace & HL7:TRC \\
+\hline
+\end{tabular}
+\caption[NullFlavors]{\label{table:table5} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
+\end{table}
+
+\end{document}

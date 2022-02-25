@@ -1,8 +1,10 @@
 package org.fairgenomes.generator;
 
+import org.apache.commons.io.FileUtils;
 import org.fairgenomes.generator.datastructures.YamlModel;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Attributes and constructor shared by all generator implementations
@@ -17,10 +19,12 @@ public abstract class AbstractGenerator {
     public static final String resourceURL = baseIRI + "resource/";
     public static final String ontologyURL = baseIRI + "ontology/";
 
-    public AbstractGenerator(YamlModel fg, File outputFolder) {
+    public AbstractGenerator(YamlModel fg, File outputFolder) throws IOException {
         this.fg = fg;
         if (!outputFolder.exists()) {
             outputFolder.mkdirs();
+        }else{
+            FileUtils.cleanDirectory(outputFolder);
         }
         this.outputFolder = outputFolder;
     }

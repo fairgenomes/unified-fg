@@ -53,7 +53,7 @@ public class ToLaTeXTables extends AbstractGenerator {
         bw.write("Name & Ontology & Nr. of elements \\\\"+ LE);
         bw.write("\\hline"+ LE);
         for (Table m : fg.tables) {
-            bw.write(m.name + " & " + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code.replace("_", "\\_") + " & " + m.columns.size() + " \\\\" + LE);
+            bw.write(m.name + " & " + printTags(m.parsedTags) + " & " + m.columns.size() + " \\\\" + LE);
         }
         bw.write("\\hline" + LE);
         bw.write("\\end{tabular}" + LE);
@@ -74,7 +74,7 @@ public class ToLaTeXTables extends AbstractGenerator {
             }
             bw.write("\\hline" + LE);
             bw.write("\\end{tabular}" + LE);
-            bw.write("\\caption[Module: " + m.name + "]{\\label{table:table" + (tableNr++) + "} Module: " + m.name + ". " + m.description + " Ontology: " + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code.replace("_", "\\_") + ". }" + LE);
+            bw.write("\\caption[Module: " + m.name + "]{\\label{table:table" + (tableNr++) + "} Module: " + m.name + ". " + m.description + " Ontology: " + printTags(m.parsedTags) + ". }" + LE);
             bw.write("\\end{table}" + LE);
             bw.write(LE);
         }

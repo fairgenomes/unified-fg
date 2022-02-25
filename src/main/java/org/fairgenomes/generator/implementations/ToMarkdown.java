@@ -38,13 +38,13 @@ public class ToMarkdown extends AbstractGenerator {
         bw.write("| Name | Description | Ontology | Nr. of elements |" + LE);
         bw.write("|---|---|---|---|" + LE);
         for (Table m : fg.tables) {
-            bw.write("| ["+m.name+"](" + m.toMarkdownAnchor() + ") | " + m.description + " | [" + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code + "](" + m.parsedOntology.iri + ") | " + m.columns.size() + " |" + LE);
+            bw.write("| ["+m.name+"](" + m.toMarkdownAnchor() + ") | " + m.description + " | "+printTags(m.parsedTags)+" | " + m.columns.size() + " |" + LE);
         }
         bw.write(LE);
 
         for (Table m : fg.tables) {
             bw.write("## Module: " + m.name + LE);
-            bw.write(m.description + " Ontology: " + "[" + m.parsedOntology.codeSystem + ":" + m.parsedOntology.code + "](" + m.parsedOntology.iri + ")." + LE + LE);
+            bw.write(m.description + " Ontology: " + ""+printTags(m.parsedTags)+"." + LE + LE);
 
             bw.write("| Element | Description | Ontology | Values |" + LE);
             bw.write("|---|---|---|---|" + LE);
