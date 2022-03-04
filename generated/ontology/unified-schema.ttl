@@ -21,14 +21,22 @@
   dc:creator "David C. Ruvolo <d.c.ruvolo@umcg.nl>", <https://orcid.org/0000-0002-5745-5298>,
     "K. Joeri van der Velde <k.j.van.der.velde@umcg.nl>", <https://orcid.org/0000-0002-0934-8375>,
     "Morris A. Swertz <m.a.swertz@umcg.nl>", <https://orcid.org/0000-0002-0979-3401>;
-  dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
+  dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-drugs.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-phenotypes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-familymembers.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-countries.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-medicalhistory.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-institutes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderatbirth.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genotypicsex.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ancestry.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderidentity.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diseases.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dcmitypes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ancestry.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusionstatus.ttl> .
 
 fg:Studies a owl:Class;
@@ -321,8 +329,8 @@ fg:Subjects_Fetal_status a owl:DatatypeProperty;
 fg:Subjects_Consanguinity a owl:DatatypeProperty;
   rdfs:label "Consanguinity";
   rdfs:domain fg:Subjects;
-  rdfs:isDefinedBy obo:NCIT_C71384;
-  dc:description "Genetic relatedness between individuals who are descendants of at least one common ancestor." .
+  rdfs:isDefinedBy obo:OMIT_0004546, <http://snomed.info/id/842009>;
+  dc:description "Information on whether the patient is a child from two family members who are second cousins or closer." .
 
 fg:Subjects_Belongs_to_study a owl:ObjectProperty;
   rdfs:label "Belongs to study";
@@ -335,3 +343,173 @@ fg:Subjects_Belongs_to_data_release a owl:ObjectProperty;
   rdfs:domain fg:Subjects;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Clinical a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C25398, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Clinical";
+  dc:description "Findings and circumstances relating to the examination and treatment of a patient.";
+  <http://semanticscience.org/resource/SIO_000332> fg:Personal .
+
+fg:Clinical_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C87853;
+  dc:description "A unique proper name or character sequence that identifies this particular clinical examination." .
+
+fg:Clinical_Belongs_to_subject a owl:ObjectProperty;
+  rdfs:label "Belongs to subject";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C142495, obo:IAO_0000136;
+  dc:description "An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored." .
+
+fg:Clinical_Affected_status a owl:DatatypeProperty;
+  rdfs:label "Affected status";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C64917;
+  dc:description "Individuals in a pedigree who exhibit the specific phenotype under study." .
+
+fg:Clinical_Date_of_diagnosis a owl:DatatypeProperty;
+  rdfs:label "Date of diagnosis";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C164339;
+  dc:description "The date on which a diagnosis of disease was made." .
+
+fg:Clinical_Age_at_diagnosis a owl:DatatypeProperty;
+  rdfs:label "Age at diagnosis";
+  sio:SIO_000074 obo:UO_0000036;
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy <http://purl.bioontology.org/ontology/SNOMEDCT/423493009>;
+  dc:description "The age (in years), measured from some defined time point (e.g. birth) at which a patient is diagnosed with a disease." .
+
+fg:Clinical_Age_of_onset a owl:DatatypeProperty;
+  rdfs:label "Age of onset";
+  sio:SIO_000074 obo:UO_0000036;
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy ordo:Orphanet_C023;
+  dc:description "Age (in years) of onset of clinical manifestations related to the disease of the patient." .
+
+fg:Clinical_Age_at_last_screening a owl:DatatypeProperty;
+  rdfs:label "Age at last screening";
+  sio:SIO_000074 obo:UO_0000036;
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C81258;
+  dc:description "Age of the patient at the moment of the most recent screening." .
+
+fg:Clinical_Observed_phenotype a owl:ObjectProperty;
+  rdfs:label "Observed phenotype";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C16977;
+  dc:description "The outward appearance of the individual. In medical context, these are often the symptoms caused by a disease.";
+  rdfs:range <https://www.wikidata.org/wiki/Property:P3841> .
+
+fg:Clinical_Unobserved_phenotype a owl:ObjectProperty;
+  rdfs:label "Unobserved phenotype";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy <http://purl.bioontology.org/ontology/HL7/C0442737>;
+  dc:description "Phenotypes or symptoms that were looked for but not observed, which may help in differential diagnosis or establish incomplete penetrance.";
+  rdfs:range <https://www.wikidata.org/wiki/Property:P3841> .
+
+fg:Clinical_Provisional_phenotype a owl:ObjectProperty;
+  rdfs:label "Provisional phenotype";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy <http://purl.bioontology.org/ontology/HL7/C0332241>;
+  dc:description "The test or procedure was successfully performed, but the results are borderline and can neither be declared positive / negative nor detected / not detected according to the current established criteria.";
+  rdfs:range <https://www.wikidata.org/wiki/Property:P3841> .
+
+fg:Clinical_Clinical_diagnosis a owl:ObjectProperty;
+  rdfs:label "Clinical diagnosis";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C15607;
+  dc:description "A diagnosis made from a study of the signs and symptoms of a disease.";
+  rdfs:range <http://edamontology.org/data_3667> .
+
+fg:Clinical_Molecular_diagnosis_gene a owl:ObjectProperty;
+  rdfs:label "Molecular diagnosis gene";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C20826;
+  dc:description "Gene affected by pathogenic variation that is causal for disease of the patient.";
+  rdfs:range obo:NCIT_C16612 .
+
+fg:Clinical_Molecular_diagnosis_other a owl:DatatypeProperty;
+  rdfs:label "Molecular diagnosis other";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C20826;
+  dc:description "Causal variant in HGVS notation with optional classification or free text explaining any other molecular mechanisms involved." .
+
+fg:Clinical_Medication a owl:ObjectProperty;
+  rdfs:label "Medication";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C459;
+  dc:description "A drug product that contains one or more active and/or inactive ingredients used by the patient intended to treat, prevent or alleviate the symptoms of disease. Any hormone therapies, gender-related or otherwise, should also be recorded here.";
+  rdfs:range <http://edamontology.org/data_3103> .
+
+fg:Clinical_Drug_regimen a owl:DatatypeProperty;
+  rdfs:label "Drug regimen";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C142516;
+  dc:description "The specific way a therapeutic drug is to be taken, including formulation, route of administration, dose, dosing interval, and treatment duration." .
+
+fg:Clinical_Medical_history a owl:ObjectProperty;
+  rdfs:label "Medical history";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C18772;
+  dc:description "A record of a person's background regarding health, occurrence of disease events and surgical procedures.";
+  rdfs:range <http://scdontology.h3abionet.org/ontology/SCDO_1000093> .
+
+fg:Clinical_Phenotypic_data_available a owl:ObjectProperty;
+  rdfs:label "Phenotypic data available";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C15783;
+  dc:description "Types of phenotypic data collected in a clinical setting that is potentially available upon request.";
+  rdfs:range <http://purl.org/dc/terms/DCMIType> .
+
+fg:Clinical_Status_of_diagnosis a owl:ObjectProperty;
+  rdfs:label "Status of diagnosis";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C25688;
+  dc:description "A condition or state at a particular time.";
+  rdfs:range obo:NCIT_C48655 .
+
+fg:Clinical_First_contact a owl:DatatypeProperty;
+  rdfs:label "First contact";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy <http://purl.bioontology.org/ontology/LNC/MTHU048806>;
+  dc:description "First contact of the patient with a specialised center in context of disease or study inclusion." .
+
+fg:Clinical_Date_diagnosis_confirmed a owl:DatatypeProperty;
+  rdfs:label "Date diagnosis confirmed";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C25164;
+  dc:description "The particular day, month and year an event has happened or will happen." .
+
+fg:Clinical_Belongs_to_data_release a owl:ObjectProperty;
+  rdfs:label "Belongs to data release";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Clinical_Family_members_affected a owl:ObjectProperty;
+  rdfs:label "Family members affected";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:HP_0032320;
+  dc:description "Family members related by descent rather than by marriage or law who were diagnosed with the same condition as the individual who is the primary focus of investigation (i.e. the proband).";
+  rdfs:range obo:NCIT_C71384 .
+
+fg:Clinical_Family_members_sequenced a owl:ObjectProperty;
+  rdfs:label "Family members sequenced";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C79916;
+  dc:description "Family members related by descent rather than by marriage or law who were also tested by next-generation sequencing.";
+  rdfs:range obo:NCIT_C71384 .
+
+fg:Clinical_Functioning a owl:DatatypeProperty;
+  rdfs:label "Functioning";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C21007;
+  dc:description "Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF)." .
+
+fg:Clinical_Material_used_in_diagnosis a owl:DatatypeProperty;
+  rdfs:label "Material used in diagnosis";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000641>;
+  dc:description "This diagnosis c.q. clinical examination is based on one or more sampled materials." .

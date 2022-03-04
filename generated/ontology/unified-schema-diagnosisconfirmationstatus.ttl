@@ -1,0 +1,206 @@
+@prefix fg: <https://w3id.org/fair-genomes/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sio: <https://semanticscience.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ordo: <http://www.orpha.net/ORDO/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+fg:Clinical_Status_of_diagnosis_Cannot_Be_Assessed a obo:NCIT_C48655;
+  rdfs:label "Cannot Be Assessed";
+  dc:description "Aspects of the context prevent the evaluation needed to determine a value.";
+  rdfs:isDefinedBy obo:NCIT_C48657 .
+
+fg:Clinical_Status_of_diagnosis_Cannot_Be_Determined a obo:NCIT_C48655;
+  rdfs:label "Cannot Be Determined";
+  dc:description "An indication that a reason or result cannot be established.";
+  rdfs:isDefinedBy obo:NCIT_C179711 .
+
+fg:Clinical_Status_of_diagnosis_Confirmed a obo:NCIT_C48655;
+  rdfs:label "Confirmed";
+  dc:description "Having been established or verified.";
+  rdfs:isDefinedBy obo:NCIT_C25458 .
+
+fg:Clinical_Status_of_diagnosis_Incomplete a obo:NCIT_C48655;
+  rdfs:label "Incomplete";
+  dc:description "Not whole; lacking some necessary part or detail; unfinished.";
+  rdfs:isDefinedBy obo:NCIT_C49160 .
+
+fg:Clinical_Status_of_diagnosis_Insufficient_Information_Available a obo:NCIT_C48655;
+  rdfs:label "Insufficient Information Available";
+  dc:description "The information available relating to the reported event is not sufficient to identify either the manufacturer the device or other essential information.";
+  rdfs:isDefinedBy obo:NCIT_C139465 .
+
+fg:Clinical_Status_of_diagnosis_Insufficient_Information_to_Classify_Condition a obo:NCIT_C48655;
+  rdfs:label "Insufficient Information to Classify Condition";
+  dc:description "Not enough information available to classify the clinical signs symptoms and conditions.";
+  rdfs:isDefinedBy obo:NCIT_C172137 .
+
+fg:Clinical_Status_of_diagnosis_Insufficient_Information_to_Classify_Health_Impact
+  a obo:NCIT_C48655;
+  rdfs:label "Insufficient Information to Classify Health Impact";
+  dc:description "Not enough information available to classify the health impact.";
+  rdfs:isDefinedBy obo:NCIT_C172138 .
+
+fg:Clinical_Status_of_diagnosis_Insufficient_Quality a obo:NCIT_C48655;
+  rdfs:label "Insufficient Quality";
+  dc:description "Conditions did not meet a qualitative measure necessary for testing or reporting.";
+  rdfs:isDefinedBy obo:NCIT_C177691 .
+
+fg:Clinical_Status_of_diagnosis_Insufficient_Quantity a obo:NCIT_C48655;
+  rdfs:label "Insufficient Quantity";
+  dc:description "Conditions did not meet a quantitative measure necessary for testing or reporting.";
+  rdfs:isDefinedBy obo:NCIT_C177690 .
+
+fg:Clinical_Status_of_diagnosis_Limited_Or_No_Information a obo:NCIT_C48655;
+  rdfs:label "Limited Or No Information";
+  dc:description "Restricted or no information available.";
+  rdfs:isDefinedBy obo:NCIT_C54352 .
+
+fg:Clinical_Status_of_diagnosis_No_Information_Available a obo:NCIT_C48655;
+  rdfs:label "No Information Available";
+  dc:description "Information regarding the subject is unknown or inaccessible at this time.";
+  rdfs:isDefinedBy obo:NCIT_C53269 .
+
+fg:Clinical_Status_of_diagnosis_Not_Applicable a obo:NCIT_C48655;
+  rdfs:label "Not Applicable";
+  dc:description "Determination of a value is not relevant in the current context.";
+  rdfs:isDefinedBy obo:NCIT_C48660 .
+
+fg:Clinical_Status_of_diagnosis_Not_Available a obo:NCIT_C48655;
+  rdfs:label "Not Available";
+  dc:description "The desired information is not available.";
+  rdfs:isDefinedBy obo:NCIT_C126101 .
+
+fg:Clinical_Status_of_diagnosis_Not_Done a obo:NCIT_C48655;
+  rdfs:label "Not Done";
+  dc:description "Indicates a task process or examination that has either not been initiated or not been completed.";
+  rdfs:isDefinedBy obo:NCIT_C49484 .
+
+fg:Clinical_Status_of_diagnosis_Not_Assessed a obo:NCIT_C48655;
+  rdfs:label "Not Assessed";
+  dc:description "Indicates that an assessment was not performed.";
+  rdfs:isDefinedBy obo:NCIT_C139527 .
+
+fg:Clinical_Status_of_diagnosis_Not_Performed a obo:NCIT_C48655;
+  rdfs:label "Not Performed";
+  dc:description "An indicator that specifies that an activity did not occur.";
+  rdfs:isDefinedBy obo:NCIT_C141477 .
+
+fg:Clinical_Status_of_diagnosis_Not_Tested a obo:NCIT_C48655;
+  rdfs:label "Not Tested";
+  dc:description "Indicates that a test was not performed.";
+  rdfs:isDefinedBy obo:NCIT_C101887 .
+
+fg:Clinical_Status_of_diagnosis_Not_Identified a obo:NCIT_C48655;
+  rdfs:label "Not Identified";
+  dc:description "The finding is not present but a value of 'none' cannot be unequivocally established absence in the current context.";
+  rdfs:isDefinedBy obo:NCIT_C48661 .
+
+fg:Clinical_Status_of_diagnosis_Not_Obtained a obo:NCIT_C48655;
+  rdfs:label "Not Obtained";
+  dc:description "Not acquired gained or come to the possession.";
+  rdfs:isDefinedBy obo:NCIT_C67325 .
+
+fg:Clinical_Status_of_diagnosis_Unknown a obo:NCIT_C48655;
+  rdfs:label "Unknown";
+  dc:description "Not known not observed not recorded or refused.";
+  rdfs:isDefinedBy obo:NCIT_C17998 .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_NoInformation_(NI,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "NoInformation (NI, nullflavor)";
+  dc:description "The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Invalid_(INV,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Invalid (INV, nullflavor)";
+  dc:description "The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Derived_(DER,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Derived (DER, nullflavor)";
+  dc:description "An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Other_(OTH,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Other (OTH, nullflavor)";
+  dc:description "The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Negative_infinity_(NINF,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Negative infinity (NINF, nullflavor)";
+  dc:description "Negative infinity of numbers.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NINF> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Positive_infinity_(PINF,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Positive infinity (PINF, nullflavor)";
+  dc:description "Positive infinity of numbers.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#PINF> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Un-encoded_(UNC,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Un-encoded (UNC, nullflavor)";
+  dc:description "The actual value has not yet been encoded within the approved value domain.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNC> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Masked_(MSK,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Masked (MSK, nullflavor)";
+  dc:description "There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons. There may be an alternate mechanism for gaining access to this information.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#MSK> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Not_applicable_(NA,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Not applicable (NA, nullflavor)";
+  dc:description "Known to have no proper value (e.g., last menstrual period for a male).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Unknown_(UNK,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Unknown (UNK, nullflavor)";
+  dc:description "A proper value is applicable, but not known.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Asked_but_unknown_(ASKU,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Asked but unknown (ASKU, nullflavor)";
+  dc:description "Information was sought but not found (e.g., patient was asked but didn't know)";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Temporarily_unavailable_(NAV,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Temporarily unavailable (NAV, nullflavor)";
+  dc:description "Information is not available at this time but it is expected that it will be available later.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAV> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Not_asked_(NASK,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Not asked (NASK, nullflavor)";
+  dc:description "This information has not been sought. (e.g., patient was not asked)";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NASK> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Not_available_(NAVU,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Not available (NAVU, nullflavor)";
+  dc:description "Information is not available at this time (with no expectation regarding whether it will or will not be available in the future).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAVU> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Sufficient_quantity_(QS,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Sufficient quantity (QS, nullflavor)";
+  dc:description "The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material. e.g. 'Add 10mg of ingredient X, 50mg of ingredient Y, and sufficient quantity of water to 100mL.' The null flavor would be used to express the quantity of water.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#QS> .
+
+<https://w3id.org/fair-genomes/ontology/Clinical_Status_of_diagnosis_Trace_(TRC,_nullflavor)>
+  a obo:NCIT_C48655;
+  rdfs:label "Trace (TRC, nullflavor)";
+  dc:description "The content is greater than zero, but too small to be quantified.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#TRC> .

@@ -65,6 +65,72 @@ resourcesinotherinstitutes,description,Text,,,,Description (English)
 resourcesinotherinstitutes,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 resourcesinotherinstitutes,code,String,,,,The code within the code system
 resourcesinotherinstitutes,iri,String,,,,The Internationalized Resource Identifier for this term
+observedphenotype,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+observedphenotype,value,String,1,TRUE,,Value (English)
+observedphenotype,description,Text,,,,Description (English)
+observedphenotype,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+observedphenotype,code,String,,,,The code within the code system
+observedphenotype,iri,String,,,,The Internationalized Resource Identifier for this term
+unobservedphenotype,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+unobservedphenotype,value,String,1,TRUE,,Value (English)
+unobservedphenotype,description,Text,,,,Description (English)
+unobservedphenotype,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+unobservedphenotype,code,String,,,,The code within the code system
+unobservedphenotype,iri,String,,,,The Internationalized Resource Identifier for this term
+provisionalphenotype,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+provisionalphenotype,value,String,1,TRUE,,Value (English)
+provisionalphenotype,description,Text,,,,Description (English)
+provisionalphenotype,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+provisionalphenotype,code,String,,,,The code within the code system
+provisionalphenotype,iri,String,,,,The Internationalized Resource Identifier for this term
+clinicaldiagnosis,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+clinicaldiagnosis,value,String,1,TRUE,,Value (English)
+clinicaldiagnosis,description,Text,,,,Description (English)
+clinicaldiagnosis,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+clinicaldiagnosis,code,String,,,,The code within the code system
+clinicaldiagnosis,iri,String,,,,The Internationalized Resource Identifier for this term
+moleculardiagnosisgene,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+moleculardiagnosisgene,value,String,1,TRUE,,Value (English)
+moleculardiagnosisgene,description,Text,,,,Description (English)
+moleculardiagnosisgene,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+moleculardiagnosisgene,code,String,,,,The code within the code system
+moleculardiagnosisgene,iri,String,,,,The Internationalized Resource Identifier for this term
+medication,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+medication,value,String,1,TRUE,,Value (English)
+medication,description,Text,,,,Description (English)
+medication,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+medication,code,String,,,,The code within the code system
+medication,iri,String,,,,The Internationalized Resource Identifier for this term
+medicalhistory,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+medicalhistory,value,String,1,TRUE,,Value (English)
+medicalhistory,description,Text,,,,Description (English)
+medicalhistory,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+medicalhistory,code,String,,,,The code within the code system
+medicalhistory,iri,String,,,,The Internationalized Resource Identifier for this term
+phenotypicdataavailable,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+phenotypicdataavailable,value,String,1,TRUE,,Value (English)
+phenotypicdataavailable,description,Text,,,,Description (English)
+phenotypicdataavailable,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+phenotypicdataavailable,code,String,,,,The code within the code system
+phenotypicdataavailable,iri,String,,,,The Internationalized Resource Identifier for this term
+statusofdiagnosis,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+statusofdiagnosis,value,String,1,TRUE,,Value (English)
+statusofdiagnosis,description,Text,,,,Description (English)
+statusofdiagnosis,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+statusofdiagnosis,code,String,,,,The code within the code system
+statusofdiagnosis,iri,String,,,,The Internationalized Resource Identifier for this term
+familymembersaffected,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+familymembersaffected,value,String,1,TRUE,,Value (English)
+familymembersaffected,description,Text,,,,Description (English)
+familymembersaffected,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+familymembersaffected,code,String,,,,The code within the code system
+familymembersaffected,iri,String,,,,The Internationalized Resource Identifier for this term
+familymemberssequenced,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+familymemberssequenced,value,String,1,TRUE,,Value (English)
+familymemberssequenced,description,Text,,,,Description (English)
+familymemberssequenced,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+familymemberssequenced,code,String,,,,The code within the code system
+familymemberssequenced,iri,String,,,,The Internationalized Resource Identifier for this term
 studies,,,,,,"A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.",http://purl.obolibrary.org/obo/NCIT_C63536
 studies,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular study.",http://purl.obolibrary.org/obo/OMIABIS_0000006
 studies,name,string,,,,"A name that designates this study.",http://purl.obolibrary.org/obo/OMIABIS_0000037
@@ -111,6 +177,32 @@ subjects,belongswithfamilymembers,ref_array,,,subjects,"Any individual related b
 subjects,belongswithtwin,bool,,,,"Either of two offspring born from the same pregnancy.",http://purl.obolibrary.org/obo/NCIT_C73427
 subjects,firstvisitdate,date,,,,"The date for the first patient visit.",http://purl.obolibrary.org/obo/NCIT_C164021
 subjects,fetalstatus,bool,,,,"Any tissue from a fetus.",http://purl.obolibrary.org/obo/NCIT_C17730
-subjects,consanguinity,bool,,,,"Genetic relatedness between individuals who are descendants of at least one common ancestor.",http://purl.obolibrary.org/obo/NCIT_C71384
+subjects,consanguinity,bool,,,,"Information on whether the patient is a child from two family members who are second cousins or closer.",http://purl.obolibrary.org/obo/OMIT_0004546
 subjects,belongstostudy,ref_array,,,studies,"Reference to the study or studies in which this person participates.",http://purl.obolibrary.org/obo/RO_0000056
 subjects,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+clinical,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
+clinical,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular clinical examination.",http://purl.obolibrary.org/obo/NCIT_C87853
+clinical,belongstosubject,ref,,,subjects,"An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.",http://purl.obolibrary.org/obo/NCIT_C142495
+clinical,affectedstatus,bool,,,,"Individuals in a pedigree who exhibit the specific phenotype under study.",http://purl.obolibrary.org/obo/NCIT_C64917
+clinical,dateofdiagnosis,date,,,,"The date on which a diagnosis of disease was made.",http://purl.obolibrary.org/obo/NCIT_C164339
+clinical,ageatdiagnosis,int,,,,"The age (in years), measured from some defined time point (e.g. birth) at which a patient is diagnosed with a disease.",http://purl.bioontology.org/ontology/SNOMEDCT/423493009
+clinical,ageofonset,int,,,,"Age (in years) of onset of clinical manifestations related to the disease of the patient.",http://www.orpha.net/ORDO/Orphanet_C023
+clinical,ageatlastscreening,int,,,,"Age of the patient at the moment of the most recent screening.",http://purl.obolibrary.org/obo/NCIT_C81258
+clinical,observedphenotype,ref_array,,,observedphenotype,"The outward appearance of the individual. In medical context, these are often the symptoms caused by a disease.",http://purl.obolibrary.org/obo/NCIT_C16977
+clinical,unobservedphenotype,ref_array,,,unobservedphenotype,"Phenotypes or symptoms that were looked for but not observed, which may help in differential diagnosis or establish incomplete penetrance.",http://purl.bioontology.org/ontology/HL7/C0442737
+clinical,provisionalphenotype,ref_array,,,provisionalphenotype,"The test or procedure was successfully performed, but the results are borderline and can neither be declared positive / negative nor detected / not detected according to the current established criteria.",http://purl.bioontology.org/ontology/HL7/C0332241
+clinical,clinicaldiagnosis,ref_array,,,clinicaldiagnosis,"A diagnosis made from a study of the signs and symptoms of a disease.",http://purl.obolibrary.org/obo/NCIT_C15607
+clinical,moleculardiagnosisgene,ref_array,,,moleculardiagnosisgene,"Gene affected by pathogenic variation that is causal for disease of the patient.",http://purl.obolibrary.org/obo/NCIT_C20826
+clinical,moleculardiagnosisother,text,,,,"Causal variant in HGVS notation with optional classification or free text explaining any other molecular mechanisms involved.",http://purl.obolibrary.org/obo/NCIT_C20826
+clinical,medication,ref_array,,,medication,"A drug product that contains one or more active and/or inactive ingredients used by the patient intended to treat, prevent or alleviate the symptoms of disease. Any hormone therapies, gender-related or otherwise, should also be recorded here.",http://purl.obolibrary.org/obo/NCIT_C459
+clinical,drugregimen,text,,,,"The specific way a therapeutic drug is to be taken, including formulation, route of administration, dose, dosing interval, and treatment duration.",http://purl.obolibrary.org/obo/NCIT_C142516
+clinical,medicalhistory,ref_array,,,medicalhistory,"A record of a person's background regarding health, occurrence of disease events and surgical procedures.",http://purl.obolibrary.org/obo/NCIT_C18772
+clinical,phenotypicdataavailable,ref_array,,,phenotypicdataavailable,"Types of phenotypic data collected in a clinical setting that is potentially available upon request.",http://purl.obolibrary.org/obo/NCIT_C15783
+clinical,statusofdiagnosis,ref,,,statusofdiagnosis,"A condition or state at a particular time.",http://purl.obolibrary.org/obo/NCIT_C25688
+clinical,firstcontact,date,,,,"First contact of the patient with a specialised center in context of disease or study inclusion.",http://purl.bioontology.org/ontology/LNC/MTHU048806
+clinical,datediagnosisconfirmed,date,,,,"The particular day, month and year an event has happened or will happen.",http://purl.obolibrary.org/obo/NCIT_C25164
+clinical,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+clinical,familymembersaffected,ref_array,,,familymembersaffected,"Family members related by descent rather than by marriage or law who were diagnosed with the same condition as the individual who is the primary focus of investigation (i.e. the proband).",http://purl.obolibrary.org/obo/HP_0032320
+clinical,familymemberssequenced,ref_array,,,familymemberssequenced,"Family members related by descent rather than by marriage or law who were also tested by next-generation sequencing.",http://purl.obolibrary.org/obo/NCIT_C79916
+clinical,functioning,text,,,,"Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF).",http://purl.obolibrary.org/obo/NCIT_C21007
+clinical,materialusedindiagnosis,string,,,,"This diagnosis c.q. clinical examination is based on one or more sampled materials.",http://semanticscience.org/resource/SIO_000641
