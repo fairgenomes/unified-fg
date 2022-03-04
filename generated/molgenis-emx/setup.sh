@@ -10,6 +10,17 @@ mcmd import -p subjects_countryofbirth_attributes.tsv --as attributes --in unifi
 mcmd import -p subjects_inclusionstatus_attributes.tsv --as attributes --in unified-schema
 mcmd import -p subjects_primaryaffiliatedinstitute_attributes.tsv --as attributes --in unified-schema
 mcmd import -p subjects_resourcesinotherinstitutes_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_observedphenotype_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_unobservedphenotype_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_provisionalphenotype_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_clinicaldiagnosis_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_moleculardiagnosisgene_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_medication_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_medicalhistory_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_phenotypicdataavailable_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_statusofdiagnosis_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_familymembersaffected_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_familymemberssequenced_attributes.tsv --as attributes --in unified-schema
 mcmd import -p studies_inclusioncriteria.tsv --as fair-genomes_studies_inclusioncriteria --in unified-schema
 mcmd import -p studies_currentstudystatus.tsv --as fair-genomes_studies_currentstudystatus --in unified-schema
 mcmd import -p subjects_genderidentity.tsv --as fair-genomes_subjects_genderidentity --in unified-schema
@@ -21,9 +32,21 @@ mcmd import -p subjects_countryofbirth.tsv --as fair-genomes_subjects_countryofb
 mcmd import -p subjects_inclusionstatus.tsv --as fair-genomes_subjects_inclusionstatus --in unified-schema
 mcmd import -p subjects_primaryaffiliatedinstitute.tsv --as fair-genomes_subjects_primaryaffiliatedinstitute --in unified-schema
 mcmd import -p subjects_resourcesinotherinstitutes.tsv --as fair-genomes_subjects_resourcesinotherinstitutes --in unified-schema
+mcmd import -p clinical_observedphenotype.tsv --as fair-genomes_clinical_observedphenotype --in unified-schema
+mcmd import -p clinical_unobservedphenotype.tsv --as fair-genomes_clinical_unobservedphenotype --in unified-schema
+mcmd import -p clinical_provisionalphenotype.tsv --as fair-genomes_clinical_provisionalphenotype --in unified-schema
+mcmd import -p clinical_clinicaldiagnosis.tsv --as fair-genomes_clinical_clinicaldiagnosis --in unified-schema
+mcmd import -p clinical_moleculardiagnosisgene.tsv --as fair-genomes_clinical_moleculardiagnosisgene --in unified-schema
+mcmd import -p clinical_medication.tsv --as fair-genomes_clinical_medication --in unified-schema
+mcmd import -p clinical_medicalhistory.tsv --as fair-genomes_clinical_medicalhistory --in unified-schema
+mcmd import -p clinical_phenotypicdataavailable.tsv --as fair-genomes_clinical_phenotypicdataavailable --in unified-schema
+mcmd import -p clinical_statusofdiagnosis.tsv --as fair-genomes_clinical_statusofdiagnosis --in unified-schema
+mcmd import -p clinical_familymembersaffected.tsv --as fair-genomes_clinical_familymembersaffected --in unified-schema
+mcmd import -p clinical_familymemberssequenced.tsv --as fair-genomes_clinical_familymemberssequenced --in unified-schema
 mcmd import -p studies_attributes.tsv --as attributes --in unified-schema
 mcmd import -p datareleases_attributes.tsv --as attributes --in unified-schema
 mcmd import -p subjects_attributes.tsv --as attributes --in unified-schema
+mcmd import -p clinical_attributes.tsv --as attributes --in unified-schema
 mcmd import -p ../../misc/molgenis/other/sys_StaticContent.tsv -a add_update_existing
 mcmd add logo -p ../../misc/molgenis/img/analysis.png
 mcmd add logo -p ../../misc/molgenis/img/lookups.png

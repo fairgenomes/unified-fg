@@ -25,6 +25,6 @@ belongswithfamilymembers	Belongs with family members	Any individual related biol
 belongswithtwin	Belongs with twin	Either of two offspring born from the same pregnancy. (NCIT:C73427 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
 firstvisitdate	First visit date	The date for the first patient visit. (NCIT:C164021 )	subjects	date	FALSE	FALSE	TRUE	TRUE	
 fetalstatus	Fetal status	Any tissue from a fetus. (NCIT:C17730 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
-consanguinity	Consanguinity	Genetic relatedness between individuals who are descendants of at least one common ancestor. (NCIT:C71384 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
+consanguinity	Consanguinity	Information on whether the patient is a child from two family members who are second cousins or closer. (OMIT:0004546, SNOMED:842009 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
 belongstostudy	Belongs to study	Reference to the study or studies in which this person participates. (RO:0000056 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_studies
 belongstodatarelease	Belongs to data release	The act of making data or other structured information accessible to the public or to the user group of a database. (NCIT:C172217 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_datareleases

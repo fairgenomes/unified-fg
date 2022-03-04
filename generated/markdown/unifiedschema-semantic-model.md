@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __3 modules__ that contain __46 metadata elements__ and __1318 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __4 modules__ that contain __71 metadata elements__ and __84520 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -9,6 +9,7 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Studies](#module-studies) | A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. | [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536)  | 15 |
 | [Data releases](#module-data-releases) | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 2 |
 | [Subjects](#module-subjects) | Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. | [NCIT:C90492](http://purl.obolibrary.org/obo/NCIT_C90492), [ExO:0000127](http://purl.obolibrary.org/obo/ExO_0000127), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 29 |
+| [Clinical](#module-clinical) | Findings and circumstances relating to the examination and treatment of a patient. | [NCIT:C25398](http://purl.obolibrary.org/obo/NCIT_C25398), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -70,9 +71,40 @@ Persons who are observed, analyzed, examined, investigated, experimented upon, o
 | Belongs with twin | Either of two offspring born from the same pregnancy. | [NCIT:C73427](http://purl.obolibrary.org/obo/NCIT_C73427)  | bool |
 | First visit date | The date for the first patient visit. | [NCIT:C164021](http://purl.obolibrary.org/obo/NCIT_C164021)  | date |
 | Fetal status | Any tissue from a fetus. | [NCIT:C17730](http://purl.obolibrary.org/obo/NCIT_C17730)  | bool |
-| Consanguinity | Genetic relatedness between individuals who are descendants of at least one common ancestor. | [NCIT:C71384](http://purl.obolibrary.org/obo/NCIT_C71384)  | bool |
+| Consanguinity | Information on whether the patient is a child from two family members who are second cousins or closer. | [OMIT:0004546](http://purl.obolibrary.org/obo/OMIT_0004546), [SNOMED:842009](http://snomed.info/id/842009)  | bool |
 | Belongs to study | Reference to the study or studies in which this person participates. | [RO:0000056](http://purl.obolibrary.org/obo/RO_0000056)  | Reference to instances of Studies |
 | Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+
+## Module: Clinical
+Findings and circumstances relating to the examination and treatment of a patient. Ontology: [NCIT:C25398](http://purl.obolibrary.org/obo/NCIT_C25398), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular clinical examination. | [NCIT:C87853](http://purl.obolibrary.org/obo/NCIT_C87853)  | identifier |
+| Belongs to subject | An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. | [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495), [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136)  | Reference to instances of Subjects |
+| Affected status | Individuals in a pedigree who exhibit the specific phenotype under study. | [NCIT:C64917](http://purl.obolibrary.org/obo/NCIT_C64917)  | bool |
+| Date of diagnosis | The date on which a diagnosis of disease was made. | [NCIT:C164339](http://purl.obolibrary.org/obo/NCIT_C164339)  | date |
+| Age at diagnosis | The age (in years), measured from some defined time point (e.g. birth) at which a patient is diagnosed with a disease. | [SNOMEDCT:423493009](http://purl.bioontology.org/ontology/SNOMEDCT/423493009)  | integer |
+| Age of onset | Age (in years) of onset of clinical manifestations related to the disease of the patient. | [Orphanet:C023](http://www.orpha.net/ORDO/Orphanet_C023)  | integer |
+| Age at last screening | Age of the patient at the moment of the most recent screening. | [NCIT:C81258](http://purl.obolibrary.org/obo/NCIT_C81258)  | integer |
+| Observed phenotype | The outward appearance of the individual. In medical context, these are often the symptoms caused by a disease. | [NCIT:C16977](http://purl.obolibrary.org/obo/NCIT_C16977)  | [Phenotypes.tsv](../../lookups/Phenotypes.tsv) lookup (15802 choices [of type](https://www.wikidata.org/wiki/Property:P3841)) |
+| Unobserved phenotype | Phenotypes or symptoms that were looked for but not observed, which may help in differential diagnosis or establish incomplete penetrance. | [HL7:C0442737](http://purl.bioontology.org/ontology/HL7/C0442737)  | [Phenotypes.tsv](../../lookups/Phenotypes.tsv) lookup (15802 choices [of type](https://www.wikidata.org/wiki/Property:P3841)) |
+| Provisional phenotype | The test or procedure was successfully performed, but the results are borderline and can neither be declared positive / negative nor detected / not detected according to the current established criteria. | [HL7:C0332241](http://purl.bioontology.org/ontology/HL7/C0332241)  | [Phenotypes.tsv](../../lookups/Phenotypes.tsv) lookup (15802 choices [of type](https://www.wikidata.org/wiki/Property:P3841)) |
+| Clinical diagnosis | A diagnosis made from a study of the signs and symptoms of a disease. | [NCIT:C15607](http://purl.obolibrary.org/obo/NCIT_C15607)  | [Diseases.tsv](../../lookups/Diseases.tsv) lookup (9700 choices [of type](http://edamontology.org/data_3667)) |
+| Molecular diagnosis gene | Gene affected by pathogenic variation that is causal for disease of the patient. | [NCIT:C20826](http://purl.obolibrary.org/obo/NCIT_C20826)  | [Genes.tsv](../../lookups/Genes.tsv) lookup (19202 choices [of type](http://purl.obolibrary.org/obo/NCIT_C16612)) |
+| Molecular diagnosis other | Causal variant in HGVS notation with optional classification or free text explaining any other molecular mechanisms involved. | [NCIT:C20826](http://purl.obolibrary.org/obo/NCIT_C20826)  | text |
+| Medication | A drug product that contains one or more active and/or inactive ingredients used by the patient intended to treat, prevent or alleviate the symptoms of disease. Any hormone therapies, gender-related or otherwise, should also be recorded here. | [NCIT:C459](http://purl.obolibrary.org/obo/NCIT_C459)  | [Drugs.tsv](../../lookups/Drugs.tsv) lookup (5632 choices [of type](http://edamontology.org/data_3103)) |
+| Drug regimen | The specific way a therapeutic drug is to be taken, including formulation, route of administration, dose, dosing interval, and treatment duration. | [NCIT:C142516](http://purl.obolibrary.org/obo/NCIT_C142516)  | text |
+| Medical history | A record of a person's background regarding health, occurrence of disease events and surgical procedures. | [NCIT:C18772](http://purl.obolibrary.org/obo/NCIT_C18772)  | [MedicalHistory.tsv](../../lookups/MedicalHistory.tsv) lookup (1154 choices [of type](http://scdontology.h3abionet.org/ontology/SCDO_1000093)) |
+| Phenotypic data available | Types of phenotypic data collected in a clinical setting that is potentially available upon request. | [NCIT:C15783](http://purl.obolibrary.org/obo/NCIT_C15783)  | [DCMITypes.tsv](../../lookups/DCMITypes.tsv) lookup (6 choices [of type](http://purl.org/dc/terms/DCMIType)) |
+| Status of diagnosis | A condition or state at a particular time. | [NCIT:C25688](http://purl.obolibrary.org/obo/NCIT_C25688)  | [DiagnosisConfirmationStatus.tsv](../../lookups/DiagnosisConfirmationStatus.tsv) lookup (20 choices [of type](http://purl.obolibrary.org/obo/NCIT_C48655)) |
+| First contact | First contact of the patient with a specialised center in context of disease or study inclusion. | [LOINC:MTHU048806](http://purl.bioontology.org/ontology/LNC/MTHU048806)  | date |
+| Date diagnosis confirmed | The particular day, month and year an event has happened or will happen. | [NCIT:C25164](http://purl.obolibrary.org/obo/NCIT_C25164)  | date |
+| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+| Family members affected | Family members related by descent rather than by marriage or law who were diagnosed with the same condition as the individual who is the primary focus of investigation (i.e. the proband). | [HP:0032320](http://purl.obolibrary.org/obo/HP_0032320)  | [FamilyMembers.tsv](../../lookups/FamilyMembers.tsv) lookup (41 choices [of type](http://purl.obolibrary.org/obo/NCIT_C71384)) |
+| Family members sequenced | Family members related by descent rather than by marriage or law who were also tested by next-generation sequencing. | [NCIT:C79916](http://purl.obolibrary.org/obo/NCIT_C79916)  | [FamilyMembers.tsv](../../lookups/FamilyMembers.tsv) lookup (41 choices [of type](http://purl.obolibrary.org/obo/NCIT_C71384)) |
+| Functioning | Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF). | [NCIT:C21007](http://purl.obolibrary.org/obo/NCIT_C21007)  | text |
+| Material used in diagnosis | This diagnosis c.q. clinical examination is based on one or more sampled materials. | [SIO:000641](http://semanticscience.org/resource/SIO_000641)  | string |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.

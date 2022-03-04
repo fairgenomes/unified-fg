@@ -1,0 +1,37 @@
+value_en	description_en	codesystem	code	description_code
+Cannot Be Assessed	Aspects of the context prevent the evaluation needed to determine a value.	NCIT	http://purl.obolibrary.org/obo/NCIT_C48657	Cannot Be Assessed
+Cannot Be Determined	An indication that a reason or result cannot be established.	NCIT	http://purl.obolibrary.org/obo/NCIT_C179711	Cannot Be Determined
+Confirmed	Having been established or verified.	NCIT	http://purl.obolibrary.org/obo/NCIT_C25458	Confirmed
+Incomplete	Not whole; lacking some necessary part or detail; unfinished.	NCIT	http://purl.obolibrary.org/obo/NCIT_C49160	Incomplete
+Insufficient Information Available	The information available relating to the reported event is not sufficient to identify either the manufacturer the device or other essential information.	NCIT	http://purl.obolibrary.org/obo/NCIT_C139465	Insufficient Information Available
+Insufficient Information to Classify Condition	Not enough information available to classify the clinical signs symptoms and conditions.	NCIT	http://purl.obolibrary.org/obo/NCIT_C172137	Insufficient Information to Classify Condition
+Insufficient Information to Classify Health Impact	Not enough information available to classify the health impact.	NCIT	http://purl.obolibrary.org/obo/NCIT_C172138	Insufficient Information to Classify Health Impact
+Insufficient Quality	Conditions did not meet a qualitative measure necessary for testing or reporting.	NCIT	http://purl.obolibrary.org/obo/NCIT_C177691	Insufficient Quality
+Insufficient Quantity	Conditions did not meet a quantitative measure necessary for testing or reporting.	NCIT	http://purl.obolibrary.org/obo/NCIT_C177690	Insufficient Quantity
+Limited Or No Information	Restricted or no information available.	NCIT	http://purl.obolibrary.org/obo/NCIT_C54352	Limited Or No Information
+No Information Available	Information regarding the subject is unknown or inaccessible at this time.	NCIT	http://purl.obolibrary.org/obo/NCIT_C53269	No Information Available
+Not Applicable	Determination of a value is not relevant in the current context.	NCIT	http://purl.obolibrary.org/obo/NCIT_C48660	Not Applicable
+Not Available	The desired information is not available.	NCIT	http://purl.obolibrary.org/obo/NCIT_C126101	Not Available
+Not Done	Indicates a task process or examination that has either not been initiated or not been completed.	NCIT	http://purl.obolibrary.org/obo/NCIT_C49484	Not Done
+Not Assessed	Indicates that an assessment was not performed.	NCIT	http://purl.obolibrary.org/obo/NCIT_C139527	Not Assessed
+Not Performed	An indicator that specifies that an activity did not occur.	NCIT	http://purl.obolibrary.org/obo/NCIT_C141477	Not Performed
+Not Tested	Indicates that a test was not performed.	NCIT	http://purl.obolibrary.org/obo/NCIT_C101887	Not Tested
+Not Identified	The finding is not present but a value of 'none' cannot be unequivocally established absence in the current context.	NCIT	http://purl.obolibrary.org/obo/NCIT_C48661	Not Identified
+Not Obtained	Not acquired gained or come to the possession.	NCIT	http://purl.obolibrary.org/obo/NCIT_C67325	Not Obtained
+Unknown	Not known not observed not recorded or refused.	NCIT	http://purl.obolibrary.org/obo/NCIT_C17998	Unknown
+NoInformation (NI, nullflavor)	The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI	NoInformation (NI, nullflavor)
+Invalid (INV, nullflavor)	The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV	Invalid (INV, nullflavor)
+Derived (DER, nullflavor)	An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER	Derived (DER, nullflavor)
+Other (OTH, nullflavor)	The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH	Other (OTH, nullflavor)
+Negative infinity (NINF, nullflavor)	Negative infinity of numbers.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NINF	Negative infinity (NINF, nullflavor)
+Positive infinity (PINF, nullflavor)	Positive infinity of numbers.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#PINF	Positive infinity (PINF, nullflavor)
+Un-encoded (UNC, nullflavor)	The actual value has not yet been encoded within the approved value domain.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNC	Un-encoded (UNC, nullflavor)
+Masked (MSK, nullflavor)	There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons. There may be an alternate mechanism for gaining access to this information.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#MSK	Masked (MSK, nullflavor)
+Not applicable (NA, nullflavor)	Known to have no proper value (e.g., last menstrual period for a male).	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA	Not applicable (NA, nullflavor)
+Unknown (UNK, nullflavor)	A proper value is applicable, but not known.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK	Unknown (UNK, nullflavor)
+Asked but unknown (ASKU, nullflavor)	Information was sought but not found (e.g., patient was asked but didn't know)	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU	Asked but unknown (ASKU, nullflavor)
+Temporarily unavailable (NAV, nullflavor)	Information is not available at this time but it is expected that it will be available later.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAV	Temporarily unavailable (NAV, nullflavor)
+Not asked (NASK, nullflavor)	This information has not been sought. (e.g., patient was not asked)	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NASK	Not asked (NASK, nullflavor)
+Not available (NAVU, nullflavor)	Information is not available at this time (with no expectation regarding whether it will or will not be available in the future).	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAVU	Not available (NAVU, nullflavor)
+Sufficient quantity (QS, nullflavor)	The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material. e.g. 'Add 10mg of ingredient X, 50mg of ingredient Y, and sufficient quantity of water to 100mL.' The null flavor would be used to express the quantity of water.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#QS	Sufficient quantity (QS, nullflavor)
+Trace (TRC, nullflavor)	The content is greater than zero, but too small to be quantified.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#TRC	Trace (TRC, nullflavor)
