@@ -9,5 +9,5 @@ public enum DataType {
     /**
      * New:
      */
-    string, text, identifier, xref, mref, xref_noglobals, mref_noglobals, integer, date, datetime, email, bool, decimal;
+    string, text, identifier, xref, mref, xref_noglobals, mref_noglobals, integer, date, datetime, email, bool, decimal, hyperlink;
 }
