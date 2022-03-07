@@ -131,6 +131,42 @@ familymemberssequenced,description,Text,,,,Description (English)
 familymemberssequenced,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 familymemberssequenced,code,String,,,,The code within the code system
 familymemberssequenced,iri,String,,,,The Internationalized Resource Identifier for this term
+reasonforsampling,,,,,,"A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.",http://purl.obolibrary.org/obo/NCIT_C43376
+reasonforsampling,value,String,1,TRUE,,Value (English)
+reasonforsampling,description,Text,,,,Description (English)
+reasonforsampling,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+reasonforsampling,code,String,,,,The code within the code system
+reasonforsampling,iri,String,,,,The Internationalized Resource Identifier for this term
+biospecimentype,,,,,,"A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.",http://purl.obolibrary.org/obo/NCIT_C43376
+biospecimentype,value,String,1,TRUE,,Value (English)
+biospecimentype,description,Text,,,,Description (English)
+biospecimentype,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+biospecimentype,code,String,,,,The code within the code system
+biospecimentype,iri,String,,,,The Internationalized Resource Identifier for this term
+anatomicalsource,,,,,,"A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.",http://purl.obolibrary.org/obo/NCIT_C43376
+anatomicalsource,value,String,1,TRUE,,Value (English)
+anatomicalsource,description,Text,,,,Description (English)
+anatomicalsource,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+anatomicalsource,code,String,,,,The code within the code system
+anatomicalsource,iri,String,,,,The Internationalized Resource Identifier for this term
+pathologicalstate,,,,,,"A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.",http://purl.obolibrary.org/obo/NCIT_C43376
+pathologicalstate,value,String,1,TRUE,,Value (English)
+pathologicalstate,description,Text,,,,Description (English)
+pathologicalstate,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+pathologicalstate,code,String,,,,The code within the code system
+pathologicalstate,iri,String,,,,The Internationalized Resource Identifier for this term
+storageconditions,,,,,,"A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.",http://purl.obolibrary.org/obo/NCIT_C43376
+storageconditions,value,String,1,TRUE,,Value (English)
+storageconditions,description,Text,,,,Description (English)
+storageconditions,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+storageconditions,code,String,,,,The code within the code system
+storageconditions,iri,String,,,,The Internationalized Resource Identifier for this term
+analysesperformed,,,,,,"A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.",http://purl.obolibrary.org/obo/NCIT_C43376
+analysesperformed,value,String,1,TRUE,,Value (English)
+analysesperformed,description,Text,,,,Description (English)
+analysesperformed,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+analysesperformed,code,String,,,,The code within the code system
+analysesperformed,iri,String,,,,The Internationalized Resource Identifier for this term
 studies,,,,,,"A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.",http://purl.obolibrary.org/obo/NCIT_C63536
 studies,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular study.",http://purl.obolibrary.org/obo/OMIABIS_0000006
 studies,name,string,,,,"A name that designates this study.",http://purl.obolibrary.org/obo/OMIABIS_0000037
@@ -206,3 +242,35 @@ clinical,familymembersaffected,ref_array,,,familymembersaffected,"Family members
 clinical,familymemberssequenced,ref_array,,,familymemberssequenced,"Family members related by descent rather than by marriage or law who were also tested by next-generation sequencing.",http://purl.obolibrary.org/obo/NCIT_C79916
 clinical,functioning,text,,,,"Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF).",http://purl.obolibrary.org/obo/NCIT_C21007
 clinical,materialusedindiagnosis,string,,,,"This diagnosis c.q. clinical examination is based on one or more sampled materials.",http://semanticscience.org/resource/SIO_000641
+materials,,,,,,"A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.",http://purl.obolibrary.org/obo/NCIT_C43376
+materials,identifier,string,1,TRUE,,"Name or other identifier of an entry from a biosample database.",http://edamontology.org/data_3273
+materials,alternativeidentifiers,string,,,,"A backup sequence of characters used to identify an entity.",http://purl.obolibrary.org/obo/NCIT_C90353
+materials,collectedfromperson,ref,,,subjects,"Reference to the subject from whom this material was collected.",http://semanticscience.org/resource/SIO_000244
+materials,belongstorequest,string,,,,"A sequence of letters, numbers, or other characters that specifically identifies a particular order.",http://purl.obolibrary.org/obo/NCIT_C164567
+materials,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+materials,belongstodiagnosis,ref_array,,,clinical,"Reference to a diagnosis c.q. clinical examination of which this material may be a part of. There can be multiple diagnoses when a non-tumor material is reused as reference.",http://semanticscience.org/resource/SIO_000068
+materials,dateofrequest,date,,,,"The date on which the activity or entity was ordered.",http://purl.obolibrary.org/obo/NCIT_C164566
+materials,reasonforsampling,ref_array,,,reasonforsampling,"The explanation for why a test, measurement, or assessment is executed.",http://purl.obolibrary.org/obo/NCIT_C171003
+materials,samplingdate,date,,,,"The date that a sample was collected or obtained.",http://purl.obolibrary.org/obo/NCIT_C164024
+materials,samplingtimestamp,datetime,,,,"Date and time at which this material was collected.",http://www.ebi.ac.uk/efo/EFO_0000689
+materials,registrationtimestamp,datetime,,,,"Date and time at which this material was listed or recorded officially, i.e. officially qualified or enrolled.",http://purl.obolibrary.org/obo/NCIT_C25646
+materials,samplingprotocoltext,text,,,,"The procedure whereby this material was sampled for an analysis.",http://www.ebi.ac.uk/efo/EFO_0005518
+materials,samplingprotocolreference,ref_array,,,samplingprotocols,"The procedure whereby this material was sampled for an analysis.",http://www.ebi.ac.uk/efo/EFO_0005518
+materials,samplingprotocoldeviation,text,,,,"A variation from processes or procedures defined in the sampling protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor.",http://purl.obolibrary.org/obo/NCIT_C50996
+materials,reasonforsamplingprotocoldeviation,text,,,,"The rationale for why a deviation from the sampling protocol has occurred.",http://purl.obolibrary.org/obo/NCIT_C93529
+materials,biospecimentype,ref,,,biospecimentype,"The type of material taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes.",http://purl.obolibrary.org/obo/NCIT_C70713
+materials,anatomicalsource,ref,,,anatomicalsource,"Biological entity that constitutes the structural organization of an individual member of a biological species from which this material was taken.",http://purl.obolibrary.org/obo/NCIT_C103264
+materials,pathologicalstate,ref,,,pathologicalstate,"The pathological state of the tissue from which this material was derived.",http://purl.obolibrary.org/obo/GO_0001894
+materials,biospecimenusability,bool,,,,"An indication as to whether a biospecimen is suitable for testing purposes.",http://purl.obolibrary.org/obo/NCIT_C171004
+materials,storageconditions,ref,,,storageconditions,"The conditions under which this biological material was stored.",http://purl.obolibrary.org/obo/NCIT_C96145
+materials,expirationdate,date,,,,"The date beyond which this material is no longer regarded as fit for use.",http://purl.obolibrary.org/obo/NCIT_C164516
+materials,percentagetumorcells,decimal,,,,"The percentage of tumor cells compared to total cells present in this material.",http://purl.obolibrary.org/obo/NCIT_C127771
+materials,physicallocation,string,,,,"A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).",http://purl.obolibrary.org/obo/GAZ_00000448
+materials,analysesperformed,ref_array,,,analysesperformed,"Reports the existence of any analyses performed on this material other than genomics (e.g. transcriptomics, metabolomics, proteomics).",http://purl.obolibrary.org/obo/IAO_0000702
+materials,derivedfrom,string,,,,"Indicate if this material was produced from or related to another.",http://purl.obolibrary.org/obo/NCIT_C28355
+samplingprotocols,,,,,,"Describes the procedure whereby biological samples for an experiment are sourced.",http://www.ebi.ac.uk/efo/EFO_0005518
+samplingprotocols,identifier,string,1,TRUE,,"One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.",http://purl.obolibrary.org/obo/NCIT_C25364
+samplingprotocols,name,string,,,,"The words or language units by which a thing is known.",http://purl.obolibrary.org/obo/NCIT_C42614
+samplingprotocols,description,text,,,,"A written or verbal account, representation, statement, or explanation of something.",http://purl.obolibrary.org/obo/NCIT_C25365
+samplingprotocols,version,string,,,,"A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications.",http://purl.obolibrary.org/obo/NCIT_C25714
+samplingprotocols,iri,string,,,,"A unique symbol that establishes identity of the resource.",http://purl.obolibrary.org/obo/NCIT_C165071

@@ -490,3 +490,184 @@ tables:
 #        description: Name or other identifier of an entry from a biosample database.
 #        tags: http://edamontology.org/data_3273
 
+  - name: Materials
+    description: A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.
+    tags: NCIT:C43376 [http://purl.obolibrary.org/obo/NCIT_C43376], SCDO:0002829 [http://purl.obolibrary.org/obo/SCDO_0002829], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+    relationWith:
+      - table: Personal
+        relation: HSO:0000242 [http://purl.obolibrary.org/obo/HSO_0000242]
+
+    columns:
+
+      - name: Identifier
+        description: Name or other identifier of an entry from a biosample database.
+        #description: A unique proper name or character sequence that identifies this particular material.
+        tags: EDAM:data_3273 [http://edamontology.org/data_3273], NCIT:C93400 [http://purl.obolibrary.org/obo/NCIT_C93400]
+        dataType: identifier
+
+      - name: Alternative identifiers
+        description: A backup sequence of characters used to identify an entity.
+        tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
+        dataType: string
+
+      - name: Collected from person
+        dataType: xref
+        reference: Subjects
+        description: Reference to the subject from whom this material was collected.
+        #description: An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
+        tags: SIO:000244 [http://semanticscience.org/resource/SIO_000244], NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495]
+
+      - name: Belongs to request
+        description: A sequence of letters, numbers, or other characters that specifically identifies a particular order.
+        tags: NCIT:C164567 [http://purl.obolibrary.org/obo/NCIT_C164567]
+        dataType: string
+
+      - name: Belongs to data release
+        dataType: mref
+        reference: Data releases
+        description: The act of making data or other structured information accessible to the public or to the user group of a database.
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+
+      - name: Belongs to diagnosis
+        description: Reference to a diagnosis c.q. clinical examination of which this material may be a part of. There can be multiple diagnoses when a non-tumor material is reused as reference.
+        tags: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
+        dataType: mref
+        reference: Clinical
+
+      - name: Date of request
+        dataType: date
+        description: The date on which the activity or entity was ordered.
+        tags: NCIT:C164566 [http://purl.obolibrary.org/obo/NCIT_C164566]
+
+      - name: Reason for sampling
+        dataType: mref
+        reference: lookups/samplingReason.tsv
+        referenceTypeTag: NCIT:C171003 [http://purl.obolibrary.org/obo/NCIT_C171003]
+        description: The explanation for why a test, measurement, or assessment is executed.
+        tags: NCIT:C171003 [http://purl.obolibrary.org/obo/NCIT_C171003]
+
+      - name: Sampling date
+        dataType: date
+        description: The date that a sample was collected or obtained.
+        tags: NCIT:C164024 [http://purl.obolibrary.org/obo/NCIT_C164024]
+
+      - name: Sampling timestamp
+        dataType: datetime
+        description: Date and time at which this material was collected.
+        tags: EFO:0000689 [http://www.ebi.ac.uk/efo/EFO_0000689]
+
+      - name: Registration timestamp
+        description: Date and time at which this material was listed or recorded officially, i.e. officially qualified or enrolled.
+        tags: NCIT:C25646 [http://purl.obolibrary.org/obo/NCIT_C25646]
+        dataType: datetime
+
+      - name: Sampling protocol text
+        description: The procedure whereby this material was sampled for an analysis.
+        tags: EFO:0005518 [http://www.ebi.ac.uk/efo/EFO_0005518]
+        dataType: text
+
+      - name: Sampling protocol reference
+        dataType: mref
+        reference: Sampling protocols
+        description: The procedure whereby this material was sampled for an analysis.
+        tags: EFO:0005518 [http://www.ebi.ac.uk/efo/EFO_0005518]
+
+      - name: Sampling protocol deviation
+        dataType: text
+        description: A variation from processes or procedures defined in the sampling protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor.
+        tags: NCIT:C50996 [http://purl.obolibrary.org/obo/NCIT_C50996]
+
+      - name: Reason for sampling protocol deviation
+        dataType: text
+        description: The rationale for why a deviation from the sampling protocol has occurred.
+        tags: NCIT:C93529 [http://purl.obolibrary.org/obo/NCIT_C93529]
+
+      - name: Biospecimen type
+        description: The type of material taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes.
+        tags: NCIT:C70713 [http://purl.obolibrary.org/obo/NCIT_C70713]
+        dataType: xref
+        reference: lookups/BiospecimenTypes.tsv
+        referenceTypeTag: NCIT:C70699 [http://purl.obolibrary.org/obo/NCIT_C70699]
+
+      - name: Anatomical source
+        dataType: xref
+        reference: lookups/AnatomicalSources.tsv
+        referenceTypeTag: UBERON:0001062 [http://purl.obolibrary.org/obo/UBERON_0001062]
+        description: Biological entity that constitutes the structural organization of an individual member of a biological species from which this material was taken.
+        tags: NCIT:C103264 [http://purl.obolibrary.org/obo/NCIT_C103264]
+
+      - name: Pathological state
+        dataType: xref
+        reference: lookups/PathologicalState.tsv
+        referenceTypeTag: NCIT:C164617 [http://purl.obolibrary.org/obo/NCIT_C164617]
+        description: The pathological state of the tissue from which this material was derived.
+        tags: GO:0001894 [http://purl.obolibrary.org/obo/GO_0001894]
+
+      - name: Biospecimen usability
+        dataType: bool
+        description: An indication as to whether a biospecimen is suitable for testing purposes.
+        tags: NCIT:C171004 [http://purl.obolibrary.org/obo/NCIT_C171004]
+
+      - name: Storage conditions
+        description: The conditions under which this biological material was stored.
+        tags: NCIT:C96145 [http://purl.obolibrary.org/obo/NCIT_C96145]
+        dataType: xref
+        reference: lookups/StorageConditions.tsv
+        referenceTypeTag: NCIT:C96145 [http://purl.obolibrary.org/obo/NCIT_C96145]
+
+      - name: Expiration date
+        description: The date beyond which this material is no longer regarded as fit for use.
+        tags: NCIT:C164516 [http://purl.obolibrary.org/obo/NCIT_C164516]
+        dataType: date
+
+      - name: Percentage tumor cells
+        description: The percentage of tumor cells compared to total cells present in this material.
+        tags: NCIT:C127771 [http://purl.obolibrary.org/obo/NCIT_C127771]
+        dataType: decimal
+
+      - name: Physical location
+        description: A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).
+        tags: GAZ:00000448 [http://purl.obolibrary.org/obo/GAZ_00000448]
+        dataType: string
+
+      - name: Analyses performed
+        description: Reports the existence of any analyses performed on this material other than genomics (e.g. transcriptomics, metabolomics, proteomics).
+        tags: IAO:0000702 [http://purl.obolibrary.org/obo/IAO_0000702]
+        dataType: mref
+        reference: lookups/AnalysesPerformed.tsv
+        referenceTypeTag: EDAM:topic_3391 [http://edamontology.org/topic_3391]
+
+      - name: Derived from
+        description: Indicate if this material was produced from or related to another.
+        tags: NCIT:C28355 [http://purl.obolibrary.org/obo/NCIT_C28355]
+        dataType: string #[WORK IN PROGRESS. This field should be proper xref to Material, but this is technically problematic due to circular dependencies.]
+
+  - name: Sampling protocols
+    description: Describes the procedure whereby biological samples for an experiment are sourced.
+    tags: EFO:0005518 [http://www.ebi.ac.uk/efo/EFO_0005518], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+    columns:
+
+      - name: Identifier
+        dataType: identifier
+        description: One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.
+        tags: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
+
+      - name: Name
+        dataType: string
+        description: The words or language units by which a thing is known.
+        tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
+
+      - name: Description
+        dataType: text
+        description: A written or verbal account, representation, statement, or explanation of something.
+        tags: NCIT:C25365 [http://purl.obolibrary.org/obo/NCIT_C25365]
+
+      - name: Version
+        dataType: string
+        description: A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications.
+        tags: NCIT:C25714 [http://purl.obolibrary.org/obo/NCIT_C25714]
+
+      - name: IRI
+        dataType: hyperlink
+        description: A unique symbol that establishes identity of the resource.
+        tags: NCIT:C165071 [http://purl.obolibrary.org/obo/NCIT_C165071]

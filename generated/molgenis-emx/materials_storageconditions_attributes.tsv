@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	materials_storageconditions	Value (English)	String	TRUE	FALSE
+description	materials_storageconditions	Description (English)	Text	FALSE	TRUE
+codesystem	materials_storageconditions	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	materials_storageconditions	The code within the code system	String	FALSE	TRUE
+iri	materials_storageconditions	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

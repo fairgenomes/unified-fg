@@ -29,15 +29,21 @@
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-medicalhistory.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-institutes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-biospecimentypes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderatbirth.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genotypicsex.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderidentity.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diseases.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-anatomicalsources.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-storageconditions.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-analysesperformed.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dcmitypes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-samplingreason.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ancestry.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusionstatus.ttl> .
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusionstatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-pathologicalstate.ttl> .
 
 fg:Studies a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C63536;
@@ -513,3 +519,200 @@ fg:Clinical_Material_used_in_diagnosis a owl:DatatypeProperty;
   rdfs:domain fg:Clinical;
   rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000641>;
   dc:description "This diagnosis c.q. clinical examination is based on one or more sampled materials." .
+
+fg:Materials a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C43376, obo:SCDO_0002829, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Materials";
+  dc:description "A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.";
+  obo:HSO_0000242 fg:Personal .
+
+fg:Materials_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy <http://edamontology.org/data_3273>, obo:NCIT_C93400;
+  dc:description "Name or other identifier of an entry from a biosample database." .
+
+fg:Materials_Alternative_identifiers a owl:DatatypeProperty;
+  rdfs:label "Alternative identifiers";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C90353;
+  dc:description "A backup sequence of characters used to identify an entity." .
+
+fg:Materials_Collected_from_person a owl:ObjectProperty;
+  rdfs:label "Collected from person";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000244>, obo:NCIT_C142495;
+  dc:description "Reference to the subject from whom this material was collected." .
+
+fg:Materials_Belongs_to_request a owl:DatatypeProperty;
+  rdfs:label "Belongs to request";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C164567;
+  dc:description "A sequence of letters, numbers, or other characters that specifically identifies a particular order." .
+
+fg:Materials_Belongs_to_data_release a owl:ObjectProperty;
+  rdfs:label "Belongs to data release";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Materials_Belongs_to_diagnosis a owl:ObjectProperty;
+  rdfs:label "Belongs to diagnosis";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000068>;
+  dc:description "Reference to a diagnosis c.q. clinical examination of which this material may be a part of. There can be multiple diagnoses when a non-tumor material is reused as reference." .
+
+fg:Materials_Date_of_request a owl:DatatypeProperty;
+  rdfs:label "Date of request";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C164566;
+  dc:description "The date on which the activity or entity was ordered." .
+
+fg:Materials_Reason_for_sampling a owl:ObjectProperty;
+  rdfs:label "Reason for sampling";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C171003;
+  dc:description "The explanation for why a test, measurement, or assessment is executed.";
+  rdfs:range obo:NCIT_C171003 .
+
+fg:Materials_Sampling_date a owl:DatatypeProperty;
+  rdfs:label "Sampling date";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C164024;
+  dc:description "The date that a sample was collected or obtained." .
+
+fg:Materials_Sampling_timestamp a owl:DatatypeProperty;
+  rdfs:label "Sampling timestamp";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/EFO_0000689>;
+  dc:description "Date and time at which this material was collected." .
+
+fg:Materials_Registration_timestamp a owl:DatatypeProperty;
+  rdfs:label "Registration timestamp";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C25646;
+  dc:description "Date and time at which this material was listed or recorded officially, i.e. officially qualified or enrolled." .
+
+fg:Materials_Sampling_protocol_text a owl:DatatypeProperty;
+  rdfs:label "Sampling protocol text";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/EFO_0005518>;
+  dc:description "The procedure whereby this material was sampled for an analysis." .
+
+fg:Materials_Sampling_protocol_reference a owl:ObjectProperty;
+  rdfs:label "Sampling protocol reference";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/EFO_0005518>;
+  dc:description "The procedure whereby this material was sampled for an analysis." .
+
+fg:Materials_Sampling_protocol_deviation a owl:DatatypeProperty;
+  rdfs:label "Sampling protocol deviation";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C50996;
+  dc:description "A variation from processes or procedures defined in the sampling protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor." .
+
+fg:Materials_Reason_for_sampling_protocol_deviation a owl:DatatypeProperty;
+  rdfs:label "Reason for sampling protocol deviation";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C93529;
+  dc:description "The rationale for why a deviation from the sampling protocol has occurred." .
+
+fg:Materials_Biospecimen_type a owl:ObjectProperty;
+  rdfs:label "Biospecimen type";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C70713;
+  dc:description "The type of material taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes.";
+  rdfs:range obo:NCIT_C70699 .
+
+fg:Materials_Anatomical_source a owl:ObjectProperty;
+  rdfs:label "Anatomical source";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C103264;
+  dc:description "Biological entity that constitutes the structural organization of an individual member of a biological species from which this material was taken.";
+  rdfs:range obo:UBERON_0001062 .
+
+fg:Materials_Pathological_state a owl:ObjectProperty;
+  rdfs:label "Pathological state";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:GO_0001894;
+  dc:description "The pathological state of the tissue from which this material was derived.";
+  rdfs:range obo:NCIT_C164617 .
+
+fg:Materials_Biospecimen_usability a owl:DatatypeProperty;
+  rdfs:label "Biospecimen usability";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C171004;
+  dc:description "An indication as to whether a biospecimen is suitable for testing purposes." .
+
+fg:Materials_Storage_conditions a owl:ObjectProperty;
+  rdfs:label "Storage conditions";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C96145;
+  dc:description "The conditions under which this biological material was stored.";
+  rdfs:range obo:NCIT_C96145 .
+
+fg:Materials_Expiration_date a owl:DatatypeProperty;
+  rdfs:label "Expiration date";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C164516;
+  dc:description "The date beyond which this material is no longer regarded as fit for use." .
+
+fg:Materials_Percentage_tumor_cells a owl:DatatypeProperty;
+  rdfs:label "Percentage tumor cells";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C127771;
+  dc:description "The percentage of tumor cells compared to total cells present in this material." .
+
+fg:Materials_Physical_location a owl:DatatypeProperty;
+  rdfs:label "Physical location";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:GAZ_00000448;
+  dc:description "A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent)." .
+
+fg:Materials_Analyses_performed a owl:ObjectProperty;
+  rdfs:label "Analyses performed";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:IAO_0000702;
+  dc:description "Reports the existence of any analyses performed on this material other than genomics (e.g. transcriptomics, metabolomics, proteomics).";
+  rdfs:range <http://edamontology.org/topic_3391> .
+
+fg:Materials_Derived_from a owl:DatatypeProperty;
+  rdfs:label "Derived from";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C28355;
+  dc:description "Indicate if this material was produced from or related to another." .
+
+fg:Sampling_protocols a owl:Class;
+  rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/EFO_0005518>, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Sampling protocols";
+  dc:description "Describes the procedure whereby biological samples for an experiment are sourced." .
+
+fg:Sampling_protocols_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Sampling_protocols;
+  rdfs:isDefinedBy obo:NCIT_C25364;
+  dc:description "One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing." .
+
+fg:Sampling_protocols_Name a owl:DatatypeProperty;
+  rdfs:label "Name";
+  rdfs:domain fg:Sampling_protocols;
+  rdfs:isDefinedBy obo:NCIT_C42614;
+  dc:description "The words or language units by which a thing is known." .
+
+fg:Sampling_protocols_Description a owl:DatatypeProperty;
+  rdfs:label "Description";
+  rdfs:domain fg:Sampling_protocols;
+  rdfs:isDefinedBy obo:NCIT_C25365;
+  dc:description "A written or verbal account, representation, statement, or explanation of something." .
+
+fg:Sampling_protocols_Version a owl:DatatypeProperty;
+  rdfs:label "Version";
+  rdfs:domain fg:Sampling_protocols;
+  rdfs:isDefinedBy obo:NCIT_C25714;
+  dc:description "A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications." .
+
+fg:Sampling_protocols_IRI a owl:DatatypeProperty;
+  rdfs:label "IRI";
+  rdfs:domain fg:Sampling_protocols;
+  rdfs:isDefinedBy obo:NCIT_C165071;
+  dc:description "A unique symbol that establishes identity of the resource." .

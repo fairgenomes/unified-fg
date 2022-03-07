@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	materials_pathologicalstate	Value (English)	String	TRUE	FALSE
+description	materials_pathologicalstate	Description (English)	Text	FALSE	TRUE
+codesystem	materials_pathologicalstate	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	materials_pathologicalstate	The code within the code system	String	FALSE	TRUE
+iri	materials_pathologicalstate	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

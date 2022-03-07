@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	materials_anatomicalsource	Value (English)	String	TRUE	FALSE
+description	materials_anatomicalsource	Description (English)	Text	FALSE	TRUE
+codesystem	materials_anatomicalsource	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	materials_anatomicalsource	The code within the code system	String	FALSE	TRUE
+iri	materials_anatomicalsource	The Internationalized Resource Identifier for this term	String	FALSE	TRUE
