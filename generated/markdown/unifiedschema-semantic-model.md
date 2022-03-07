@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __4 modules__ that contain __71 metadata elements__ and __84520 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __6 modules__ that contain __101 metadata elements__ and __98810 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -10,6 +10,8 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Data releases](#module-data-releases) | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 2 |
 | [Subjects](#module-subjects) | Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. | [NCIT:C90492](http://purl.obolibrary.org/obo/NCIT_C90492), [ExO:0000127](http://purl.obolibrary.org/obo/ExO_0000127), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 29 |
 | [Clinical](#module-clinical) | Findings and circumstances relating to the examination and treatment of a patient. | [NCIT:C25398](http://purl.obolibrary.org/obo/NCIT_C25398), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
+| [Materials](#module-materials) | A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. | [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
+| [Sampling protocols](#module-sampling-protocols) | Describes the procedure whereby biological samples for an experiment are sourced. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 5 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -105,6 +107,48 @@ Findings and circumstances relating to the examination and treatment of a patien
 | Family members sequenced | Family members related by descent rather than by marriage or law who were also tested by next-generation sequencing. | [NCIT:C79916](http://purl.obolibrary.org/obo/NCIT_C79916)  | [FamilyMembers.tsv](../../lookups/FamilyMembers.tsv) lookup (41 choices [of type](http://purl.obolibrary.org/obo/NCIT_C71384)) |
 | Functioning | Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF). | [NCIT:C21007](http://purl.obolibrary.org/obo/NCIT_C21007)  | text |
 | Material used in diagnosis | This diagnosis c.q. clinical examination is based on one or more sampled materials. | [SIO:000641](http://semanticscience.org/resource/SIO_000641)  | string |
+
+## Module: Materials
+A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. Ontology: [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | Name or other identifier of an entry from a biosample database. | [EDAM:data_3273](http://edamontology.org/data_3273), [NCIT:C93400](http://purl.obolibrary.org/obo/NCIT_C93400)  | identifier |
+| Alternative identifiers | A backup sequence of characters used to identify an entity. | [NCIT:C90353](http://purl.obolibrary.org/obo/NCIT_C90353)  | string |
+| Collected from person | Reference to the subject from whom this material was collected. | [SIO:000244](http://semanticscience.org/resource/SIO_000244), [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495)  | Reference to instances of Subjects |
+| Belongs to request | A sequence of letters, numbers, or other characters that specifically identifies a particular order. | [NCIT:C164567](http://purl.obolibrary.org/obo/NCIT_C164567)  | string |
+| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+| Belongs to diagnosis | Reference to a diagnosis c.q. clinical examination of which this material may be a part of. There can be multiple diagnoses when a non-tumor material is reused as reference. | [SIO:000068](http://semanticscience.org/resource/SIO_000068)  | Reference to instances of Clinical |
+| Date of request | The date on which the activity or entity was ordered. | [NCIT:C164566](http://purl.obolibrary.org/obo/NCIT_C164566)  | date |
+| Reason for sampling | The explanation for why a test, measurement, or assessment is executed. | [NCIT:C171003](http://purl.obolibrary.org/obo/NCIT_C171003)  | [samplingReason.tsv](../../lookups/samplingReason.tsv) lookup (10 choices [of type](http://purl.obolibrary.org/obo/NCIT_C171003)) |
+| Sampling date | The date that a sample was collected or obtained. | [NCIT:C164024](http://purl.obolibrary.org/obo/NCIT_C164024)  | date |
+| Sampling timestamp | Date and time at which this material was collected. | [EFO:0000689](http://www.ebi.ac.uk/efo/EFO_0000689)  | datetime |
+| Registration timestamp | Date and time at which this material was listed or recorded officially, i.e. officially qualified or enrolled. | [NCIT:C25646](http://purl.obolibrary.org/obo/NCIT_C25646)  | datetime |
+| Sampling protocol text | The procedure whereby this material was sampled for an analysis. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518)  | text |
+| Sampling protocol reference | The procedure whereby this material was sampled for an analysis. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518)  | Reference to instances of Sampling protocols |
+| Sampling protocol deviation | A variation from processes or procedures defined in the sampling protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor. | [NCIT:C50996](http://purl.obolibrary.org/obo/NCIT_C50996)  | text |
+| Reason for sampling protocol deviation | The rationale for why a deviation from the sampling protocol has occurred. | [NCIT:C93529](http://purl.obolibrary.org/obo/NCIT_C93529)  | text |
+| Biospecimen type | The type of material taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes. | [NCIT:C70713](http://purl.obolibrary.org/obo/NCIT_C70713)  | [BiospecimenTypes.tsv](../../lookups/BiospecimenTypes.tsv) lookup (403 choices [of type](http://purl.obolibrary.org/obo/NCIT_C70699)) |
+| Anatomical source | Biological entity that constitutes the structural organization of an individual member of a biological species from which this material was taken. | [NCIT:C103264](http://purl.obolibrary.org/obo/NCIT_C103264)  | [AnatomicalSources.tsv](../../lookups/AnatomicalSources.tsv) lookup (13827 choices [of type](http://purl.obolibrary.org/obo/UBERON_0001062)) |
+| Pathological state | The pathological state of the tissue from which this material was derived. | [GO:0001894](http://purl.obolibrary.org/obo/GO_0001894)  | [PathologicalState.tsv](../../lookups/PathologicalState.tsv) lookup (4 choices [of type](http://purl.obolibrary.org/obo/NCIT_C164617)) |
+| Biospecimen usability | An indication as to whether a biospecimen is suitable for testing purposes. | [NCIT:C171004](http://purl.obolibrary.org/obo/NCIT_C171004)  | bool |
+| Storage conditions | The conditions under which this biological material was stored. | [NCIT:C96145](http://purl.obolibrary.org/obo/NCIT_C96145)  | [StorageConditions.tsv](../../lookups/StorageConditions.tsv) lookup (26 choices [of type](http://purl.obolibrary.org/obo/NCIT_C96145)) |
+| Expiration date | The date beyond which this material is no longer regarded as fit for use. | [NCIT:C164516](http://purl.obolibrary.org/obo/NCIT_C164516)  | date |
+| Percentage tumor cells | The percentage of tumor cells compared to total cells present in this material. | [NCIT:C127771](http://purl.obolibrary.org/obo/NCIT_C127771)  | decimal |
+| Physical location | A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent). | [GAZ:00000448](http://purl.obolibrary.org/obo/GAZ_00000448)  | string |
+| Analyses performed | Reports the existence of any analyses performed on this material other than genomics (e.g. transcriptomics, metabolomics, proteomics). | [IAO:0000702](http://purl.obolibrary.org/obo/IAO_0000702)  | [AnalysesPerformed.tsv](../../lookups/AnalysesPerformed.tsv) lookup (20 choices [of type](http://edamontology.org/topic_3391)) |
+| Derived from | Indicate if this material was produced from or related to another. | [NCIT:C28355](http://purl.obolibrary.org/obo/NCIT_C28355)  | string |
+
+## Module: Sampling protocols
+Describes the procedure whereby biological samples for an experiment are sourced. Ontology: [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing. | [NCIT:C25364](http://purl.obolibrary.org/obo/NCIT_C25364)  | identifier |
+| Name | The words or language units by which a thing is known. | [NCIT:C42614](http://purl.obolibrary.org/obo/NCIT_C42614)  | string |
+| Description | A written or verbal account, representation, statement, or explanation of something. | [NCIT:C25365](http://purl.obolibrary.org/obo/NCIT_C25365)  | text |
+| Version | A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications. | [NCIT:C25714](http://purl.obolibrary.org/obo/NCIT_C25714)  | string |
+| IRI | A unique symbol that establishes identity of the resource. | [NCIT:C165071](http://purl.obolibrary.org/obo/NCIT_C165071)  | hyperlink |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.

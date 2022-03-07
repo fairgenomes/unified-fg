@@ -6,7 +6,7 @@
 \textbf{Unified metadata schema}
 \newline
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 4 modules that contain 71 metadata elements and 84520 lookups in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 6 modules that contain 101 metadata elements and 98810 lookups in total (excluding null flavors).
 
 \begin{table}[htb]
 \begin{tabular}{lll}
@@ -16,6 +16,8 @@ Studies & NCIT:C63536  & 15 \\
 Data releases & NCIT:C172217, dcat:Dataset  & 2 \\
 Subjects & NCIT:C90492, ExO:0000127, dcat:Dataset  & 29 \\
 Clinical & NCIT:C25398, dcat:Dataset  & 25 \\
+Materials & NCIT:C43376, SCDO:0002829, dcat:Dataset  & 25 \\
+Sampling protocols & EFO:0005518, dcat:Dataset  & 5 \\
 \hline
 \end{tabular}
 \caption[Module overview]{\label{table:table1} Unified metadata schema v0.1-SNAPSHOT overview of all modules.}
@@ -129,6 +131,54 @@ Material used in diagnosis & SIO:000641  & string \\
 \end{table}
 
 \begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Identifier & EDAM:data\_3273, NCIT:C93400  & identifier \\
+Alternative identifiers & NCIT:C90353  & string \\
+Collected from person & SIO:000244, NCIT:C142495  & Reference to Subjects \\
+Belongs to request & NCIT:C164567  & string \\
+Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+Belongs to diagnosis & SIO:000068  & Reference to Clinical \\
+Date of request & NCIT:C164566  & date \\
+Reason for sampling & NCIT:C171003  & samplingReason.tsv lookup (10 choices) \\
+Sampling date & NCIT:C164024  & date \\
+Sampling timestamp & EFO:0000689  & datetime \\
+Registration timestamp & NCIT:C25646  & datetime \\
+Sampling protocol text & EFO:0005518  & text \\
+Sampling protocol reference & EFO:0005518  & Reference to Sampling protocols \\
+Sampling protocol deviation & NCIT:C50996  & text \\
+Reason for sampling protocol deviation & NCIT:C93529  & text \\
+Biospecimen type & NCIT:C70713  & BiospecimenTypes.tsv lookup (403 choices) \\
+Anatomical source & NCIT:C103264  & AnatomicalSources.tsv lookup (13827 choices) \\
+Pathological state & GO:0001894  & PathologicalState.tsv lookup (4 choices) \\
+Biospecimen usability & NCIT:C171004  & bool \\
+Storage conditions & NCIT:C96145  & StorageConditions.tsv lookup (26 choices) \\
+Expiration date & NCIT:C164516  & date \\
+Percentage tumor cells & NCIT:C127771  & decimal \\
+Physical location & GAZ:00000448  & string \\
+Analyses performed & IAO:0000702  & AnalysesPerformed.tsv lookup (20 choices) \\
+Derived from & NCIT:C28355  & string \\
+\hline
+\end{tabular}
+\caption[Module: Materials]{\label{table:table6} Module: Materials. A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. Ontology: NCIT:C43376, SCDO:0002829, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Identifier & NCIT:C25364  & identifier \\
+Name & NCIT:C42614  & string \\
+Description & NCIT:C25365  & text \\
+Version & NCIT:C25714  & string \\
+IRI & NCIT:C165071  & hyperlink \\
+\hline
+\end{tabular}
+\caption[Module: Sampling protocols]{\label{table:table7} Module: Sampling protocols. Describes the procedure whereby biological samples for an experiment are sourced. Ontology: EFO:0005518, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
 \begin{tabular}{ll}
 Value & Ontology \\
 \hline
@@ -150,7 +200,7 @@ Sufficient quantity & HL7:QS \\
 Trace & HL7:TRC \\
 \hline
 \end{tabular}
-\caption[NullFlavors]{\label{table:table6} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
+\caption[NullFlavors]{\label{table:table8} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
 \end{table}
 
 \end{document}

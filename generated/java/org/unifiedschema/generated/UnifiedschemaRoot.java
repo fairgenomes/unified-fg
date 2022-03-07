@@ -7,4 +7,6 @@ public class UnifiedschemaRoot {
 	public Map<String, Datareleases> Datareleases;
 	public Map<String, Subjects> Subjects;
 	public Map<String, Clinical> Clinical;
+	public Map<String, Materials> Materials;
+	public Map<String, Samplingprotocols> Samplingprotocols;
 }

@@ -1,0 +1,6 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+identifier	Identifier	One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing. (NCIT:C25364 )	samplingprotocols	string	TRUE	TRUE	TRUE	FALSE	
+name	Name	The words or language units by which a thing is known. (NCIT:C42614 )	samplingprotocols	string	FALSE	FALSE	TRUE	TRUE	
+description	Description	A written or verbal account, representation, statement, or explanation of something. (NCIT:C25365 )	samplingprotocols	text	FALSE	FALSE	TRUE	TRUE	
+version	Version	A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications. (NCIT:C25714 )	samplingprotocols	string	FALSE	FALSE	TRUE	TRUE	
+iri	IRI	A unique symbol that establishes identity of the resource. (NCIT:C165071 )	samplingprotocols	string	FALSE	FALSE	TRUE	TRUE	
