@@ -167,6 +167,18 @@ analysesperformed,description,Text,,,,Description (English)
 analysesperformed,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 analysesperformed,code,String,,,,The code within the code system
 analysesperformed,iri,String,,,,The Internationalized Resource Identifier for this term
+librarypreparationkit,,,,,,"A sample preparation for a nucleic acids sequencing assay.",http://purl.obolibrary.org/obo/OBI_0001902
+librarypreparationkit,value,String,1,TRUE,,Value (English)
+librarypreparationkit,description,Text,,,,Description (English)
+librarypreparationkit,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+librarypreparationkit,code,String,,,,The code within the code system
+librarypreparationkit,iri,String,,,,The Internationalized Resource Identifier for this term
+targetenrichmentkit,,,,,,"A sample preparation for a nucleic acids sequencing assay.",http://purl.obolibrary.org/obo/OBI_0001902
+targetenrichmentkit,value,String,1,TRUE,,Value (English)
+targetenrichmentkit,description,Text,,,,Description (English)
+targetenrichmentkit,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+targetenrichmentkit,code,String,,,,The code within the code system
+targetenrichmentkit,iri,String,,,,The Internationalized Resource Identifier for this term
 studies,,,,,,"A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.",http://purl.obolibrary.org/obo/NCIT_C63536
 studies,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular study.",http://purl.obolibrary.org/obo/OMIABIS_0000006
 studies,name,string,,,,"A name that designates this study.",http://purl.obolibrary.org/obo/OMIABIS_0000037
@@ -274,3 +286,25 @@ samplingprotocols,name,string,,,,"The words or language units by which a thing i
 samplingprotocols,description,text,,,,"A written or verbal account, representation, statement, or explanation of something.",http://purl.obolibrary.org/obo/NCIT_C25365
 samplingprotocols,version,string,,,,"A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications.",http://purl.obolibrary.org/obo/NCIT_C25714
 samplingprotocols,iri,string,,,,"A unique symbol that establishes identity of the resource.",http://purl.obolibrary.org/obo/NCIT_C165071
+ngssamplepreparation,,,,,,"A sample preparation for a nucleic acids sequencing assay.",http://purl.obolibrary.org/obo/OBI_0001902
+ngssamplepreparation,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular sample preparation.",http://purl.obolibrary.org/obo/NCIT_C132299
+ngssamplepreparation,belongstomaterials,ref,,,materials,"Reference to the source material from which this sample was prepared.",http://purl.obolibrary.org/obo/NCIT_C93400
+ngssamplepreparation,belongstolabprocedure,ref,,,laboratoryprocedures,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
+ngssamplepreparation,belongstorequest,string,,,,"A sequence of letters, numbers, or other characters that specifically identifies a particular order.",http://purl.obolibrary.org/obo/NCIT_C164567
+ngssamplepreparation,inputamount,int,,,,"Amount of input material in nanogram (ng).",http://purl.allotrope.org/ontologies/role#AFRL_0000010
+ngssamplepreparation,librarypreparationkit,ref,,,librarypreparationkit,"Pre-filled, ready-to-use reagent cartridges intented to improve chemistry, cluster density and read length as well as improve quality (Q) scores for this sample. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications.",http://purl.obolibrary.org/obo/GENEPIO_0000085
+ngssamplepreparation,pcrfree,bool,,,,"Indicates whether a polymerase chain reaction (PCR) was used to prepare this sample. PCR is a method for amplifying a DNA base sequence using multiple rounds of heat denaturation of the DNA and annealing of oligonucleotide primers complementary to flanking regions in the presence of a heat-stable polymerase.",http://purl.obolibrary.org/obo/NCIT_C17003
+ngssamplepreparation,targetenrichmentkit,ref,,,targetenrichmentkit,"Indicates which target enrichment kit was used to prepare this sample. Target enrichment is a pre-sequencing DNA preparation step where DNA sequences are either directly amplified (amplicon or multiplex PCR-based) or captured (hybrid capture-based) in order to only focus on specific regions of a genome or DNA sample.",http://purl.obolibrary.org/obo/NCIT_C154307
+ngssamplepreparation,umispresent,bool,,,,"Indicates whether any unique molecular identifiers (UMIs) are present. An UMI barcode is a short nucleotide sequence that is used to identify reads originating from an individual mRNA molecule.",http://www.ebi.ac.uk/efo/EFO_0010199
+ngssamplepreparation,intendedinsertsize,int,,,,"In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance.",https://w3id.org/fair-genomes/resource/FG_0000001
+ngssamplepreparation,intendedreadlength,int,,,,"The number of nucleotides intended to be ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process.",http://purl.obolibrary.org/obo/NCIT_C153362
+ngssamplepreparation,barcode,string,,,,"A machine-readable representation of information in a visual format on a surface.",http://purl.obolibrary.org/obo/NCIT_C43361
+ngssamplepreparation,belongstobatch,string,,,,"A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group.",http://purl.obolibrary.org/obo/NCIT_C67073
+ngssamplepreparation,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+laboratoryprocedures,,,,,,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
+laboratoryprocedures,code,string,1,TRUE,,"A character or string that represents the short code name of the laboratory test.",http://purl.obolibrary.org/obo/NCIT_C83322
+laboratoryprocedures,test,string,,,,"A character or string that represents the full name of the laboratory assessment.",http://purl.obolibrary.org/obo/NCIT_C117142
+laboratoryprocedures,description,text,,,,"A written or verbal account, representation, statement, or explanation of something",http://purl.obolibrary.org/obo/NCIT_C25365
+laboratoryprocedures,category,string,,,,"A classification of the laboratory test.",http://purl.obolibrary.org/obo/NCIT_C83017
+laboratoryprocedures,subcategory,string,,,,"A sub-division of the laboratory test classification.",http://purl.obolibrary.org/obo/NCIT_C83142
+laboratoryprocedures,genelist,text,,,,"A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis.",http://purl.obolibrary.org/obo/OBI_0000118

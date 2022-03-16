@@ -1,0 +1,7 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+code	Code	A character or string that represents the short code name of the laboratory test. (NCIT:C83322 )	laboratoryprocedures	string	TRUE	TRUE	TRUE	FALSE	
+test	Test	A character or string that represents the full name of the laboratory assessment. (NCIT:C117142 )	laboratoryprocedures	string	FALSE	FALSE	TRUE	TRUE	
+description	Description	A written or verbal account, representation, statement, or explanation of something (NCIT:C25365 )	laboratoryprocedures	text	FALSE	FALSE	TRUE	TRUE	
+category	Category	A classification of the laboratory test. (NCIT:C83017 )	laboratoryprocedures	string	FALSE	FALSE	TRUE	TRUE	
+subcategory	Subcategory	A sub-division of the laboratory test classification. (NCIT:C83142 )	laboratoryprocedures	string	FALSE	FALSE	TRUE	TRUE	
+genelist	Gene list	A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis. (OBI:0000118 )	laboratoryprocedures	text	FALSE	FALSE	TRUE	TRUE	

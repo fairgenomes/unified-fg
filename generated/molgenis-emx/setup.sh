@@ -27,6 +27,8 @@ mcmd import -p materials_anatomicalsource_attributes.tsv --as attributes --in un
 mcmd import -p materials_pathologicalstate_attributes.tsv --as attributes --in unified-schema
 mcmd import -p materials_storageconditions_attributes.tsv --as attributes --in unified-schema
 mcmd import -p materials_analysesperformed_attributes.tsv --as attributes --in unified-schema
+mcmd import -p ngssamplepreparation_librarypreparationkit_attributes.tsv --as attributes --in unified-schema
+mcmd import -p ngssamplepreparation_targetenrichmentkit_attributes.tsv --as attributes --in unified-schema
 mcmd import -p studies_inclusioncriteria.tsv --as fair-genomes_studies_inclusioncriteria --in unified-schema
 mcmd import -p studies_currentstudystatus.tsv --as fair-genomes_studies_currentstudystatus --in unified-schema
 mcmd import -p subjects_genderidentity.tsv --as fair-genomes_subjects_genderidentity --in unified-schema
@@ -55,12 +57,16 @@ mcmd import -p materials_anatomicalsource.tsv --as fair-genomes_materials_anatom
 mcmd import -p materials_pathologicalstate.tsv --as fair-genomes_materials_pathologicalstate --in unified-schema
 mcmd import -p materials_storageconditions.tsv --as fair-genomes_materials_storageconditions --in unified-schema
 mcmd import -p materials_analysesperformed.tsv --as fair-genomes_materials_analysesperformed --in unified-schema
+mcmd import -p ngssamplepreparation_librarypreparationkit.tsv --as fair-genomes_ngssamplepreparation_librarypreparationkit --in unified-schema
+mcmd import -p ngssamplepreparation_targetenrichmentkit.tsv --as fair-genomes_ngssamplepreparation_targetenrichmentkit --in unified-schema
 mcmd import -p studies_attributes.tsv --as attributes --in unified-schema
 mcmd import -p datareleases_attributes.tsv --as attributes --in unified-schema
 mcmd import -p subjects_attributes.tsv --as attributes --in unified-schema
 mcmd import -p clinical_attributes.tsv --as attributes --in unified-schema
 mcmd import -p materials_attributes.tsv --as attributes --in unified-schema
 mcmd import -p samplingprotocols_attributes.tsv --as attributes --in unified-schema
+mcmd import -p ngssamplepreparation_attributes.tsv --as attributes --in unified-schema
+mcmd import -p laboratoryprocedures_attributes.tsv --as attributes --in unified-schema
 mcmd import -p ../../misc/molgenis/other/sys_StaticContent.tsv -a add_update_existing
 mcmd add logo -p ../../misc/molgenis/img/analysis.png
 mcmd add logo -p ../../misc/molgenis/img/lookups.png
