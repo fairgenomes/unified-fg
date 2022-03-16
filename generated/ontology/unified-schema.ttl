@@ -37,6 +37,7 @@
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-anatomicalsources.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-storageconditions.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ngskits.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-analysesperformed.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dcmitypes.ttl>,
@@ -716,3 +717,137 @@ fg:Sampling_protocols_IRI a owl:DatatypeProperty;
   rdfs:domain fg:Sampling_protocols;
   rdfs:isDefinedBy obo:NCIT_C165071;
   dc:description "A unique symbol that establishes identity of the resource." .
+
+fg:NGS_sample_preparation a owl:Class;
+  rdfs:isDefinedBy obo:OBI_0001902, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "NGS sample preparation";
+  dc:description "A sample preparation for a nucleic acids sequencing assay.";
+  obo:NCIT_C179746 fg:Materials .
+
+fg:NGS_sample_preparation_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C132299;
+  dc:description "A unique proper name or character sequence that identifies this particular sample preparation." .
+
+fg:NGS_sample_preparation_Belongs_to_materials a owl:ObjectProperty;
+  rdfs:label "Belongs to materials";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C93400, obo:NCIT_C25683;
+  dc:description "Reference to the source material from which this sample was prepared." .
+
+fg:NGS_sample_preparation_Belongs_to_lab_procedure a owl:ObjectProperty;
+  rdfs:label "Belongs to lab procedure";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C25294;
+  dc:description "Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting." .
+
+fg:NGS_sample_preparation_Belongs_to_request a owl:DatatypeProperty;
+  rdfs:label "Belongs to request";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C164567;
+  dc:description "A sequence of letters, numbers, or other characters that specifically identifies a particular order." .
+
+fg:NGS_sample_preparation_Input_amount a owl:DatatypeProperty;
+  rdfs:label "Input amount";
+  sio:SIO_000074 obo:UO_0000024;
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy <http://purl.allotrope.org/ontologies/role#AFRL_0000010>;
+  dc:description "Amount of input material in nanogram (ng)." .
+
+fg:NGS_sample_preparation_Library_preparation_kit a owl:ObjectProperty;
+  rdfs:label "Library preparation kit";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:GENEPIO_0000085;
+  dc:description "Pre-filled, ready-to-use reagent cartridges intented to improve chemistry, cluster density and read length as well as improve quality (Q) scores for this sample. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications.";
+  rdfs:range obo:GENEPIO_0000081 .
+
+fg:NGS_sample_preparation_PCR_free a owl:DatatypeProperty;
+  rdfs:label "PCR free";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C17003;
+  dc:description "Indicates whether a polymerase chain reaction (PCR) was used to prepare this sample. PCR is a method for amplifying a DNA base sequence using multiple rounds of heat denaturation of the DNA and annealing of oligonucleotide primers complementary to flanking regions in the presence of a heat-stable polymerase." .
+
+fg:NGS_sample_preparation_Target_enrichment_kit a owl:ObjectProperty;
+  rdfs:label "Target enrichment kit";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C154307;
+  dc:description "Indicates which target enrichment kit was used to prepare this sample. Target enrichment is a pre-sequencing DNA preparation step where DNA sequences are either directly amplified (amplicon or multiplex PCR-based) or captured (hybrid capture-based) in order to only focus on specific regions of a genome or DNA sample.";
+  rdfs:range obo:GENEPIO_0000081 .
+
+fg:NGS_sample_preparation_UMIs_present a owl:DatatypeProperty;
+  rdfs:label "UMIs present";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/EFO_0010199>;
+  dc:description "Indicates whether any unique molecular identifiers (UMIs) are present. An UMI barcode is a short nucleotide sequence that is used to identify reads originating from an individual mRNA molecule." .
+
+fg:NGS_sample_preparation_Intended_insert_size a owl:DatatypeProperty;
+  rdfs:label "Intended insert size";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy <https://w3id.org/fair-genomes/resource/FG_0000001>;
+  dc:description "In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance." .
+
+fg:NGS_sample_preparation_Intended_read_length a owl:DatatypeProperty;
+  rdfs:label "Intended read length";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C153362;
+  dc:description "The number of nucleotides intended to be ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process." .
+
+fg:NGS_sample_preparation_Barcode a owl:DatatypeProperty;
+  rdfs:label "Barcode";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C43361;
+  dc:description "A machine-readable representation of information in a visual format on a surface." .
+
+fg:NGS_sample_preparation_Belongs_to_batch a owl:DatatypeProperty;
+  rdfs:label "Belongs to batch";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C67073;
+  dc:description "A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group." .
+
+fg:NGS_sample_preparation_Belongs_to_data_release a owl:ObjectProperty;
+  rdfs:label "Belongs to data release";
+  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Laboratory_Procedures a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C25294, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Laboratory Procedures";
+  dc:description "Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting." .
+
+fg:Laboratory_Procedures_Code a owl:DatatypeProperty;
+  rdfs:label "Code";
+  rdfs:domain fg:Laboratory_Procedures;
+  rdfs:isDefinedBy obo:NCIT_C83322;
+  dc:description "A character or string that represents the short code name of the laboratory test." .
+
+fg:Laboratory_Procedures_Test a owl:DatatypeProperty;
+  rdfs:label "Test";
+  rdfs:domain fg:Laboratory_Procedures;
+  rdfs:isDefinedBy obo:NCIT_C117142;
+  dc:description "A character or string that represents the full name of the laboratory assessment." .
+
+fg:Laboratory_Procedures_Description a owl:DatatypeProperty;
+  rdfs:label "Description";
+  rdfs:domain fg:Laboratory_Procedures;
+  rdfs:isDefinedBy obo:NCIT_C25365;
+  dc:description "A written or verbal account, representation, statement, or explanation of something" .
+
+fg:Laboratory_Procedures_Category a owl:DatatypeProperty;
+  rdfs:label "Category";
+  rdfs:domain fg:Laboratory_Procedures;
+  rdfs:isDefinedBy obo:NCIT_C83017;
+  dc:description "A classification of the laboratory test." .
+
+fg:Laboratory_Procedures_Subcategory a owl:DatatypeProperty;
+  rdfs:label "Subcategory";
+  rdfs:domain fg:Laboratory_Procedures;
+  rdfs:isDefinedBy obo:NCIT_C83142;
+  dc:description "A sub-division of the laboratory test classification." .
+
+fg:Laboratory_Procedures_Gene_list a owl:DatatypeProperty;
+  rdfs:label "Gene list";
+  rdfs:domain fg:Laboratory_Procedures;
+  rdfs:isDefinedBy obo:OBI_0000118;
+  dc:description "A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis." .

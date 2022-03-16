@@ -36,11 +36,11 @@ public class Ontology {
         int whiteSpaceIndex = raw.indexOf(" ");
         if(whiteSpaceIndex == -1)
         {
-            throw new Exception("bad ontology info: " + raw + ", no whitespace");
+            throw new Exception("bad ontology tag: " + raw + ", format = CODESYSTEM:CODE [IRI]");
         }
         String codeAndCodeSystem = raw.substring(0, whiteSpaceIndex);
         if(!codeAndCodeSystem.contains(":")){
-            throw new Exception("bad ontology info: " + raw + ", no colon");
+            throw new Exception("bad ontology tag: " + raw + ", format = CODESYSTEM:CODE [IRI]");
         }
         String[] split = codeAndCodeSystem.split(":", -1);
         this.codeSystem = split[0];

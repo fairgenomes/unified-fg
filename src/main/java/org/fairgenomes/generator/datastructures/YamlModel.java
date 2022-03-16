@@ -53,6 +53,10 @@ public class YamlModel {
         {
             for(Column e : m.columns)
             {
+                if(e.dataType == null)
+                {
+                    throw new Exception("No datatype for " + e.toString());
+                }
                 int whiteSpaceIndex = e.dataType.indexOf(" ");
                 String vt = whiteSpaceIndex > 0 ? e.dataType.substring(0, whiteSpaceIndex) : e.dataType;
                 DataType dataType = DataType.valueOf(vt);

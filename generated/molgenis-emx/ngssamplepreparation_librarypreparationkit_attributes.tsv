@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	ngssamplepreparation_librarypreparationkit	Value (English)	String	TRUE	FALSE
+description	ngssamplepreparation_librarypreparationkit	Description (English)	Text	FALSE	TRUE
+codesystem	ngssamplepreparation_librarypreparationkit	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	ngssamplepreparation_librarypreparationkit	The code within the code system	String	FALSE	TRUE
+iri	ngssamplepreparation_librarypreparationkit	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

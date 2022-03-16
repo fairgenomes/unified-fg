@@ -6,7 +6,7 @@
 \textbf{Unified metadata schema}
 \newline
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 6 modules that contain 101 metadata elements and 98810 lookups in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 8 modules that contain 121 metadata elements and 100042 lookups in total (excluding null flavors).
 
 \begin{table}[htb]
 \begin{tabular}{lll}
@@ -18,6 +18,8 @@ Subjects & NCIT:C90492, ExO:0000127, dcat:Dataset  & 29 \\
 Clinical & NCIT:C25398, dcat:Dataset  & 25 \\
 Materials & NCIT:C43376, SCDO:0002829, dcat:Dataset  & 25 \\
 Sampling protocols & EFO:0005518, dcat:Dataset  & 5 \\
+NGS sample preparation & OBI:0001902, dcat:Dataset  & 14 \\
+Laboratory Procedures & NCIT:C25294, dcat:Dataset  & 6 \\
 \hline
 \end{tabular}
 \caption[Module overview]{\label{table:table1} Unified metadata schema v0.1-SNAPSHOT overview of all modules.}
@@ -179,6 +181,44 @@ IRI & NCIT:C165071  & hyperlink \\
 \end{table}
 
 \begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Identifier & NCIT:C132299  & identifier \\
+Belongs to materials & NCIT:C93400, NCIT:C25683  & Reference to Materials \\
+Belongs to lab procedure & NCIT:C25294  & Reference to Laboratory Procedures \\
+Belongs to request & NCIT:C164567  & string \\
+Input amount & AFRL:0000010  & integer \\
+Library preparation kit & GENEPIO:0000085  & NGSKits.tsv lookup (616 choices) \\
+PCR free & NCIT:C17003  & bool \\
+Target enrichment kit & NCIT:C154307  & NGSKits.tsv lookup (616 choices) \\
+UMIs present & EFO:0010199  & bool \\
+Intended insert size & FG:0000001  & integer \\
+Intended read length & NCIT:C153362  & integer \\
+Barcode & NCIT:C43361  & string \\
+Belongs to batch & NCIT:C67073  & string \\
+Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+\hline
+\end{tabular}
+\caption[Module: NGS sample preparation]{\label{table:table8} Module: NGS sample preparation. A sample preparation for a nucleic acids sequencing assay. Ontology: OBI:0001902, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Code & NCIT:C83322  & identifier \\
+Test & NCIT:C117142  & string \\
+Description & NCIT:C25365  & text \\
+Category & NCIT:C83017  & string \\
+Subcategory & NCIT:C83142  & string \\
+Gene list & OBI:0000118  & text \\
+\hline
+\end{tabular}
+\caption[Module: Laboratory Procedures]{\label{table:table9} Module: Laboratory Procedures. Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. Ontology: NCIT:C25294, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
 \begin{tabular}{ll}
 Value & Ontology \\
 \hline
@@ -200,7 +240,7 @@ Sufficient quantity & HL7:QS \\
 Trace & HL7:TRC \\
 \hline
 \end{tabular}
-\caption[NullFlavors]{\label{table:table8} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
+\caption[NullFlavors]{\label{table:table10} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
 \end{table}
 
 \end{document}

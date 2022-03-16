@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __6 modules__ that contain __101 metadata elements__ and __98810 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __8 modules__ that contain __121 metadata elements__ and __100042 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -12,6 +12,8 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Clinical](#module-clinical) | Findings and circumstances relating to the examination and treatment of a patient. | [NCIT:C25398](http://purl.obolibrary.org/obo/NCIT_C25398), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
 | [Materials](#module-materials) | A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. | [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
 | [Sampling protocols](#module-sampling-protocols) | Describes the procedure whereby biological samples for an experiment are sourced. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 5 |
+| [NGS sample preparation](#module-ngs-sample-preparation) | A sample preparation for a nucleic acids sequencing assay. | [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
+| [Laboratory Procedures](#module-laboratory-procedures) | Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. | [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 6 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -149,6 +151,38 @@ Describes the procedure whereby biological samples for an experiment are sourced
 | Description | A written or verbal account, representation, statement, or explanation of something. | [NCIT:C25365](http://purl.obolibrary.org/obo/NCIT_C25365)  | text |
 | Version | A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications. | [NCIT:C25714](http://purl.obolibrary.org/obo/NCIT_C25714)  | string |
 | IRI | A unique symbol that establishes identity of the resource. | [NCIT:C165071](http://purl.obolibrary.org/obo/NCIT_C165071)  | hyperlink |
+
+## Module: NGS sample preparation
+A sample preparation for a nucleic acids sequencing assay. Ontology: [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular sample preparation. | [NCIT:C132299](http://purl.obolibrary.org/obo/NCIT_C132299)  | identifier |
+| Belongs to materials | Reference to the source material from which this sample was prepared. | [NCIT:C93400](http://purl.obolibrary.org/obo/NCIT_C93400), [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of Materials |
+| Belongs to lab procedure | Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. | [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294)  | Reference to instances of Laboratory Procedures |
+| Belongs to request | A sequence of letters, numbers, or other characters that specifically identifies a particular order. | [NCIT:C164567](http://purl.obolibrary.org/obo/NCIT_C164567)  | string |
+| Input amount | Amount of input material in nanogram (ng). | [AFRL:0000010](http://purl.allotrope.org/ontologies/role#AFRL_0000010)  | integer |
+| Library preparation kit | Pre-filled, ready-to-use reagent cartridges intented to improve chemistry, cluster density and read length as well as improve quality (Q) scores for this sample. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications. | [GENEPIO:0000085](http://purl.obolibrary.org/obo/GENEPIO_0000085)  | [NGSKits.tsv](../../lookups/NGSKits.tsv) lookup (616 choices [of type](http://purl.obolibrary.org/obo/GENEPIO_0000081)) |
+| PCR free | Indicates whether a polymerase chain reaction (PCR) was used to prepare this sample. PCR is a method for amplifying a DNA base sequence using multiple rounds of heat denaturation of the DNA and annealing of oligonucleotide primers complementary to flanking regions in the presence of a heat-stable polymerase. | [NCIT:C17003](http://purl.obolibrary.org/obo/NCIT_C17003)  | bool |
+| Target enrichment kit | Indicates which target enrichment kit was used to prepare this sample. Target enrichment is a pre-sequencing DNA preparation step where DNA sequences are either directly amplified (amplicon or multiplex PCR-based) or captured (hybrid capture-based) in order to only focus on specific regions of a genome or DNA sample. | [NCIT:C154307](http://purl.obolibrary.org/obo/NCIT_C154307)  | [NGSKits.tsv](../../lookups/NGSKits.tsv) lookup (616 choices [of type](http://purl.obolibrary.org/obo/GENEPIO_0000081)) |
+| UMIs present | Indicates whether any unique molecular identifiers (UMIs) are present. An UMI barcode is a short nucleotide sequence that is used to identify reads originating from an individual mRNA molecule. | [EFO:0010199](http://www.ebi.ac.uk/efo/EFO_0010199)  | bool |
+| Intended insert size | In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance. | [FG:0000001](https://w3id.org/fair-genomes/resource/FG_0000001)  | integer |
+| Intended read length | The number of nucleotides intended to be ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process. | [NCIT:C153362](http://purl.obolibrary.org/obo/NCIT_C153362)  | integer |
+| Barcode | A machine-readable representation of information in a visual format on a surface. | [NCIT:C43361](http://purl.obolibrary.org/obo/NCIT_C43361)  | string |
+| Belongs to batch | A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group. | [NCIT:C67073](http://purl.obolibrary.org/obo/NCIT_C67073)  | string |
+| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+
+## Module: Laboratory Procedures
+Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. Ontology: [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Code | A character or string that represents the short code name of the laboratory test. | [NCIT:C83322](http://purl.obolibrary.org/obo/NCIT_C83322)  | identifier |
+| Test | A character or string that represents the full name of the laboratory assessment. | [NCIT:C117142](http://purl.obolibrary.org/obo/NCIT_C117142)  | string |
+| Description | A written or verbal account, representation, statement, or explanation of something | [NCIT:C25365](http://purl.obolibrary.org/obo/NCIT_C25365)  | text |
+| Category | A classification of the laboratory test. | [NCIT:C83017](http://purl.obolibrary.org/obo/NCIT_C83017)  | string |
+| Subcategory | A sub-division of the laboratory test classification. | [NCIT:C83142](http://purl.obolibrary.org/obo/NCIT_C83142)  | string |
+| Gene list | A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis. | [OBI:0000118](http://purl.obolibrary.org/obo/OBI_0000118)  | text |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.

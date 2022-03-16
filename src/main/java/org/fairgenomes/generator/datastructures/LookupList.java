@@ -20,7 +20,6 @@ public class LookupList {
      */
     public LookupList(File lookupListFile) throws Exception {
         this.srcFile = lookupListFile;
-        System.out.println("lookupListFile = " + lookupListFile);
         this.name = this.srcFile.getName().substring(0,this.srcFile.getName().indexOf("."));
         this.technicalName = YamlModel.toTechName(this.name);
         lookups = new LinkedHashMap<>();
