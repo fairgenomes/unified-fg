@@ -318,11 +318,12 @@ tables:
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
-      #      - name: belongsToCohort
-      #        dataType: mref
-      #        reference: umdm_cohorts
-      #        description: A group of individuals, identified by a common characteristic.
-      #        tags: http://purl.obolibrary.org/obo/NCIT_C61512
+
+      - name: Belongs to cohort
+        dataType: mref
+        reference: Cohorts
+        description: A group of individuals, identified by a common characteristic.
+        tags: NCIT:C61512 [http://purl.obolibrary.org/obo/NCIT_C61512]
 
   - name: Clinical
     description: Findings and circumstances relating to the examination and treatment of a patient.
@@ -1016,7 +1017,7 @@ tables:
         description: The description of the characteristics that define a cohort.
         tags: NCIT:C166209 [http://purl.obolibrary.org/obo/NCIT_C166209]
 
-      - name: principleInvestigator
+      - name: Principle investigator
         description: The principle investigator or responsible person for this study.
         tags: OMIABIS:0000100 [http://purl.obolibrary.org/obo/OMIABIS_0000100]
         dataType: string
@@ -1031,7 +1032,7 @@ tables:
         description: An email address for the purpose of contacting the study contact person.
         tags: OMIABIS:0000035 [http://purl.obolibrary.org/obo/OMIABIS_0000035]
 
-      - name: sizeOfCohort
+      - name: Size of cohort
         dataType: integer
         description: A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population.
         tags: NCIT:C53190 [http://purl.obolibrary.org/obo/NCIT_C53190]
