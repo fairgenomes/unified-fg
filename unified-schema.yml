@@ -318,11 +318,12 @@ tables:
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
-      #      - name: belongsToCohort
-      #        dataType: mref
-      #        reference: umdm_cohorts
-      #        description: A group of individuals, identified by a common characteristic.
-      #        tags: http://purl.obolibrary.org/obo/NCIT_C61512
+
+      - name: Belongs to cohort
+        dataType: mref
+        reference: Cohorts
+        description: A group of individuals, identified by a common characteristic.
+        tags: NCIT:C61512 [http://purl.obolibrary.org/obo/NCIT_C61512]
 
   - name: Clinical
     description: Findings and circumstances relating to the examination and treatment of a patient.
@@ -672,7 +673,7 @@ tables:
         description: A unique symbol that establishes identity of the resource.
         tags: NCIT:C165071 [http://purl.obolibrary.org/obo/NCIT_C165071]
 
-  - name: NGS sample preparation
+  - name: NGS sample preparations
     description: A sample preparation for a nucleic acids sequencing assay.
     tags: OBI:0001902 [http://purl.obolibrary.org/obo/OBI_0001902], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
     relationWith:
@@ -795,3 +796,243 @@ tables:
         dataType: text
         description: A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis.
         tags: OBI:0000118 [http://purl.obolibrary.org/obo/OBI_0000118]
+
+  - name: Sequencing
+    description: The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.
+    tags: EDAM:topic_3168 [http://edamontology.org/topic_3168], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+    relationWith:
+      - table: NGS sample preparations
+        relation: SIO:001220 [http://semanticscience.org/resource/SIO_001220]
+    columns:
+
+      - name: Identifier
+        dataType: identifier
+        description: A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.
+        tags: NCIT:C171337 [http://purl.obolibrary.org/obo/NCIT_C171337]
+
+      - name: Belongs to lab procedure
+        dataType: xref
+        reference: Laboratory Procedures
+        description: Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.
+        tags: NCIT:C25294 [http://purl.obolibrary.org/obo/NCIT_C25294]
+
+      - name: Belongs to sample preparation
+        dataType: xref
+        reference: NGS sample preparations
+        #description: A unique proper name or character sequence that identifies this particular sample preparation.
+        description: Reference to the prepared sample, i.e. the source that was sequenced.
+        tags: NCIT:C132299 [http://purl.obolibrary.org/obo/NCIT_C132299], NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+
+      - name: Reason for sequencing
+        dataType: xref
+        reference: lookups/SamplingReason.tsv
+        referenceTypeTag: NCIT:C171003 [http://purl.obolibrary.org/obo/NCIT_C171003]
+        description: A rationale for executing a plan of action.
+        tags: NCIT:C69216 [http://purl.obolibrary.org/obo/NCIT_C69216]
+
+      - name: Sequencing date
+        dataType: date
+        description: Date on which this sequencing assay was performed.
+        tags: GENEPIO:0000069 [http://purl.obolibrary.org/obo/GENEPIO_0000069]
+
+      - name: Sequencing facility organization
+        dataType: xref
+        reference: lookups/Institutes.tsv
+        referenceTypeTag: SIO:000688 [http://semanticscience.org/resource/SIO_000688]
+        description: An organization that provides sequence determination service.
+        tags: OBI:0001891 [http://purl.obolibrary.org/obo/OBI_0001891]
+
+      - name: Sequencing platform
+        dataType: xref
+        reference: lookups/SequencingPlatform.tsv
+        referenceTypeTag: GENEPIO:0000071 [http://purl.obolibrary.org/obo/GENEPIO_0000071]
+        description: The used sequencing platform (i.e. brand, name of a company that produces sequencer equipment).
+        tags: GENEPIO:0000071 [http://purl.obolibrary.org/obo/GENEPIO_0000071]
+
+      - name: Sequencing instrument model
+        dataType: xref
+        reference: lookups/SequencingInstrumentModels.tsv
+        description: The used product name and model number of a manufacturer's genomic (dna) sequencer.
+        referenceTypeTag: GENEPIO:0001921 [http://purl.obolibrary.org/obo/GENEPIO_0001921]
+        tags: GENEPIO:0001921 [http://purl.obolibrary.org/obo/GENEPIO_0001921]
+
+      - name: Sequencing method
+        dataType: xref
+        reference: lookups/SequencingMethods.tsv
+        referenceTypeTag: NCIT:C17565 [http://purl.obolibrary.org/obo/NCIT_C17565]
+        description: Method used to determine the order of bases in a nucleic acid sequence.
+        tags: FIX:0000704 [http://purl.obolibrary.org/obo/FIX_0000704]
+
+      - name: Median read depth
+        dataType: integer
+        description: The median number of times a particular locus (site, nucleotide, amplicon, region) was sequenced.
+        tags: NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
+
+      - name: Observed read length
+        dataType: integer
+        description: The number of nucleotides successfully ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process.
+        tags: NCIT:C153362 [http://purl.obolibrary.org/obo/NCIT_C153362]
+
+      - name: Observed insert size
+        dataType: integer
+        description: In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance.
+        tags: FG:0000002 [https://w3id.org/fair-genomes/resource/FG_0000002]
+
+      - name: Percentage Q30
+        dataType: decimal
+        description: Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly.
+        tags: GENEPIO:0000089 [http://purl.obolibrary.org/obo/GENEPIO_0000089]
+
+      - name: Percentage TR20
+        dataType: decimal
+        description: Percentage of the target sequence on which 20 or more unique reads were successfully mapped.
+        tags: FG:0000003 [https://w3id.org/fair-genomes/resource/FG_0000003]
+
+      - name: Other quality metrics
+        dataType: text
+        description: Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check.
+        tags: EDAM:data_3914 [http://edamontology.org/data_3914]
+
+    #  - name: referenceGenomeUsed
+    #    dataType: xref
+    #    refEntity: umdm_lookups_genomeAccessions
+    #    description: The specific build of the human genome used as reference for sequence alignment and variant calling.
+    #    tags: http://edamontology.org/data_2340
+
+      - name: Belongs to data release
+        dataType: mref
+        reference: Data releases
+        description: The act of making data or other structured information accessible to the public or to the user group of a database.
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+
+
+
+##
+
+  - name: Files
+    description: A set of related records (either written or electronic) kept together.
+    tags: NCIT:C42883 [http://purl.obolibrary.org/obo/NCIT_C42883], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+
+    columns:
+      - name: Filename
+        dataType: identifier
+        description: The literal identifier for an electronic file.
+        tags: NCIT:C171191 [http://purl.obolibrary.org/obo/NCIT_C171191]
+
+      - name: Produced by sequencing
+        dataType: mref
+        reference: Sequencing
+        description: A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.
+        tags: NCIT:C171337 [http://purl.obolibrary.org/obo/NCIT_C171337]
+
+      - name: Belongs to subject
+        dataType: xref
+        reference: Subjects
+        #description: Reference to the person whom this clinical information is about.
+        description: An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
+        tags: NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495], IAO:0000136 [http://purl.obolibrary.org/obo/IAO_0000136]
+
+      - name: Belongs to study
+        dataType: mref
+        reference: Studies
+        description: Reference to the study or studies to which this file belongs.
+        tags: BFO:0000050 [http://purl.obolibrary.org/obo/BFO_0000050]
+
+      - name: Belongs to cohort
+        dataType: mref
+        reference: Cohorts
+        description: A group of individuals, identified by a common characteristic.
+        tags: NCIT:C61512 [http://purl.obolibrary.org/obo/NCIT_C61512]
+
+      - name: Server
+        description: A computer which provides some service for other computers connected to it via a network.
+        tags: NCIT:C48297 [http://purl.obolibrary.org/obo/NCIT_C48297]
+        dataType: string
+
+      - name: File path
+        description: The specification of a node (file or directory) in a hierarchical file system, usually specified by listing the nodes top-down.
+        tags: NCIT:C47922 [http://purl.obolibrary.org/obo/NCIT_C47922]
+        dataType: string
+
+      - name: File format
+        description: The format of an electronic file.
+        tags: NCIT:C171252 [http://purl.obolibrary.org/obo/NCIT_C171252]
+        dataType: string #EDAM file format lookup?
+
+      - name: File size
+        dataType: integer
+        description: The size of an electronic file in bytes.
+        tags: NCIT:C171192 [http://purl.obolibrary.org/obo/NCIT_C171192]
+
+      - name: MD5 checksum
+        description: A 32-character hexadecimal number that is computed on a file.
+        tags: NCIT:C171276 [http://purl.obolibrary.org/obo/NCIT_C171276]
+        dataType: string
+
+      - name: File status
+        dataType: xref
+        reference: lookups/FileStatus.tsv
+        referenceTypeTag: NCIT:C171193 [http://purl.obolibrary.org/obo/NCIT_C171193]
+        description: The condition for an electronic file relative to the current data or file processing step.
+        tags: NCIT:C171193 [http://purl.obolibrary.org/obo/NCIT_C171193]
+
+      - name: Creation date
+        dataType: date
+        description: The date a digital resource was created.
+        tags: NCIT:C69199 [http://purl.obolibrary.org/obo/NCIT_C69199]
+
+      - name: Alternative identifiers
+        description: A backup sequence of characters used to identify an entity.
+        tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
+        dataType: string
+
+      - name: Belongs to data release
+        dataType: mref
+        reference: Data releases
+        description: The act of making data or other structured information accessible to the public or to the user group of a database.
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+
+  - name: Cohorts
+    description: A group of individuals, identified by a common characteristic.
+    tags: NCIT:C61512 [http://purl.obolibrary.org/obo/NCIT_C61512], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+    columns:
+
+      - name: Identifier
+        dataType: identifier
+        description: One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.
+        tags: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
+
+      - name: Acronym
+        description: The non-unique initials or abbreviated name used for identification.
+        tags: NCIT:C93495 [http://purl.obolibrary.org/obo/NCIT_C93495]
+        dataType: string
+
+      - name: Name
+        description: The words or language units by which a thing is known.
+        tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
+        dataType: string
+
+      - name: Description
+        dataType: text
+        description: The description of the characteristics that define a cohort.
+        tags: NCIT:C166209 [http://purl.obolibrary.org/obo/NCIT_C166209]
+
+      - name: Principle investigator
+        description: The principle investigator or responsible person for this study.
+        tags: OMIABIS:0000100 [http://purl.obolibrary.org/obo/OMIABIS_0000100]
+        dataType: string
+
+      - name: Contact person
+        description: A person acting as a channel for communication between groups or on behalf of a group.
+        tags: NCIT:C25461 [http://purl.obolibrary.org/obo/NCIT_C25461]
+        dataType: string
+
+      - name: Contact email
+        dataType: email
+        description: An email address for the purpose of contacting the study contact person.
+        tags: OMIABIS:0000035 [http://purl.obolibrary.org/obo/OMIABIS_0000035]
+
+      - name: Size of cohort
+        dataType: integer
+        description: A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population.
+        tags: NCIT:C53190 [http://purl.obolibrary.org/obo/NCIT_C53190]

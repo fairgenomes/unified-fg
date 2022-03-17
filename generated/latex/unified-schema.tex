@@ -6,7 +6,7 @@
 \textbf{Unified metadata schema}
 \newline
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 8 modules that contain 121 metadata elements and 100042 lookups in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 11 modules that contain 160 metadata elements and 100358 lookups in total (excluding null flavors).
 
 \begin{table}[htb]
 \begin{tabular}{lll}
@@ -14,12 +14,15 @@ Name & Ontology & Nr. of elements \\
 \hline
 Studies & NCIT:C63536  & 15 \\
 Data releases & NCIT:C172217, dcat:Dataset  & 2 \\
-Subjects & NCIT:C90492, ExO:0000127, dcat:Dataset  & 29 \\
+Subjects & NCIT:C90492, ExO:0000127, dcat:Dataset  & 30 \\
 Clinical & NCIT:C25398, dcat:Dataset  & 25 \\
 Materials & NCIT:C43376, SCDO:0002829, dcat:Dataset  & 25 \\
 Sampling protocols & EFO:0005518, dcat:Dataset  & 5 \\
-NGS sample preparation & OBI:0001902, dcat:Dataset  & 14 \\
+NGS sample preparations & OBI:0001902, dcat:Dataset  & 14 \\
 Laboratory Procedures & NCIT:C25294, dcat:Dataset  & 6 \\
+Sequencing & EDAM:topic\_3168, dcat:Dataset  & 16 \\
+Files & NCIT:C42883, dcat:Dataset  & 14 \\
+Cohorts & NCIT:C61512, dcat:Dataset  & 8 \\
 \hline
 \end{tabular}
 \caption[Module overview]{\label{table:table1} Unified metadata schema v0.1-SNAPSHOT overview of all modules.}
@@ -93,6 +96,7 @@ Fetal status & NCIT:C17730  & bool \\
 Consanguinity & OMIT:0004546, SNOMED:842009  & bool \\
 Belongs to study & RO:0000056  & Reference to Studies \\
 Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+Belongs to cohort & NCIT:C61512  & Reference to Cohorts \\
 \hline
 \end{tabular}
 \caption[Module: Subjects]{\label{table:table4} Module: Subjects. Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. Ontology: NCIT:C90492, ExO:0000127, dcat:Dataset . }
@@ -200,7 +204,7 @@ Belongs to batch & NCIT:C67073  & string \\
 Belongs to data release & NCIT:C172217  & Reference to Data releases \\
 \hline
 \end{tabular}
-\caption[Module: NGS sample preparation]{\label{table:table8} Module: NGS sample preparation. A sample preparation for a nucleic acids sequencing assay. Ontology: OBI:0001902, dcat:Dataset . }
+\caption[Module: NGS sample preparations]{\label{table:table8} Module: NGS sample preparations. A sample preparation for a nucleic acids sequencing assay. Ontology: OBI:0001902, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -216,6 +220,71 @@ Gene list & OBI:0000118  & text \\
 \hline
 \end{tabular}
 \caption[Module: Laboratory Procedures]{\label{table:table9} Module: Laboratory Procedures. Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. Ontology: NCIT:C25294, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Identifier & NCIT:C171337  & identifier \\
+Belongs to lab procedure & NCIT:C25294  & Reference to Laboratory Procedures \\
+Belongs to sample preparation & NCIT:C132299, NCIT:C25683  & Reference to NGS sample preparations \\
+Reason for sequencing & NCIT:C69216  & SamplingReason.tsv lookup (10 choices) \\
+Sequencing date & GENEPIO:0000069  & date \\
+Sequencing facility organization & OBI:0001891  & Institutes.tsv lookup (218 choices) \\
+Sequencing platform & GENEPIO:0000071  & SequencingPlatform.tsv lookup (7 choices) \\
+Sequencing instrument model & GENEPIO:0001921  & SequencingInstrumentModels.tsv lookup (39 choices) \\
+Sequencing method & FIX:0000704  & SequencingMethods.tsv lookup (35 choices) \\
+Median read depth & NCIT:C155320  & integer \\
+Observed read length & NCIT:C153362  & integer \\
+Observed insert size & FG:0000002  & integer \\
+Percentage Q30 & GENEPIO:0000089  & decimal \\
+Percentage TR20 & FG:0000003  & decimal \\
+Other quality metrics & EDAM:data\_3914  & text \\
+Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+\hline
+\end{tabular}
+\caption[Module: Sequencing]{\label{table:table10} Module: Sequencing. The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. Ontology: EDAM:topic\_3168, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Filename & NCIT:C171191  & identifier \\
+Produced by sequencing & NCIT:C171337  & Reference to Sequencing \\
+Belongs to subject & NCIT:C142495, IAO:0000136  & Reference to Subjects \\
+Belongs to study & BFO:0000050  & Reference to Studies \\
+Belongs to cohort & NCIT:C61512  & Reference to Cohorts \\
+Server & NCIT:C48297  & string \\
+File path & NCIT:C47922  & string \\
+File format & NCIT:C171252  & string \\
+File size & NCIT:C171192  & integer \\
+MD5 checksum & NCIT:C171276  & string \\
+File status & NCIT:C171193  & FileStatus.tsv lookup (7 choices) \\
+Creation date & NCIT:C69199  & date \\
+Alternative identifiers & NCIT:C90353  & string \\
+Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+\hline
+\end{tabular}
+\caption[Module: Files]{\label{table:table11} Module: Files. A set of related records (either written or electronic) kept together. Ontology: NCIT:C42883, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Identifier & NCIT:C25364  & identifier \\
+Acronym & NCIT:C93495  & string \\
+Name & NCIT:C42614  & string \\
+Description & NCIT:C166209  & text \\
+Principle investigator & OMIABIS:0000100  & string \\
+Contact person & NCIT:C25461  & string \\
+Contact email & OMIABIS:0000035  & email \\
+Size of cohort & NCIT:C53190  & integer \\
+\hline
+\end{tabular}
+\caption[Module: Cohorts]{\label{table:table12} Module: Cohorts. A group of individuals, identified by a common characteristic. Ontology: NCIT:C61512, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -240,7 +309,7 @@ Sufficient quantity & HL7:QS \\
 Trace & HL7:TRC \\
 \hline
 \end{tabular}
-\caption[NullFlavors]{\label{table:table10} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
+\caption[NullFlavors]{\label{table:table13} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
 \end{table}
 
 \end{document}

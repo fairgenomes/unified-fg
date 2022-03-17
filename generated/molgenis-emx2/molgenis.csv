@@ -179,6 +179,42 @@ targetenrichmentkit,description,Text,,,,Description (English)
 targetenrichmentkit,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 targetenrichmentkit,code,String,,,,The code within the code system
 targetenrichmentkit,iri,String,,,,The Internationalized Resource Identifier for this term
+reasonforsequencing,,,,,,"The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.",http://edamontology.org/topic_3168
+reasonforsequencing,value,String,1,TRUE,,Value (English)
+reasonforsequencing,description,Text,,,,Description (English)
+reasonforsequencing,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+reasonforsequencing,code,String,,,,The code within the code system
+reasonforsequencing,iri,String,,,,The Internationalized Resource Identifier for this term
+sequencingfacilityorganization,,,,,,"The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.",http://edamontology.org/topic_3168
+sequencingfacilityorganization,value,String,1,TRUE,,Value (English)
+sequencingfacilityorganization,description,Text,,,,Description (English)
+sequencingfacilityorganization,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+sequencingfacilityorganization,code,String,,,,The code within the code system
+sequencingfacilityorganization,iri,String,,,,The Internationalized Resource Identifier for this term
+sequencingplatform,,,,,,"The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.",http://edamontology.org/topic_3168
+sequencingplatform,value,String,1,TRUE,,Value (English)
+sequencingplatform,description,Text,,,,Description (English)
+sequencingplatform,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+sequencingplatform,code,String,,,,The code within the code system
+sequencingplatform,iri,String,,,,The Internationalized Resource Identifier for this term
+sequencinginstrumentmodel,,,,,,"The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.",http://edamontology.org/topic_3168
+sequencinginstrumentmodel,value,String,1,TRUE,,Value (English)
+sequencinginstrumentmodel,description,Text,,,,Description (English)
+sequencinginstrumentmodel,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+sequencinginstrumentmodel,code,String,,,,The code within the code system
+sequencinginstrumentmodel,iri,String,,,,The Internationalized Resource Identifier for this term
+sequencingmethod,,,,,,"The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.",http://edamontology.org/topic_3168
+sequencingmethod,value,String,1,TRUE,,Value (English)
+sequencingmethod,description,Text,,,,Description (English)
+sequencingmethod,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+sequencingmethod,code,String,,,,The code within the code system
+sequencingmethod,iri,String,,,,The Internationalized Resource Identifier for this term
+filestatus,,,,,,"A set of related records (either written or electronic) kept together.",http://purl.obolibrary.org/obo/NCIT_C42883
+filestatus,value,String,1,TRUE,,Value (English)
+filestatus,description,Text,,,,Description (English)
+filestatus,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+filestatus,code,String,,,,The code within the code system
+filestatus,iri,String,,,,The Internationalized Resource Identifier for this term
 studies,,,,,,"A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.",http://purl.obolibrary.org/obo/NCIT_C63536
 studies,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular study.",http://purl.obolibrary.org/obo/OMIABIS_0000006
 studies,name,string,,,,"A name that designates this study.",http://purl.obolibrary.org/obo/OMIABIS_0000037
@@ -228,6 +264,7 @@ subjects,fetalstatus,bool,,,,"Any tissue from a fetus.",http://purl.obolibrary.o
 subjects,consanguinity,bool,,,,"Information on whether the patient is a child from two family members who are second cousins or closer.",http://purl.obolibrary.org/obo/OMIT_0004546
 subjects,belongstostudy,ref_array,,,studies,"Reference to the study or studies in which this person participates.",http://purl.obolibrary.org/obo/RO_0000056
 subjects,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+subjects,belongstocohort,ref_array,,,cohorts,"A group of individuals, identified by a common characteristic.",http://purl.obolibrary.org/obo/NCIT_C61512
 clinical,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
 clinical,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular clinical examination.",http://purl.obolibrary.org/obo/NCIT_C87853
 clinical,belongstosubject,ref,,,subjects,"An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.",http://purl.obolibrary.org/obo/NCIT_C142495
@@ -286,21 +323,21 @@ samplingprotocols,name,string,,,,"The words or language units by which a thing i
 samplingprotocols,description,text,,,,"A written or verbal account, representation, statement, or explanation of something.",http://purl.obolibrary.org/obo/NCIT_C25365
 samplingprotocols,version,string,,,,"A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications.",http://purl.obolibrary.org/obo/NCIT_C25714
 samplingprotocols,iri,string,,,,"A unique symbol that establishes identity of the resource.",http://purl.obolibrary.org/obo/NCIT_C165071
-ngssamplepreparation,,,,,,"A sample preparation for a nucleic acids sequencing assay.",http://purl.obolibrary.org/obo/OBI_0001902
-ngssamplepreparation,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular sample preparation.",http://purl.obolibrary.org/obo/NCIT_C132299
-ngssamplepreparation,belongstomaterials,ref,,,materials,"Reference to the source material from which this sample was prepared.",http://purl.obolibrary.org/obo/NCIT_C93400
-ngssamplepreparation,belongstolabprocedure,ref,,,laboratoryprocedures,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
-ngssamplepreparation,belongstorequest,string,,,,"A sequence of letters, numbers, or other characters that specifically identifies a particular order.",http://purl.obolibrary.org/obo/NCIT_C164567
-ngssamplepreparation,inputamount,int,,,,"Amount of input material in nanogram (ng).",http://purl.allotrope.org/ontologies/role#AFRL_0000010
-ngssamplepreparation,librarypreparationkit,ref,,,librarypreparationkit,"Pre-filled, ready-to-use reagent cartridges intented to improve chemistry, cluster density and read length as well as improve quality (Q) scores for this sample. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications.",http://purl.obolibrary.org/obo/GENEPIO_0000085
-ngssamplepreparation,pcrfree,bool,,,,"Indicates whether a polymerase chain reaction (PCR) was used to prepare this sample. PCR is a method for amplifying a DNA base sequence using multiple rounds of heat denaturation of the DNA and annealing of oligonucleotide primers complementary to flanking regions in the presence of a heat-stable polymerase.",http://purl.obolibrary.org/obo/NCIT_C17003
-ngssamplepreparation,targetenrichmentkit,ref,,,targetenrichmentkit,"Indicates which target enrichment kit was used to prepare this sample. Target enrichment is a pre-sequencing DNA preparation step where DNA sequences are either directly amplified (amplicon or multiplex PCR-based) or captured (hybrid capture-based) in order to only focus on specific regions of a genome or DNA sample.",http://purl.obolibrary.org/obo/NCIT_C154307
-ngssamplepreparation,umispresent,bool,,,,"Indicates whether any unique molecular identifiers (UMIs) are present. An UMI barcode is a short nucleotide sequence that is used to identify reads originating from an individual mRNA molecule.",http://www.ebi.ac.uk/efo/EFO_0010199
-ngssamplepreparation,intendedinsertsize,int,,,,"In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance.",https://w3id.org/fair-genomes/resource/FG_0000001
-ngssamplepreparation,intendedreadlength,int,,,,"The number of nucleotides intended to be ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process.",http://purl.obolibrary.org/obo/NCIT_C153362
-ngssamplepreparation,barcode,string,,,,"A machine-readable representation of information in a visual format on a surface.",http://purl.obolibrary.org/obo/NCIT_C43361
-ngssamplepreparation,belongstobatch,string,,,,"A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group.",http://purl.obolibrary.org/obo/NCIT_C67073
-ngssamplepreparation,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+ngssamplepreparations,,,,,,"A sample preparation for a nucleic acids sequencing assay.",http://purl.obolibrary.org/obo/OBI_0001902
+ngssamplepreparations,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular sample preparation.",http://purl.obolibrary.org/obo/NCIT_C132299
+ngssamplepreparations,belongstomaterials,ref,,,materials,"Reference to the source material from which this sample was prepared.",http://purl.obolibrary.org/obo/NCIT_C93400
+ngssamplepreparations,belongstolabprocedure,ref,,,laboratoryprocedures,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
+ngssamplepreparations,belongstorequest,string,,,,"A sequence of letters, numbers, or other characters that specifically identifies a particular order.",http://purl.obolibrary.org/obo/NCIT_C164567
+ngssamplepreparations,inputamount,int,,,,"Amount of input material in nanogram (ng).",http://purl.allotrope.org/ontologies/role#AFRL_0000010
+ngssamplepreparations,librarypreparationkit,ref,,,librarypreparationkit,"Pre-filled, ready-to-use reagent cartridges intented to improve chemistry, cluster density and read length as well as improve quality (Q) scores for this sample. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications.",http://purl.obolibrary.org/obo/GENEPIO_0000085
+ngssamplepreparations,pcrfree,bool,,,,"Indicates whether a polymerase chain reaction (PCR) was used to prepare this sample. PCR is a method for amplifying a DNA base sequence using multiple rounds of heat denaturation of the DNA and annealing of oligonucleotide primers complementary to flanking regions in the presence of a heat-stable polymerase.",http://purl.obolibrary.org/obo/NCIT_C17003
+ngssamplepreparations,targetenrichmentkit,ref,,,targetenrichmentkit,"Indicates which target enrichment kit was used to prepare this sample. Target enrichment is a pre-sequencing DNA preparation step where DNA sequences are either directly amplified (amplicon or multiplex PCR-based) or captured (hybrid capture-based) in order to only focus on specific regions of a genome or DNA sample.",http://purl.obolibrary.org/obo/NCIT_C154307
+ngssamplepreparations,umispresent,bool,,,,"Indicates whether any unique molecular identifiers (UMIs) are present. An UMI barcode is a short nucleotide sequence that is used to identify reads originating from an individual mRNA molecule.",http://www.ebi.ac.uk/efo/EFO_0010199
+ngssamplepreparations,intendedinsertsize,int,,,,"In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance.",https://w3id.org/fair-genomes/resource/FG_0000001
+ngssamplepreparations,intendedreadlength,int,,,,"The number of nucleotides intended to be ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process.",http://purl.obolibrary.org/obo/NCIT_C153362
+ngssamplepreparations,barcode,string,,,,"A machine-readable representation of information in a visual format on a surface.",http://purl.obolibrary.org/obo/NCIT_C43361
+ngssamplepreparations,belongstobatch,string,,,,"A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group.",http://purl.obolibrary.org/obo/NCIT_C67073
+ngssamplepreparations,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 laboratoryprocedures,,,,,,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
 laboratoryprocedures,code,string,1,TRUE,,"A character or string that represents the short code name of the laboratory test.",http://purl.obolibrary.org/obo/NCIT_C83322
 laboratoryprocedures,test,string,,,,"A character or string that represents the full name of the laboratory assessment.",http://purl.obolibrary.org/obo/NCIT_C117142
@@ -308,3 +345,44 @@ laboratoryprocedures,description,text,,,,"A written or verbal account, represent
 laboratoryprocedures,category,string,,,,"A classification of the laboratory test.",http://purl.obolibrary.org/obo/NCIT_C83017
 laboratoryprocedures,subcategory,string,,,,"A sub-division of the laboratory test classification.",http://purl.obolibrary.org/obo/NCIT_C83142
 laboratoryprocedures,genelist,text,,,,"A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis.",http://purl.obolibrary.org/obo/OBI_0000118
+sequencing,,,,,,"The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.",http://edamontology.org/topic_3168
+sequencing,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
+sequencing,belongstolabprocedure,ref,,,laboratoryprocedures,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
+sequencing,belongstosamplepreparation,ref,,,ngssamplepreparations,"Reference to the prepared sample, i.e. the source that was sequenced.",http://purl.obolibrary.org/obo/NCIT_C132299
+sequencing,reasonforsequencing,ref,,,reasonforsequencing,"A rationale for executing a plan of action.",http://purl.obolibrary.org/obo/NCIT_C69216
+sequencing,sequencingdate,date,,,,"Date on which this sequencing assay was performed.",http://purl.obolibrary.org/obo/GENEPIO_0000069
+sequencing,sequencingfacilityorganization,ref,,,sequencingfacilityorganization,"An organization that provides sequence determination service.",http://purl.obolibrary.org/obo/OBI_0001891
+sequencing,sequencingplatform,ref,,,sequencingplatform,"The used sequencing platform (i.e. brand, name of a company that produces sequencer equipment).",http://purl.obolibrary.org/obo/GENEPIO_0000071
+sequencing,sequencinginstrumentmodel,ref,,,sequencinginstrumentmodel,"The used product name and model number of a manufacturer's genomic (dna) sequencer.",http://purl.obolibrary.org/obo/GENEPIO_0001921
+sequencing,sequencingmethod,ref,,,sequencingmethod,"Method used to determine the order of bases in a nucleic acid sequence.",http://purl.obolibrary.org/obo/FIX_0000704
+sequencing,medianreaddepth,int,,,,"The median number of times a particular locus (site, nucleotide, amplicon, region) was sequenced.",http://purl.obolibrary.org/obo/NCIT_C155320
+sequencing,observedreadlength,int,,,,"The number of nucleotides successfully ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process.",http://purl.obolibrary.org/obo/NCIT_C153362
+sequencing,observedinsertsize,int,,,,"In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance.",https://w3id.org/fair-genomes/resource/FG_0000002
+sequencing,percentageq30,decimal,,,,"Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly.",http://purl.obolibrary.org/obo/GENEPIO_0000089
+sequencing,percentagetr20,decimal,,,,"Percentage of the target sequence on which 20 or more unique reads were successfully mapped.",https://w3id.org/fair-genomes/resource/FG_0000003
+sequencing,otherqualitymetrics,text,,,,"Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check.",http://edamontology.org/data_3914
+sequencing,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+files,,,,,,"A set of related records (either written or electronic) kept together.",http://purl.obolibrary.org/obo/NCIT_C42883
+files,filename,string,1,TRUE,,"The literal identifier for an electronic file.",http://purl.obolibrary.org/obo/NCIT_C171191
+files,producedbysequencing,ref_array,,,sequencing,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
+files,belongstosubject,ref,,,subjects,"An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.",http://purl.obolibrary.org/obo/NCIT_C142495
+files,belongstostudy,ref_array,,,studies,"Reference to the study or studies to which this file belongs.",http://purl.obolibrary.org/obo/BFO_0000050
+files,belongstocohort,ref_array,,,cohorts,"A group of individuals, identified by a common characteristic.",http://purl.obolibrary.org/obo/NCIT_C61512
+files,server,string,,,,"A computer which provides some service for other computers connected to it via a network.",http://purl.obolibrary.org/obo/NCIT_C48297
+files,filepath,string,,,,"The specification of a node (file or directory) in a hierarchical file system, usually specified by listing the nodes top-down.",http://purl.obolibrary.org/obo/NCIT_C47922
+files,fileformat,string,,,,"The format of an electronic file.",http://purl.obolibrary.org/obo/NCIT_C171252
+files,filesize,int,,,,"The size of an electronic file in bytes.",http://purl.obolibrary.org/obo/NCIT_C171192
+files,md5checksum,string,,,,"A 32-character hexadecimal number that is computed on a file.",http://purl.obolibrary.org/obo/NCIT_C171276
+files,filestatus,ref,,,filestatus,"The condition for an electronic file relative to the current data or file processing step.",http://purl.obolibrary.org/obo/NCIT_C171193
+files,creationdate,date,,,,"The date a digital resource was created.",http://purl.obolibrary.org/obo/NCIT_C69199
+files,alternativeidentifiers,string,,,,"A backup sequence of characters used to identify an entity.",http://purl.obolibrary.org/obo/NCIT_C90353
+files,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+cohorts,,,,,,"A group of individuals, identified by a common characteristic.",http://purl.obolibrary.org/obo/NCIT_C61512
+cohorts,identifier,string,1,TRUE,,"One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.",http://purl.obolibrary.org/obo/NCIT_C25364
+cohorts,acronym,string,,,,"The non-unique initials or abbreviated name used for identification.",http://purl.obolibrary.org/obo/NCIT_C93495
+cohorts,name,string,,,,"The words or language units by which a thing is known.",http://purl.obolibrary.org/obo/NCIT_C42614
+cohorts,description,text,,,,"The description of the characteristics that define a cohort.",http://purl.obolibrary.org/obo/NCIT_C166209
+cohorts,principleinvestigator,string,,,,"The principle investigator or responsible person for this study.",http://purl.obolibrary.org/obo/OMIABIS_0000100
+cohorts,contactperson,string,,,,"A person acting as a channel for communication between groups or on behalf of a group.",http://purl.obolibrary.org/obo/NCIT_C25461
+cohorts,contactemail,string,,,,"An email address for the purpose of contacting the study contact person.",http://purl.obolibrary.org/obo/OMIABIS_0000035
+cohorts,sizeofcohort,int,,,,"A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population.",http://purl.obolibrary.org/obo/NCIT_C53190

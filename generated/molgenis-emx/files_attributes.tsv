@@ -1,0 +1,15 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+filename	Filename	The literal identifier for an electronic file. (NCIT:C171191 )	files	string	TRUE	TRUE	TRUE	FALSE	
+producedbysequencing	Produced by sequencing	A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. (NCIT:C171337 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_sequencing
+belongstosubject	Belongs to subject	An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. (NCIT:C142495, IAO:0000136 )	files	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects
+belongstostudy	Belongs to study	Reference to the study or studies to which this file belongs. (BFO:0000050 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_studies
+belongstocohort	Belongs to cohort	A group of individuals, identified by a common characteristic. (NCIT:C61512 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_cohorts
+server	Server	A computer which provides some service for other computers connected to it via a network. (NCIT:C48297 )	files	string	FALSE	FALSE	TRUE	TRUE	
+filepath	File path	The specification of a node (file or directory) in a hierarchical file system, usually specified by listing the nodes top-down. (NCIT:C47922 )	files	string	FALSE	FALSE	TRUE	TRUE	
+fileformat	File format	The format of an electronic file. (NCIT:C171252 )	files	string	FALSE	FALSE	TRUE	TRUE	
+filesize	File size	The size of an electronic file in bytes. (NCIT:C171192 )	files	int	FALSE	FALSE	TRUE	TRUE	
+md5checksum	MD5 checksum	A 32-character hexadecimal number that is computed on a file. (NCIT:C171276 )	files	string	FALSE	FALSE	TRUE	TRUE	
+filestatus	File status	The condition for an electronic file relative to the current data or file processing step. (NCIT:C171193 )	files	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_files_filestatus
+creationdate	Creation date	The date a digital resource was created. (NCIT:C69199 )	files	date	FALSE	FALSE	TRUE	TRUE	
+alternativeidentifiers	Alternative identifiers	A backup sequence of characters used to identify an entity. (NCIT:C90353 )	files	string	FALSE	FALSE	TRUE	TRUE	
+belongstodatarelease	Belongs to data release	The act of making data or other structured information accessible to the public or to the user group of a database. (NCIT:C172217 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_datareleases
