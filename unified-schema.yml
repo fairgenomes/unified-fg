@@ -903,3 +903,135 @@ tables:
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+
+
+
+##
+
+  - name: Files
+    description: A set of related records (either written or electronic) kept together.
+    tags: NCIT:C42883 [http://purl.obolibrary.org/obo/NCIT_C42883], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+
+    columns:
+      - name: Filename
+        dataType: identifier
+        description: The literal identifier for an electronic file.
+        tags: NCIT:C171191 [http://purl.obolibrary.org/obo/NCIT_C171191]
+
+      - name: Produced by sequencing
+        dataType: mref
+        reference: Sequencing
+        description: A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.
+        tags: NCIT:C171337 [http://purl.obolibrary.org/obo/NCIT_C171337]
+
+      - name: Belongs to subject
+        dataType: xref
+        reference: Subjects
+        #description: Reference to the person whom this clinical information is about.
+        description: An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
+        tags: NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495], IAO:0000136 [http://purl.obolibrary.org/obo/IAO_0000136]
+
+      - name: Belongs to study
+        dataType: mref
+        reference: Studies
+        description: Reference to the study or studies to which this file belongs.
+        tags: BFO:0000050 [http://purl.obolibrary.org/obo/BFO_0000050]
+
+      - name: Belongs to cohort
+        dataType: mref
+        reference: Cohorts
+        description: A group of individuals, identified by a common characteristic.
+        tags: NCIT:C61512 [http://purl.obolibrary.org/obo/NCIT_C61512]
+
+      - name: Server
+        description: A computer which provides some service for other computers connected to it via a network.
+        tags: NCIT:C48297 [http://purl.obolibrary.org/obo/NCIT_C48297]
+        dataType: string
+
+      - name: File path
+        description: The specification of a node (file or directory) in a hierarchical file system, usually specified by listing the nodes top-down.
+        tags: NCIT:C47922 [http://purl.obolibrary.org/obo/NCIT_C47922]
+        dataType: string
+
+      - name: File format
+        description: The format of an electronic file.
+        tags: NCIT:C171252 [http://purl.obolibrary.org/obo/NCIT_C171252]
+        dataType: string #EDAM file format lookup?
+
+      - name: File size
+        dataType: integer
+        description: The size of an electronic file in bytes.
+        tags: NCIT:C171192 [http://purl.obolibrary.org/obo/NCIT_C171192]
+
+      - name: MD5 checksum
+        description: A 32-character hexadecimal number that is computed on a file.
+        tags: NCIT:C171276 [http://purl.obolibrary.org/obo/NCIT_C171276]
+        dataType: string
+
+      - name: File status
+        dataType: xref
+        reference: lookups/FileStatus.tsv
+        referenceTypeTag: NCIT:C171193 [http://purl.obolibrary.org/obo/NCIT_C171193]
+        description: The condition for an electronic file relative to the current data or file processing step.
+        tags: NCIT:C171193 [http://purl.obolibrary.org/obo/NCIT_C171193]
+
+      - name: Creation date
+        dataType: date
+        description: The date a digital resource was created.
+        tags: NCIT:C69199 [http://purl.obolibrary.org/obo/NCIT_C69199]
+
+      - name: Alternative identifiers
+        description: A backup sequence of characters used to identify an entity.
+        tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
+        dataType: string
+
+      - name: Belongs to data release
+        dataType: mref
+        reference: Data releases
+        description: The act of making data or other structured information accessible to the public or to the user group of a database.
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+
+  - name: Cohorts
+    description: A group of individuals, identified by a common characteristic.
+    tags: NCIT:C61512 [http://purl.obolibrary.org/obo/NCIT_C61512], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+    columns:
+
+      - name: Identifier
+        dataType: identifier
+        description: One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.
+        tags: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
+
+      - name: Acronym
+        description: The non-unique initials or abbreviated name used for identification.
+        tags: NCIT:C93495 [http://purl.obolibrary.org/obo/NCIT_C93495]
+        dataType: string
+
+      - name: Name
+        description: The words or language units by which a thing is known.
+        tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
+        dataType: string
+
+      - name: Description
+        dataType: text
+        description: The description of the characteristics that define a cohort.
+        tags: NCIT:C166209 [http://purl.obolibrary.org/obo/NCIT_C166209]
+
+      - name: principleInvestigator
+        description: The principle investigator or responsible person for this study.
+        tags: OMIABIS:0000100 [http://purl.obolibrary.org/obo/OMIABIS_0000100]
+        dataType: string
+
+      - name: Contact person
+        description: A person acting as a channel for communication between groups or on behalf of a group.
+        tags: NCIT:C25461 [http://purl.obolibrary.org/obo/NCIT_C25461]
+        dataType: string
+
+      - name: Contact email
+        dataType: email
+        description: An email address for the purpose of contacting the study contact person.
+        tags: OMIABIS:0000035 [http://purl.obolibrary.org/obo/OMIABIS_0000035]
+
+      - name: sizeOfCohort
+        dataType: integer
+        description: A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population.
+        tags: NCIT:C53190 [http://purl.obolibrary.org/obo/NCIT_C53190]
