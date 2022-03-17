@@ -1,0 +1,9 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+identifier	Identifier	One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing. (NCIT:C25364 )	cohorts	string	TRUE	TRUE	TRUE	FALSE	
+acronym	Acronym	The non-unique initials or abbreviated name used for identification. (NCIT:C93495 )	cohorts	string	FALSE	FALSE	TRUE	TRUE	
+name	Name	The words or language units by which a thing is known. (NCIT:C42614 )	cohorts	string	FALSE	FALSE	TRUE	TRUE	
+description	Description	The description of the characteristics that define a cohort. (NCIT:C166209 )	cohorts	text	FALSE	FALSE	TRUE	TRUE	
+principleinvestigator	Principle investigator	The principle investigator or responsible person for this study. (OMIABIS:0000100 )	cohorts	string	FALSE	FALSE	TRUE	TRUE	
+contactperson	Contact person	A person acting as a channel for communication between groups or on behalf of a group. (NCIT:C25461 )	cohorts	string	FALSE	FALSE	TRUE	TRUE	
+contactemail	Contact email	An email address for the purpose of contacting the study contact person. (OMIABIS:0000035 )	cohorts	string	FALSE	FALSE	TRUE	TRUE	
+sizeofcohort	Size of cohort	A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population. (NCIT:C53190 )	cohorts	int	FALSE	FALSE	TRUE	TRUE	

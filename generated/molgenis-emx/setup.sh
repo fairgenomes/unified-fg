@@ -34,6 +34,7 @@ mcmd import -p sequencing_sequencingfacilityorganization_attributes.tsv --as att
 mcmd import -p sequencing_sequencingplatform_attributes.tsv --as attributes --in unified-schema
 mcmd import -p sequencing_sequencinginstrumentmodel_attributes.tsv --as attributes --in unified-schema
 mcmd import -p sequencing_sequencingmethod_attributes.tsv --as attributes --in unified-schema
+mcmd import -p files_filestatus_attributes.tsv --as attributes --in unified-schema
 mcmd import -p studies_inclusioncriteria.tsv --as fair-genomes_studies_inclusioncriteria --in unified-schema
 mcmd import -p studies_currentstudystatus.tsv --as fair-genomes_studies_currentstudystatus --in unified-schema
 mcmd import -p subjects_genderidentity.tsv --as fair-genomes_subjects_genderidentity --in unified-schema
@@ -69,6 +70,7 @@ mcmd import -p sequencing_sequencingfacilityorganization.tsv --as fair-genomes_s
 mcmd import -p sequencing_sequencingplatform.tsv --as fair-genomes_sequencing_sequencingplatform --in unified-schema
 mcmd import -p sequencing_sequencinginstrumentmodel.tsv --as fair-genomes_sequencing_sequencinginstrumentmodel --in unified-schema
 mcmd import -p sequencing_sequencingmethod.tsv --as fair-genomes_sequencing_sequencingmethod --in unified-schema
+mcmd import -p files_filestatus.tsv --as fair-genomes_files_filestatus --in unified-schema
 mcmd import -p studies_attributes.tsv --as attributes --in unified-schema
 mcmd import -p datareleases_attributes.tsv --as attributes --in unified-schema
 mcmd import -p subjects_attributes.tsv --as attributes --in unified-schema
@@ -78,6 +80,8 @@ mcmd import -p samplingprotocols_attributes.tsv --as attributes --in unified-sch
 mcmd import -p ngssamplepreparations_attributes.tsv --as attributes --in unified-schema
 mcmd import -p laboratoryprocedures_attributes.tsv --as attributes --in unified-schema
 mcmd import -p sequencing_attributes.tsv --as attributes --in unified-schema
+mcmd import -p files_attributes.tsv --as attributes --in unified-schema
+mcmd import -p cohorts_attributes.tsv --as attributes --in unified-schema
 mcmd import -p ../../misc/molgenis/other/sys_StaticContent.tsv -a add_update_existing
 mcmd add logo -p ../../misc/molgenis/img/analysis.png
 mcmd add logo -p ../../misc/molgenis/img/lookups.png

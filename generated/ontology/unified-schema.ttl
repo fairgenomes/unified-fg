@@ -24,6 +24,7 @@
   dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-drugs.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-familymembers.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-filestatus.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-countries.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-medicalhistory.ttl>,
@@ -353,6 +354,12 @@ fg:Subjects_Belongs_to_data_release a owl:ObjectProperty;
   rdfs:domain fg:Subjects;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Subjects_Belongs_to_cohort a owl:ObjectProperty;
+  rdfs:label "Belongs to cohort";
+  rdfs:domain fg:Subjects;
+  rdfs:isDefinedBy obo:NCIT_C61512;
+  dc:description "A group of individuals, identified by a common characteristic." .
 
 fg:Clinical a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C25398, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
@@ -961,3 +968,146 @@ fg:Sequencing_Belongs_to_data_release a owl:ObjectProperty;
   rdfs:domain fg:Sequencing;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Files a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C42883, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Files";
+  dc:description "A set of related records (either written or electronic) kept together." .
+
+fg:Files_Filename a owl:DatatypeProperty;
+  rdfs:label "Filename";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C171191;
+  dc:description "The literal identifier for an electronic file." .
+
+fg:Files_Produced_by_sequencing a owl:ObjectProperty;
+  rdfs:label "Produced by sequencing";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C171337;
+  dc:description "A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay." .
+
+fg:Files_Belongs_to_subject a owl:ObjectProperty;
+  rdfs:label "Belongs to subject";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C142495, obo:IAO_0000136;
+  dc:description "An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored." .
+
+fg:Files_Belongs_to_study a owl:ObjectProperty;
+  rdfs:label "Belongs to study";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:BFO_0000050;
+  dc:description "Reference to the study or studies to which this file belongs." .
+
+fg:Files_Belongs_to_cohort a owl:ObjectProperty;
+  rdfs:label "Belongs to cohort";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C61512;
+  dc:description "A group of individuals, identified by a common characteristic." .
+
+fg:Files_Server a owl:DatatypeProperty;
+  rdfs:label "Server";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C48297;
+  dc:description "A computer which provides some service for other computers connected to it via a network." .
+
+fg:Files_File_path a owl:DatatypeProperty;
+  rdfs:label "File path";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C47922;
+  dc:description "The specification of a node (file or directory) in a hierarchical file system, usually specified by listing the nodes top-down." .
+
+fg:Files_File_format a owl:DatatypeProperty;
+  rdfs:label "File format";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C171252;
+  dc:description "The format of an electronic file." .
+
+fg:Files_File_size a owl:DatatypeProperty;
+  rdfs:label "File size";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C171192;
+  dc:description "The size of an electronic file in bytes." .
+
+fg:Files_MD5_checksum a owl:DatatypeProperty;
+  rdfs:label "MD5 checksum";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C171276;
+  dc:description "A 32-character hexadecimal number that is computed on a file." .
+
+fg:Files_File_status a owl:ObjectProperty;
+  rdfs:label "File status";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C171193;
+  dc:description "The condition for an electronic file relative to the current data or file processing step.";
+  rdfs:range obo:NCIT_C171193 .
+
+fg:Files_Creation_date a owl:DatatypeProperty;
+  rdfs:label "Creation date";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C69199;
+  dc:description "The date a digital resource was created." .
+
+fg:Files_Alternative_identifiers a owl:DatatypeProperty;
+  rdfs:label "Alternative identifiers";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C90353;
+  dc:description "A backup sequence of characters used to identify an entity." .
+
+fg:Files_Belongs_to_data_release a owl:ObjectProperty;
+  rdfs:label "Belongs to data release";
+  rdfs:domain fg:Files;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Cohorts a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C61512, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Cohorts";
+  dc:description "A group of individuals, identified by a common characteristic." .
+
+fg:Cohorts_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Cohorts;
+  rdfs:isDefinedBy obo:NCIT_C25364;
+  dc:description "One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing." .
+
+fg:Cohorts_Acronym a owl:DatatypeProperty;
+  rdfs:label "Acronym";
+  rdfs:domain fg:Cohorts;
+  rdfs:isDefinedBy obo:NCIT_C93495;
+  dc:description "The non-unique initials or abbreviated name used for identification." .
+
+fg:Cohorts_Name a owl:DatatypeProperty;
+  rdfs:label "Name";
+  rdfs:domain fg:Cohorts;
+  rdfs:isDefinedBy obo:NCIT_C42614;
+  dc:description "The words or language units by which a thing is known." .
+
+fg:Cohorts_Description a owl:DatatypeProperty;
+  rdfs:label "Description";
+  rdfs:domain fg:Cohorts;
+  rdfs:isDefinedBy obo:NCIT_C166209;
+  dc:description "The description of the characteristics that define a cohort." .
+
+fg:Cohorts_Principle_investigator a owl:DatatypeProperty;
+  rdfs:label "Principle investigator";
+  rdfs:domain fg:Cohorts;
+  rdfs:isDefinedBy obo:OMIABIS_0000100;
+  dc:description "The principle investigator or responsible person for this study." .
+
+fg:Cohorts_Contact_person a owl:DatatypeProperty;
+  rdfs:label "Contact person";
+  rdfs:domain fg:Cohorts;
+  rdfs:isDefinedBy obo:NCIT_C25461;
+  dc:description "A person acting as a channel for communication between groups or on behalf of a group." .
+
+fg:Cohorts_Contact_email a owl:DatatypeProperty;
+  rdfs:label "Contact email";
+  rdfs:domain fg:Cohorts;
+  rdfs:isDefinedBy obo:OMIABIS_0000035;
+  dc:description "An email address for the purpose of contacting the study contact person." .
+
+fg:Cohorts_Size_of_cohort a owl:DatatypeProperty;
+  rdfs:label "Size of cohort";
+  rdfs:domain fg:Cohorts;
+  rdfs:isDefinedBy obo:NCIT_C53190;
+  dc:description "A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population." .

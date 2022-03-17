@@ -32,4 +32,5 @@ public class Subjects {
 	public boolean consanguinity;
 	public List<String> belongstostudy;
 	public List<String> belongstodatarelease;
+	public List<String> belongstocohort;
 }

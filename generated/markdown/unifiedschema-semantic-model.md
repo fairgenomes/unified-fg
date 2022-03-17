@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __9 modules__ that contain __137 metadata elements__ and __100351 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __11 modules__ that contain __160 metadata elements__ and __100358 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -8,13 +8,15 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 |---|---|---|---|
 | [Studies](#module-studies) | A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. | [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536)  | 15 |
 | [Data releases](#module-data-releases) | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 2 |
-| [Subjects](#module-subjects) | Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. | [NCIT:C90492](http://purl.obolibrary.org/obo/NCIT_C90492), [ExO:0000127](http://purl.obolibrary.org/obo/ExO_0000127), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 29 |
+| [Subjects](#module-subjects) | Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. | [NCIT:C90492](http://purl.obolibrary.org/obo/NCIT_C90492), [ExO:0000127](http://purl.obolibrary.org/obo/ExO_0000127), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 30 |
 | [Clinical](#module-clinical) | Findings and circumstances relating to the examination and treatment of a patient. | [NCIT:C25398](http://purl.obolibrary.org/obo/NCIT_C25398), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
 | [Materials](#module-materials) | A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. | [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
 | [Sampling protocols](#module-sampling-protocols) | Describes the procedure whereby biological samples for an experiment are sourced. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 5 |
 | [NGS sample preparations](#module-ngs-sample-preparations) | A sample preparation for a nucleic acids sequencing assay. | [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
 | [Laboratory Procedures](#module-laboratory-procedures) | Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. | [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 6 |
 | [Sequencing](#module-sequencing) | The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. | [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 16 |
+| [Files](#module-files) | A set of related records (either written or electronic) kept together. | [NCIT:C42883](http://purl.obolibrary.org/obo/NCIT_C42883), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
+| [Cohorts](#module-cohorts) | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 8 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -79,6 +81,7 @@ Persons who are observed, analyzed, examined, investigated, experimented upon, o
 | Consanguinity | Information on whether the patient is a child from two family members who are second cousins or closer. | [OMIT:0004546](http://purl.obolibrary.org/obo/OMIT_0004546), [SNOMED:842009](http://snomed.info/id/842009)  | bool |
 | Belongs to study | Reference to the study or studies in which this person participates. | [RO:0000056](http://purl.obolibrary.org/obo/RO_0000056)  | Reference to instances of Studies |
 | Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+| Belongs to cohort | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512)  | Reference to instances of Cohorts |
 
 ## Module: Clinical
 Findings and circumstances relating to the examination and treatment of a patient. Ontology: [NCIT:C25398](http://purl.obolibrary.org/obo/NCIT_C25398), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
@@ -206,6 +209,40 @@ The determination of complete (typically nucleotide) sequences, including those 
 | Percentage TR20 | Percentage of the target sequence on which 20 or more unique reads were successfully mapped. | [FG:0000003](https://w3id.org/fair-genomes/resource/FG_0000003)  | decimal |
 | Other quality metrics | Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check. | [EDAM:data_3914](http://edamontology.org/data_3914)  | text |
 | Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+
+## Module: Files
+A set of related records (either written or electronic) kept together. Ontology: [NCIT:C42883](http://purl.obolibrary.org/obo/NCIT_C42883), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Filename | The literal identifier for an electronic file. | [NCIT:C171191](http://purl.obolibrary.org/obo/NCIT_C171191)  | identifier |
+| Produced by sequencing | A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. | [NCIT:C171337](http://purl.obolibrary.org/obo/NCIT_C171337)  | Reference to instances of Sequencing |
+| Belongs to subject | An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. | [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495), [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136)  | Reference to instances of Subjects |
+| Belongs to study | Reference to the study or studies to which this file belongs. | [BFO:0000050](http://purl.obolibrary.org/obo/BFO_0000050)  | Reference to instances of Studies |
+| Belongs to cohort | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512)  | Reference to instances of Cohorts |
+| Server | A computer which provides some service for other computers connected to it via a network. | [NCIT:C48297](http://purl.obolibrary.org/obo/NCIT_C48297)  | string |
+| File path | The specification of a node (file or directory) in a hierarchical file system, usually specified by listing the nodes top-down. | [NCIT:C47922](http://purl.obolibrary.org/obo/NCIT_C47922)  | string |
+| File format | The format of an electronic file. | [NCIT:C171252](http://purl.obolibrary.org/obo/NCIT_C171252)  | string |
+| File size | The size of an electronic file in bytes. | [NCIT:C171192](http://purl.obolibrary.org/obo/NCIT_C171192)  | integer |
+| MD5 checksum | A 32-character hexadecimal number that is computed on a file. | [NCIT:C171276](http://purl.obolibrary.org/obo/NCIT_C171276)  | string |
+| File status | The condition for an electronic file relative to the current data or file processing step. | [NCIT:C171193](http://purl.obolibrary.org/obo/NCIT_C171193)  | [FileStatus.tsv](../../lookups/FileStatus.tsv) lookup (7 choices [of type](http://purl.obolibrary.org/obo/NCIT_C171193)) |
+| Creation date | The date a digital resource was created. | [NCIT:C69199](http://purl.obolibrary.org/obo/NCIT_C69199)  | date |
+| Alternative identifiers | A backup sequence of characters used to identify an entity. | [NCIT:C90353](http://purl.obolibrary.org/obo/NCIT_C90353)  | string |
+| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+
+## Module: Cohorts
+A group of individuals, identified by a common characteristic. Ontology: [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing. | [NCIT:C25364](http://purl.obolibrary.org/obo/NCIT_C25364)  | identifier |
+| Acronym | The non-unique initials or abbreviated name used for identification. | [NCIT:C93495](http://purl.obolibrary.org/obo/NCIT_C93495)  | string |
+| Name | The words or language units by which a thing is known. | [NCIT:C42614](http://purl.obolibrary.org/obo/NCIT_C42614)  | string |
+| Description | The description of the characteristics that define a cohort. | [NCIT:C166209](http://purl.obolibrary.org/obo/NCIT_C166209)  | text |
+| Principle investigator | The principle investigator or responsible person for this study. | [OMIABIS:0000100](http://purl.obolibrary.org/obo/OMIABIS_0000100)  | string |
+| Contact person | A person acting as a channel for communication between groups or on behalf of a group. | [NCIT:C25461](http://purl.obolibrary.org/obo/NCIT_C25461)  | string |
+| Contact email | An email address for the purpose of contacting the study contact person. | [OMIABIS:0000035](http://purl.obolibrary.org/obo/OMIABIS_0000035)  | email |
+| Size of cohort | A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population. | [NCIT:C53190](http://purl.obolibrary.org/obo/NCIT_C53190)  | integer |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.

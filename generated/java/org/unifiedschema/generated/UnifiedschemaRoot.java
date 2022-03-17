@@ -12,4 +12,6 @@ public class UnifiedschemaRoot {
 	public Map<String, Ngssamplepreparations> Ngssamplepreparations;
 	public Map<String, Laboratoryprocedures> Laboratoryprocedures;
 	public Map<String, Sequencing> Sequencing;
+	public Map<String, Files> Files;
+	public Map<String, Cohorts> Cohorts;
 }
