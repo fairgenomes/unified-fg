@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __8 modules__ that contain __121 metadata elements__ and __100042 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __9 modules__ that contain __137 metadata elements__ and __100351 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -12,8 +12,9 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Clinical](#module-clinical) | Findings and circumstances relating to the examination and treatment of a patient. | [NCIT:C25398](http://purl.obolibrary.org/obo/NCIT_C25398), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
 | [Materials](#module-materials) | A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. | [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
 | [Sampling protocols](#module-sampling-protocols) | Describes the procedure whereby biological samples for an experiment are sourced. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 5 |
-| [NGS sample preparation](#module-ngs-sample-preparation) | A sample preparation for a nucleic acids sequencing assay. | [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
+| [NGS sample preparations](#module-ngs-sample-preparations) | A sample preparation for a nucleic acids sequencing assay. | [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
 | [Laboratory Procedures](#module-laboratory-procedures) | Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. | [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 6 |
+| [Sequencing](#module-sequencing) | The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. | [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 16 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -152,7 +153,7 @@ Describes the procedure whereby biological samples for an experiment are sourced
 | Version | A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications. | [NCIT:C25714](http://purl.obolibrary.org/obo/NCIT_C25714)  | string |
 | IRI | A unique symbol that establishes identity of the resource. | [NCIT:C165071](http://purl.obolibrary.org/obo/NCIT_C165071)  | hyperlink |
 
-## Module: NGS sample preparation
+## Module: NGS sample preparations
 A sample preparation for a nucleic acids sequencing assay. Ontology: [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
 
 | Element | Description | Ontology | Values |
@@ -183,6 +184,28 @@ Any procedure that involves testing or manipulating a sample of blood, urine, or
 | Category | A classification of the laboratory test. | [NCIT:C83017](http://purl.obolibrary.org/obo/NCIT_C83017)  | string |
 | Subcategory | A sub-division of the laboratory test classification. | [NCIT:C83142](http://purl.obolibrary.org/obo/NCIT_C83142)  | string |
 | Gene list | A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis. | [OBI:0000118](http://purl.obolibrary.org/obo/OBI_0000118)  | text |
+
+## Module: Sequencing
+The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. Ontology: [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. | [NCIT:C171337](http://purl.obolibrary.org/obo/NCIT_C171337)  | identifier |
+| Belongs to lab procedure | Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. | [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294)  | Reference to instances of Laboratory Procedures |
+| Belongs to sample preparation | Reference to the prepared sample, i.e. the source that was sequenced. | [NCIT:C132299](http://purl.obolibrary.org/obo/NCIT_C132299), [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of NGS sample preparations |
+| Reason for sequencing | A rationale for executing a plan of action. | [NCIT:C69216](http://purl.obolibrary.org/obo/NCIT_C69216)  | [SamplingReason.tsv](../../lookups/SamplingReason.tsv) lookup (10 choices [of type](http://purl.obolibrary.org/obo/NCIT_C171003)) |
+| Sequencing date | Date on which this sequencing assay was performed. | [GENEPIO:0000069](http://purl.obolibrary.org/obo/GENEPIO_0000069)  | date |
+| Sequencing facility organization | An organization that provides sequence determination service. | [OBI:0001891](http://purl.obolibrary.org/obo/OBI_0001891)  | [Institutes.tsv](../../lookups/Institutes.tsv) lookup (218 choices [of type](http://semanticscience.org/resource/SIO_000688)) |
+| Sequencing platform | The used sequencing platform (i.e. brand, name of a company that produces sequencer equipment). | [GENEPIO:0000071](http://purl.obolibrary.org/obo/GENEPIO_0000071)  | [SequencingPlatform.tsv](../../lookups/SequencingPlatform.tsv) lookup (7 choices [of type](http://purl.obolibrary.org/obo/GENEPIO_0000071)) |
+| Sequencing instrument model | The used product name and model number of a manufacturer's genomic (dna) sequencer. | [GENEPIO:0001921](http://purl.obolibrary.org/obo/GENEPIO_0001921)  | [SequencingInstrumentModels.tsv](../../lookups/SequencingInstrumentModels.tsv) lookup (39 choices [of type](http://purl.obolibrary.org/obo/GENEPIO_0001921)) |
+| Sequencing method | Method used to determine the order of bases in a nucleic acid sequence. | [FIX:0000704](http://purl.obolibrary.org/obo/FIX_0000704)  | [SequencingMethods.tsv](../../lookups/SequencingMethods.tsv) lookup (35 choices [of type](http://purl.obolibrary.org/obo/NCIT_C17565)) |
+| Median read depth | The median number of times a particular locus (site, nucleotide, amplicon, region) was sequenced. | [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
+| Observed read length | The number of nucleotides successfully ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process. | [NCIT:C153362](http://purl.obolibrary.org/obo/NCIT_C153362)  | integer |
+| Observed insert size | In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance. | [FG:0000002](https://w3id.org/fair-genomes/resource/FG_0000002)  | integer |
+| Percentage Q30 | Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly. | [GENEPIO:0000089](http://purl.obolibrary.org/obo/GENEPIO_0000089)  | decimal |
+| Percentage TR20 | Percentage of the target sequence on which 20 or more unique reads were successfully mapped. | [FG:0000003](https://w3id.org/fair-genomes/resource/FG_0000003)  | decimal |
+| Other quality metrics | Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check. | [EDAM:data_3914](http://edamontology.org/data_3914)  | text |
+| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.

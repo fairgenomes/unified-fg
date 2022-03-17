@@ -23,28 +23,31 @@
     "Morris A. Swertz <m.a.swertz@umcg.nl>", <https://orcid.org/0000-0002-0979-3401>;
   dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-drugs.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-phenotypes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-familymembers.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-countries.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-medicalhistory.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-institutes.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-biospecimentypes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderatbirth.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genotypicsex.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderidentity.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diseases.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-anatomicalsources.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-storageconditions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencingplatform.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencinginstrumentmodels.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ngskits.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-analysesperformed.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dcmitypes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-samplingreason.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ancestry.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusionstatus.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-pathologicalstate.ttl> .
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-pathologicalstate.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-phenotypes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-biospecimentypes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genotypicsex.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderidentity.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diseases.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-anatomicalsources.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencingmethods.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-storageconditions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ngskits.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-analysesperformed.ttl> .
 
 fg:Studies a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C63536;
@@ -718,96 +721,96 @@ fg:Sampling_protocols_IRI a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:NCIT_C165071;
   dc:description "A unique symbol that establishes identity of the resource." .
 
-fg:NGS_sample_preparation a owl:Class;
+fg:NGS_sample_preparations a owl:Class;
   rdfs:isDefinedBy obo:OBI_0001902, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
-  rdfs:label "NGS sample preparation";
+  rdfs:label "NGS sample preparations";
   dc:description "A sample preparation for a nucleic acids sequencing assay.";
   obo:NCIT_C179746 fg:Materials .
 
-fg:NGS_sample_preparation_Identifier a owl:DatatypeProperty;
+fg:NGS_sample_preparations_Identifier a owl:DatatypeProperty;
   rdfs:label "Identifier";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C132299;
   dc:description "A unique proper name or character sequence that identifies this particular sample preparation." .
 
-fg:NGS_sample_preparation_Belongs_to_materials a owl:ObjectProperty;
+fg:NGS_sample_preparations_Belongs_to_materials a owl:ObjectProperty;
   rdfs:label "Belongs to materials";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C93400, obo:NCIT_C25683;
   dc:description "Reference to the source material from which this sample was prepared." .
 
-fg:NGS_sample_preparation_Belongs_to_lab_procedure a owl:ObjectProperty;
+fg:NGS_sample_preparations_Belongs_to_lab_procedure a owl:ObjectProperty;
   rdfs:label "Belongs to lab procedure";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C25294;
   dc:description "Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting." .
 
-fg:NGS_sample_preparation_Belongs_to_request a owl:DatatypeProperty;
+fg:NGS_sample_preparations_Belongs_to_request a owl:DatatypeProperty;
   rdfs:label "Belongs to request";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C164567;
   dc:description "A sequence of letters, numbers, or other characters that specifically identifies a particular order." .
 
-fg:NGS_sample_preparation_Input_amount a owl:DatatypeProperty;
+fg:NGS_sample_preparations_Input_amount a owl:DatatypeProperty;
   rdfs:label "Input amount";
   sio:SIO_000074 obo:UO_0000024;
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy <http://purl.allotrope.org/ontologies/role#AFRL_0000010>;
   dc:description "Amount of input material in nanogram (ng)." .
 
-fg:NGS_sample_preparation_Library_preparation_kit a owl:ObjectProperty;
+fg:NGS_sample_preparations_Library_preparation_kit a owl:ObjectProperty;
   rdfs:label "Library preparation kit";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:GENEPIO_0000085;
   dc:description "Pre-filled, ready-to-use reagent cartridges intented to improve chemistry, cluster density and read length as well as improve quality (Q) scores for this sample. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications.";
   rdfs:range obo:GENEPIO_0000081 .
 
-fg:NGS_sample_preparation_PCR_free a owl:DatatypeProperty;
+fg:NGS_sample_preparations_PCR_free a owl:DatatypeProperty;
   rdfs:label "PCR free";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C17003;
   dc:description "Indicates whether a polymerase chain reaction (PCR) was used to prepare this sample. PCR is a method for amplifying a DNA base sequence using multiple rounds of heat denaturation of the DNA and annealing of oligonucleotide primers complementary to flanking regions in the presence of a heat-stable polymerase." .
 
-fg:NGS_sample_preparation_Target_enrichment_kit a owl:ObjectProperty;
+fg:NGS_sample_preparations_Target_enrichment_kit a owl:ObjectProperty;
   rdfs:label "Target enrichment kit";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C154307;
   dc:description "Indicates which target enrichment kit was used to prepare this sample. Target enrichment is a pre-sequencing DNA preparation step where DNA sequences are either directly amplified (amplicon or multiplex PCR-based) or captured (hybrid capture-based) in order to only focus on specific regions of a genome or DNA sample.";
   rdfs:range obo:GENEPIO_0000081 .
 
-fg:NGS_sample_preparation_UMIs_present a owl:DatatypeProperty;
+fg:NGS_sample_preparations_UMIs_present a owl:DatatypeProperty;
   rdfs:label "UMIs present";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/EFO_0010199>;
   dc:description "Indicates whether any unique molecular identifiers (UMIs) are present. An UMI barcode is a short nucleotide sequence that is used to identify reads originating from an individual mRNA molecule." .
 
-fg:NGS_sample_preparation_Intended_insert_size a owl:DatatypeProperty;
+fg:NGS_sample_preparations_Intended_insert_size a owl:DatatypeProperty;
   rdfs:label "Intended insert size";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy <https://w3id.org/fair-genomes/resource/FG_0000001>;
   dc:description "In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance." .
 
-fg:NGS_sample_preparation_Intended_read_length a owl:DatatypeProperty;
+fg:NGS_sample_preparations_Intended_read_length a owl:DatatypeProperty;
   rdfs:label "Intended read length";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C153362;
   dc:description "The number of nucleotides intended to be ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process." .
 
-fg:NGS_sample_preparation_Barcode a owl:DatatypeProperty;
+fg:NGS_sample_preparations_Barcode a owl:DatatypeProperty;
   rdfs:label "Barcode";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C43361;
   dc:description "A machine-readable representation of information in a visual format on a surface." .
 
-fg:NGS_sample_preparation_Belongs_to_batch a owl:DatatypeProperty;
+fg:NGS_sample_preparations_Belongs_to_batch a owl:DatatypeProperty;
   rdfs:label "Belongs to batch";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C67073;
   dc:description "A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group." .
 
-fg:NGS_sample_preparation_Belongs_to_data_release a owl:ObjectProperty;
+fg:NGS_sample_preparations_Belongs_to_data_release a owl:ObjectProperty;
   rdfs:label "Belongs to data release";
-  rdfs:domain fg:NGS_sample_preparation;
+  rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
 
@@ -851,3 +854,110 @@ fg:Laboratory_Procedures_Gene_list a owl:DatatypeProperty;
   rdfs:domain fg:Laboratory_Procedures;
   rdfs:isDefinedBy obo:OBI_0000118;
   dc:description "A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis." .
+
+fg:Sequencing a owl:Class;
+  rdfs:isDefinedBy <http://edamontology.org/topic_3168>, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Sequencing";
+  dc:description "The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.";
+  <http://semanticscience.org/resource/SIO_001220> fg:NGS_sample_preparations .
+
+fg:Sequencing_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:NCIT_C171337;
+  dc:description "A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay." .
+
+fg:Sequencing_Belongs_to_lab_procedure a owl:ObjectProperty;
+  rdfs:label "Belongs to lab procedure";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:NCIT_C25294;
+  dc:description "Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting." .
+
+fg:Sequencing_Belongs_to_sample_preparation a owl:ObjectProperty;
+  rdfs:label "Belongs to sample preparation";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:NCIT_C132299, obo:NCIT_C25683;
+  dc:description "Reference to the prepared sample, i.e. the source that was sequenced." .
+
+fg:Sequencing_Reason_for_sequencing a owl:ObjectProperty;
+  rdfs:label "Reason for sequencing";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:NCIT_C69216;
+  dc:description "A rationale for executing a plan of action.";
+  rdfs:range obo:NCIT_C171003 .
+
+fg:Sequencing_Sequencing_date a owl:DatatypeProperty;
+  rdfs:label "Sequencing date";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:GENEPIO_0000069;
+  dc:description "Date on which this sequencing assay was performed." .
+
+fg:Sequencing_Sequencing_facility_organization a owl:ObjectProperty;
+  rdfs:label "Sequencing facility organization";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:OBI_0001891;
+  dc:description "An organization that provides sequence determination service.";
+  rdfs:range <http://semanticscience.org/resource/SIO_000688> .
+
+fg:Sequencing_Sequencing_platform a owl:ObjectProperty;
+  rdfs:label "Sequencing platform";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:GENEPIO_0000071;
+  dc:description "The used sequencing platform (i.e. brand, name of a company that produces sequencer equipment).";
+  rdfs:range obo:GENEPIO_0000071 .
+
+fg:Sequencing_Sequencing_instrument_model a owl:ObjectProperty;
+  rdfs:label "Sequencing instrument model";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:GENEPIO_0001921;
+  dc:description "The used product name and model number of a manufacturer's genomic (dna) sequencer.";
+  rdfs:range obo:GENEPIO_0001921 .
+
+fg:Sequencing_Sequencing_method a owl:ObjectProperty;
+  rdfs:label "Sequencing method";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:FIX_0000704;
+  dc:description "Method used to determine the order of bases in a nucleic acid sequence.";
+  rdfs:range obo:NCIT_C17565 .
+
+fg:Sequencing_Median_read_depth a owl:DatatypeProperty;
+  rdfs:label "Median read depth";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:NCIT_C155320;
+  dc:description "The median number of times a particular locus (site, nucleotide, amplicon, region) was sequenced." .
+
+fg:Sequencing_Observed_read_length a owl:DatatypeProperty;
+  rdfs:label "Observed read length";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:NCIT_C153362;
+  dc:description "The number of nucleotides successfully ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process." .
+
+fg:Sequencing_Observed_insert_size a owl:DatatypeProperty;
+  rdfs:label "Observed insert size";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy <https://w3id.org/fair-genomes/resource/FG_0000002>;
+  dc:description "In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance." .
+
+fg:Sequencing_Percentage_Q30 a owl:DatatypeProperty;
+  rdfs:label "Percentage Q30";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:GENEPIO_0000089;
+  dc:description "Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly." .
+
+fg:Sequencing_Percentage_TR20 a owl:DatatypeProperty;
+  rdfs:label "Percentage TR20";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy <https://w3id.org/fair-genomes/resource/FG_0000003>;
+  dc:description "Percentage of the target sequence on which 20 or more unique reads were successfully mapped." .
+
+fg:Sequencing_Other_quality_metrics a owl:DatatypeProperty;
+  rdfs:label "Other quality metrics";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy <http://edamontology.org/data_3914>;
+  dc:description "Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check." .
+
+fg:Sequencing_Belongs_to_data_release a owl:ObjectProperty;
+  rdfs:label "Belongs to data release";
+  rdfs:domain fg:Sequencing;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
