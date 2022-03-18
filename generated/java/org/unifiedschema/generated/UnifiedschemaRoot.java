@@ -14,4 +14,6 @@ public class UnifiedschemaRoot {
 	public Map<String, Sequencing> Sequencing;
 	public Map<String, Files> Files;
 	public Map<String, Cohorts> Cohorts;
+	public Map<String, Signedconsent> Signedconsent;
+	public Map<String, Leafletandconsentform> Leafletandconsentform;
 }

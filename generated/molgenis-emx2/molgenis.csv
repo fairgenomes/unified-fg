@@ -215,6 +215,36 @@ filestatus,description,Text,,,,Description (English)
 filestatus,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 filestatus,code,String,,,,The code within the code system
 filestatus,iri,String,,,,The Internationalized Resource Identifier for this term
+representedby,,,,,,"Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.",http://purl.obolibrary.org/obo/NCIT_C16735
+representedby,value,String,1,TRUE,,Value (English)
+representedby,description,Text,,,,Description (English)
+representedby,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+representedby,code,String,,,,The code within the code system
+representedby,iri,String,,,,The Internationalized Resource Identifier for this term
+datausepermissions,,,,,,"Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.",http://purl.obolibrary.org/obo/NCIT_C16735
+datausepermissions,value,String,1,TRUE,,Value (English)
+datausepermissions,description,Text,,,,Description (English)
+datausepermissions,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+datausepermissions,code,String,,,,The code within the code system
+datausepermissions,iri,String,,,,The Internationalized Resource Identifier for this term
+datausemodifiers,,,,,,"Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.",http://purl.obolibrary.org/obo/NCIT_C16735
+datausemodifiers,value,String,1,TRUE,,Value (English)
+datausemodifiers,description,Text,,,,Description (English)
+datausemodifiers,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+datausemodifiers,code,String,,,,The code within the code system
+datausemodifiers,iri,String,,,,The Internationalized Resource Identifier for this term
+allowrecontacting,,,,,,"Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.",http://purl.obolibrary.org/obo/NCIT_C16735
+allowrecontacting,value,String,1,TRUE,,Value (English)
+allowrecontacting,description,Text,,,,Description (English)
+allowrecontacting,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+allowrecontacting,code,String,,,,The code within the code system
+allowrecontacting,iri,String,,,,The Internationalized Resource Identifier for this term
+consentformcreator,,,,,,"A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian.",http://purl.obolibrary.org/obo/NCIT_C16468
+consentformcreator,value,String,1,TRUE,,Value (English)
+consentformcreator,description,Text,,,,Description (English)
+consentformcreator,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+consentformcreator,code,String,,,,The code within the code system
+consentformcreator,iri,String,,,,The Internationalized Resource Identifier for this term
 studies,,,,,,"A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.",http://purl.obolibrary.org/obo/NCIT_C63536
 studies,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular study.",http://purl.obolibrary.org/obo/OMIABIS_0000006
 studies,name,string,,,,"A name that designates this study.",http://purl.obolibrary.org/obo/OMIABIS_0000037
@@ -386,3 +416,29 @@ cohorts,principleinvestigator,string,,,,"The principle investigator or responsib
 cohorts,contactperson,string,,,,"A person acting as a channel for communication between groups or on behalf of a group.",http://purl.obolibrary.org/obo/NCIT_C25461
 cohorts,contactemail,string,,,,"An email address for the purpose of contacting the study contact person.",http://purl.obolibrary.org/obo/OMIABIS_0000035
 cohorts,sizeofcohort,int,,,,"A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population.",http://purl.obolibrary.org/obo/NCIT_C53190
+signedconsent,,,,,,"Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.",http://purl.obolibrary.org/obo/NCIT_C16735
+signedconsent,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular signed individual consent.",http://purl.obolibrary.org/obo/ICO_0000044
+signedconsent,belongstosubject,ref,,,subjects,"Reference to the person (i.e. subject) to whom this individual consent applies.",http://purl.obolibrary.org/obo/IAO_0000136
+signedconsent,consentformused,ref,,,leafletandconsentform,"Reference to the informed consent form that was signed. Points to a particular instance of leaflet and consent form that usually exists as a record (i.e. a row) within the same database as this individual consent.",http://purl.obolibrary.org/obo/IAO_0000136
+signedconsent,collectedby,string,,,,"Indicates the person, group, or institution who performed the collection act.",http://purl.obolibrary.org/obo/NCIT_C45262
+signedconsent,signingdate,date,,,,"A date specification that designates when this individual consent form was signed.",http://purl.obolibrary.org/obo/ICO_0000036
+signedconsent,validfrom,date,,,,"Starting date of the validity of this individual consent.",http://purl.org/dc/terms/valid
+signedconsent,validuntil,date,,,,"End date of the validity of this individual consent.",http://purl.org/dc/terms/valid
+signedconsent,representedby,ref,,,representedby,"An individual who is authorized under applicable State or local law to consent on behalf of a child or incapable person to general medical care including participation in clinical research.",http://purl.obolibrary.org/obo/NCIT_C142600
+signedconsent,consentwithdrawn,bool,,,,"An indication that the consent to participate in the study or one or more segments of the study has been revoked.",http://purl.obolibrary.org/obo/NCIT_C176342
+signedconsent,datausepermissions,ref,,,datausepermissions,"A data item that is used to indicate consent permissions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be used.",http://purl.obolibrary.org/obo/DUO_0000001
+signedconsent,datausemodifiers,ref_array,,,datausemodifiers,"Data use modifiers indicate additional conditions for use. For instance, a dataset is restricted to investigations into specific diseases or performed at specific geographical locations.",http://purl.obolibrary.org/obo/DUO_0000017
+signedconsent,datausespecification,text,,,,"Further specification of applied data use permissions and modifiers. For example, a list of countries in case of geographic restrictions or a list of diseases when restricted to disease-specific research.",http://semanticscience.org/resource/SIO_000090
+signedconsent,allowmatchmaker,bool,,,,"Permission is given for MatchMaking",http://purl.obolibrary.org/obo/NCIT_C54116
+signedconsent,allowrecontacting,ref_array,,,allowrecontacting,"The procedure of recontacting the patient for specified reasons. This means the patient agrees to be re-identifiable under those circumstances.",http://purl.obolibrary.org/obo/NCIT_C25737
+signedconsent,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+leafletandconsentform,,,,,,"A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian.",http://purl.obolibrary.org/obo/NCIT_C16468
+leafletandconsentform,leaflettitle,string,,,,"A title or name given to the leaflet that belongs to this consent form.",http://purl.org/dc/terms/title
+leafletandconsentform,leafletdate,date,,,,"A point or period of time associated with the publication of this leaflet that belongs to this consent form.",http://purl.org/dc/terms/date
+leafletandconsentform,leafletversion,string,,,,"The version, edition, or adaptation of this leaflet that belongs to this consent form.",http://purl.org/dc/terms/hasVersion
+leafletandconsentform,consentformidentifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular leaflet and consent form combination used in signing individual consent. Using a DOI would be optimal. Using any resolvable URL is suboptimal but still preferable over using a plain text value.",http://purl.org/dc/terms/identifier
+leafletandconsentform,consentformtitle,string,,,,"A title or name given to this consent form.",http://purl.org/dc/terms/title
+leafletandconsentform,consentformaccepteddate,date,,,,"Date of acceptance of this consent form.",http://purl.org/dc/terms/dateAccepted
+leafletandconsentform,consentformvaliduntil,date,,,,"End date of the validity of this consent form.",http://purl.org/dc/terms/valid
+leafletandconsentform,consentformcreator,ref_array,,,consentformcreator,"Indicates the authoritative body who brought this consent form into existence.",http://purl.org/dc/terms/creator
+leafletandconsentform,consentformversion,string,,,,"The version, edition, or adaptation of this consent form.",http://purl.org/dc/terms/hasVersion

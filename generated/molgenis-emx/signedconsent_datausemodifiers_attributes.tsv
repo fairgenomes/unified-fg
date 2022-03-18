@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	signedconsent_datausemodifiers	Value (English)	String	TRUE	FALSE
+description	signedconsent_datausemodifiers	Description (English)	Text	FALSE	TRUE
+codesystem	signedconsent_datausemodifiers	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	signedconsent_datausemodifiers	The code within the code system	String	FALSE	TRUE
+iri	signedconsent_datausemodifiers	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

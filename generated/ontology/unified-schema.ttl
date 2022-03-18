@@ -20,35 +20,7 @@
   <http://purl.org/dc/terms/LicenseDocument> <https://creativecommons.org/licenses/by/4.0/>;
   dc:creator "David C. Ruvolo <d.c.ruvolo@umcg.nl>", <https://orcid.org/0000-0002-5745-5298>,
     "K. Joeri van der Velde <k.j.van.der.velde@umcg.nl>", <https://orcid.org/0000-0002-0934-8375>,
-    "Morris A. Swertz <m.a.swertz@umcg.nl>", <https://orcid.org/0000-0002-0979-3401>;
-  dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-drugs.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-familymembers.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-filestatus.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-countries.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genes.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-medicalhistory.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-institutes.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderatbirth.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencingplatform.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencinginstrumentmodels.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dcmitypes.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-samplingreason.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ancestry.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusionstatus.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-pathologicalstate.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-phenotypes.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-biospecimentypes.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genotypicsex.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderidentity.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diseases.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-anatomicalsources.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencingmethods.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-storageconditions.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ngskits.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-analysesperformed.ttl> .
+    "Morris A. Swertz <m.a.swertz@umcg.nl>", <https://orcid.org/0000-0002-0979-3401> .
 
 fg:Studies a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C63536;
@@ -1111,3 +1083,197 @@ fg:Cohorts_Size_of_cohort a owl:DatatypeProperty;
   rdfs:domain fg:Cohorts;
   rdfs:isDefinedBy obo:NCIT_C53190;
   dc:description "A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population." .
+
+fg:Signed_consent a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C16735, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:label "Signed consent";
+  dc:description "Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.";
+  obo:IAO_0021007 fg:Leaflet_and_consent_form;
+  obo:ICO_0000005 fg:Subjects .
+
+fg:Signed_consent_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:ICO_0000044;
+  dc:description "A unique proper name or character sequence that identifies this particular signed individual consent." .
+
+fg:Signed_consent_Belongs_to_subject a owl:ObjectProperty;
+  rdfs:label "Belongs to subject";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:IAO_0000136, obo:NCIT_C142495;
+  dc:description "Reference to the person (i.e. subject) to whom this individual consent applies." .
+
+fg:Signed_consent_Consent_form_used a owl:ObjectProperty;
+  rdfs:label "Consent form used";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:IAO_0000136;
+  dc:description "Reference to the informed consent form that was signed. Points to a particular instance of leaflet and consent form that usually exists as a record (i.e. a row) within the same database as this individual consent." .
+
+fg:Signed_consent_Collected_by a owl:DatatypeProperty;
+  rdfs:label "Collected by";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:NCIT_C45262;
+  dc:description "Indicates the person, group, or institution who performed the collection act." .
+
+fg:Signed_consent_Signing_date a owl:DatatypeProperty;
+  rdfs:label "Signing date";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:ICO_0000036;
+  dc:description "A date specification that designates when this individual consent form was signed." .
+
+fg:Signed_consent_Valid_from a owl:DatatypeProperty;
+  rdfs:label "Valid from";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/valid>;
+  dc:description "Starting date of the validity of this individual consent." .
+
+fg:Signed_consent_Valid_until a owl:DatatypeProperty;
+  rdfs:label "Valid until";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/valid>;
+  dc:description "End date of the validity of this individual consent." .
+
+fg:Signed_consent_Represented_by a owl:ObjectProperty;
+  rdfs:label "Represented by";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:NCIT_C142600;
+  dc:description "An individual who is authorized under applicable State or local law to consent on behalf of a child or incapable person to general medical care including participation in clinical research.";
+  rdfs:range obo:BFO_0000023 .
+
+fg:Signed_consent_Consent_withdrawn a owl:DatatypeProperty;
+  rdfs:label "Consent withdrawn";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:NCIT_C176342;
+  dc:description "An indication that the consent to participate in the study or one or more segments of the study has been revoked." .
+
+fg:Signed_consent_Data_use_permissions a owl:ObjectProperty;
+  rdfs:label "Data use permissions";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:DUO_0000001;
+  dc:description "A data item that is used to indicate consent permissions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be used.";
+  rdfs:range obo:DUO_0000001 .
+
+fg:Signed_consent_Data_use_modifiers a owl:ObjectProperty;
+  rdfs:label "Data use modifiers";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:DUO_0000017;
+  dc:description "Data use modifiers indicate additional conditions for use. For instance, a dataset is restricted to investigations into specific diseases or performed at specific geographical locations.";
+  rdfs:range obo:DUO_0000017 .
+
+fg:Signed_consent_Data_use_specification a owl:DatatypeProperty;
+  rdfs:label "Data use specification";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000090>;
+  dc:description "Further specification of applied data use permissions and modifiers. For example, a list of countries in case of geographic restrictions or a list of diseases when restricted to disease-specific research." .
+
+fg:Signed_consent_Allow_matchmaker a owl:DatatypeProperty;
+  rdfs:label "Allow matchmaker";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:NCIT_C54116;
+  dc:description "Permission is given for MatchMaking" .
+
+fg:Signed_consent_Allow_recontacting a owl:ObjectProperty;
+  rdfs:label "Allow recontacting";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:NCIT_C25737;
+  dc:description "The procedure of recontacting the patient for specified reasons. This means the patient agrees to be re-identifiable under those circumstances.";
+  rdfs:range obo:NCIT_C176244 .
+
+fg:Signed_consent_Belongs_to_data_release a owl:ObjectProperty;
+  rdfs:label "Belongs to data release";
+  rdfs:domain fg:Signed_consent;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
+fg:Leaflet_and_consent_form a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C16468;
+  rdfs:label "Leaflet and consent form";
+  dc:description "A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian." .
+
+fg:Leaflet_and_consent_form_Leaflet_title a owl:DatatypeProperty;
+  rdfs:label "Leaflet title";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/title>;
+  dc:description "A title or name given to the leaflet that belongs to this consent form." .
+
+fg:Leaflet_and_consent_form_Leaflet_date a owl:DatatypeProperty;
+  rdfs:label "Leaflet date";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/date>;
+  dc:description "A point or period of time associated with the publication of this leaflet that belongs to this consent form." .
+
+fg:Leaflet_and_consent_form_Leaflet_version a owl:DatatypeProperty;
+  rdfs:label "Leaflet version";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/hasVersion>;
+  dc:description "The version, edition, or adaptation of this leaflet that belongs to this consent form." .
+
+fg:Leaflet_and_consent_form_Consent_form_identifier a owl:DatatypeProperty;
+  rdfs:label "Consent form identifier";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/identifier>;
+  dc:description "A unique proper name or character sequence that identifies this particular leaflet and consent form combination used in signing individual consent. Using a DOI would be optimal. Using any resolvable URL is suboptimal but still preferable over using a plain text value." .
+
+fg:Leaflet_and_consent_form_Consent_form_title a owl:DatatypeProperty;
+  rdfs:label "Consent form title";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/title>;
+  dc:description "A title or name given to this consent form." .
+
+fg:Leaflet_and_consent_form_Consent_form_accepted_date a owl:DatatypeProperty;
+  rdfs:label "Consent form accepted date";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/dateAccepted>;
+  dc:description "Date of acceptance of this consent form." .
+
+fg:Leaflet_and_consent_form_Consent_form_valid_until a owl:DatatypeProperty;
+  rdfs:label "Consent form valid until";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/valid>;
+  dc:description "End date of the validity of this consent form." .
+
+fg:Leaflet_and_consent_form_Consent_form_creator a owl:ObjectProperty;
+  rdfs:label "Consent form creator";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/creator>;
+  dc:description "Indicates the authoritative body who brought this consent form into existence.";
+  rdfs:range <http://semanticscience.org/resource/SIO_000688> .
+
+fg:Leaflet_and_consent_form_Consent_form_version a owl:DatatypeProperty;
+  rdfs:label "Consent form version";
+  rdfs:domain fg:Leaflet_and_consent_form;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/hasVersion>;
+  dc:description "The version, edition, or adaptation of this consent form." .
+
+<https://w3id.org/fair-genomes/ontology/> dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-drugs.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-familymembers.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-filestatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-datausemodifiers.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-countries.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-medicalhistory.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-institutes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderatbirth.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencingplatform.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencinginstrumentmodels.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-representedby.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-datausepermissions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dcmitypes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-samplingreason.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ancestry.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusionstatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-pathologicalstate.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-phenotypes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-recontacting.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-biospecimentypes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genotypicsex.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderidentity.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diseases.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-anatomicalsources.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencingmethods.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-storageconditions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ngskits.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-analysesperformed.ttl> .
