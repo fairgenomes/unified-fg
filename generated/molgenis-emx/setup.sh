@@ -35,6 +35,11 @@ mcmd import -p sequencing_sequencingplatform_attributes.tsv --as attributes --in
 mcmd import -p sequencing_sequencinginstrumentmodel_attributes.tsv --as attributes --in unified-schema
 mcmd import -p sequencing_sequencingmethod_attributes.tsv --as attributes --in unified-schema
 mcmd import -p files_filestatus_attributes.tsv --as attributes --in unified-schema
+mcmd import -p signedconsent_representedby_attributes.tsv --as attributes --in unified-schema
+mcmd import -p signedconsent_datausepermissions_attributes.tsv --as attributes --in unified-schema
+mcmd import -p signedconsent_datausemodifiers_attributes.tsv --as attributes --in unified-schema
+mcmd import -p signedconsent_allowrecontacting_attributes.tsv --as attributes --in unified-schema
+mcmd import -p leafletandconsentform_consentformcreator_attributes.tsv --as attributes --in unified-schema
 mcmd import -p studies_inclusioncriteria.tsv --as fair-genomes_studies_inclusioncriteria --in unified-schema
 mcmd import -p studies_currentstudystatus.tsv --as fair-genomes_studies_currentstudystatus --in unified-schema
 mcmd import -p subjects_genderidentity.tsv --as fair-genomes_subjects_genderidentity --in unified-schema
@@ -71,6 +76,11 @@ mcmd import -p sequencing_sequencingplatform.tsv --as fair-genomes_sequencing_se
 mcmd import -p sequencing_sequencinginstrumentmodel.tsv --as fair-genomes_sequencing_sequencinginstrumentmodel --in unified-schema
 mcmd import -p sequencing_sequencingmethod.tsv --as fair-genomes_sequencing_sequencingmethod --in unified-schema
 mcmd import -p files_filestatus.tsv --as fair-genomes_files_filestatus --in unified-schema
+mcmd import -p signedconsent_representedby.tsv --as fair-genomes_signedconsent_representedby --in unified-schema
+mcmd import -p signedconsent_datausepermissions.tsv --as fair-genomes_signedconsent_datausepermissions --in unified-schema
+mcmd import -p signedconsent_datausemodifiers.tsv --as fair-genomes_signedconsent_datausemodifiers --in unified-schema
+mcmd import -p signedconsent_allowrecontacting.tsv --as fair-genomes_signedconsent_allowrecontacting --in unified-schema
+mcmd import -p leafletandconsentform_consentformcreator.tsv --as fair-genomes_leafletandconsentform_consentformcreator --in unified-schema
 mcmd import -p studies_attributes.tsv --as attributes --in unified-schema
 mcmd import -p datareleases_attributes.tsv --as attributes --in unified-schema
 mcmd import -p subjects_attributes.tsv --as attributes --in unified-schema
@@ -82,6 +92,8 @@ mcmd import -p laboratoryprocedures_attributes.tsv --as attributes --in unified-
 mcmd import -p sequencing_attributes.tsv --as attributes --in unified-schema
 mcmd import -p files_attributes.tsv --as attributes --in unified-schema
 mcmd import -p cohorts_attributes.tsv --as attributes --in unified-schema
+mcmd import -p signedconsent_attributes.tsv --as attributes --in unified-schema
+mcmd import -p leafletandconsentform_attributes.tsv --as attributes --in unified-schema
 mcmd import -p ../../misc/molgenis/other/sys_StaticContent.tsv -a add_update_existing
 mcmd add logo -p ../../misc/molgenis/img/analysis.png
 mcmd add logo -p ../../misc/molgenis/img/lookups.png

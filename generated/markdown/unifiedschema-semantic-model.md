@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __11 modules__ that contain __160 metadata elements__ and __100358 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __13 modules__ that contain __184 metadata elements__ and __100610 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -17,6 +17,8 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Sequencing](#module-sequencing) | The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. | [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 16 |
 | [Files](#module-files) | A set of related records (either written or electronic) kept together. | [NCIT:C42883](http://purl.obolibrary.org/obo/NCIT_C42883), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
 | [Cohorts](#module-cohorts) | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 8 |
+| [Signed consent](#module-signed-consent) | Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. | [NCIT:C16735](http://purl.obolibrary.org/obo/NCIT_C16735), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 15 |
+| [Leaflet and consent form](#module-leaflet-and-consent-form) | A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. | [NCIT:C16468](http://purl.obolibrary.org/obo/NCIT_C16468)  | 9 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -243,6 +245,42 @@ A group of individuals, identified by a common characteristic. Ontology: [NCIT:C
 | Contact person | A person acting as a channel for communication between groups or on behalf of a group. | [NCIT:C25461](http://purl.obolibrary.org/obo/NCIT_C25461)  | string |
 | Contact email | An email address for the purpose of contacting the study contact person. | [OMIABIS:0000035](http://purl.obolibrary.org/obo/OMIABIS_0000035)  | email |
 | Size of cohort | A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population. | [NCIT:C53190](http://purl.obolibrary.org/obo/NCIT_C53190)  | integer |
+
+## Module: Signed consent
+Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. Ontology: [NCIT:C16735](http://purl.obolibrary.org/obo/NCIT_C16735), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular signed individual consent. | [ICO:0000044](http://purl.obolibrary.org/obo/ICO_0000044)  | identifier |
+| Belongs to subject | Reference to the person (i.e. subject) to whom this individual consent applies. | [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136), [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495)  | Reference to instances of Subjects |
+| Consent form used | Reference to the informed consent form that was signed. Points to a particular instance of leaflet and consent form that usually exists as a record (i.e. a row) within the same database as this individual consent. | [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136)  | Reference to instances of Leaflet and consent form |
+| Collected by | Indicates the person, group, or institution who performed the collection act. | [NCIT:C45262](http://purl.obolibrary.org/obo/NCIT_C45262)  | string |
+| Signing date | A date specification that designates when this individual consent form was signed. | [ICO:0000036](http://purl.obolibrary.org/obo/ICO_0000036)  | date |
+| Valid from | Starting date of the validity of this individual consent. | [DC:valid](http://purl.org/dc/terms/valid)  | date |
+| Valid until | End date of the validity of this individual consent. | [DC:valid](http://purl.org/dc/terms/valid)  | date |
+| Represented by | An individual who is authorized under applicable State or local law to consent on behalf of a child or incapable person to general medical care including participation in clinical research. | [NCIT:C142600](http://purl.obolibrary.org/obo/NCIT_C142600)  | [RepresentedBy.tsv](../../lookups/RepresentedBy.tsv) lookup (3 choices [of type](http://purl.obolibrary.org/obo/BFO_0000023)) |
+| Consent withdrawn | An indication that the consent to participate in the study or one or more segments of the study has been revoked. | [NCIT:C176342](http://purl.obolibrary.org/obo/NCIT_C176342)  | bool |
+| Data use permissions | A data item that is used to indicate consent permissions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be used. | [DUO:0000001](http://purl.obolibrary.org/obo/DUO_0000001)  | [DataUsePermissions.tsv](../../lookups/DataUsePermissions.tsv) lookup (5 choices [of type](http://purl.obolibrary.org/obo/DUO_0000001)) |
+| Data use modifiers | Data use modifiers indicate additional conditions for use. For instance, a dataset is restricted to investigations into specific diseases or performed at specific geographical locations. | [DUO:0000017](http://purl.obolibrary.org/obo/DUO_0000017)  | [DataUseModifiers.tsv](../../lookups/DataUseModifiers.tsv) lookup (23 choices [of type](http://purl.obolibrary.org/obo/DUO_0000017)) |
+| Data use specification | Further specification of applied data use permissions and modifiers. For example, a list of countries in case of geographic restrictions or a list of diseases when restricted to disease-specific research. | [SIO:000090](http://semanticscience.org/resource/SIO_000090)  | text |
+| Allow matchmaker | Permission is given for MatchMaking | [NCIT:C54116](http://purl.obolibrary.org/obo/NCIT_C54116)  | bool |
+| Allow recontacting | The procedure of recontacting the patient for specified reasons. This means the patient agrees to be re-identifiable under those circumstances. | [NCIT:C25737](http://purl.obolibrary.org/obo/NCIT_C25737)  | [Recontacting.tsv](../../lookups/Recontacting.tsv) lookup (3 choices [of type](http://purl.obolibrary.org/obo/NCIT_C176244)) |
+| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+
+## Module: Leaflet and consent form
+A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. Ontology: [NCIT:C16468](http://purl.obolibrary.org/obo/NCIT_C16468) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Leaflet title | A title or name given to the leaflet that belongs to this consent form. | [DC:title](http://purl.org/dc/terms/title)  | string |
+| Leaflet date | A point or period of time associated with the publication of this leaflet that belongs to this consent form. | [DC:date](http://purl.org/dc/terms/date)  | date |
+| Leaflet version | The version, edition, or adaptation of this leaflet that belongs to this consent form. | [DC:hasVersion](http://purl.org/dc/terms/hasVersion)  | string |
+| Consent form identifier | A unique proper name or character sequence that identifies this particular leaflet and consent form combination used in signing individual consent. Using a DOI would be optimal. Using any resolvable URL is suboptimal but still preferable over using a plain text value. | [DC:identifier](http://purl.org/dc/terms/identifier)  | identifier |
+| Consent form title | A title or name given to this consent form. | [DC:title](http://purl.org/dc/terms/title)  | string |
+| Consent form accepted date | Date of acceptance of this consent form. | [DC:dateAccepted](http://purl.org/dc/terms/dateAccepted)  | date |
+| Consent form valid until | End date of the validity of this consent form. | [DC:valid](http://purl.org/dc/terms/valid)  | date |
+| Consent form creator | Indicates the authoritative body who brought this consent form into existence. | [DC:creator](http://purl.org/dc/terms/creator)  | [Institutes.tsv](../../lookups/Institutes.tsv) lookup (218 choices [of type](http://semanticscience.org/resource/SIO_000688)) |
+| Consent form version | The version, edition, or adaptation of this consent form. | [DC:hasVersion](http://purl.org/dc/terms/hasVersion)  | string |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.

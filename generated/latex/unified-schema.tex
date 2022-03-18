@@ -6,7 +6,7 @@
 \textbf{Unified metadata schema}
 \newline
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 11 modules that contain 160 metadata elements and 100358 lookups in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 13 modules that contain 184 metadata elements and 100610 lookups in total (excluding null flavors).
 
 \begin{table}[htb]
 \begin{tabular}{lll}
@@ -23,6 +23,8 @@ Laboratory Procedures & NCIT:C25294, dcat:Dataset  & 6 \\
 Sequencing & EDAM:topic\_3168, dcat:Dataset  & 16 \\
 Files & NCIT:C42883, dcat:Dataset  & 14 \\
 Cohorts & NCIT:C61512, dcat:Dataset  & 8 \\
+Signed consent & NCIT:C16735, dcat:Dataset  & 15 \\
+Leaflet and consent form & NCIT:C16468  & 9 \\
 \hline
 \end{tabular}
 \caption[Module overview]{\label{table:table1} Unified metadata schema v0.1-SNAPSHOT overview of all modules.}
@@ -288,6 +290,48 @@ Size of cohort & NCIT:C53190  & integer \\
 \end{table}
 
 \begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Identifier & ICO:0000044  & identifier \\
+Belongs to subject & IAO:0000136, NCIT:C142495  & Reference to Subjects \\
+Consent form used & IAO:0000136  & Reference to Leaflet and consent form \\
+Collected by & NCIT:C45262  & string \\
+Signing date & ICO:0000036  & date \\
+Valid from & DC:valid  & date \\
+Valid until & DC:valid  & date \\
+Represented by & NCIT:C142600  & RepresentedBy.tsv lookup (3 choices) \\
+Consent withdrawn & NCIT:C176342  & bool \\
+Data use permissions & DUO:0000001  & DataUsePermissions.tsv lookup (5 choices) \\
+Data use modifiers & DUO:0000017  & DataUseModifiers.tsv lookup (23 choices) \\
+Data use specification & SIO:000090  & text \\
+Allow matchmaker & NCIT:C54116  & bool \\
+Allow recontacting & NCIT:C25737  & Recontacting.tsv lookup (3 choices) \\
+Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+\hline
+\end{tabular}
+\caption[Module: Signed consent]{\label{table:table13} Module: Signed consent. Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. Ontology: NCIT:C16735, dcat:Dataset . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Leaflet title & DC:title  & string \\
+Leaflet date & DC:date  & date \\
+Leaflet version & DC:hasVersion  & string \\
+Consent form identifier & DC:identifier  & identifier \\
+Consent form title & DC:title  & string \\
+Consent form accepted date & DC:dateAccepted  & date \\
+Consent form valid until & DC:valid  & date \\
+Consent form creator & DC:creator  & Institutes.tsv lookup (218 choices) \\
+Consent form version & DC:hasVersion  & string \\
+\hline
+\end{tabular}
+\caption[Module: Leaflet and consent form]{\label{table:table14} Module: Leaflet and consent form. A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. Ontology: NCIT:C16468 . }
+\end{table}
+
+\begin{table}[htb]
 \begin{tabular}{ll}
 Value & Ontology \\
 \hline
@@ -309,7 +353,7 @@ Sufficient quantity & HL7:QS \\
 Trace & HL7:TRC \\
 \hline
 \end{tabular}
-\caption[NullFlavors]{\label{table:table13} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
+\caption[NullFlavors]{\label{table:table15} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
 \end{table}
 
 \end{document}

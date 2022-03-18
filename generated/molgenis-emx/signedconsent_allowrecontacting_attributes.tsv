@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	signedconsent_allowrecontacting	Value (English)	String	TRUE	FALSE
+description	signedconsent_allowrecontacting	Description (English)	Text	FALSE	TRUE
+codesystem	signedconsent_allowrecontacting	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	signedconsent_allowrecontacting	The code within the code system	String	FALSE	TRUE
+iri	signedconsent_allowrecontacting	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	signedconsent_representedby	Value (English)	String	TRUE	FALSE
+description	signedconsent_representedby	Description (English)	Text	FALSE	TRUE
+codesystem	signedconsent_representedby	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	signedconsent_representedby	The code within the code system	String	FALSE	TRUE
+iri	signedconsent_representedby	The Internationalized Resource Identifier for this term	String	FALSE	TRUE
