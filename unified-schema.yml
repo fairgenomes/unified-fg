@@ -1036,3 +1036,159 @@ tables:
         dataType: integer
         description: A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population.
         tags: NCIT:C53190 [http://purl.obolibrary.org/obo/NCIT_C53190]
+
+  - name: Signed consent # "individual consent" ? "subject consent" ?
+    description: Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.
+    tags: NCIT:C16735 [http://purl.obolibrary.org/obo/NCIT_C16735], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+    relationWith:
+      - table: Leaflet and consent form
+        relation: IAO:0021007 [http://purl.obolibrary.org/obo/IAO_0021007]
+      - table: Subjects
+        relation: ICO:0000005 [http://purl.obolibrary.org/obo/ICO_0000005]
+    columns:
+
+      - name: Identifier
+        dataType: identifier
+        description: A unique proper name or character sequence that identifies this particular signed individual consent.
+        tags: ICO:0000044 [http://purl.obolibrary.org/obo/ICO_0000044]
+
+      - name: Belongs to subject #Consenting subject? Subject giving consent?
+        dataType: xref
+        reference: Subjects
+        description: Reference to the person (i.e. subject) to whom this individual consent applies.
+        #description: An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
+        tags: IAO:0000136 [http://purl.obolibrary.org/obo/IAO_0000136], NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495]
+
+      - name: Consent form used
+        description: Reference to the informed consent form that was signed. Points to a particular instance of leaflet and consent form that usually exists as a record (i.e. a row) within the same database as this individual consent.
+        tags: IAO:0000136 [http://purl.obolibrary.org/obo/IAO_0000136]
+        dataType: xref
+        reference: Leaflet and consent form
+
+      - name: Collected by
+        description: Indicates the person, group, or institution who performed the collection act.
+        tags: NCIT:C45262 [http://purl.obolibrary.org/obo/NCIT_C45262]
+        dataType: string
+#       dataType: LookupOne [lookups/Institutes.txt], ofType [http://semanticscience.org/resource/SIO_000688]
+
+      - name: Signing date
+        dataType: date
+        description: A date specification that designates when this individual consent form was signed.
+        tags: ICO:0000036 [http://purl.obolibrary.org/obo/ICO_0000036]
+
+      - name: Valid from
+        dataType: date
+        description: Starting date of the validity of this individual consent.
+        tags: DC:valid [http://purl.org/dc/terms/valid]
+
+      - name: Valid until
+        dataType: date
+        description: End date of the validity of this individual consent.
+        tags: DC:valid [http://purl.org/dc/terms/valid]
+
+      - name: Represented by
+        description: An individual who is authorized under applicable State or local law to consent on behalf of a child or incapable person to general medical care including participation in clinical research.
+        tags: NCIT:C142600 [http://purl.obolibrary.org/obo/NCIT_C142600]
+        dataType: xref
+        reference: lookups/RepresentedBy.tsv
+        referenceTypeTag: BFO:0000023 [http://purl.obolibrary.org/obo/BFO_0000023]
+
+      - name: Consent withdrawn
+        dataType: bool
+        description: An indication that the consent to participate in the study or one or more segments of the study has been revoked.
+        tags: NCIT:C176342 [http://purl.obolibrary.org/obo/NCIT_C176342]
+
+      - name: Data use permissions
+        dataType: xref # in UMDM, this is mref, but it seems the data use permissions options 'exclude' each other, see http://purl.obolibrary.org/obo/DUO_0000001
+        reference: lookups/DataUsePermissions.tsv
+        referenceTypeTag: DUO:0000001 [http://purl.obolibrary.org/obo/DUO_0000001]
+        description: A data item that is used to indicate consent permissions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be used.
+        tags: DUO:0000001 [http://purl.obolibrary.org/obo/DUO_0000001]
+
+      - name: Data use modifiers
+        dataType: mref
+        reference: lookups/DataUseModifiers.tsv
+        referenceTypeTag: DUO:0000017 [http://purl.obolibrary.org/obo/DUO_0000017]
+        description: Data use modifiers indicate additional conditions for use. For instance, a dataset is restricted to investigations into specific diseases or performed at specific geographical locations.
+        tags: DUO:0000017 [http://purl.obolibrary.org/obo/DUO_0000017]
+
+      - name: Data use specification
+        dataType: text
+        description: Further specification of applied data use permissions and modifiers. For example, a list of countries in case of geographic restrictions or a list of diseases when restricted to disease-specific research.
+        tags: SIO:000090 [http://semanticscience.org/resource/SIO_000090]
+
+#     -- already part of Allow recontacting --
+#      - name: allowIncidentalFindingRecontact
+#        dataType: bool
+#        description: A planned process for a subject agrees not to be informed about any incidental finding.
+#        tags: http://purl.obolibrary.org/obo/ICO_0000178
+
+      - name: Allow matchmaker
+        dataType: bool
+        description: Permission is given for MatchMaking
+        tags: NCIT:C54116 [http://purl.obolibrary.org/obo/NCIT_C54116]
+
+      - name: Allow recontacting
+        dataType: mref
+        reference: lookups/Recontacting.tsv
+        referenceTypeTag: NCIT:C176244 [http://purl.obolibrary.org/obo/NCIT_C176244]
+        description: The procedure of recontacting the patient for specified reasons. This means the patient agrees to be re-identifiable under those circumstances.
+        tags: NCIT:C25737 [http://purl.obolibrary.org/obo/NCIT_C25737]
+
+      - name: Belongs to data release
+        dataType: mref
+        reference: Data releases
+        description: The act of making data or other structured information accessible to the public or to the user group of a database.
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+
+  - name: Leaflet and consent form
+    description: A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian.
+    tags: NCIT:C16468 [http://purl.obolibrary.org/obo/NCIT_C16468]
+    columns:
+
+      - name: Leaflet title
+        description: A title or name given to the leaflet that belongs to this consent form.
+        tags: DC:title [http://purl.org/dc/terms/title]
+        dataType: string
+
+      - name: Leaflet date
+        description: A point or period of time associated with the publication of this leaflet that belongs to this consent form.
+        tags: DC:date [http://purl.org/dc/terms/date]
+        dataType: date
+
+      - name: Leaflet version
+        description: The version, edition, or adaptation of this leaflet that belongs to this consent form.
+        tags: DC:hasVersion [http://purl.org/dc/terms/hasVersion]
+        dataType: string
+
+      - name: Consent form identifier
+        description: A unique proper name or character sequence that identifies this particular leaflet and consent form combination used in signing individual consent. Using a DOI would be optimal. Using any resolvable URL is suboptimal but still preferable over using a plain text value.
+        tags: DC:identifier [http://purl.org/dc/terms/identifier]
+        dataType: identifier
+
+      - name: Consent form title
+        description: A title or name given to this consent form.
+        tags: DC:title [http://purl.org/dc/terms/title]
+        dataType: string
+
+      - name: Consent form accepted date
+        description: Date of acceptance of this consent form.
+        tags: DC:dateAccepted [http://purl.org/dc/terms/dateAccepted]
+        dataType: date
+
+      - name: Consent form valid until
+        description: End date of the validity of this consent form.
+        tags: DC:valid [http://purl.org/dc/terms/valid]
+        dataType: date
+
+      - name: Consent form creator
+        description: Indicates the authoritative body who brought this consent form into existence.
+        tags: DC:creator [http://purl.org/dc/terms/creator]
+        dataType: mref
+        reference: lookups/Institutes.tsv
+        referenceTypeTag: SIO:000688 [http://semanticscience.org/resource/SIO_000688]
+
+      - name: Consent form version
+        description: The version, edition, or adaptation of this consent form.
+        tags: DC:hasVersion [http://purl.org/dc/terms/hasVersion]
+        dataType: string
