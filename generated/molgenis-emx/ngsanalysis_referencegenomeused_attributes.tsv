@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	ngsanalysis_referencegenomeused	Value (English)	String	TRUE	FALSE
+description	ngsanalysis_referencegenomeused	Description (English)	Text	FALSE	TRUE
+codesystem	ngsanalysis_referencegenomeused	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	ngsanalysis_referencegenomeused	The code within the code system	String	FALSE	TRUE
+iri	ngsanalysis_referencegenomeused	The Internationalized Resource Identifier for this term	String	FALSE	TRUE
