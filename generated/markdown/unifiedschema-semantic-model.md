@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __13 modules__ that contain __184 metadata elements__ and __100610 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __14 modules__ that contain __195 metadata elements__ and __101221 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -14,11 +14,12 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Sampling protocols](#module-sampling-protocols) | Describes the procedure whereby biological samples for an experiment are sourced. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 5 |
 | [NGS sample preparations](#module-ngs-sample-preparations) | A sample preparation for a nucleic acids sequencing assay. | [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
 | [Laboratory Procedures](#module-laboratory-procedures) | Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. | [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 6 |
-| [Sequencing](#module-sequencing) | The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. | [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 16 |
+| [Sequencing run](#module-sequencing-run) | The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. | [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 16 |
 | [Files](#module-files) | A set of related records (either written or electronic) kept together. | [NCIT:C42883](http://purl.obolibrary.org/obo/NCIT_C42883), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
 | [Cohorts](#module-cohorts) | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 8 |
 | [Signed consent](#module-signed-consent) | Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. | [NCIT:C16735](http://purl.obolibrary.org/obo/NCIT_C16735), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 15 |
 | [Leaflet and consent form](#module-leaflet-and-consent-form) | A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. | [NCIT:C16468](http://purl.obolibrary.org/obo/NCIT_C16468)  | 9 |
+| [NGS analysis](#module-ngs-analysis) | An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output. | [EDAM:operation_2945](http://edamontology.org/operation_2945)  | 11 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -190,7 +191,7 @@ Any procedure that involves testing or manipulating a sample of blood, urine, or
 | Subcategory | A sub-division of the laboratory test classification. | [NCIT:C83142](http://purl.obolibrary.org/obo/NCIT_C83142)  | string |
 | Gene list | A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis. | [OBI:0000118](http://purl.obolibrary.org/obo/OBI_0000118)  | text |
 
-## Module: Sequencing
+## Module: Sequencing run
 The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. Ontology: [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
 
 | Element | Description | Ontology | Values |
@@ -218,7 +219,7 @@ A set of related records (either written or electronic) kept together. Ontology:
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | Filename | The literal identifier for an electronic file. | [NCIT:C171191](http://purl.obolibrary.org/obo/NCIT_C171191)  | identifier |
-| Produced by sequencing | A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. | [NCIT:C171337](http://purl.obolibrary.org/obo/NCIT_C171337)  | Reference to instances of Sequencing |
+| Produced by sequencing | A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. | [NCIT:C171337](http://purl.obolibrary.org/obo/NCIT_C171337)  | Reference to instances of Sequencing run |
 | Belongs to subject | An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. | [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495), [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136)  | Reference to instances of Subjects |
 | Belongs to study | Reference to the study or studies to which this file belongs. | [BFO:0000050](http://purl.obolibrary.org/obo/BFO_0000050)  | Reference to instances of Studies |
 | Belongs to cohort | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512)  | Reference to instances of Cohorts |
@@ -281,6 +282,23 @@ A document explaining all the relevant information to assist an individual in un
 | Consent form valid until | End date of the validity of this consent form. | [DC:valid](http://purl.org/dc/terms/valid)  | date |
 | Consent form creator | Indicates the authoritative body who brought this consent form into existence. | [DC:creator](http://purl.org/dc/terms/creator)  | [Institutes.tsv](../../lookups/Institutes.tsv) lookup (218 choices [of type](http://semanticscience.org/resource/SIO_000688)) |
 | Consent form version | The version, edition, or adaptation of this consent form. | [DC:hasVersion](http://purl.org/dc/terms/hasVersion)  | string |
+
+## Module: NGS analysis
+An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output. Ontology: [EDAM:operation_2945](http://edamontology.org/operation_2945) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular analysis. | [AFR:0001979](http://purl.allotrope.org/ontologies/result#AFR_0001979)  | identifier |
+| Belongs to sequencing | Reference to the sequencing that was performed, i.e. the source on which this analysis was based. | [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of Sequencing run |
+| Physical data location | A place on the Earth where the data is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which computer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent). | [GAZ:00000448](http://purl.obolibrary.org/obo/GAZ_00000448)  | string |
+| Abstract data location | The file location of the data, or a copy of the data, on an electronically accessible device for preservation (either in plain-text or encrypted format). | [NCIT:C142494](http://purl.obolibrary.org/obo/NCIT_C142494)  | string |
+| Data formats stored | Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available. | [NCIT:C142494](http://purl.obolibrary.org/obo/NCIT_C142494)  | [DataFormats.tsv](../../lookups/DataFormats.tsv) lookup (582 choices [of type](http://edamontology.org/format_1915)) |
+| Algorithms used | Any used problem-solving procedures implemented in software to be executed by a computer. | [NCIT:C16275](http://purl.obolibrary.org/obo/NCIT_C16275)  | text |
+| Reference genome used | The specific build of the human genome used as reference for sequence alignment and variant calling. | [EDAM:data_2340](http://edamontology.org/data_2340)  | [GenomeAccessions.tsv](../../lookups/GenomeAccessions.tsv) lookup (29 choices [of type](http://edamontology.org/data_2787)) |
+| Bioinformatic protocol used | A human-readable collection of information about about how a scientific experiment or analysis was carried out that results in a specific set of data or results used for further analysis or to test a specific hypothesis. | [EDAM:data_2531](http://edamontology.org/data_2531)  | text |
+| Bioinformatic protocol deviation | A variation from processes or procedures defined in the bioinformatic protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor. | [NCIT:C50996](http://purl.obolibrary.org/obo/NCIT_C50996)  | string |
+| Reason for bioinformatic protocol deviation | The rationale for why a deviation from the bioinformatic protocol has occurred. | [NCIT:C93529](http://purl.obolibrary.org/obo/NCIT_C93529)  | string |
+| WGS guideline followed | Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels. | [NCIT:C17564](http://purl.obolibrary.org/obo/NCIT_C17564)  | string |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.

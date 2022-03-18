@@ -834,110 +834,110 @@ fg:Laboratory_Procedures_Gene_list a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:OBI_0000118;
   dc:description "A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis." .
 
-fg:Sequencing a owl:Class;
+fg:Sequencing_run a owl:Class;
   rdfs:isDefinedBy <http://edamontology.org/topic_3168>, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
-  rdfs:label "Sequencing";
+  rdfs:label "Sequencing run";
   dc:description "The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.";
   <http://semanticscience.org/resource/SIO_001220> fg:NGS_sample_preparations .
 
-fg:Sequencing_Identifier a owl:DatatypeProperty;
+fg:Sequencing_run_Identifier a owl:DatatypeProperty;
   rdfs:label "Identifier";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:NCIT_C171337;
   dc:description "A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay." .
 
-fg:Sequencing_Belongs_to_lab_procedure a owl:ObjectProperty;
+fg:Sequencing_run_Belongs_to_lab_procedure a owl:ObjectProperty;
   rdfs:label "Belongs to lab procedure";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:NCIT_C25294;
   dc:description "Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting." .
 
-fg:Sequencing_Belongs_to_sample_preparation a owl:ObjectProperty;
+fg:Sequencing_run_Belongs_to_sample_preparation a owl:ObjectProperty;
   rdfs:label "Belongs to sample preparation";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:NCIT_C132299, obo:NCIT_C25683;
   dc:description "Reference to the prepared sample, i.e. the source that was sequenced." .
 
-fg:Sequencing_Reason_for_sequencing a owl:ObjectProperty;
+fg:Sequencing_run_Reason_for_sequencing a owl:ObjectProperty;
   rdfs:label "Reason for sequencing";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:NCIT_C69216;
   dc:description "A rationale for executing a plan of action.";
   rdfs:range obo:NCIT_C171003 .
 
-fg:Sequencing_Sequencing_date a owl:DatatypeProperty;
+fg:Sequencing_run_Sequencing_date a owl:DatatypeProperty;
   rdfs:label "Sequencing date";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:GENEPIO_0000069;
   dc:description "Date on which this sequencing assay was performed." .
 
-fg:Sequencing_Sequencing_facility_organization a owl:ObjectProperty;
+fg:Sequencing_run_Sequencing_facility_organization a owl:ObjectProperty;
   rdfs:label "Sequencing facility organization";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:OBI_0001891;
   dc:description "An organization that provides sequence determination service.";
   rdfs:range <http://semanticscience.org/resource/SIO_000688> .
 
-fg:Sequencing_Sequencing_platform a owl:ObjectProperty;
+fg:Sequencing_run_Sequencing_platform a owl:ObjectProperty;
   rdfs:label "Sequencing platform";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:GENEPIO_0000071;
   dc:description "The used sequencing platform (i.e. brand, name of a company that produces sequencer equipment).";
   rdfs:range obo:GENEPIO_0000071 .
 
-fg:Sequencing_Sequencing_instrument_model a owl:ObjectProperty;
+fg:Sequencing_run_Sequencing_instrument_model a owl:ObjectProperty;
   rdfs:label "Sequencing instrument model";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:GENEPIO_0001921;
   dc:description "The used product name and model number of a manufacturer's genomic (dna) sequencer.";
   rdfs:range obo:GENEPIO_0001921 .
 
-fg:Sequencing_Sequencing_method a owl:ObjectProperty;
+fg:Sequencing_run_Sequencing_method a owl:ObjectProperty;
   rdfs:label "Sequencing method";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:FIX_0000704;
   dc:description "Method used to determine the order of bases in a nucleic acid sequence.";
   rdfs:range obo:NCIT_C17565 .
 
-fg:Sequencing_Median_read_depth a owl:DatatypeProperty;
+fg:Sequencing_run_Median_read_depth a owl:DatatypeProperty;
   rdfs:label "Median read depth";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:NCIT_C155320;
   dc:description "The median number of times a particular locus (site, nucleotide, amplicon, region) was sequenced." .
 
-fg:Sequencing_Observed_read_length a owl:DatatypeProperty;
+fg:Sequencing_run_Observed_read_length a owl:DatatypeProperty;
   rdfs:label "Observed read length";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:NCIT_C153362;
   dc:description "The number of nucleotides successfully ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process." .
 
-fg:Sequencing_Observed_insert_size a owl:DatatypeProperty;
+fg:Sequencing_run_Observed_insert_size a owl:DatatypeProperty;
   rdfs:label "Observed insert size";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy <https://w3id.org/fair-genomes/resource/FG_0000002>;
   dc:description "In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance." .
 
-fg:Sequencing_Percentage_Q30 a owl:DatatypeProperty;
+fg:Sequencing_run_Percentage_Q30 a owl:DatatypeProperty;
   rdfs:label "Percentage Q30";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:GENEPIO_0000089;
   dc:description "Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly." .
 
-fg:Sequencing_Percentage_TR20 a owl:DatatypeProperty;
+fg:Sequencing_run_Percentage_TR20 a owl:DatatypeProperty;
   rdfs:label "Percentage TR20";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy <https://w3id.org/fair-genomes/resource/FG_0000003>;
   dc:description "Percentage of the target sequence on which 20 or more unique reads were successfully mapped." .
 
-fg:Sequencing_Other_quality_metrics a owl:DatatypeProperty;
+fg:Sequencing_run_Other_quality_metrics a owl:DatatypeProperty;
   rdfs:label "Other quality metrics";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy <http://edamontology.org/data_3914>;
   dc:description "Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check." .
 
-fg:Sequencing_Belongs_to_data_release a owl:ObjectProperty;
+fg:Sequencing_run_Belongs_to_data_release a owl:ObjectProperty;
   rdfs:label "Belongs to data release";
-  rdfs:domain fg:Sequencing;
+  rdfs:domain fg:Sequencing_run;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
 
@@ -1245,6 +1245,80 @@ fg:Leaflet_and_consent_form_Consent_form_version a owl:DatatypeProperty;
   rdfs:isDefinedBy <http://purl.org/dc/terms/hasVersion>;
   dc:description "The version, edition, or adaptation of this consent form." .
 
+fg:NGS_analysis a owl:Class;
+  rdfs:isDefinedBy <http://edamontology.org/operation_2945>;
+  rdfs:label "NGS analysis";
+  dc:description "An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output.";
+  <http://semanticscience.org/resource/SIO_000253> fg:Sequencing_run .
+
+fg:NGS_analysis_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy <http://purl.allotrope.org/ontologies/result#AFR_0001979>;
+  dc:description "A unique proper name or character sequence that identifies this particular analysis." .
+
+fg:NGS_analysis_Belongs_to_sequencing a owl:ObjectProperty;
+  rdfs:label "Belongs to sequencing";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy obo:NCIT_C25683;
+  dc:description "Reference to the sequencing that was performed, i.e. the source on which this analysis was based." .
+
+fg:NGS_analysis_Physical_data_location a owl:DatatypeProperty;
+  rdfs:label "Physical data location";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy obo:GAZ_00000448;
+  dc:description "A place on the Earth where the data is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which computer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent)." .
+
+fg:NGS_analysis_Abstract_data_location a owl:DatatypeProperty;
+  rdfs:label "Abstract data location";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy obo:NCIT_C142494;
+  dc:description "The file location of the data, or a copy of the data, on an electronically accessible device for preservation (either in plain-text or encrypted format)." .
+
+fg:NGS_analysis_Data_formats_stored a owl:ObjectProperty;
+  rdfs:label "Data formats stored";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy obo:NCIT_C142494;
+  dc:description "Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.";
+  rdfs:range <http://edamontology.org/format_1915> .
+
+fg:NGS_analysis_Algorithms_used a owl:DatatypeProperty;
+  rdfs:label "Algorithms used";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy obo:NCIT_C16275;
+  dc:description "Any used problem-solving procedures implemented in software to be executed by a computer." .
+
+fg:NGS_analysis_Reference_genome_used a owl:ObjectProperty;
+  rdfs:label "Reference genome used";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy <http://edamontology.org/data_2340>;
+  dc:description "The specific build of the human genome used as reference for sequence alignment and variant calling.";
+  rdfs:range <http://edamontology.org/data_2787> .
+
+fg:NGS_analysis_Bioinformatic_protocol_used a owl:DatatypeProperty;
+  rdfs:label "Bioinformatic protocol used";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy <http://edamontology.org/data_2531>;
+  dc:description "A human-readable collection of information about about how a scientific experiment or analysis was carried out that results in a specific set of data or results used for further analysis or to test a specific hypothesis." .
+
+fg:NGS_analysis_Bioinformatic_protocol_deviation a owl:DatatypeProperty;
+  rdfs:label "Bioinformatic protocol deviation";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy obo:NCIT_C50996;
+  dc:description "A variation from processes or procedures defined in the bioinformatic protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor." .
+
+fg:NGS_analysis_Reason_for_bioinformatic_protocol_deviation a owl:DatatypeProperty;
+  rdfs:label "Reason for bioinformatic protocol deviation";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy obo:NCIT_C93529;
+  dc:description "The rationale for why a deviation from the bioinformatic protocol has occurred." .
+
+fg:NGS_analysis_WGS_guideline_followed a owl:DatatypeProperty;
+  rdfs:label "WGS guideline followed";
+  rdfs:domain fg:NGS_analysis;
+  rdfs:isDefinedBy obo:NCIT_C17564;
+  dc:description "Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels." .
+
 <https://w3id.org/fair-genomes/ontology/> dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-drugs.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-familymembers.ttl>,
@@ -1259,6 +1333,8 @@ fg:Leaflet_and_consent_form_Consent_form_version a owl:DatatypeProperty;
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencinginstrumentmodels.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-representedby.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-datausepermissions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dataformats.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genomeaccessions.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dcmitypes.ttl>,

@@ -245,6 +245,18 @@ consentformcreator,description,Text,,,,Description (English)
 consentformcreator,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 consentformcreator,code,String,,,,The code within the code system
 consentformcreator,iri,String,,,,The Internationalized Resource Identifier for this term
+dataformatsstored,,,,,,"An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output.",http://edamontology.org/operation_2945
+dataformatsstored,value,String,1,TRUE,,Value (English)
+dataformatsstored,description,Text,,,,Description (English)
+dataformatsstored,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+dataformatsstored,code,String,,,,The code within the code system
+dataformatsstored,iri,String,,,,The Internationalized Resource Identifier for this term
+referencegenomeused,,,,,,"An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output.",http://edamontology.org/operation_2945
+referencegenomeused,value,String,1,TRUE,,Value (English)
+referencegenomeused,description,Text,,,,Description (English)
+referencegenomeused,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+referencegenomeused,code,String,,,,The code within the code system
+referencegenomeused,iri,String,,,,The Internationalized Resource Identifier for this term
 studies,,,,,,"A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.",http://purl.obolibrary.org/obo/NCIT_C63536
 studies,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular study.",http://purl.obolibrary.org/obo/OMIABIS_0000006
 studies,name,string,,,,"A name that designates this study.",http://purl.obolibrary.org/obo/OMIABIS_0000037
@@ -375,26 +387,26 @@ laboratoryprocedures,description,text,,,,"A written or verbal account, represent
 laboratoryprocedures,category,string,,,,"A classification of the laboratory test.",http://purl.obolibrary.org/obo/NCIT_C83017
 laboratoryprocedures,subcategory,string,,,,"A sub-division of the laboratory test classification.",http://purl.obolibrary.org/obo/NCIT_C83142
 laboratoryprocedures,genelist,text,,,,"A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis.",http://purl.obolibrary.org/obo/OBI_0000118
-sequencing,,,,,,"The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.",http://edamontology.org/topic_3168
-sequencing,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
-sequencing,belongstolabprocedure,ref,,,laboratoryprocedures,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
-sequencing,belongstosamplepreparation,ref,,,ngssamplepreparations,"Reference to the prepared sample, i.e. the source that was sequenced.",http://purl.obolibrary.org/obo/NCIT_C132299
-sequencing,reasonforsequencing,ref,,,reasonforsequencing,"A rationale for executing a plan of action.",http://purl.obolibrary.org/obo/NCIT_C69216
-sequencing,sequencingdate,date,,,,"Date on which this sequencing assay was performed.",http://purl.obolibrary.org/obo/GENEPIO_0000069
-sequencing,sequencingfacilityorganization,ref,,,sequencingfacilityorganization,"An organization that provides sequence determination service.",http://purl.obolibrary.org/obo/OBI_0001891
-sequencing,sequencingplatform,ref,,,sequencingplatform,"The used sequencing platform (i.e. brand, name of a company that produces sequencer equipment).",http://purl.obolibrary.org/obo/GENEPIO_0000071
-sequencing,sequencinginstrumentmodel,ref,,,sequencinginstrumentmodel,"The used product name and model number of a manufacturer's genomic (dna) sequencer.",http://purl.obolibrary.org/obo/GENEPIO_0001921
-sequencing,sequencingmethod,ref,,,sequencingmethod,"Method used to determine the order of bases in a nucleic acid sequence.",http://purl.obolibrary.org/obo/FIX_0000704
-sequencing,medianreaddepth,int,,,,"The median number of times a particular locus (site, nucleotide, amplicon, region) was sequenced.",http://purl.obolibrary.org/obo/NCIT_C155320
-sequencing,observedreadlength,int,,,,"The number of nucleotides successfully ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process.",http://purl.obolibrary.org/obo/NCIT_C153362
-sequencing,observedinsertsize,int,,,,"In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance.",https://w3id.org/fair-genomes/resource/FG_0000002
-sequencing,percentageq30,decimal,,,,"Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly.",http://purl.obolibrary.org/obo/GENEPIO_0000089
-sequencing,percentagetr20,decimal,,,,"Percentage of the target sequence on which 20 or more unique reads were successfully mapped.",https://w3id.org/fair-genomes/resource/FG_0000003
-sequencing,otherqualitymetrics,text,,,,"Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check.",http://edamontology.org/data_3914
-sequencing,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+sequencingrun,,,,,,"The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.",http://edamontology.org/topic_3168
+sequencingrun,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
+sequencingrun,belongstolabprocedure,ref,,,laboratoryprocedures,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
+sequencingrun,belongstosamplepreparation,ref,,,ngssamplepreparations,"Reference to the prepared sample, i.e. the source that was sequenced.",http://purl.obolibrary.org/obo/NCIT_C132299
+sequencingrun,reasonforsequencing,ref,,,reasonforsequencing,"A rationale for executing a plan of action.",http://purl.obolibrary.org/obo/NCIT_C69216
+sequencingrun,sequencingdate,date,,,,"Date on which this sequencing assay was performed.",http://purl.obolibrary.org/obo/GENEPIO_0000069
+sequencingrun,sequencingfacilityorganization,ref,,,sequencingfacilityorganization,"An organization that provides sequence determination service.",http://purl.obolibrary.org/obo/OBI_0001891
+sequencingrun,sequencingplatform,ref,,,sequencingplatform,"The used sequencing platform (i.e. brand, name of a company that produces sequencer equipment).",http://purl.obolibrary.org/obo/GENEPIO_0000071
+sequencingrun,sequencinginstrumentmodel,ref,,,sequencinginstrumentmodel,"The used product name and model number of a manufacturer's genomic (dna) sequencer.",http://purl.obolibrary.org/obo/GENEPIO_0001921
+sequencingrun,sequencingmethod,ref,,,sequencingmethod,"Method used to determine the order of bases in a nucleic acid sequence.",http://purl.obolibrary.org/obo/FIX_0000704
+sequencingrun,medianreaddepth,int,,,,"The median number of times a particular locus (site, nucleotide, amplicon, region) was sequenced.",http://purl.obolibrary.org/obo/NCIT_C155320
+sequencingrun,observedreadlength,int,,,,"The number of nucleotides successfully ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process.",http://purl.obolibrary.org/obo/NCIT_C153362
+sequencingrun,observedinsertsize,int,,,,"In paired-end sequencing, the DNA between the adapter sequences is the insert. The length of this sequence is known as the insert size, not to be confused with the inner distance between reads. So, fragment length equals read adapter length (2x) plus insert size, and insert size equals read lenght (2x) plus inner distance.",https://w3id.org/fair-genomes/resource/FG_0000002
+sequencingrun,percentageq30,decimal,,,,"Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly.",http://purl.obolibrary.org/obo/GENEPIO_0000089
+sequencingrun,percentagetr20,decimal,,,,"Percentage of the target sequence on which 20 or more unique reads were successfully mapped.",https://w3id.org/fair-genomes/resource/FG_0000003
+sequencingrun,otherqualitymetrics,text,,,,"Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check.",http://edamontology.org/data_3914
+sequencingrun,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 files,,,,,,"A set of related records (either written or electronic) kept together.",http://purl.obolibrary.org/obo/NCIT_C42883
 files,filename,string,1,TRUE,,"The literal identifier for an electronic file.",http://purl.obolibrary.org/obo/NCIT_C171191
-files,producedbysequencing,ref_array,,,sequencing,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
+files,producedbysequencing,ref_array,,,sequencingrun,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
 files,belongstosubject,ref,,,subjects,"An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.",http://purl.obolibrary.org/obo/NCIT_C142495
 files,belongstostudy,ref_array,,,studies,"Reference to the study or studies to which this file belongs.",http://purl.obolibrary.org/obo/BFO_0000050
 files,belongstocohort,ref_array,,,cohorts,"A group of individuals, identified by a common characteristic.",http://purl.obolibrary.org/obo/NCIT_C61512
@@ -442,3 +454,15 @@ leafletandconsentform,consentformaccepteddate,date,,,,"Date of acceptance of thi
 leafletandconsentform,consentformvaliduntil,date,,,,"End date of the validity of this consent form.",http://purl.org/dc/terms/valid
 leafletandconsentform,consentformcreator,ref_array,,,consentformcreator,"Indicates the authoritative body who brought this consent form into existence.",http://purl.org/dc/terms/creator
 leafletandconsentform,consentformversion,string,,,,"The version, edition, or adaptation of this consent form.",http://purl.org/dc/terms/hasVersion
+ngsanalysis,,,,,,"An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output.",http://edamontology.org/operation_2945
+ngsanalysis,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular analysis.",http://purl.allotrope.org/ontologies/result#AFR_0001979
+ngsanalysis,belongstosequencing,ref,,,sequencingrun,"Reference to the sequencing that was performed, i.e. the source on which this analysis was based.",http://purl.obolibrary.org/obo/NCIT_C25683
+ngsanalysis,physicaldatalocation,string,,,,"A place on the Earth where the data is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which computer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).",http://purl.obolibrary.org/obo/GAZ_00000448
+ngsanalysis,abstractdatalocation,string,,,,"The file location of the data, or a copy of the data, on an electronically accessible device for preservation (either in plain-text or encrypted format).",http://purl.obolibrary.org/obo/NCIT_C142494
+ngsanalysis,dataformatsstored,ref_array,,,dataformatsstored,"Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.",http://purl.obolibrary.org/obo/NCIT_C142494
+ngsanalysis,algorithmsused,text,,,,"Any used problem-solving procedures implemented in software to be executed by a computer.",http://purl.obolibrary.org/obo/NCIT_C16275
+ngsanalysis,referencegenomeused,ref,,,referencegenomeused,"The specific build of the human genome used as reference for sequence alignment and variant calling.",http://edamontology.org/data_2340
+ngsanalysis,bioinformaticprotocolused,text,,,,"A human-readable collection of information about about how a scientific experiment or analysis was carried out that results in a specific set of data or results used for further analysis or to test a specific hypothesis.",http://edamontology.org/data_2531
+ngsanalysis,bioinformaticprotocoldeviation,string,,,,"A variation from processes or procedures defined in the bioinformatic protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor.",http://purl.obolibrary.org/obo/NCIT_C50996
+ngsanalysis,reasonforbioinformaticprotocoldeviation,string,,,,"The rationale for why a deviation from the bioinformatic protocol has occurred.",http://purl.obolibrary.org/obo/NCIT_C93529
+ngsanalysis,wgsguidelinefollowed,string,,,,"Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels.",http://purl.obolibrary.org/obo/NCIT_C17564
