@@ -93,6 +93,10 @@ public class YamlModel {
            {
                for(RelationWith rw : m.relationWith)
                {
+                   if(rw.relation == null)
+                   {
+                       throw new Exception("relation null for " + m.name);
+                   }
                    rw.relationOnto = new Ontology(rw.relation);
                }
            }
