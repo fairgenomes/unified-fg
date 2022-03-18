@@ -797,7 +797,7 @@ tables:
         description: A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis.
         tags: OBI:0000118 [http://purl.obolibrary.org/obo/OBI_0000118]
 
-  - name: Sequencing
+  - name: Sequencing run
     description: The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.
     tags: EDAM:topic_3168 [http://edamontology.org/topic_3168], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
     relationWith:
@@ -921,7 +921,7 @@ tables:
 
       - name: Produced by sequencing
         dataType: mref
-        reference: Sequencing
+        reference: Sequencing run
         description: A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.
         tags: NCIT:C171337 [http://purl.obolibrary.org/obo/NCIT_C171337]
 
@@ -1191,4 +1191,61 @@ tables:
       - name: Consent form version
         description: The version, edition, or adaptation of this consent form.
         tags: DC:hasVersion [http://purl.org/dc/terms/hasVersion]
+        dataType: string
+
+  - name: NGS analysis
+    description: An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output.
+    tags: EDAM:operation_2945 [http://edamontology.org/operation_2945]
+    relationWith:
+      - table: Sequencing run
+        relation: SIO:000253 [http://semanticscience.org/resource/SIO_000253]
+    columns:
+      - name: Identifier
+        description: A unique proper name or character sequence that identifies this particular analysis.
+        tags: AFR:0001979 [http://purl.allotrope.org/ontologies/result#AFR_0001979]
+        dataType: identifier
+      - name: Belongs to sequencing
+        description: Reference to the sequencing that was performed, i.e. the source on which this analysis was based.
+        tags: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+        dataType: xref
+        reference: Sequencing run
+      - name: Physical data location
+        description: A place on the Earth where the data is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which computer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).
+        tags: GAZ:00000448 [http://purl.obolibrary.org/obo/GAZ_00000448]
+        dataType: string
+      - name: Abstract data location
+        description: The file location of the data, or a copy of the data, on an electronically accessible device for preservation (either in plain-text or encrypted format).
+        tags: NCIT:C142494 [http://purl.obolibrary.org/obo/NCIT_C142494]
+        dataType: string
+      - name: Data formats stored
+        description: Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.
+        tags: NCIT:C142494 [http://purl.obolibrary.org/obo/NCIT_C142494]
+        dataType: mref
+        reference: lookups/DataFormats.tsv
+        referenceTypeTag: EDAM:format_1915 [http://edamontology.org/format_1915]
+      - name: Algorithms used
+        description: Any used problem-solving procedures implemented in software to be executed by a computer.
+        tags: NCIT:C16275 [http://purl.obolibrary.org/obo/NCIT_C16275]
+        dataType: text
+      - name: Reference genome used
+        description: The specific build of the human genome used as reference for sequence alignment and variant calling.
+        tags: EDAM:data_2340 [http://edamontology.org/data_2340]
+        dataType: xref
+        reference: lookups/GenomeAccessions.tsv
+        referenceTypeTag: EDAM:data_2787 [http://edamontology.org/data_2787]
+      - name: Bioinformatic protocol used
+        description: A human-readable collection of information about about how a scientific experiment or analysis was carried out that results in a specific set of data or results used for further analysis or to test a specific hypothesis.
+        tags: EDAM:data_2531 [http://edamontology.org/data_2531]
+        dataType: text
+      - name: Bioinformatic protocol deviation
+        description: A variation from processes or procedures defined in the bioinformatic protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor.
+        tags: NCIT:C50996 [http://purl.obolibrary.org/obo/NCIT_C50996]
+        dataType: string
+      - name: Reason for bioinformatic protocol deviation
+        description: The rationale for why a deviation from the bioinformatic protocol has occurred.
+        tags: NCIT:C93529 [http://purl.obolibrary.org/obo/NCIT_C93529]
+        dataType: string
+      - name: WGS guideline followed
+        description: Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels.
+        tags: NCIT:C17564 [http://purl.obolibrary.org/obo/NCIT_C17564]
         dataType: string
