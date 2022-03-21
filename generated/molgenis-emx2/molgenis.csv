@@ -257,6 +257,12 @@ referencegenomeused,description,Text,,,,Description (English)
 referencegenomeused,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 referencegenomeused,code,String,,,,The code within the code system
 referencegenomeused,iri,String,,,,The Internationalized Resource Identifier for this term
+position.assemblyid,,,,,,"Schema for a Beacon genomic variant entry.",http://purl.obolibrary.org/obo/SO_0001060
+position.assemblyid,value,String,1,TRUE,,Value (English)
+position.assemblyid,description,Text,,,,Description (English)
+position.assemblyid,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+position.assemblyid,code,String,,,,The code within the code system
+position.assemblyid,iri,String,,,,The Internationalized Resource Identifier for this term
 studies,,,,,,"A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.",http://purl.obolibrary.org/obo/NCIT_C63536
 studies,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular study.",http://purl.obolibrary.org/obo/OMIABIS_0000006
 studies,name,string,,,,"A name that designates this study.",http://purl.obolibrary.org/obo/OMIABIS_0000037
@@ -466,3 +472,23 @@ ngsanalysis,bioinformaticprotocolused,text,,,,"A human-readable collection of in
 ngsanalysis,bioinformaticprotocoldeviation,string,,,,"A variation from processes or procedures defined in the bioinformatic protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor.",http://purl.obolibrary.org/obo/NCIT_C50996
 ngsanalysis,reasonforbioinformaticprotocoldeviation,string,,,,"The rationale for why a deviation from the bioinformatic protocol has occurred.",http://purl.obolibrary.org/obo/NCIT_C93529
 ngsanalysis,wgsguidelinefollowed,string,,,,"Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels.",http://purl.obolibrary.org/obo/NCIT_C17564
+genomicvariation,,,,,,"Schema for a Beacon genomic variant entry.",http://purl.obolibrary.org/obo/SO_0001060
+genomicvariation,variantinternalid,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular variation.",http://purl.obolibrary.org/obo/NCIT_C164813
+genomicvariation,alternatebases,string,,,,"An allele that varies in it sequence from what is considered the reference or canonical sequence at that location.",http://purl.obolibrary.org/obo/GENO_0000002
+genomicvariation,referencebases,string,,,,"An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared.",http://purl.obolibrary.org/obo/GENO_0000152
+genomicvariation,varianttype,string,,,,"An attribute describing a type of variation inhering in a sequence feature or collection.",http://purl.obolibrary.org/obo/GENO_0000773
+genomicvariation,position.start,int,,,,"The starting position of a sequence feature or interval.",http://purl.obolibrary.org/obo/GENO_0000894
+genomicvariation,position.end,int,,,,"The ending position of a sequence feature or interval.",http://purl.obolibrary.org/obo/GENO_0000895
+genomicvariation,position.assemblyid,ref,,,position.assemblyid,"The specific build of the human genome used as reference for this variant.",http://edamontology.org/data_2340
+genomicvariation,position.refseqid,string,,,,"TODO unsure what is ment here - Refseq accession number of a transcript?",http://purl.obolibrary.org/obo/NCIT_C45335
+genomicvariation,identifiers.clinvarids,string,,,,"NCBI resource that aggregates information about genomic variation and its relationship to human health.",http://ensembl.org/glossary/ENSGLOSSARY_0000242
+genomicvariation,identifiers.genomichgvsid,string,,,,"HGVS genomic sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
+genomicvariation,identifiers.proteinhgvsids,string,,,,"HGVS protein sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
+genomicvariation,identifiers.transcripthgvsids,string,,,,"HGVS transcript sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
+genomicvariation,identifiers.variantalternativeids,string,,,,"A backup sequence of characters used to identify an entity.",http://purl.obolibrary.org/obo/NCIT_C90353
+genomicvariation,molecularattributes.aminoacidchanges,string,,,,"A variation in the amino acid sequence of a specific gene product.",http://purl.obolibrary.org/obo/NCIT_C97928
+genomicvariation,molecularattributes.geneids,string,,,,"A unique gene name within a specific repository, database, or collection.",http://purl.obolibrary.org/obo/NCIT_C48664
+genomicvariation,molecularattributes.genomicfeatures,string,,,,"A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)",http://purl.obolibrary.org/obo/GENO_0000481
+genomicvariation,molecularattributes.moleculareffects,string,,,,"The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps.",http://ensembl.org/glossary/ENSGLOSSARY_0000134
+genomicvariation,variantleveldata.clinicalinterpretations,string,,,,"The determination of the meaning of a clinical result.",http://purl.obolibrary.org/obo/NCIT_C125009
+genomicvariation,variantleveldata.phenotypiceffects,string,,,,"The likelihood of an entity to produce pathologic changes or disease.",http://purl.obolibrary.org/obo/NCIT_C168796

@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __14 modules__ that contain __195 metadata elements__ and __101221 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __15 modules__ that contain __214 metadata elements__ and __101250 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -20,6 +20,7 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Signed consent](#module-signed-consent) | Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. | [NCIT:C16735](http://purl.obolibrary.org/obo/NCIT_C16735), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 15 |
 | [Leaflet and consent form](#module-leaflet-and-consent-form) | A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. | [NCIT:C16468](http://purl.obolibrary.org/obo/NCIT_C16468)  | 9 |
 | [NGS analysis](#module-ngs-analysis) | An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output. | [EDAM:operation_2945](http://edamontology.org/operation_2945)  | 11 |
+| [Genomic Variation](#module-genomic-variation) | Schema for a Beacon genomic variant entry. | [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060)  | 19 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -299,6 +300,31 @@ An analysis applies analytical (often computational) methods to existing data of
 | Bioinformatic protocol deviation | A variation from processes or procedures defined in the bioinformatic protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor. | [NCIT:C50996](http://purl.obolibrary.org/obo/NCIT_C50996)  | string |
 | Reason for bioinformatic protocol deviation | The rationale for why a deviation from the bioinformatic protocol has occurred. | [NCIT:C93529](http://purl.obolibrary.org/obo/NCIT_C93529)  | string |
 | WGS guideline followed | Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels. | [NCIT:C17564](http://purl.obolibrary.org/obo/NCIT_C17564)  | string |
+
+## Module: Genomic Variation
+Schema for a Beacon genomic variant entry. Ontology: [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| variantInternalId | A unique proper name or character sequence that identifies this particular variation. | [NCIT:C164813](http://purl.obolibrary.org/obo/NCIT_C164813)  | identifier |
+| alternateBases | An allele that varies in it sequence from what is considered the reference or canonical sequence at that location. | [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)  | string |
+| referenceBases | An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared. | [GENO:0000152](http://purl.obolibrary.org/obo/GENO_0000152)  | string |
+| variantType | An attribute describing a type of variation inhering in a sequence feature or collection. | [GENO:0000773](http://purl.obolibrary.org/obo/GENO_0000773)  | string |
+| position.start | The starting position of a sequence feature or interval. | [GENO:0000894](http://purl.obolibrary.org/obo/GENO_0000894)  | integer |
+| position.end | The ending position of a sequence feature or interval. | [GENO:0000895](http://purl.obolibrary.org/obo/GENO_0000895)  | integer |
+| position.assemblyId | The specific build of the human genome used as reference for this variant. | [EDAM:data_2340](http://edamontology.org/data_2340)  | [GenomeAccessions.tsv](../../lookups/GenomeAccessions.tsv) lookup (29 choices [of type](http://edamontology.org/data_2787)) |
+| position.refseqId | TODO unsure what is ment here - Refseq accession number of a transcript? | [NCIT:C45335](http://purl.obolibrary.org/obo/NCIT_C45335)  | string |
+| identifiers.clinVarIds | NCBI resource that aggregates information about genomic variation and its relationship to human health. | [ENSGLOSSARY:0000242](http://ensembl.org/glossary/ENSGLOSSARY_0000242)  | string |
+| identifiers.genomicHGVSId | HGVS genomic sequence variant nomenclature | [ENSGLOSSARY:0000274](http://ensembl.org/glossary/ENSGLOSSARY_0000274)  | string |
+| identifiers.proteinHGVSIds | HGVS protein sequence variant nomenclature | [ENSGLOSSARY:0000274](http://ensembl.org/glossary/ENSGLOSSARY_0000274)  | string |
+| identifiers.transcriptHGVSIds | HGVS transcript sequence variant nomenclature | [ENSGLOSSARY:0000274](http://ensembl.org/glossary/ENSGLOSSARY_0000274)  | string |
+| identifiers.variantAlternativeIds | A backup sequence of characters used to identify an entity. | [NCIT:C90353](http://purl.obolibrary.org/obo/NCIT_C90353)  | string |
+| molecularAttributes.aminoacidChanges | A variation in the amino acid sequence of a specific gene product. | [NCIT:C97928](http://purl.obolibrary.org/obo/NCIT_C97928)  | string |
+| molecularAttributes.geneIds | A unique gene name within a specific repository, database, or collection. | [NCIT:C48664](http://purl.obolibrary.org/obo/NCIT_C48664)  | string |
+| molecularAttributes.genomicFeatures | A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism) | [GENO:0000481](http://purl.obolibrary.org/obo/GENO_0000481)  | string |
+| molecularAttributes.molecularEffects | The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps. | [ENSGLOSSARY:0000134](http://ensembl.org/glossary/ENSGLOSSARY_0000134)  | string |
+| variantLevelData.clinicalInterpretations | The determination of the meaning of a clinical result. | [NCIT:C125009](http://purl.obolibrary.org/obo/NCIT_C125009)  | string |
+| variantLevelData.phenotypicEffects | The likelihood of an entity to produce pathologic changes or disease. | [NCIT:C168796](http://purl.obolibrary.org/obo/NCIT_C168796)  | string |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.
