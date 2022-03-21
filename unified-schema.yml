@@ -1249,3 +1249,111 @@ tables:
         description: Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels.
         tags: NCIT:C17564 [http://purl.obolibrary.org/obo/NCIT_C17564]
         dataType: string
+
+  # Beacon v2 "genomicVariations" attributes with added ontology tags
+  #
+  # for now, ignoring:
+  # caseLevelData (n = 11)
+  # frequencyInPopulations (n = 4)
+  #
+  - name: Genomic Variation
+    description: Schema for a Beacon genomic variant entry.
+    tags: SO:0001060 [http://purl.obolibrary.org/obo/SO_0001060]
+    columns:
+
+      - name: variantInternalId
+        description: A unique proper name or character sequence that identifies this particular variation.
+        tags: NCIT:C164813 [http://purl.obolibrary.org/obo/NCIT_C164813]
+        dataType: identifier
+
+      - name: alternateBases
+        description: An allele that varies in it sequence from what is considered the reference or canonical sequence at that location.
+        tags: GENO:0000002 [http://purl.obolibrary.org/obo/GENO_0000002]
+        dataType: string
+
+      - name: referenceBases
+        description: An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared.
+        tags: GENO:0000152 [http://purl.obolibrary.org/obo/GENO_0000152]
+        dataType: string
+
+      - name: variantType
+        description: An attribute describing a type of variation inhering in a sequence feature or collection.
+        tags: GENO:0000773 [http://purl.obolibrary.org/obo/GENO_0000773]
+        dataType: string #todo: lookup (SNP, indel, SV, etc)
+
+      - name: position.start
+        description: The starting position of a sequence feature or interval.
+        tags: GENO:0000894 [http://purl.obolibrary.org/obo/GENO_0000894]
+        dataType: integer #long?
+
+      - name: position.end
+        description: The ending position of a sequence feature or interval.
+        tags: GENO:0000895 [http://purl.obolibrary.org/obo/GENO_0000895]
+        dataType: integer #long?
+
+      - name: position.assemblyId
+        description: The specific build of the human genome used as reference for this variant.
+        tags: EDAM:data_2340 [http://edamontology.org/data_2340]
+        dataType: xref
+        reference: lookups/GenomeAccessions.tsv
+        referenceTypeTag: EDAM:data_2787 [http://edamontology.org/data_2787]
+
+      - name: position.refseqId
+        description: TODO unsure what is ment here - Refseq accession number of a transcript?
+        tags: NCIT:C45335 [http://purl.obolibrary.org/obo/NCIT_C45335]
+        dataType: string
+
+      - name: identifiers.clinVarIds
+        description: NCBI resource that aggregates information about genomic variation and its relationship to human health.
+        tags: ENSGLOSSARY:0000242 http://ensembl.org/glossary/ENSGLOSSARY_0000242
+        dataType: string
+
+      - name: identifiers.genomicHGVSId
+        description: HGVS genomic sequence variant nomenclature
+        tags: ENSGLOSSARY:0000274 [http://ensembl.org/glossary/ENSGLOSSARY_0000274]
+        dataType: string
+
+      - name: identifiers.proteinHGVSIds
+        description: HGVS protein sequence variant nomenclature
+        tags: ENSGLOSSARY:0000274 [http://ensembl.org/glossary/ENSGLOSSARY_0000274]
+        dataType: string
+
+      - name: identifiers.transcriptHGVSIds
+        description: HGVS transcript sequence variant nomenclature
+        tags: ENSGLOSSARY:0000274 [http://ensembl.org/glossary/ENSGLOSSARY_0000274]
+        dataType: string
+
+      - name: identifiers.variantAlternativeIds
+        description: A backup sequence of characters used to identify an entity.
+        tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
+        dataType: string
+
+      - name: molecularAttributes.aminoacidChanges
+        description: A variation in the amino acid sequence of a specific gene product.
+        tags: NCIT:C97928 [http://purl.obolibrary.org/obo/NCIT_C97928]
+        dataType: string
+
+      - name: molecularAttributes.geneIds
+        description: A unique gene name within a specific repository, database, or collection.
+        tags: NCIT:C48664 [http://purl.obolibrary.org/obo/NCIT_C48664]
+        dataType: string
+
+      - name: molecularAttributes.genomicFeatures
+        description: A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)
+        tags: GENO:0000481 [http://purl.obolibrary.org/obo/GENO_0000481]
+        dataType: string
+
+      - name: molecularAttributes.molecularEffects
+        description: The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps.
+        tags: ENSGLOSSARY:0000134 [http://ensembl.org/glossary/ENSGLOSSARY_0000134]
+        dataType: string
+
+      - name: variantLevelData.clinicalInterpretations
+        description: The determination of the meaning of a clinical result.
+        tags: NCIT:C125009 [http://purl.obolibrary.org/obo/NCIT_C125009]
+        dataType: string
+
+      - name: variantLevelData.phenotypicEffects
+        description: The likelihood of an entity to produce pathologic changes or disease.
+        tags: NCIT:C168796 [http://purl.obolibrary.org/obo/NCIT_C168796]
+        dataType: string

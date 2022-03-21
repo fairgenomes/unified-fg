@@ -42,6 +42,7 @@ mcmd import -p signedconsent_allowrecontacting_attributes.tsv --as attributes --
 mcmd import -p leafletandconsentform_consentformcreator_attributes.tsv --as attributes --in unified-schema
 mcmd import -p ngsanalysis_dataformatsstored_attributes.tsv --as attributes --in unified-schema
 mcmd import -p ngsanalysis_referencegenomeused_attributes.tsv --as attributes --in unified-schema
+mcmd import -p genomicvariation_position.assemblyid_attributes.tsv --as attributes --in unified-schema
 mcmd import -p studies_inclusioncriteria.tsv --as fair-genomes_studies_inclusioncriteria --in unified-schema
 mcmd import -p studies_currentstudystatus.tsv --as fair-genomes_studies_currentstudystatus --in unified-schema
 mcmd import -p subjects_genderidentity.tsv --as fair-genomes_subjects_genderidentity --in unified-schema
@@ -85,6 +86,7 @@ mcmd import -p signedconsent_allowrecontacting.tsv --as fair-genomes_signedconse
 mcmd import -p leafletandconsentform_consentformcreator.tsv --as fair-genomes_leafletandconsentform_consentformcreator --in unified-schema
 mcmd import -p ngsanalysis_dataformatsstored.tsv --as fair-genomes_ngsanalysis_dataformatsstored --in unified-schema
 mcmd import -p ngsanalysis_referencegenomeused.tsv --as fair-genomes_ngsanalysis_referencegenomeused --in unified-schema
+mcmd import -p genomicvariation_position.assemblyid.tsv --as fair-genomes_genomicvariation_position.assemblyid --in unified-schema
 mcmd import -p studies_attributes.tsv --as attributes --in unified-schema
 mcmd import -p datareleases_attributes.tsv --as attributes --in unified-schema
 mcmd import -p subjects_attributes.tsv --as attributes --in unified-schema
@@ -99,6 +101,7 @@ mcmd import -p cohorts_attributes.tsv --as attributes --in unified-schema
 mcmd import -p signedconsent_attributes.tsv --as attributes --in unified-schema
 mcmd import -p leafletandconsentform_attributes.tsv --as attributes --in unified-schema
 mcmd import -p ngsanalysis_attributes.tsv --as attributes --in unified-schema
+mcmd import -p genomicvariation_attributes.tsv --as attributes --in unified-schema
 mcmd import -p ../../misc/molgenis/other/sys_StaticContent.tsv -a add_update_existing
 mcmd add logo -p ../../misc/molgenis/img/analysis.png
 mcmd add logo -p ../../misc/molgenis/img/lookups.png

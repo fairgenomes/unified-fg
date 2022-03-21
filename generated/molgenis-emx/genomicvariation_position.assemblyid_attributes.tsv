@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	genomicvariation_position.assemblyid	Value (English)	String	TRUE	FALSE
+description	genomicvariation_position.assemblyid	Description (English)	Text	FALSE	TRUE
+codesystem	genomicvariation_position.assemblyid	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	genomicvariation_position.assemblyid	The code within the code system	String	FALSE	TRUE
+iri	genomicvariation_position.assemblyid	The Internationalized Resource Identifier for this term	String	FALSE	TRUE
