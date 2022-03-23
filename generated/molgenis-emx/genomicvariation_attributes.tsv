@@ -3,18 +3,18 @@ variantinternalid	variantInternalId	A unique proper name or character sequence t
 alternatebases	alternateBases	An allele that varies in it sequence from what is considered the reference or canonical sequence at that location. (GENO:0000002 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
 referencebases	referenceBases	An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared. (GENO:0000152 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
 varianttype	variantType	An attribute describing a type of variation inhering in a sequence feature or collection. (GENO:0000773 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-position.start	position.start	The starting position of a sequence feature or interval. (GENO:0000894 )	genomicvariation	int	FALSE	FALSE	TRUE	TRUE	
-position.end	position.end	The ending position of a sequence feature or interval. (GENO:0000895 )	genomicvariation	int	FALSE	FALSE	TRUE	TRUE	
-position.assemblyid	position.assemblyId	The specific build of the human genome used as reference for this variant. (EDAM:data_2340 )	genomicvariation	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariation_position.assemblyid
-position.refseqid	position.refseqId	TODO unsure what is ment here - Refseq accession number of a transcript? (NCIT:C45335 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-identifiers.clinvarids	identifiers.clinVarIds	NCBI resource that aggregates information about genomic variation and its relationship to human health. (ENSGLOSSARY:0000242 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-identifiers.genomichgvsid	identifiers.genomicHGVSId	HGVS genomic sequence variant nomenclature (ENSGLOSSARY:0000274 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-identifiers.proteinhgvsids	identifiers.proteinHGVSIds	HGVS protein sequence variant nomenclature (ENSGLOSSARY:0000274 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-identifiers.transcripthgvsids	identifiers.transcriptHGVSIds	HGVS transcript sequence variant nomenclature (ENSGLOSSARY:0000274 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-identifiers.variantalternativeids	identifiers.variantAlternativeIds	A backup sequence of characters used to identify an entity. (NCIT:C90353 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-molecularattributes.aminoacidchanges	molecularAttributes.aminoacidChanges	A variation in the amino acid sequence of a specific gene product. (NCIT:C97928 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-molecularattributes.geneids	molecularAttributes.geneIds	A unique gene name within a specific repository, database, or collection. (NCIT:C48664 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-molecularattributes.genomicfeatures	molecularAttributes.genomicFeatures	A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism) (GENO:0000481 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-molecularattributes.moleculareffects	molecularAttributes.molecularEffects	The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps. (ENSGLOSSARY:0000134 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-variantleveldata.clinicalinterpretations	variantLevelData.clinicalInterpretations	The determination of the meaning of a clinical result. (NCIT:C125009 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
-variantleveldata.phenotypiceffects	variantLevelData.phenotypicEffects	The likelihood of an entity to produce pathologic changes or disease. (NCIT:C168796 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+position_start	position_start	The starting position of a sequence feature or interval. (GENO:0000894 )	genomicvariation	int	FALSE	FALSE	TRUE	TRUE	
+position_end	position_end	The ending position of a sequence feature or interval. (GENO:0000895 )	genomicvariation	int	FALSE	FALSE	TRUE	TRUE	
+position_assemblyid	position_assemblyId	The specific build of the human genome used as reference for this variant. (EDAM:data_2340 )	genomicvariation	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariation_position_assemblyid
+position_refseqid	position_refseqId	TODO unsure what is ment here - Refseq accession number of a transcript? (NCIT:C45335 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+identifiers_clinvarids	identifiers_clinVarIds	NCBI resource that aggregates information about genomic variation and its relationship to human health. (ENSGLOSSARY:0000242 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+identifiers_genomichgvsid	identifiers_genomicHGVSId	HGVS genomic sequence variant nomenclature (ENSGLOSSARY:0000274 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+identifiers_proteinhgvsids	identifiers_proteinHGVSIds	HGVS protein sequence variant nomenclature (ENSGLOSSARY:0000274 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+identifiers_transcripthgvsids	identifiers_transcriptHGVSIds	HGVS transcript sequence variant nomenclature (ENSGLOSSARY:0000274 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+identifiers_variantalternativeids	identifiers_variantAlternativeIds	A backup sequence of characters used to identify an entity. (NCIT:C90353 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+molecularattributes_aminoacidchanges	molecularAttributes_aminoacidChanges	A variation in the amino acid sequence of a specific gene product. (NCIT:C97928 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+molecularattributes_geneids	molecularAttributes_geneIds	A unique gene name within a specific repository, database, or collection. (NCIT:C48664 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+molecularattributes_genomicfeatures	molecularAttributes_genomicFeatures	A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism) (GENO:0000481 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+molecularattributes_moleculareffects	molecularAttributes_molecularEffects	The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps. (ENSGLOSSARY:0000134 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+variantleveldata_clinicalinterpretations	variantLevelData_clinicalInterpretations	The determination of the meaning of a clinical result. (NCIT:C125009 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
+variantleveldata_phenotypiceffects	variantLevelData_phenotypicEffects	The likelihood of an entity to produce pathologic changes or disease. (NCIT:C168796 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	

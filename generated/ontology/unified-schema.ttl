@@ -1348,93 +1348,93 @@ fg:Genomic_Variation_variantType a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:GENO_0000773;
   dc:description "An attribute describing a type of variation inhering in a sequence feature or collection." .
 
-fg:Genomic_Variation_position.start a owl:DatatypeProperty;
-  rdfs:label "position.start";
+fg:Genomic_Variation_position_start a owl:DatatypeProperty;
+  rdfs:label "position_start";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:GENO_0000894;
   dc:description "The starting position of a sequence feature or interval." .
 
-fg:Genomic_Variation_position.end a owl:DatatypeProperty;
-  rdfs:label "position.end";
+fg:Genomic_Variation_position_end a owl:DatatypeProperty;
+  rdfs:label "position_end";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:GENO_0000895;
   dc:description "The ending position of a sequence feature or interval." .
 
-fg:Genomic_Variation_position.assemblyId a owl:ObjectProperty;
-  rdfs:label "position.assemblyId";
+fg:Genomic_Variation_position_assemblyId a owl:ObjectProperty;
+  rdfs:label "position_assemblyId";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy <http://edamontology.org/data_2340>;
   dc:description "The specific build of the human genome used as reference for this variant.";
   rdfs:range <http://edamontology.org/data_2787> .
 
-fg:Genomic_Variation_position.refseqId a owl:DatatypeProperty;
-  rdfs:label "position.refseqId";
+fg:Genomic_Variation_position_refseqId a owl:DatatypeProperty;
+  rdfs:label "position_refseqId";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:NCIT_C45335;
   dc:description "TODO unsure what is ment here - Refseq accession number of a transcript?" .
 
-fg:Genomic_Variation_identifiers.clinVarIds a owl:DatatypeProperty;
-  rdfs:label "identifiers.clinVarIds";
+fg:Genomic_Variation_identifiers_clinVarIds a owl:DatatypeProperty;
+  rdfs:label "identifiers_clinVarIds";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000242>;
   dc:description "NCBI resource that aggregates information about genomic variation and its relationship to human health." .
 
-fg:Genomic_Variation_identifiers.genomicHGVSId a owl:DatatypeProperty;
-  rdfs:label "identifiers.genomicHGVSId";
+fg:Genomic_Variation_identifiers_genomicHGVSId a owl:DatatypeProperty;
+  rdfs:label "identifiers_genomicHGVSId";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000274>;
   dc:description "HGVS genomic sequence variant nomenclature" .
 
-fg:Genomic_Variation_identifiers.proteinHGVSIds a owl:DatatypeProperty;
-  rdfs:label "identifiers.proteinHGVSIds";
+fg:Genomic_Variation_identifiers_proteinHGVSIds a owl:DatatypeProperty;
+  rdfs:label "identifiers_proteinHGVSIds";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000274>;
   dc:description "HGVS protein sequence variant nomenclature" .
 
-fg:Genomic_Variation_identifiers.transcriptHGVSIds a owl:DatatypeProperty;
-  rdfs:label "identifiers.transcriptHGVSIds";
+fg:Genomic_Variation_identifiers_transcriptHGVSIds a owl:DatatypeProperty;
+  rdfs:label "identifiers_transcriptHGVSIds";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000274>;
   dc:description "HGVS transcript sequence variant nomenclature" .
 
-fg:Genomic_Variation_identifiers.variantAlternativeIds a owl:DatatypeProperty;
-  rdfs:label "identifiers.variantAlternativeIds";
+fg:Genomic_Variation_identifiers_variantAlternativeIds a owl:DatatypeProperty;
+  rdfs:label "identifiers_variantAlternativeIds";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:NCIT_C90353;
   dc:description "A backup sequence of characters used to identify an entity." .
 
-fg:Genomic_Variation_molecularAttributes.aminoacidChanges a owl:DatatypeProperty;
-  rdfs:label "molecularAttributes.aminoacidChanges";
+fg:Genomic_Variation_molecularAttributes_aminoacidChanges a owl:DatatypeProperty;
+  rdfs:label "molecularAttributes_aminoacidChanges";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:NCIT_C97928;
   dc:description "A variation in the amino acid sequence of a specific gene product." .
 
-fg:Genomic_Variation_molecularAttributes.geneIds a owl:DatatypeProperty;
-  rdfs:label "molecularAttributes.geneIds";
+fg:Genomic_Variation_molecularAttributes_geneIds a owl:DatatypeProperty;
+  rdfs:label "molecularAttributes_geneIds";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:NCIT_C48664;
   dc:description "A unique gene name within a specific repository, database, or collection." .
 
-fg:Genomic_Variation_molecularAttributes.genomicFeatures a owl:DatatypeProperty;
-  rdfs:label "molecularAttributes.genomicFeatures";
+fg:Genomic_Variation_molecularAttributes_genomicFeatures a owl:DatatypeProperty;
+  rdfs:label "molecularAttributes_genomicFeatures";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:GENO_0000481;
   dc:description "A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)" .
 
-fg:Genomic_Variation_molecularAttributes.molecularEffects a owl:DatatypeProperty;
-  rdfs:label "molecularAttributes.molecularEffects";
+fg:Genomic_Variation_molecularAttributes_molecularEffects a owl:DatatypeProperty;
+  rdfs:label "molecularAttributes_molecularEffects";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000134>;
   dc:description "The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps." .
 
-fg:Genomic_Variation_variantLevelData.clinicalInterpretations a owl:DatatypeProperty;
-  rdfs:label "variantLevelData.clinicalInterpretations";
+fg:Genomic_Variation_variantLevelData_clinicalInterpretations a owl:DatatypeProperty;
+  rdfs:label "variantLevelData_clinicalInterpretations";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:NCIT_C125009;
   dc:description "The determination of the meaning of a clinical result." .
 
-fg:Genomic_Variation_variantLevelData.phenotypicEffects a owl:DatatypeProperty;
-  rdfs:label "variantLevelData.phenotypicEffects";
+fg:Genomic_Variation_variantLevelData_phenotypicEffects a owl:DatatypeProperty;
+  rdfs:label "variantLevelData_phenotypicEffects";
   rdfs:domain fg:Genomic_Variation;
   rdfs:isDefinedBy obo:NCIT_C168796;
   dc:description "The likelihood of an entity to produce pathologic changes or disease." .
