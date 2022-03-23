@@ -66,6 +66,36 @@ public class YamlModel {
     }
 
     /**
+     * Added checks for proper table and column names.
+     * The EMX2 rules are: "Table name must start with a letter, followed by letters, underscores, a space or numbers,
+     * i.e. [a-zA-Z][a-zA-Z0-9_]*. Maximum length: 31 characters(so it fits in Excel sheet names)"
+     */
+    public void checkAllowedTableAndColumnNames() throws Exception {
+        for(Table m: tables) {
+            if(!m.name.matches("^[a-zA-Z][a-zA-Z0-9_\\s]*$")){
+                throw new Exception("Table name must start with a letter, followed by letters,\n" +
+                        "     * underscores, a space or numbers, i.e. [a-zA-Z][a-zA-Z0-9_\\s]*. Offending table name: '" + m.name +"'");
+            }
+            if(m.name.length() > 31)
+            {
+                throw new Exception("Table name too long, " + m.name.length() + " characters where 31 is allowed. Offending table name: '" + m.name +"'");
+            }
+            for(Column e : m.columns)
+            {
+                if(!e.name.matches("^[a-zA-Z][a-zA-Z0-9_\\s]*$")){
+                    throw new Exception("Column name must start with a letter, followed by letters,\n" +
+                            "     * underscores, a space or numbers, i.e. [a-zA-Z][a-zA-Z0-9_\\s]*. Offending column name: '" + e.name +"'");
+                }
+                // does not apply to colum names?
+//                if(e.name.length() > 31)
+//                {
+//                    throw new Exception("Column name too long, " + e.name.length() + " characters where 31 is allowed. Offending column name: '" + e.name +"'");
+//                }
+            }
+        }
+    }
+
+    /**
      * Parse element 'unit' information
      * @throws Exception
      */

@@ -15,6 +15,8 @@ import java.util.HashMap;
  */
 public class ToMOLGENISEMX2 extends AbstractGenerator {
 
+    public static String EMX2_SCHEMA_NAME = "unifiedmodel";
+
     public ToMOLGENISEMX2(YamlModel fg, File outputFolder) throws Exception {
         super(fg, outputFolder);
     }
@@ -22,11 +24,18 @@ public class ToMOLGENISEMX2 extends AbstractGenerator {
     @Override
     public void start() throws IOException {
 
+        /*
+        Installation SH script.
+        Start here, keep adding stuff as we iterate over the data, and close at the very end.
+        */
+        FileWriter installerFW = new FileWriter(new File(outputFolder, "setup.sh"));
+        BufferedWriter installer = new BufferedWriter(installerFW);
+
         String fileName = "molgenis.csv";
         FileWriter fw = new FileWriter(new File(outputFolder, fileName));
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write("tableName,columnName,columnType,key,required,refTable,description,semantics" + LE);
-
+        installer.write("curl -X POST --data-binary @molgenis.csv http://localhost:8080/"+EMX2_SCHEMA_NAME+"/api/csv" + LE);
 
         //TODO
         //bw.write(PACKAGE_NAME + "," + fg.name + "," + fg.description + (fg.description.endsWith(".")?"":".") + " Version " + fg.version +  "-" + fg.releaseType + " (" + fg.date + ")" + LE);
@@ -48,7 +57,7 @@ public class ToMOLGENISEMX2 extends AbstractGenerator {
                     bw.write(tableName + ",codesystem,String,,,,The code system (e.g. ontology) this term belongs to" + LE);
                     bw.write(tableName + ",code,String,,,,The code within the code system" + LE);
                     bw.write(tableName + ",iri,String,,,,The Internationalized Resource Identifier for this term" + LE);
-
+                    installer.write("curl -X POST --data-binary @"+e.technicalName+".csv http://localhost:8080/"+EMX2_SCHEMA_NAME+"/api/csv/" +e.technicalName + LE);
                 }
             }
         }
@@ -101,6 +110,9 @@ public class ToMOLGENISEMX2 extends AbstractGenerator {
                 }
             }
         }
+
+        installer.flush();
+        installer.close();
 
 // TODO add home page and permission
 //        /*

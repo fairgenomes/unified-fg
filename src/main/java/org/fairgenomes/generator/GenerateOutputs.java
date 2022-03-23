@@ -38,6 +38,7 @@ public class GenerateOutputs {
         YamlModel y = mapper.readValue(inputF, YamlModel.class);
         System.out.println("Loading lookups and value types...");
         y.fileName = inputF.getName().replace(".yml","");
+        y.checkAllowedTableAndColumnNames();
         y.loadLookupGlobalOptions();
         y.parseElementValueTypes();
         y.parseElementUnits();

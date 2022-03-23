@@ -45,6 +45,8 @@ public class Column {
 
     /**
      * Helper function to determine whether this element has a lookup value type
+     * meaning it refers to a pre-loaded table, like a categorical value
+     * in contrast to a 'regular xref/mref' between tables as defined in the model
      *
      * @return
      */
