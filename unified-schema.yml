@@ -1261,6 +1261,12 @@ tables:
         tags: NCIT:C132299 [http://purl.obolibrary.org/obo/NCIT_C132299]
         dataType: identifier
 
+      - name: Belongs to materials
+        dataType: xref
+        reference: Materials
+        description: Reference to the source material from which this sample was prepared.
+        tags: NCIT:C93400 [http://purl.obolibrary.org/obo/NCIT_C93400], NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+
       - name: Sample extraction
         description: The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it.
         tags: CHMO:0001577 [http://purl.obolibrary.org/obo/CHMO_0001577]
