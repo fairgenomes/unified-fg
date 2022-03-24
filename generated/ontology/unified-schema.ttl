@@ -1330,6 +1330,12 @@ fg:Metabolomic_material_processing_Identifier a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:NCIT_C132299;
   dc:description "A unique proper name or character sequence that identifies this particular metabolomics material processing." .
 
+fg:Metabolomic_material_processing_Belongs_to_materials a owl:ObjectProperty;
+  rdfs:label "Belongs to materials";
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:NCIT_C93400, obo:NCIT_C25683;
+  dc:description "Reference to the source material from which this sample was prepared." .
+
 fg:Metabolomic_material_processing_Sample_extraction a owl:DatatypeProperty;
   rdfs:label "Sample extraction";
   rdfs:domain fg:Metabolomic_material_processing;

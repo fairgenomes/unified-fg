@@ -6,7 +6,7 @@
 \textbf{Unified metadata schema}
 \newline
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 18 modules that contain 239 metadata elements and 101832 lookups in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 18 modules that contain 240 metadata elements and 101832 lookups in total (excluding null flavors).
 
 \begin{table}[htb]
 \begin{tabular}{lll}
@@ -26,7 +26,7 @@ Cohorts & NCIT:C61512, dcat:Dataset  & 8 \\
 Signed consent & NCIT:C16735, dcat:Dataset  & 15 \\
 Leaflet and consent form & NCIT:C16468  & 9 \\
 NGS analysis & EDAM:operation\_2945  & 11 \\
-Metabolomic material processing & OBI:0000073  & 6 \\
+Metabolomic material processing & OBI:0000073  & 7 \\
 Metabolomic assay & NCIT:C60819  & 8 \\
 Metabolomic analysis & EDAM:data\_0949  & 11 \\
 Genomic Variation & SO:0001060  & 19 \\
@@ -361,6 +361,7 @@ WGS guideline followed & NCIT:C17564  & string \\
 Name & Ontology & Values \\
 \hline
 Identifier & NCIT:C132299  & identifier \\
+Belongs to materials & NCIT:C93400, NCIT:C25683  & Reference to Materials \\
 Sample extraction & CHMO:0001577  & string \\
 Filter used & CHMO:0001640  & string \\
 Passing rate & CHMO:0002751  & integer \\

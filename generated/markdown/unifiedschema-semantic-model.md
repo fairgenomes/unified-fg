@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __18 modules__ that contain __239 metadata elements__ and __101832 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __18 modules__ that contain __240 metadata elements__ and __101832 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -20,7 +20,7 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Signed consent](#module-signed-consent) | Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. | [NCIT:C16735](http://purl.obolibrary.org/obo/NCIT_C16735), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 15 |
 | [Leaflet and consent form](#module-leaflet-and-consent-form) | A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. | [NCIT:C16468](http://purl.obolibrary.org/obo/NCIT_C16468)  | 9 |
 | [NGS analysis](#module-ngs-analysis) | An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output. | [EDAM:operation_2945](http://edamontology.org/operation_2945)  | 11 |
-| [Metabolomic material processing](#module-metabolomic-material-processing) | A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. | [OBI:0000073](http://purl.obolibrary.org/obo/OBI_0000073)  | 6 |
+| [Metabolomic material processing](#module-metabolomic-material-processing) | A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. | [OBI:0000073](http://purl.obolibrary.org/obo/OBI_0000073)  | 7 |
 | [Metabolomic assay](#module-metabolomic-assay) | A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. | [NCIT:C60819](http://purl.obolibrary.org/obo/NCIT_C60819)  | 8 |
 | [Metabolomic analysis](#module-metabolomic-analysis) | Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). | [EDAM:data_0949](http://edamontology.org/data_0949)  | 11 |
 | [Genomic Variation](#module-genomic-variation) | Schema for a Beacon genomic variant entry. | [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060)  | 19 |
@@ -310,6 +310,7 @@ A metabolomics material processing is a protocol application including material 
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | Identifier | A unique proper name or character sequence that identifies this particular metabolomics material processing. | [NCIT:C132299](http://purl.obolibrary.org/obo/NCIT_C132299)  | identifier |
+| Belongs to materials | Reference to the source material from which this sample was prepared. | [NCIT:C93400](http://purl.obolibrary.org/obo/NCIT_C93400), [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of Materials |
 | Sample extraction | The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it. | [CHMO:0001577](http://purl.obolibrary.org/obo/CHMO_0001577)  | string |
 | Filter used | The filter used in separating of suspended solids from a liquid or gas, usually by forcing a carrier gas or liquid through a porous medium. | [CHMO:0001640](http://purl.obolibrary.org/obo/CHMO_0001640)  | string |
 | Passing rate | The volume of carrier gas passing through a chromatography column in unit time. | [CHMO:0002751](http://purl.obolibrary.org/obo/CHMO_0002751)  | integer |
