@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __15 modules__ that contain __214 metadata elements__ and __101250 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __18 modules__ that contain __239 metadata elements__ and __101832 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -20,6 +20,9 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Signed consent](#module-signed-consent) | Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. | [NCIT:C16735](http://purl.obolibrary.org/obo/NCIT_C16735), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 15 |
 | [Leaflet and consent form](#module-leaflet-and-consent-form) | A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. | [NCIT:C16468](http://purl.obolibrary.org/obo/NCIT_C16468)  | 9 |
 | [NGS analysis](#module-ngs-analysis) | An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output. | [EDAM:operation_2945](http://edamontology.org/operation_2945)  | 11 |
+| [Metabolomic material processing](#module-metabolomic-material-processing) | A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. | [OBI:0000073](http://purl.obolibrary.org/obo/OBI_0000073)  | 6 |
+| [Metabolomic assay](#module-metabolomic-assay) | A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. | [NCIT:C60819](http://purl.obolibrary.org/obo/NCIT_C60819)  | 8 |
+| [Metabolomic analysis](#module-metabolomic-analysis) | Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). | [EDAM:data_0949](http://edamontology.org/data_0949)  | 11 |
 | [Genomic Variation](#module-genomic-variation) | Schema for a Beacon genomic variant entry. | [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060)  | 19 |
 
 ## Module: Studies
@@ -300,6 +303,49 @@ An analysis applies analytical (often computational) methods to existing data of
 | Bioinformatic protocol deviation | A variation from processes or procedures defined in the bioinformatic protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor. | [NCIT:C50996](http://purl.obolibrary.org/obo/NCIT_C50996)  | string |
 | Reason for bioinformatic protocol deviation | The rationale for why a deviation from the bioinformatic protocol has occurred. | [NCIT:C93529](http://purl.obolibrary.org/obo/NCIT_C93529)  | string |
 | WGS guideline followed | Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels. | [NCIT:C17564](http://purl.obolibrary.org/obo/NCIT_C17564)  | string |
+
+## Module: Metabolomic material processing
+A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. Ontology: [OBI:0000073](http://purl.obolibrary.org/obo/OBI_0000073) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular metabolomics material processing. | [NCIT:C132299](http://purl.obolibrary.org/obo/NCIT_C132299)  | identifier |
+| Sample extraction | The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it. | [CHMO:0001577](http://purl.obolibrary.org/obo/CHMO_0001577)  | string |
+| Filter used | The filter used in separating of suspended solids from a liquid or gas, usually by forcing a carrier gas or liquid through a porous medium. | [CHMO:0001640](http://purl.obolibrary.org/obo/CHMO_0001640)  | string |
+| Passing rate | The volume of carrier gas passing through a chromatography column in unit time. | [CHMO:0002751](http://purl.obolibrary.org/obo/CHMO_0002751)  | integer |
+| SPE cartridge | A sample preparation technique using a solid adsorbent contained most commonly in a cartridge device, or on a disk to adsorb select species from solution. | [OMIT:0025161](http://purl.obolibrary.org/obo/OMIT_0025161)  | string |
+| Washing protocol | Washing is a process by which a material entity acting as contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow. | [OBI:0302888](http://purl.obolibrary.org/obo/OBI_0302888)  | text |
+
+## Module: Metabolomic assay
+A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. Ontology: [NCIT:C60819](http://purl.obolibrary.org/obo/NCIT_C60819) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular metabolomics assay. | [NCIT:C171266](http://purl.obolibrary.org/obo/NCIT_C171266)  | identifier |
+| Belongs metabolomic material processing | This metabolomic assay is part of a metabolomic material processing. | [SIO:000068](http://semanticscience.org/resource/SIO_000068)  | Reference to instances of Metabolomic material processing |
+| Inlet | A valve that controls the flow of fluids in through the wall of a chamber. | [NCIT:C50251](http://purl.obolibrary.org/obo/NCIT_C50251)  | string |
+| Mass spectrometer | A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra. | [CHMO:0000982](http://purl.obolibrary.org/obo/CHMO_0000982)  | string |
+| Ionization source | A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis. | [CHMO:0000960](http://purl.obolibrary.org/obo/CHMO_0000960)  | string |
+| Chromatography column | A piece of apparatus that has the form of a tube with a diameter between 5 to 50 mm and hosts the stationary bed in chromatography. | [CHMO:0000997](http://purl.obolibrary.org/obo/CHMO_0000997)  | string |
+| Phase separation protocol | Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase. | [CHMO:0002214](http://purl.obolibrary.org/obo/CHMO_0002214)  | text |
+| Mass spec source conditions | Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition. | [ZECO:0000104](http://purl.obolibrary.org/obo/ZECO_0000104)  | string |
+
+## Module: Metabolomic analysis
+Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). Ontology: [EDAM:data_0949](http://edamontology.org/data_0949) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular metabolomics assay. | [EDAM:data_1083](http://edamontology.org/data_1083)  | identifier |
+| Belongs metabolomic assay | This metabolomic analysis is part of a metabolomic assay. | [SIO:000068](http://semanticscience.org/resource/SIO_000068)  | Reference to instances of Metabolomic assay |
+| Workflow definition | File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives. | [SIO:000127](http://semanticscience.org/resource/SIO_000127)  | text |
+| Workflow engine | The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow. | [NCIT:C48293](http://purl.obolibrary.org/obo/NCIT_C48293)  | string |
+| Workflow published | A printed or electronic work offered for distribution. | [NCIT:C48471](http://purl.obolibrary.org/obo/NCIT_C48471)  | string |
+| Containerized by | The analysis has been boxed by a container engine such as Singularity or Docker. | [NCIT:C43186](http://purl.obolibrary.org/obo/NCIT_C43186)  | string |
+| Software tools | A general term primarily used for digitally stored data such as computer programs and other kinds of information read and written by computers. | [ERO:0000071](http://purl.obolibrary.org/obo/ERO_0000071)  | string |
+| Parameters | Any factor that defines a system and determines (or limits) its performance. | [NCIT:C44175](http://purl.obolibrary.org/obo/NCIT_C44175)  | string |
+| Data formats stored | Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available. | [NCIT:C142494](http://purl.obolibrary.org/obo/NCIT_C142494)  | [DataFormats.tsv](../../lookups/DataFormats.tsv) lookup (582 choices [of type](http://edamontology.org/format_1915)) |
+| Standards used | Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc. | [SIO:000618](http://semanticscience.org/resource/SIO_000618)  | string |
+| Statistical methods applied | A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc. | [NCIT:C19044](http://purl.obolibrary.org/obo/NCIT_C19044)  | string |
 
 ## Module: Genomic Variation
 Schema for a Beacon genomic variant entry. Ontology: [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060) .

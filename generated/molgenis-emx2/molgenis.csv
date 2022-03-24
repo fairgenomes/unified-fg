@@ -257,6 +257,12 @@ referencegenomeused,description,Text,,,,Description (English)
 referencegenomeused,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 referencegenomeused,code,String,,,,The code within the code system
 referencegenomeused,iri,String,,,,The Internationalized Resource Identifier for this term
+dataformatsstored,,,,,,"Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).",http://edamontology.org/data_0949
+dataformatsstored,value,String,1,TRUE,,Value (English)
+dataformatsstored,description,Text,,,,Description (English)
+dataformatsstored,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+dataformatsstored,code,String,,,,The code within the code system
+dataformatsstored,iri,String,,,,The Internationalized Resource Identifier for this term
 position_assemblyid,,,,,,"Schema for a Beacon genomic variant entry.",http://purl.obolibrary.org/obo/SO_0001060
 position_assemblyid,value,String,1,TRUE,,Value (English)
 position_assemblyid,description,Text,,,,Description (English)
@@ -472,6 +478,34 @@ ngsanalysis,bioinformaticprotocolused,text,,,,"A human-readable collection of in
 ngsanalysis,bioinformaticprotocoldeviation,string,,,,"A variation from processes or procedures defined in the bioinformatic protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor.",http://purl.obolibrary.org/obo/NCIT_C50996
 ngsanalysis,reasonforbioinformaticprotocoldeviation,string,,,,"The rationale for why a deviation from the bioinformatic protocol has occurred.",http://purl.obolibrary.org/obo/NCIT_C93529
 ngsanalysis,wgsguidelinefollowed,string,,,,"Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels.",http://purl.obolibrary.org/obo/NCIT_C17564
+metabolomicmaterialprocessing,,,,,,"A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations.",http://purl.obolibrary.org/obo/OBI_0000073
+metabolomicmaterialprocessing,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular metabolomics material processing.",http://purl.obolibrary.org/obo/NCIT_C132299
+metabolomicmaterialprocessing,sampleextraction,string,,,,"The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it.",http://purl.obolibrary.org/obo/CHMO_0001577
+metabolomicmaterialprocessing,filterused,string,,,,"The filter used in separating of suspended solids from a liquid or gas, usually by forcing a carrier gas or liquid through a porous medium.",http://purl.obolibrary.org/obo/CHMO_0001640
+metabolomicmaterialprocessing,passingrate,int,,,,"The volume of carrier gas passing through a chromatography column in unit time.",http://purl.obolibrary.org/obo/CHMO_0002751
+metabolomicmaterialprocessing,specartridge,string,,,,"A sample preparation technique using a solid adsorbent contained most commonly in a cartridge device, or on a disk to adsorb select species from solution.",http://purl.obolibrary.org/obo/OMIT_0025161
+metabolomicmaterialprocessing,washingprotocol,text,,,,"Washing is a process by which a material entity acting as contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow.",http://purl.obolibrary.org/obo/OBI_0302888
+metabolomicassay,,,,,,"A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug.",http://purl.obolibrary.org/obo/NCIT_C60819
+metabolomicassay,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular metabolomics assay.",http://purl.obolibrary.org/obo/NCIT_C171266
+metabolomicassay,belongsmetabolomicmaterialprocessing,ref,,,metabolomicmaterialprocessing,"This metabolomic assay is part of a metabolomic material processing.",http://semanticscience.org/resource/SIO_000068
+metabolomicassay,inlet,string,,,,"A valve that controls the flow of fluids in through the wall of a chamber.",http://purl.obolibrary.org/obo/NCIT_C50251
+metabolomicassay,massspectrometer,string,,,,"A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra.",http://purl.obolibrary.org/obo/CHMO_0000982
+metabolomicassay,ionizationsource,string,,,,"A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis.",http://purl.obolibrary.org/obo/CHMO_0000960
+metabolomicassay,chromatographycolumn,string,,,,"A piece of apparatus that has the form of a tube with a diameter between 5 to 50 mm and hosts the stationary bed in chromatography.",http://purl.obolibrary.org/obo/CHMO_0000997
+metabolomicassay,phaseseparationprotocol,text,,,,"Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase.",http://purl.obolibrary.org/obo/CHMO_0002214
+metabolomicassay,massspecsourceconditions,string,,,,"Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition.",http://purl.obolibrary.org/obo/ZECO_0000104
+metabolomicanalysis,,,,,,"Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).",http://edamontology.org/data_0949
+metabolomicanalysis,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular metabolomics assay.",http://edamontology.org/data_1083
+metabolomicanalysis,belongsmetabolomicassay,ref,,,metabolomicassay,"This metabolomic analysis is part of a metabolomic assay.",http://semanticscience.org/resource/SIO_000068
+metabolomicanalysis,workflowdefinition,text,,,,"File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives.",http://semanticscience.org/resource/SIO_000127
+metabolomicanalysis,workflowengine,string,,,,"The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow.",http://purl.obolibrary.org/obo/NCIT_C48293
+metabolomicanalysis,workflowpublished,string,,,,"A printed or electronic work offered for distribution.",http://purl.obolibrary.org/obo/NCIT_C48471
+metabolomicanalysis,containerizedby,string,,,,"The analysis has been boxed by a container engine such as Singularity or Docker.",http://purl.obolibrary.org/obo/NCIT_C43186
+metabolomicanalysis,softwaretools,string,,,,"A general term primarily used for digitally stored data such as computer programs and other kinds of information read and written by computers.",http://purl.obolibrary.org/obo/ERO_0000071
+metabolomicanalysis,parameters,string,,,,"Any factor that defines a system and determines (or limits) its performance.",http://purl.obolibrary.org/obo/NCIT_C44175
+metabolomicanalysis,dataformatsstored,ref_array,,,dataformatsstored,"Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.",http://purl.obolibrary.org/obo/NCIT_C142494
+metabolomicanalysis,standardsused,string,,,,"Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc.",http://semanticscience.org/resource/SIO_000618
+metabolomicanalysis,statisticalmethodsapplied,string,,,,"A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc.",http://purl.obolibrary.org/obo/NCIT_C19044
 genomicvariation,,,,,,"Schema for a Beacon genomic variant entry.",http://purl.obolibrary.org/obo/SO_0001060
 genomicvariation,variantinternalid,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular variation.",http://purl.obolibrary.org/obo/NCIT_C164813
 genomicvariation,alternatebases,string,,,,"An allele that varies in it sequence from what is considered the reference or canonical sequence at that location.",http://purl.obolibrary.org/obo/GENO_0000002
