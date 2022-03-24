@@ -1319,6 +1319,179 @@ fg:NGS_analysis_WGS_guideline_followed a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:NCIT_C17564;
   dc:description "Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels." .
 
+fg:Metabolomic_material_processing a owl:Class;
+  rdfs:isDefinedBy obo:OBI_0000073;
+  rdfs:label "Metabolomic material processing";
+  dc:description "A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations." .
+
+fg:Metabolomic_material_processing_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:NCIT_C132299;
+  dc:description "A unique proper name or character sequence that identifies this particular metabolomics material processing." .
+
+fg:Metabolomic_material_processing_Belongs_to_materials a owl:ObjectProperty;
+  rdfs:label "Belongs to materials";
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:NCIT_C93400, obo:NCIT_C25683;
+  dc:description "Reference to the source material from which this sample was prepared." .
+
+fg:Metabolomic_material_processing_Sample_extraction a owl:DatatypeProperty;
+  rdfs:label "Sample extraction";
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:CHMO_0001577;
+  dc:description "The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it." .
+
+fg:Metabolomic_material_processing_Filter_used a owl:DatatypeProperty;
+  rdfs:label "Filter used";
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:CHMO_0001640;
+  dc:description "The filter used in separating of suspended solids from a liquid or gas, usually by forcing a carrier gas or liquid through a porous medium." .
+
+fg:Metabolomic_material_processing_Passing_rate a owl:DatatypeProperty;
+  rdfs:label "Passing rate";
+  sio:SIO_000074 obo:NCIT_C64777;
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:CHMO_0002751;
+  dc:description "The volume of carrier gas passing through a chromatography column in unit time." .
+
+fg:Metabolomic_material_processing_SPE_cartridge a owl:DatatypeProperty;
+  rdfs:label "SPE cartridge";
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:OMIT_0025161;
+  dc:description "A sample preparation technique using a solid adsorbent contained most commonly in a cartridge device, or on a disk to adsorb select species from solution." .
+
+fg:Metabolomic_material_processing_Washing_protocol a owl:DatatypeProperty;
+  rdfs:label "Washing protocol";
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:OBI_0302888;
+  dc:description "Washing is a process by which a material entity acting as contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow." .
+
+fg:Metabolomic_assay a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C60819;
+  rdfs:label "Metabolomic assay";
+  dc:description "A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug." .
+
+fg:Metabolomic_assay_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Metabolomic_assay;
+  rdfs:isDefinedBy obo:NCIT_C171266;
+  dc:description "A unique proper name or character sequence that identifies this particular metabolomics assay." .
+
+fg:Metabolomic_assay_Belongs_metabolomic_material_processing a owl:ObjectProperty;
+  rdfs:label "Belongs metabolomic material processing";
+  rdfs:domain fg:Metabolomic_assay;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000068>;
+  dc:description "This metabolomic assay is part of a metabolomic material processing." .
+
+fg:Metabolomic_assay_Inlet a owl:DatatypeProperty;
+  rdfs:label "Inlet";
+  rdfs:domain fg:Metabolomic_assay;
+  rdfs:isDefinedBy obo:NCIT_C50251;
+  dc:description "A valve that controls the flow of fluids in through the wall of a chamber." .
+
+fg:Metabolomic_assay_Mass_spectrometer a owl:DatatypeProperty;
+  rdfs:label "Mass spectrometer";
+  rdfs:domain fg:Metabolomic_assay;
+  rdfs:isDefinedBy obo:CHMO_0000982;
+  dc:description "A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra." .
+
+fg:Metabolomic_assay_Ionization_source a owl:DatatypeProperty;
+  rdfs:label "Ionization source";
+  rdfs:domain fg:Metabolomic_assay;
+  rdfs:isDefinedBy obo:CHMO_0000960;
+  dc:description "A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis." .
+
+fg:Metabolomic_assay_Chromatography_column a owl:DatatypeProperty;
+  rdfs:label "Chromatography column";
+  rdfs:domain fg:Metabolomic_assay;
+  rdfs:isDefinedBy obo:CHMO_0000997;
+  dc:description "A piece of apparatus that has the form of a tube with a diameter between 5 to 50 mm and hosts the stationary bed in chromatography." .
+
+fg:Metabolomic_assay_Phase_separation_protocol a owl:DatatypeProperty;
+  rdfs:label "Phase separation protocol";
+  rdfs:domain fg:Metabolomic_assay;
+  rdfs:isDefinedBy obo:CHMO_0002214;
+  dc:description "Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase." .
+
+fg:Metabolomic_assay_Mass_spec_source_conditions a owl:DatatypeProperty;
+  rdfs:label "Mass spec source conditions";
+  rdfs:domain fg:Metabolomic_assay;
+  rdfs:isDefinedBy obo:ZECO_0000104;
+  dc:description "Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition." .
+
+fg:Metabolomic_analysis a owl:Class;
+  rdfs:isDefinedBy <http://edamontology.org/data_0949>;
+  rdfs:label "Metabolomic analysis";
+  dc:description "Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself)." .
+
+fg:Metabolomic_analysis_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy <http://edamontology.org/data_1083>;
+  dc:description "A unique proper name or character sequence that identifies this particular metabolomics assay." .
+
+fg:Metabolomic_analysis_Belongs_metabolomic_assay a owl:ObjectProperty;
+  rdfs:label "Belongs metabolomic assay";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000068>;
+  dc:description "This metabolomic analysis is part of a metabolomic assay." .
+
+fg:Metabolomic_analysis_Workflow_definition a owl:DatatypeProperty;
+  rdfs:label "Workflow definition";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000127>;
+  dc:description "File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives." .
+
+fg:Metabolomic_analysis_Workflow_engine a owl:DatatypeProperty;
+  rdfs:label "Workflow engine";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy obo:NCIT_C48293;
+  dc:description "The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow." .
+
+fg:Metabolomic_analysis_Workflow_published a owl:DatatypeProperty;
+  rdfs:label "Workflow published";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy obo:NCIT_C48471;
+  dc:description "A printed or electronic work offered for distribution." .
+
+fg:Metabolomic_analysis_Containerized_by a owl:DatatypeProperty;
+  rdfs:label "Containerized by";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy obo:NCIT_C43186;
+  dc:description "The analysis has been boxed by a container engine such as Singularity or Docker." .
+
+fg:Metabolomic_analysis_Software_tools a owl:DatatypeProperty;
+  rdfs:label "Software tools";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy obo:ERO_0000071;
+  dc:description "A general term primarily used for digitally stored data such as computer programs and other kinds of information read and written by computers." .
+
+fg:Metabolomic_analysis_Parameters a owl:DatatypeProperty;
+  rdfs:label "Parameters";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy obo:NCIT_C44175;
+  dc:description "Any factor that defines a system and determines (or limits) its performance." .
+
+fg:Metabolomic_analysis_Data_formats_stored a owl:ObjectProperty;
+  rdfs:label "Data formats stored";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy obo:NCIT_C142494;
+  dc:description "Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.";
+  rdfs:range <http://edamontology.org/format_1915> .
+
+fg:Metabolomic_analysis_Standards_used a owl:DatatypeProperty;
+  rdfs:label "Standards used";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000618>;
+  dc:description "Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc." .
+
+fg:Metabolomic_analysis_Statistical_methods_applied a owl:DatatypeProperty;
+  rdfs:label "Statistical methods applied";
+  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:isDefinedBy obo:NCIT_C19044;
+  dc:description "A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc." .
+
 fg:Genomic_Variation a owl:Class;
   rdfs:isDefinedBy obo:SO_0001060;
   rdfs:label "Genomic Variation";

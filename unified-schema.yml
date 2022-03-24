@@ -1250,6 +1250,158 @@ tables:
         tags: NCIT:C17564 [http://purl.obolibrary.org/obo/NCIT_C17564]
         dataType: string
 
+
+  - name: Metabolomic material processing
+    description: A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations.
+    tags: OBI:0000073 [http://purl.obolibrary.org/obo/OBI_0000073]
+    columns:
+
+      - name: Identifier
+        description: A unique proper name or character sequence that identifies this particular metabolomics material processing.
+        tags: NCIT:C132299 [http://purl.obolibrary.org/obo/NCIT_C132299]
+        dataType: identifier
+
+      - name: Belongs to materials
+        dataType: xref
+        reference: Materials
+        description: Reference to the source material from which this sample was prepared.
+        tags: NCIT:C93400 [http://purl.obolibrary.org/obo/NCIT_C93400], NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+
+      - name: Sample extraction
+        description: The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it.
+        tags: CHMO:0001577 [http://purl.obolibrary.org/obo/CHMO_0001577]
+        dataType: string
+
+      - name: Filter used
+        description: The filter used in separating of suspended solids from a liquid or gas, usually by forcing a carrier gas or liquid through a porous medium.
+        tags: CHMO:0001640 [http://purl.obolibrary.org/obo/CHMO_0001640]
+        dataType: string
+
+      - name: Passing rate
+        description: The volume of carrier gas passing through a chromatography column in unit time.
+        tags: CHMO:0002751 [http://purl.obolibrary.org/obo/CHMO_0002751]
+        dataType: integer
+        unit: NCIT:C64777 [http://purl.obolibrary.org/obo/NCIT_C64777]
+
+      - name: SPE cartridge
+        description: A sample preparation technique using a solid adsorbent contained most commonly in a cartridge device, or on a disk to adsorb select species from solution.
+        tags: OMIT:0025161 [http://purl.obolibrary.org/obo/OMIT_0025161]
+        dataType: string
+
+      - name: Washing protocol
+        description: Washing is a process by which a material entity acting as contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow.
+        tags: OBI:0302888 [http://purl.obolibrary.org/obo/OBI_0302888]
+        dataType: text
+
+  - name: Metabolomic assay
+    description: A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug.
+    tags: NCIT:C60819 [http://purl.obolibrary.org/obo/NCIT_C60819]
+    columns:
+
+      - name: Identifier
+        description: A unique proper name or character sequence that identifies this particular metabolomics assay.
+        tags: NCIT:C171266 [http://purl.obolibrary.org/obo/NCIT_C171266]
+        dataType: identifier
+
+      - name: Belongs metabolomic material processing
+        dataType: xref
+        reference: Metabolomic material processing
+        description: This metabolomic assay is part of a metabolomic material processing.
+        tags: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
+
+      - name: Inlet
+        description: A valve that controls the flow of fluids in through the wall of a chamber.
+        tags: NCIT:C50251 [http://purl.obolibrary.org/obo/NCIT_C50251]
+        dataType: string
+
+      - name: Mass spectrometer
+        description: A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra.
+        tags: CHMO:0000982 [http://purl.obolibrary.org/obo/CHMO_0000982]
+        dataType: string
+
+      - name: Ionization source
+        description: A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis.
+        tags: CHMO:0000960 [http://purl.obolibrary.org/obo/CHMO_0000960]
+        dataType: string
+
+      - name: Chromatography column
+        description: A piece of apparatus that has the form of a tube with a diameter between 5 to 50 mm and hosts the stationary bed in chromatography.
+        tags: CHMO:0000997 [http://purl.obolibrary.org/obo/CHMO_0000997]
+        dataType: string
+
+      - name: Phase separation protocol
+        description: Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase.
+        tags: CHMO:0002214 [http://purl.obolibrary.org/obo/CHMO_0002214]
+        dataType: text
+
+      - name: Mass spec source conditions
+        description: Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition.
+        tags: ZECO:0000104 [http://purl.obolibrary.org/obo/ZECO_0000104]
+        dataType: string
+
+  - name: Metabolomic analysis
+    description: Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).
+    tags: EDAM:data_0949 [http://edamontology.org/data_0949]
+    columns:
+
+      - name: Identifier
+        description: A unique proper name or character sequence that identifies this particular metabolomics assay.
+        tags: EDAM:data_1083 [http://edamontology.org/data_1083]
+        dataType: identifier
+
+      - name: Belongs metabolomic assay
+        dataType: xref
+        reference: Metabolomic assay
+        description: This metabolomic analysis is part of a metabolomic assay.
+        tags: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
+
+      - name: Workflow definition
+        description: File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives.
+        tags: SIO:000127 [http://semanticscience.org/resource/SIO_000127]
+        dataType: text
+
+      - name: Workflow engine
+        description: The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow.
+        tags: NCIT:C48293 [http://purl.obolibrary.org/obo/NCIT_C48293]
+        dataType: string
+
+      - name: Workflow published
+        description: A printed or electronic work offered for distribution.
+        tags: NCIT:C48471 [http://purl.obolibrary.org/obo/NCIT_C48471]
+        dataType: string
+
+      - name: Containerized by
+        description: The analysis has been boxed by a container engine such as Singularity or Docker.
+        tags: NCIT:C43186 [http://purl.obolibrary.org/obo/NCIT_C43186]
+        dataType: string
+
+      - name: Software tools
+        description: A general term primarily used for digitally stored data such as computer programs and other kinds of information read and written by computers.
+        tags: ERO:0000071 [http://purl.obolibrary.org/obo/ERO_0000071]
+        dataType: string
+
+      - name: Parameters
+        description: Any factor that defines a system and determines (or limits) its performance.
+        tags: NCIT:C44175 [http://purl.obolibrary.org/obo/NCIT_C44175]
+        dataType: string
+
+      - name: Data formats stored
+        description: Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.
+        tags: NCIT:C142494 [http://purl.obolibrary.org/obo/NCIT_C142494]
+        dataType: mref
+        reference: lookups/DataFormats.tsv
+        referenceTypeTag: EDAM:format_1915 [http://edamontology.org/format_1915]
+
+      - name: Standards used
+        description: Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc.
+        tags: SIO:000618 [http://semanticscience.org/resource/SIO_000618]
+        dataType: string
+
+      - name: Statistical methods applied
+        description: A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc.
+        tags: NCIT:C19044 [http://purl.obolibrary.org/obo/NCIT_C19044]
+        dataType: string
+
   # Beacon v2 "genomicVariations" attributes with added ontology tags
   #
   # for now, ignoring:

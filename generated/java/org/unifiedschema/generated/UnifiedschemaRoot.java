@@ -17,5 +17,8 @@ public class UnifiedschemaRoot {
 	public Map<String, Signedconsent> Signedconsent;
 	public Map<String, Leafletandconsentform> Leafletandconsentform;
 	public Map<String, Ngsanalysis> Ngsanalysis;
+	public Map<String, Metabolomicmaterialprocessing> Metabolomicmaterialprocessing;
+	public Map<String, Metabolomicassay> Metabolomicassay;
+	public Map<String, Metabolomicanalysis> Metabolomicanalysis;
 	public Map<String, Genomicvariation> Genomicvariation;
 }

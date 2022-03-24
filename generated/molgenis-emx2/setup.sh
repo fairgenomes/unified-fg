@@ -42,4 +42,5 @@ curl -X POST --data-binary @allowrecontacting.csv http://localhost:8080/unifiedm
 curl -X POST --data-binary @consentformcreator.csv http://localhost:8080/unifiedmodel/api/csv/consentformcreator
 curl -X POST --data-binary @dataformatsstored.csv http://localhost:8080/unifiedmodel/api/csv/dataformatsstored
 curl -X POST --data-binary @referencegenomeused.csv http://localhost:8080/unifiedmodel/api/csv/referencegenomeused
+curl -X POST --data-binary @dataformatsstored.csv http://localhost:8080/unifiedmodel/api/csv/dataformatsstored
 curl -X POST --data-binary @position_assemblyid.csv http://localhost:8080/unifiedmodel/api/csv/position_assemblyid
