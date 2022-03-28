@@ -797,7 +797,7 @@ tables:
         description: A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis.
         tags: OBI:0000118 [http://purl.obolibrary.org/obo/OBI_0000118]
 
-  - name: Sequencing run
+  - name: Sequencing runs
     description: The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes.
     tags: EDAM:topic_3168 [http://edamontology.org/topic_3168], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
     relationWith:
@@ -921,7 +921,7 @@ tables:
 
       - name: Produced by sequencing
         dataType: mref
-        reference: Sequencing run
+        reference: Sequencing runs
         description: A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.
         tags: NCIT:C171337 [http://purl.obolibrary.org/obo/NCIT_C171337]
 
@@ -1197,7 +1197,7 @@ tables:
     description: An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output.
     tags: EDAM:operation_2945 [http://edamontology.org/operation_2945]
     relationWith:
-      - table: Sequencing run
+      - table: Sequencing runs
         relation: SIO:000253 [http://semanticscience.org/resource/SIO_000253]
     columns:
       - name: Identifier
@@ -1208,7 +1208,7 @@ tables:
         description: Reference to the sequencing that was performed, i.e. the source on which this analysis was based.
         tags: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
         dataType: xref
-        reference: Sequencing run
+        reference: Sequencing runs
       - name: Physical data location
         description: A place on the Earth where the data is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which computer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).
         tags: GAZ:00000448 [http://purl.obolibrary.org/obo/GAZ_00000448]
@@ -1418,6 +1418,24 @@ tables:
         tags: NCIT:C164813 [http://purl.obolibrary.org/obo/NCIT_C164813]
         dataType: identifier
 
+      - name: Belongs to subject
+        dataType: xref
+        reference: Subjects
+        description: An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
+        tags: NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495], IAO:0000136 [http://purl.obolibrary.org/obo/IAO_0000136]
+
+      - name: Belongs to material
+        dataType: xref
+        reference: Materials
+        description: Reference to the source material from which this sample was prepared.
+        tags: NCIT:C93400 [http://purl.obolibrary.org/obo/NCIT_C93400], NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+
+      - name: Produced by sequencing run
+        dataType: mref
+        reference: Sequencing runs
+        description: A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.
+        tags: NCIT:C171337 [http://purl.obolibrary.org/obo/NCIT_C171337]
+
       - name: alternateBases
         description: An allele that varies in it sequence from what is considered the reference or canonical sequence at that location.
         tags: GENO:0000002 [http://purl.obolibrary.org/obo/GENO_0000002]
@@ -1509,3 +1527,4 @@ tables:
         description: The likelihood of an entity to produce pathologic changes or disease.
         tags: NCIT:C168796 [http://purl.obolibrary.org/obo/NCIT_C168796]
         dataType: string
+

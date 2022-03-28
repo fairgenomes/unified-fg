@@ -4,6 +4,9 @@ import java.util.List;
 
 public class Genomicvariation {
 	public String variantinternalid;
+	public String belongstosubject;
+	public String belongstomaterial;
+	public List<String> producedbysequencingrun;
 	public String alternatebases;
 	public String referencebases;
 	public String varianttype;

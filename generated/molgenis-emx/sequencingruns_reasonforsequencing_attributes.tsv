@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	sequencingruns_reasonforsequencing	Value (English)	String	TRUE	FALSE
+description	sequencingruns_reasonforsequencing	Description (English)	Text	FALSE	TRUE
+codesystem	sequencingruns_reasonforsequencing	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	sequencingruns_reasonforsequencing	The code within the code system	String	FALSE	TRUE
+iri	sequencingruns_reasonforsequencing	The Internationalized Resource Identifier for this term	String	FALSE	TRUE
