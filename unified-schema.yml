@@ -1408,9 +1408,9 @@ tables:
   # caseLevelData (n = 11)
   # frequencyInPopulations (n = 4)
   #
-  - name: Genomic Variation
-    description: Schema for a Beacon genomic variant entry.
-    tags: SO:0001060 [http://purl.obolibrary.org/obo/SO_0001060]
+  - name: Genomic variation description
+    description: Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence.
+    tags: NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248]
     columns:
 
       - name: variantInternalId
@@ -1528,3 +1528,16 @@ tables:
         tags: NCIT:C168796 [http://purl.obolibrary.org/obo/NCIT_C168796]
         dataType: string
 
+  - name: Genomic variation observation
+    description: Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment.
+    tags: NCIT:C164404 [http://purl.obolibrary.org/obo/NCIT_C164404]
+    columns:
+
+      - name: todo
+
+  - name: Genomic variation annotation
+    description: In-context information that has been associated with genomic variants.
+    tags: NCIT:C44272 [http://purl.obolibrary.org/obo/NCIT_C44272]
+    columns:
+
+      - name: todo
