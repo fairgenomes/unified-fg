@@ -8,147 +8,147 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-fg:Sequencing_run_Reason_for_sequencing_Carrier_Status a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Carrier_Status a obo:NCIT_C171003;
   rdfs:label "Carrier Status";
   dc:description "quantification of the presence or absence of a marker eg a gene or a substance in a sample";
   rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/EFO_0007658> .
 
-fg:Sequencing_run_Reason_for_sequencing_Diagnostic a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Diagnostic a obo:NCIT_C171003;
   rdfs:label "Diagnostic";
   dc:description "Characteristic or indicative of a condition.";
   rdfs:isDefinedBy obo:NCIT_C25482 .
 
-fg:Sequencing_run_Reason_for_sequencing_Genetic_Testing a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Genetic_Testing a obo:NCIT_C171003;
   rdfs:label "Genetic Testing";
   dc:description "The process of isolating and testing the DNA of an embryo or a person to detect the presence of genetic alterations or defects that may predispose to the future development of a disease or disorder.";
   rdfs:isDefinedBy obo:NCIT_C15709 .
 
-fg:Sequencing_run_Reason_for_sequencing_Informative a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Informative a obo:NCIT_C171003;
   rdfs:label "Informative";
   dc:description "Refers to data that is useful in forming an opinion or judging an outcome.";
   rdfs:isDefinedBy obo:NCIT_C94366 .
 
-fg:Sequencing_run_Reason_for_sequencing_Prenatal_Examination a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Prenatal_Examination a obo:NCIT_C171003;
   rdfs:label "Prenatal Examination";
   dc:description "A test or diagnostic examination to assess the health status of the mother and well being of the fetus.";
   rdfs:isDefinedBy obo:MAXO_0000528 .
 
-fg:Sequencing_run_Reason_for_sequencing_Presymptomatic_Testing a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Presymptomatic_Testing a obo:NCIT_C171003;
   rdfs:label "Presymptomatic Testing";
   dc:description "Genetic analysis of an asymptomatic or unaffected individual who is at risk of a specific genetic disorder.";
   rdfs:isDefinedBy obo:NCIT_C94311 .
 
-fg:Sequencing_run_Reason_for_sequencing_Research a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Research a obo:NCIT_C171003;
   rdfs:label "Research";
   dc:description "Systematic investigation into a subject in order to discover facts establish or revise a theory or develop a plan of action based on the facts discovered.";
   rdfs:isDefinedBy obo:NCIT_C15429 .
 
-fg:Sequencing_run_Reason_for_sequencing_Storage a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Storage a obo:NCIT_C171003;
   rdfs:label "Storage";
   dc:description "A maintenance process by which material entities that are not actively metabolizing are placed in well identified location and possibly under controlled environment in ad-hoc devices/structures in order to preserve and protect them from decay/alteration and maintain availability.";
   rdfs:isDefinedBy obo:OBI_0302893 .
 
-fg:Sequencing_run_Reason_for_sequencing_Other a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Other a obo:NCIT_C171003;
   rdfs:label "Other";
   dc:description "The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g. concept not provided by required code system).";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH> .
 
-fg:Sequencing_run_Reason_for_sequencing_Unknown a obo:NCIT_C171003;
+fg:Sequencing_runs_Reason_for_sequencing_Unknown a obo:NCIT_C171003;
   rdfs:label "Unknown";
   dc:description "A proper value is applicable but not known.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_NoInformation_(NI,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_NoInformation_(NI,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "NoInformation (NI, nullflavor)";
   dc:description "The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Invalid_(INV,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Invalid_(INV,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Invalid (INV, nullflavor)";
   dc:description "The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Derived_(DER,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Derived_(DER,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Derived (DER, nullflavor)";
   dc:description "An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Other_(OTH,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Other_(OTH,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Other (OTH, nullflavor)";
   dc:description "The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Negative_infinity_(NINF,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Negative_infinity_(NINF,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Negative infinity (NINF, nullflavor)";
   dc:description "Negative infinity of numbers.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NINF> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Positive_infinity_(PINF,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Positive_infinity_(PINF,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Positive infinity (PINF, nullflavor)";
   dc:description "Positive infinity of numbers.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#PINF> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Un-encoded_(UNC,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Un-encoded_(UNC,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Un-encoded (UNC, nullflavor)";
   dc:description "The actual value has not yet been encoded within the approved value domain.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNC> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Masked_(MSK,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Masked_(MSK,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Masked (MSK, nullflavor)";
   dc:description "There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons. There may be an alternate mechanism for gaining access to this information.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#MSK> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Not_applicable_(NA,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Not_applicable_(NA,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Not applicable (NA, nullflavor)";
   dc:description "Known to have no proper value (e.g., last menstrual period for a male).";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Unknown_(UNK,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Unknown_(UNK,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Unknown (UNK, nullflavor)";
   dc:description "A proper value is applicable, but not known.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Asked_but_unknown_(ASKU,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Asked_but_unknown_(ASKU,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Asked but unknown (ASKU, nullflavor)";
   dc:description "Information was sought but not found (e.g., patient was asked but didn't know)";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Temporarily_unavailable_(NAV,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Temporarily_unavailable_(NAV,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Temporarily unavailable (NAV, nullflavor)";
   dc:description "Information is not available at this time but it is expected that it will be available later.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAV> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Not_asked_(NASK,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Not_asked_(NASK,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Not asked (NASK, nullflavor)";
   dc:description "This information has not been sought. (e.g., patient was not asked)";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NASK> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Not_available_(NAVU,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Not_available_(NAVU,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Not available (NAVU, nullflavor)";
   dc:description "Information is not available at this time (with no expectation regarding whether it will or will not be available in the future).";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAVU> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Sufficient_quantity_(QS,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Sufficient_quantity_(QS,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Sufficient quantity (QS, nullflavor)";
   dc:description "The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material. e.g. 'Add 10mg of ingredient X, 50mg of ingredient Y, and sufficient quantity of water to 100mL.' The null flavor would be used to express the quantity of water.";
   rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#QS> .
 
-<https://w3id.org/fair-genomes/ontology/Sequencing_run_Reason_for_sequencing_Trace_(TRC,_nullflavor)>
+<https://w3id.org/fair-genomes/ontology/Sequencing_runs_Reason_for_sequencing_Trace_(TRC,_nullflavor)>
   a obo:NCIT_C171003;
   rdfs:label "Trace (TRC, nullflavor)";
   dc:description "The content is greater than zero, but too small to be quantified.";

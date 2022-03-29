@@ -1,0 +1,21 @@
+value	description	codesystem	code	iri
+X-linked dominant   Pattern of inheritance in which a single mutated allele on the X chromosome is sufficient to express the phenotype. The phenotype is more consistently and severely expressed in hemizygous boys (having only one copy of the gene) than in heterozygous girls.     Orphanet    409934   http://www.orpha.net/ORDO/Orphanet_409934
+X-linked recessive
+Y-linked
+autosomal dominant
+autosomal recessive
+mitochondrial
+multigenic/multifactorial
+no inheritance data available
+not genetically inherited
+oligogenic
+semi-dominant
+unknown inheritance
+
+orpha:
+https://www.ebi.ac.uk/ols/ontologies/ordo/terms?iri=http%3A%2F%2Fwww.orpha.net%2FORDO%2FOrphanet_C005&viewMode=All&siblings=false
+
+HPO (better..)
+https://www.ebi.ac.uk/ols/ontologies/hp/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0000005&viewMode=PreferredRoots&siblings=false
+
+

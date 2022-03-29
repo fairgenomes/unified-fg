@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __18 modules__ that contain __240 metadata elements__ and __101832 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __18 modules__ that contain __243 metadata elements__ and __101832 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -14,7 +14,7 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Sampling protocols](#module-sampling-protocols) | Describes the procedure whereby biological samples for an experiment are sourced. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 5 |
 | [NGS sample preparations](#module-ngs-sample-preparations) | A sample preparation for a nucleic acids sequencing assay. | [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
 | [Laboratory Procedures](#module-laboratory-procedures) | Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. | [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 6 |
-| [Sequencing run](#module-sequencing-run) | The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. | [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 16 |
+| [Sequencing runs](#module-sequencing-runs) | The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. | [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 16 |
 | [Files](#module-files) | A set of related records (either written or electronic) kept together. | [NCIT:C42883](http://purl.obolibrary.org/obo/NCIT_C42883), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
 | [Cohorts](#module-cohorts) | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 8 |
 | [Signed consent](#module-signed-consent) | Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. | [NCIT:C16735](http://purl.obolibrary.org/obo/NCIT_C16735), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 15 |
@@ -23,7 +23,7 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Metabolomic material processing](#module-metabolomic-material-processing) | A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. | [OBI:0000073](http://purl.obolibrary.org/obo/OBI_0000073)  | 7 |
 | [Metabolomic assay](#module-metabolomic-assay) | A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. | [NCIT:C60819](http://purl.obolibrary.org/obo/NCIT_C60819)  | 8 |
 | [Metabolomic analysis](#module-metabolomic-analysis) | Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). | [EDAM:data_0949](http://edamontology.org/data_0949)  | 11 |
-| [Genomic Variation](#module-genomic-variation) | Schema for a Beacon genomic variant entry. | [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060)  | 19 |
+| [Genomic Variation](#module-genomic-variation) | Schema for a Beacon genomic variant entry. | [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060)  | 22 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -195,7 +195,7 @@ Any procedure that involves testing or manipulating a sample of blood, urine, or
 | Subcategory | A sub-division of the laboratory test classification. | [NCIT:C83142](http://purl.obolibrary.org/obo/NCIT_C83142)  | string |
 | Gene list | A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis. | [OBI:0000118](http://purl.obolibrary.org/obo/OBI_0000118)  | text |
 
-## Module: Sequencing run
+## Module: Sequencing runs
 The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. Ontology: [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
 
 | Element | Description | Ontology | Values |
@@ -223,7 +223,7 @@ A set of related records (either written or electronic) kept together. Ontology:
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | Filename | The literal identifier for an electronic file. | [NCIT:C171191](http://purl.obolibrary.org/obo/NCIT_C171191)  | identifier |
-| Produced by sequencing | A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. | [NCIT:C171337](http://purl.obolibrary.org/obo/NCIT_C171337)  | Reference to instances of Sequencing run |
+| Produced by sequencing | A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. | [NCIT:C171337](http://purl.obolibrary.org/obo/NCIT_C171337)  | Reference to instances of Sequencing runs |
 | Belongs to subject | An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. | [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495), [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136)  | Reference to instances of Subjects |
 | Belongs to study | Reference to the study or studies to which this file belongs. | [BFO:0000050](http://purl.obolibrary.org/obo/BFO_0000050)  | Reference to instances of Studies |
 | Belongs to cohort | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512)  | Reference to instances of Cohorts |
@@ -293,7 +293,7 @@ An analysis applies analytical (often computational) methods to existing data of
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | Identifier | A unique proper name or character sequence that identifies this particular analysis. | [AFR:0001979](http://purl.allotrope.org/ontologies/result#AFR_0001979)  | identifier |
-| Belongs to sequencing | Reference to the sequencing that was performed, i.e. the source on which this analysis was based. | [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of Sequencing run |
+| Belongs to sequencing | Reference to the sequencing that was performed, i.e. the source on which this analysis was based. | [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of Sequencing runs |
 | Physical data location | A place on the Earth where the data is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which computer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent). | [GAZ:00000448](http://purl.obolibrary.org/obo/GAZ_00000448)  | string |
 | Abstract data location | The file location of the data, or a copy of the data, on an electronically accessible device for preservation (either in plain-text or encrypted format). | [NCIT:C142494](http://purl.obolibrary.org/obo/NCIT_C142494)  | string |
 | Data formats stored | Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available. | [NCIT:C142494](http://purl.obolibrary.org/obo/NCIT_C142494)  | [DataFormats.tsv](../../lookups/DataFormats.tsv) lookup (582 choices [of type](http://edamontology.org/format_1915)) |
@@ -354,6 +354,9 @@ Schema for a Beacon genomic variant entry. Ontology: [SO:0001060](http://purl.ob
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | variantInternalId | A unique proper name or character sequence that identifies this particular variation. | [NCIT:C164813](http://purl.obolibrary.org/obo/NCIT_C164813)  | identifier |
+| Belongs to subject | An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. | [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495), [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136)  | Reference to instances of Subjects |
+| Belongs to material | Reference to the source material from which this sample was prepared. | [NCIT:C93400](http://purl.obolibrary.org/obo/NCIT_C93400), [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of Materials |
+| Produced by sequencing run | A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. | [NCIT:C171337](http://purl.obolibrary.org/obo/NCIT_C171337)  | Reference to instances of Sequencing runs |
 | alternateBases | An allele that varies in it sequence from what is considered the reference or canonical sequence at that location. | [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)  | string |
 | referenceBases | An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared. | [GENO:0000152](http://purl.obolibrary.org/obo/GENO_0000152)  | string |
 | variantType | An attribute describing a type of variation inhering in a sequence feature or collection. | [GENO:0000773](http://purl.obolibrary.org/obo/GENO_0000773)  | string |

@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	sequencingruns_sequencingfacilityorganization	Value (English)	String	TRUE	FALSE
+description	sequencingruns_sequencingfacilityorganization	Description (English)	Text	FALSE	TRUE
+codesystem	sequencingruns_sequencingfacilityorganization	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	sequencingruns_sequencingfacilityorganization	The code within the code system	String	FALSE	TRUE
+iri	sequencingruns_sequencingfacilityorganization	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	sequencingruns_sequencinginstrumentmodel	Value (English)	String	TRUE	FALSE
+description	sequencingruns_sequencinginstrumentmodel	Description (English)	Text	FALSE	TRUE
+codesystem	sequencingruns_sequencinginstrumentmodel	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	sequencingruns_sequencinginstrumentmodel	The code within the code system	String	FALSE	TRUE
+iri	sequencingruns_sequencinginstrumentmodel	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

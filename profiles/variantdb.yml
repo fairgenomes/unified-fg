@@ -1,0 +1,23 @@
+name: VariantDB
+description: VariantDB unified schema profile
+authors:
+  - name: David C. Ruvolo
+    email: d.c.ruvolo@umcg.nl
+    orcid: 0000-0002-5745-5298
+  - name: K. Joeri van der Velde
+    email: k.j.van.der.velde@umcg.nl
+    orcid: 0000-0002-0934-8375
+  - name: Morris A. Swertz
+    email: m.a.swertz@umcg.nl
+    orcid: 0000-0002-0979-3401
+copyright:
+  holder: University Medical Center Groningen
+  years: 2022
+license:
+  name: Attribution 4.0 International (CC BY 4.0)
+  url: https://creativecommons.org/licenses/by/4.0/
+includes:
+  - table: Genomic variation
+    columns:
+      - name: variantInternalId
+      - name: Belongs to subject

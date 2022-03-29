@@ -1,6 +1,6 @@
 name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
 filename	Filename	The literal identifier for an electronic file. (NCIT:C171191 )	files	string	TRUE	TRUE	TRUE	FALSE	
-producedbysequencing	Produced by sequencing	A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. (NCIT:C171337 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_sequencingrun
+producedbysequencing	Produced by sequencing	A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. (NCIT:C171337 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_sequencingruns
 belongstosubject	Belongs to subject	An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. (NCIT:C142495, IAO:0000136 )	files	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects
 belongstostudy	Belongs to study	Reference to the study or studies to which this file belongs. (BFO:0000050 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_studies
 belongstocohort	Belongs to cohort	A group of individuals, identified by a common characteristic. (NCIT:C61512 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_cohorts

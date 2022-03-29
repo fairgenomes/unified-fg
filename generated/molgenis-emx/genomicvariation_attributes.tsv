@@ -1,5 +1,8 @@
 name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
 variantinternalid	variantInternalId	A unique proper name or character sequence that identifies this particular variation. (NCIT:C164813 )	genomicvariation	string	TRUE	TRUE	TRUE	FALSE	
+belongstosubject	Belongs to subject	An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. (NCIT:C142495, IAO:0000136 )	genomicvariation	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects
+belongstomaterial	Belongs to material	Reference to the source material from which this sample was prepared. (NCIT:C93400, NCIT:C25683 )	genomicvariation	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_materials
+producedbysequencingrun	Produced by sequencing run	A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. (NCIT:C171337 )	genomicvariation	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_sequencingruns
 alternatebases	alternateBases	An allele that varies in it sequence from what is considered the reference or canonical sequence at that location. (GENO:0000002 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
 referencebases	referenceBases	An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared. (GENO:0000152 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	
 varianttype	variantType	An attribute describing a type of variation inhering in a sequence feature or collection. (GENO:0000773 )	genomicvariation	string	FALSE	FALSE	TRUE	TRUE	

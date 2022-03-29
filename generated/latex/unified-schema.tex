@@ -6,7 +6,7 @@
 \textbf{Unified metadata schema}
 \newline
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 18 modules that contain 240 metadata elements and 101832 lookups in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 18 modules that contain 243 metadata elements and 101832 lookups in total (excluding null flavors).
 
 \begin{table}[htb]
 \begin{tabular}{lll}
@@ -20,7 +20,7 @@ Materials & NCIT:C43376, SCDO:0002829, dcat:Dataset  & 25 \\
 Sampling protocols & EFO:0005518, dcat:Dataset  & 5 \\
 NGS sample preparations & OBI:0001902, dcat:Dataset  & 14 \\
 Laboratory Procedures & NCIT:C25294, dcat:Dataset  & 6 \\
-Sequencing run & EDAM:topic\_3168, dcat:Dataset  & 16 \\
+Sequencing runs & EDAM:topic\_3168, dcat:Dataset  & 16 \\
 Files & NCIT:C42883, dcat:Dataset  & 14 \\
 Cohorts & NCIT:C61512, dcat:Dataset  & 8 \\
 Signed consent & NCIT:C16735, dcat:Dataset  & 15 \\
@@ -29,7 +29,7 @@ NGS analysis & EDAM:operation\_2945  & 11 \\
 Metabolomic material processing & OBI:0000073  & 7 \\
 Metabolomic assay & NCIT:C60819  & 8 \\
 Metabolomic analysis & EDAM:data\_0949  & 11 \\
-Genomic Variation & SO:0001060  & 19 \\
+Genomic Variation & SO:0001060  & 22 \\
 \hline
 \end{tabular}
 \caption[Module overview]{\label{table:table1} Unified metadata schema v0.1-SNAPSHOT overview of all modules.}
@@ -251,7 +251,7 @@ Other quality metrics & EDAM:data\_3914  & text \\
 Belongs to data release & NCIT:C172217  & Reference to Data releases \\
 \hline
 \end{tabular}
-\caption[Module: Sequencing run]{\label{table:table10} Module: Sequencing run. The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. Ontology: EDAM:topic\_3168, dcat:Dataset . }
+\caption[Module: Sequencing runs]{\label{table:table10} Module: Sequencing runs. The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. Ontology: EDAM:topic\_3168, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -259,7 +259,7 @@ Belongs to data release & NCIT:C172217  & Reference to Data releases \\
 Name & Ontology & Values \\
 \hline
 Filename & NCIT:C171191  & identifier \\
-Produced by sequencing & NCIT:C171337  & Reference to Sequencing run \\
+Produced by sequencing & NCIT:C171337  & Reference to Sequencing runs \\
 Belongs to subject & NCIT:C142495, IAO:0000136  & Reference to Subjects \\
 Belongs to study & BFO:0000050  & Reference to Studies \\
 Belongs to cohort & NCIT:C61512  & Reference to Cohorts \\
@@ -341,7 +341,7 @@ Consent form version & DC:hasVersion  & string \\
 Name & Ontology & Values \\
 \hline
 Identifier & AFR:0001979  & identifier \\
-Belongs to sequencing & NCIT:C25683  & Reference to Sequencing run \\
+Belongs to sequencing & NCIT:C25683  & Reference to Sequencing runs \\
 Physical data location & GAZ:00000448  & string \\
 Abstract data location & NCIT:C142494  & string \\
 Data formats stored & NCIT:C142494  & DataFormats.tsv lookup (582 choices) \\
@@ -414,6 +414,9 @@ Statistical methods applied & NCIT:C19044  & string \\
 Name & Ontology & Values \\
 \hline
 variantInternalId & NCIT:C164813  & identifier \\
+Belongs to subject & NCIT:C142495, IAO:0000136  & Reference to Subjects \\
+Belongs to material & NCIT:C93400, NCIT:C25683  & Reference to Materials \\
+Produced by sequencing run & NCIT:C171337  & Reference to Sequencing runs \\
 alternateBases & GENO:0000002  & string \\
 referenceBases & GENO:0000152  & string \\
 variantType & GENO:0000773  & string \\
