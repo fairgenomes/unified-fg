@@ -38,6 +38,7 @@ tables:
         tags: OMIABIS:0000006 [http://purl.obolibrary.org/obo/OMIABIS_0000006]
         broadMatch: SIO:000729 [http://semanticscience.org/resource/SIO_000729], IAO:0000577 [http://purl.obolibrary.org/obo/IAO_0000577]
         dataType: identifier
+        example: NEURODB
 
       - name: Name
         description: A name that designates this study.
@@ -45,11 +46,13 @@ tables:
         exactMatch: OBI:0001622 [http://purl.obolibrary.org/obo/OBI_0001622]
         broadMatch: SIO:000185 [https://semanticscience.org/resource/SIO_000185]
         dataType: string
+        example: Neuro Data Bank
 
       - name: Acronym
         description: The non-unique initials or abbreviated name used for identification.
         tags: NCIT:C93495 [http://purl.obolibrary.org/obo/NCIT_C93495]
         dataType: string
+        example: NeuroDB
 
       - name: Description
         description: A statement or piece of writing that provides details on this study.
@@ -57,6 +60,7 @@ tables:
         exactMatch: OBI:0001615 [http://purl.obolibrary.org/obo/OBI_0001615]
         broadMatch: SIO:000136 [https://semanticscience.org/resource/SIO_000136]
         dataType: text
+        example: Longitudinal biobank of samples collected from patients with neurodegenerative diseases
 
       - name: Inclusion criteria
         description: The conditions which, if met, make an person eligible for participation in this study.
@@ -64,6 +68,7 @@ tables:
         dataType: mref
         reference: lookups/InclusionCriteria.tsv
         referenceTypeTag: OBI:0500027 [http://purl.obolibrary.org/obo/OBI_0500027]
+        example: age group inclusion criterion, defined population inclusion criterion, health status inclusion criterion
 
       - name: Principal investigator
         description: An investigator who is responsible for all aspects of the conduct of a study.
@@ -71,12 +76,14 @@ tables:
         broadMatch: SIO:000881 [https://semanticscience.org/resource/SIO_000881], OBI:0000202 [http://purl.obolibrary.org/obo/OBI_0000202]
         dataType: xref
         reference: Person
+        example: rosemarie.vandale@neurocenter.nl
 
       - name: Contact person
         description: Name of study contact.
         tags: NCIT:C176373 [http://purl.obolibrary.org/obo/NCIT_C176373]
         dataType: xref
         reference: Person
+        example: rosemarie.vandale@neurocenter.nl
 
       #- name: Contact email --> part of Person
       #  description: An email address for the purpose of contacting the study contact person.
@@ -87,12 +94,14 @@ tables:
         description: A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of this study.
         tags: OBI:0500000 [http://purl.obolibrary.org/obo/OBI_0500000]
         dataType: text
+        example: "Background: The development of software for use in diagnostic settings is faster than clinical validation and implementation. To enable rapid, large scale validation of diagnostic technologies, it is critical that a comprehensive data bank is established so that these technologies can be validated on a larger scale. Methods/Design: 1000 individuals will be recruited over a five year period at five partnering hospitals. Clinical characteristics and biological materials will be collected once per individual through their regular GP visit."
 
       - name: Start date
         description: The date on which this study began.
         tags: NCIT:C69208 [http://purl.obolibrary.org/obo/NCIT_C69208]
         broadMatch: SIO:000031 [https://semanticscience.org/resource/SIO_000031], IAO:0000582 [http://purl.obolibrary.org/obo/IAO_0000582]
         dataType: date
+        example: 2022-01-01
 
       - name: Completion date
         description: The date on which the concluding information for this study is completed. Usually, this is when the last subject has a final visit, or the main analysis has finished, or any other protocol-defined completion date.
@@ -100,6 +109,7 @@ tables:
         broadMatch: IAO:0000582 [http://purl.obolibrary.org/obo/IAO_0000582]
         relatedMatch: SIO:001083 [https://semanticscience.org/resource/SIO_001083], SIO:001314 [https://semanticscience.org/resource/SIO_001314]
         dataType: date
+        example: 2027-12-31
 
       - name: Current study status
         dataType: mref
@@ -107,16 +117,19 @@ tables:
         description: The status of a study or trial.
         tags: NCIT:C171103 [http://purl.obolibrary.org/obo/NCIT_C171103]
         referenceTypeTag: NCIT:C171103 [http://purl.obolibrary.org/obo/NCIT_C171103]
+        example: Active Study
 
       - name: Number of subjects enrolled
         dataType: integer
         description: An integer specifying the quantity of study subjects enrolled in the study at the current time.
         tags: NCIT:C153145 [http://purl.obolibrary.org/obo/NCIT_C153145]
+        example: 112
 
       - name: Numer of samples collected
         dataType: integer
         description: An integer specifying the quantity of samples collected at the current time.
         tags: KISAO:0000326 [http://www.biomodels.net/kisao/KISAO#KISAO_0000326]
+        example: 72
 
       - name: belongsToDataRelease
         dataType: mref
@@ -134,29 +147,35 @@ tables:
         idAttribute: true
         lookupAttribute: true
         tags: http://purl.obolibrary.org/obo/NCIT_C25364
+        example: rosemarie.vandale@neurocenter.nl
 
       - name: fullName
         label: Full Name
         description: full name. E.g. Morris Swertz
         tags: http://purl.obolibrary.org/obo/GSSO_001755
+        example: Rosemarie Vandale
 
       - name: alternativeIdentifier
         label: Alternative ID
         description: alternative identifier. E.g. ORCID:1234
         tags: http://purl.obolibrary.org/obo/NCIT_C90353
+        example: ORCID:0000-0000-0000-0000
 
       - name: firstName
         tags: http://purl.obolibrary.org/obo/NCIT_C40974
+        example: Rosemarie
 
       - name: middleInitials
         label: Initials
         description: middle initiatials. E.g. A.
         tags: http://purl.obolibrary.org/obo/NCIT_C166237
+        example:
 
       - name: lastName
         label: Lastname
         description: last name. E.g. Swertz
         tags: http://purl.obolibrary.org/obo/NCIT_C40975
+        example: Vandale
 
       - name: email
         label: Email
@@ -164,6 +183,7 @@ tables:
         nillable: false
         labelAttribute: true
         tags: http://purl.obolibrary.org/obo/NCIT_C42775
+        example: rosemarie.vandale@neurocenter.nl
 
   - name: Data releases
     description: The act of making data or other structured information accessible to the public or to the user group of a database.
@@ -174,11 +194,13 @@ tables:
         dataType: identifier
         description: One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.
         tags: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
+        example: NEURODB_R00001
 
       - name: name
         description: The words or language units by which a thing is known.
         tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
         dataType: string
+        example: NeuroDB Initial Release (Year 1 Deliverable)
 
   - name: Subjects
     description: Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study.
@@ -192,11 +214,13 @@ tables:
         description: A unique proper name or character sequence that identifies this particular individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
         tags: NCIT:C164337 [http://purl.obolibrary.org/obo/NCIT_C164337], NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495]
         dataType: identifier
+        example: NEURODB_P00001
 
       - name: Alternative identifiers
         description: A backup sequence of characters used to identify an entity.
         tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
         dataType: string
+        example: HOSPITAL_099999
 
       - name: Gender identity
         description: A person's concept of self as being male and masculine or female and feminine, or ambivalent, based in part on physical characteristics, parental responses, and psychological and social pressures. It is the internal experience of gender role. For practical reasons the lookups are limited to first and second-level entries, but can be expanded when needed. Note that 'Gender at birth', 'Genotypic sex' and any (gender-related) hormone therapies in 'Medication' are usually medically more relevant than this term.
@@ -204,6 +228,7 @@ tables:
         dataType: xref
         reference: lookups/GenderIdentity.tsv
         referenceTypeTag: MESH:D005783 [http://purl.bioontology.org/ontology/MESH/D005783]
+        example: female gender identity
 
       - name: Gender at birth
         description: Assigned gender is one's gender which was assigned at birth, typically by a medical and/or legal organization, and then later registered with other organizations. Such a designation is typically based off of the superficial appearance of external genitalia present at birth.
@@ -211,6 +236,7 @@ tables:
         dataType: xref
         reference: lookups/GenderAtBirth.tsv
         referenceTypeTag: GSSO:009418 [http://purl.obolibrary.org/obo/GSSO_009418]
+        example: assigned female at birth
 
       - name: Genotypic sex
         description: A biological sex quality inhering in an individual based upon genotypic composition of sex chromosomes.
@@ -218,6 +244,7 @@ tables:
         dataType: xref
         reference: lookups/GenotypicSex.tsv
         referenceTypeTag: NCIT:C168871 [http://purl.obolibrary.org/obo/NCIT_C168871]
+        example: XX Genotype
 
       - name: Country of residence
         description: Country of residence at enrollment.
@@ -225,6 +252,7 @@ tables:
         dataType: xref
         reference: lookups/Countries.tsv
         referenceTypeTag: GENEPIO:0001830 [http://purl.obolibrary.org/obo/GENEPIO_0001830]
+        example: Netherlands (the)
 
       - name: Ancestry
         description: Population category defined using ancestry informative markers (AIMs) based on genetic/genomic data.
@@ -232,6 +260,7 @@ tables:
         dataType: xref
         reference: lookups/Ancestry.tsv
         referenceTypeTag: HANCESTRO:0004 [http://purl.obolibrary.org/obo/HANCESTRO_0004]
+        example: Dutch
 
       - name: Country of birth
         description: The country that this person was born in.
@@ -239,17 +268,20 @@ tables:
         dataType: xref
         reference: lookups/Countries.tsv
         referenceTypeTag: GENEPIO:0001830 [http://purl.obolibrary.org/obo/GENEPIO_0001830]
+        example: Netherlands (the)
 
       - name: Year of birth
         description: The year in which this person was born.
         tags: NCIT:C83164 [http://purl.obolibrary.org/obo/NCIT_C83164]
         dataType: integer
         unit: NCIT:C159612 [http://purl.obolibrary.org/obo/NCIT_C159612]
+        example: 1969
 
       - name: Date of birth
         dataType: date
         description: The calendar date on which a person was born.
         tags: NCIT:C68615 [http://purl.obolibrary.org/obo/NCIT_C68615]
+        example: 1969-03-14
 
       - name: Inclusion status
         description: A findings domain that contains general subject characteristics that are evaluated periodically to determine if they have changed.
@@ -258,22 +290,26 @@ tables:
         dataType: xref
         reference: lookups/InclusionStatus.tsv
         referenceTypeTag: NCIT:C19332 [http://purl.obolibrary.org/obo/NCIT_C19332]
+        example: Alive
 
       - name: Age at death
         description: The age at which death occurred.
         tags: NCIT:C135383 [http://purl.obolibrary.org/obo/NCIT_C135383]
         dataType: integer
         unit: UO:0000036 [http://purl.obolibrary.org/obo/UO_0000036]
+        example:
 
       - name: Date of death
         dataType: date
         description: The calendar date of subject's death.
         tags: NCIT:C70810 [http://purl.obolibrary.org/obo/NCIT_C70810]
+        example:
 
       - name: Year of death
         dataType: integer
         description: The year in which an individual derived.
         tags: NCIT:C156426 [http://purl.obolibrary.org/obo/NCIT_C156426]
+        example:
 
       - name: Primary affiliated institute
         description: The most significant institute for medical consultation and/or study inclusion in context of the genetic disease of this person.
@@ -281,12 +317,14 @@ tables:
         dataType: xref
         reference: lookups/Institutes.tsv
         referenceTypeTag: SIO:000688 [http://semanticscience.org/resource/SIO_000688]
+        example: Universitair Medisch Centrum Groningen (UMCG)
 
       - name: Affiliated institute contact person
         description: A person acting as a channel for communication between groups or on behalf of a group.
         tags: NCIT:C25461 [http://purl.obolibrary.org/obo/NCIT_C25461]
         dataType: xref
         reference: Person
+        example: rosemarie.vandale@neurocenter.nl
 
      # - name: Affiliated institute contact email --> part of Person
      #   dataType: email
@@ -299,50 +337,59 @@ tables:
         dataType: mref
         reference: lookups/Institutes.tsv
         referenceTypeTag: SIO:000688 [http://semanticscience.org/resource/SIO_000688]
+        example: Martini Ziekenhuis, Groningen
 
       - name: Participates in study
         description: Reference to the study or studies in which this person participates.
         tags: RO:0000056 [http://purl.obolibrary.org/obo/RO_0000056]
         dataType: mref
         reference: Studies
+        example: NEURODB
 
       - name: Belongs to family
         description: A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption.
         tags: NCIT:C25173 [http://purl.obolibrary.org/obo/NCIT_C25173]
         dataType: string
+        example: NEURODB_F00001
 
       - name: Belongs to mother
         dataType: xref
         reference: Subjects
         description: A designation that has some relationship to motherhood.
         tags: NCIT:C89336 [http://purl.obolibrary.org/obo/NCIT_C89336]
+        example: NEURODB_P00002
 
       - name: Belongs to father
         dataType: xref
         reference: Subjects
         description: Having to do with the father, coming from the father, or related through the father.
         tags: NCIT:C94324 [http://purl.obolibrary.org/obo/NCIT_C94324]
+        example: NEURODB_P00003
 
       - name: Belongs with family members
         dataType: mref
         reference: Subjects
         description: Any individual related biologically or legally to another individual.
         tags: NCIT:C21480 [http://purl.obolibrary.org/obo/NCIT_C21480]
+        example: NEURODB_P00002,NEURODB_P00003,NEURODB_P00004,NEURODB_P00005 
 
       - name: Belongs with twin
         dataType: bool
         description: Either of two offspring born from the same pregnancy.
         tags: NCIT:C73427 [http://purl.obolibrary.org/obo/NCIT_C73427]
+        example: false
 
       - name: First visit date
         dataType: date
         description: The date for the first patient visit.
         tags: NCIT:C164021 [http://purl.obolibrary.org/obo/NCIT_C164021]
+        example: 2022-01-03
 
       - name: Fetal status
         dataType: bool
         description: Any tissue from a fetus.
         tags: NCIT:C17730 [http://purl.obolibrary.org/obo/NCIT_C17730]
+        example: false
 
       - name: Consanguinity
         dataType: bool
@@ -350,24 +397,21 @@ tables:
         #description: Genetic relatedness between individuals who are descendants of at least one common ancestor.
         tags: OMIT:0004546 [http://purl.obolibrary.org/obo/OMIT_0004546], SNOMED:842009 [http://snomed.info/id/842009]
         # old tags, dont fit well: http://purl.obolibrary.org/obo/NCIT_C71384, GSSO:007578 [http://purl.obolibrary.org/obo/GSSO_007578]
-
-      - name: Belongs to study
-        dataType: mref
-        reference: Studies
-        description: Reference to the study or studies in which this person participates.
-        tags: RO:0000056 [http://purl.obolibrary.org/obo/RO_0000056]
+        example: false
 
       - name: Belongs to data release
         dataType: mref
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+        example:
 
       - name: Belongs to cohort
         dataType: mref
         reference: Cohorts
         description: A group of individuals, identified by a common characteristic.
         tags: NCIT:C61512 [http://purl.obolibrary.org/obo/NCIT_C61512]
+        example
 
   - name: Clinical
     description: Findings and circumstances relating to the examination and treatment of a patient.
@@ -381,6 +425,7 @@ tables:
         description: A unique proper name or character sequence that identifies this particular clinical examination.
         tags: NCIT:C87853 [http://purl.obolibrary.org/obo/NCIT_C87853]
         dataType: identifier
+        example: NEURODB_P00001_C1
 
       - name: Belongs to subject
         dataType: xref
@@ -388,34 +433,40 @@ tables:
         #description: Reference to the person whom this clinical information is about.
         description: An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
         tags: NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495], IAO:0000136 [http://purl.obolibrary.org/obo/IAO_0000136]
+        example: NEURODB_P00001
 
       - name: Affected status
         dataType: bool
         description: Individuals in a pedigree who exhibit the specific phenotype under study.
         tags: NCIT:C64917 http://purl.obolibrary.org/obo/NCIT_C64917
+        example: false
 
       - name: Date of diagnosis
         dataType: date
         description: The date on which a diagnosis of disease was made.
         tags: NCIT:C164339 [http://purl.obolibrary.org/obo/NCIT_C164339]
+        example: 2022-01-05
 
       - name: Age at diagnosis
         dataType: integer
         description: The age (in years), measured from some defined time point (e.g. birth) at which a patient is diagnosed with a disease.
         tags: SNOMEDCT:423493009 [http://purl.bioontology.org/ontology/SNOMEDCT/423493009]
         unit: UO:0000036 [http://purl.obolibrary.org/obo/UO_0000036]
+        example: 53
 
       - name: Age of onset
         dataType: integer
         description: Age (in years) of onset of clinical manifestations related to the disease of the patient.
         tags: Orphanet:C023 [http://www.orpha.net/ORDO/Orphanet_C023]
         unit: UO:0000036 [http://purl.obolibrary.org/obo/UO_0000036]
+        example: 52
 
       - name: Age at last screening
         description: Age of the patient at the moment of the most recent screening.
         tags: NCIT:C81258 [http://purl.obolibrary.org/obo/NCIT_C81258]
         dataType: integer
         unit: UO:0000036 [http://purl.obolibrary.org/obo/UO_0000036]
+        example: 52
 
       - name: Observed phenotype
         dataType: mref
@@ -423,6 +474,7 @@ tables:
         referenceTypeTag: Wikidata:P3841 [https://www.wikidata.org/wiki/Property:P3841]
         description: The outward appearance of the individual. In medical context, these are often the symptoms caused by a disease.
         tags: NCIT:C16977 [http://purl.obolibrary.org/obo/NCIT_C16977]
+        example: Motor deterioration
 
       - name: Unobserved phenotype
         dataType: mref
@@ -430,6 +482,7 @@ tables:
         referenceTypeTag: Wikidata:P3841 [https://www.wikidata.org/wiki/Property:P3841]
         description: Phenotypes or symptoms that were looked for but not observed, which may help in differential diagnosis or establish incomplete penetrance.
         tags: HL7:C0442737 [http://purl.bioontology.org/ontology/HL7/C0442737]
+        example: Memory impairment
 
       - name: Provisional phenotype
         dataType: mref
@@ -437,6 +490,7 @@ tables:
         referenceTypeTag: Wikidata:P3841 [https://www.wikidata.org/wiki/Property:P3841]
         description: The test or procedure was successfully performed, but the results are borderline and can neither be declared positive / negative nor detected / not detected according to the current established criteria.
         tags: HL7:C0332241 [http://purl.bioontology.org/ontology/HL7/C0332241]
+        example: Cognitive impairment,Procedural memory loss
 
       - name: Clinical diagnosis
         dataType: mref
@@ -444,6 +498,7 @@ tables:
         referenceTypeTag: EDAM:data_3667 [http://edamontology.org/data_3667] #Note that lookup type EDAM:data_2800 would best match the default Orpha codes, but EDAM:data_3667 was chosen to allow alternative disease coding systems (e.g. ICD or SNOMED).
         description: A diagnosis made from a study of the signs and symptoms of a disease.
         tags: NCIT:C15607 [http://purl.obolibrary.org/obo/NCIT_C15607]
+        example:
 
       - name: Molecular diagnosis gene
         dataType: mref
@@ -451,11 +506,13 @@ tables:
         referenceTypeTag: NCIT:C16612 [http://purl.obolibrary.org/obo/NCIT_C16612]
         description: Gene affected by pathogenic variation that is causal for disease of the patient.
         tags: NCIT:C20826 [http://purl.obolibrary.org/obo/NCIT_C20826]
+        example: 
 
       - name: Molecular diagnosis other
         dataType: text
         description: Causal variant in HGVS notation with optional classification or free text explaining any other molecular mechanisms involved.
         tags: NCIT:C20826 [http://purl.obolibrary.org/obo/NCIT_C20826]
+        example: 
 
       - name: Medication
         description: A drug product that contains one or more active and/or inactive ingredients used by the patient intended to treat, prevent or alleviate the symptoms of disease. Any hormone therapies, gender-related or otherwise, should also be recorded here.
@@ -463,11 +520,13 @@ tables:
         dataType: mref
         reference: lookups/Drugs.tsv
         referenceTypeTag: EDAM:data_3103 [http://edamontology.org/data_3103]
+        example: 
 
       - name: Drug regimen
         description: The specific way a therapeutic drug is to be taken, including formulation, route of administration, dose, dosing interval, and treatment duration.
         tags: NCIT:C142516 [http://purl.obolibrary.org/obo/NCIT_C142516]
         dataType: text
+        example: 
 
       - name: Medical history
         description: A record of a person's background regarding health, occurrence of disease events and surgical procedures.
@@ -475,6 +534,7 @@ tables:
         dataType: mref
         reference: lookups/MedicalHistory.tsv
         referenceTypeTag: SCDO:1000093 [http://scdontology.h3abionet.org/ontology/SCDO_1000093]
+        example:
 
       - name: Phenotypic data available
         description: Types of phenotypic data collected in a clinical setting that is potentially available upon request.
@@ -482,6 +542,7 @@ tables:
         dataType: mref
         reference: lookups/DCMITypes.tsv
         referenceTypeTag: DC:DCMIType [http://purl.org/dc/terms/DCMIType]
+        example: Dataset
 
       - name: Status of diagnosis
         dataType: xref
@@ -489,22 +550,26 @@ tables:
         referenceTypeTag: NCIT:C48655 [http://purl.obolibrary.org/obo/NCIT_C48655]
         description: A condition or state at a particular time.
         tags: NCIT:C25688 [http://purl.obolibrary.org/obo/NCIT_C25688]
+        example: Not Identified
 
       - name: First contact
         description: First contact of the patient with a specialised center in context of disease or study inclusion.
         tags: LOINC:MTHU048806 [http://purl.bioontology.org/ontology/LNC/MTHU048806]
         dataType: date
+        example: 2022-01-03
 
       - name: Date diagnosis confirmed
         dataType: date
         description: The particular day, month and year an event has happened or will happen.
         tags: NCIT:C25164 [http://purl.obolibrary.org/obo/NCIT_C25164]
+        example: 
 
       - name: Belongs to data release
         dataType: mref
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+        example: NEURODB_R00001
 
       - name: Family members affected
         description: Family members related by descent rather than by marriage or law who were diagnosed with the same condition as the individual who is the primary focus of investigation (i.e. the proband).
@@ -512,6 +577,7 @@ tables:
         dataType: mref
         reference: lookups/FamilyMembers.tsv
         referenceTypeTag: NCIT:C71384 [http://purl.obolibrary.org/obo/NCIT_C71384]
+        example: Biological Father
 
       - name: Family members sequenced
         description: Family members related by descent rather than by marriage or law who were also tested by next-generation sequencing.
@@ -519,11 +585,13 @@ tables:
         dataType: mref
         reference: lookups/FamilyMembers.tsv
         referenceTypeTag: NCIT:C71384 [http://purl.obolibrary.org/obo/NCIT_C71384]
+        example: Biological Father,Full Brother,Full Sister
 
       - name: Functioning
         description: Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF).
         tags: NCIT:C21007 [http://purl.obolibrary.org/obo/NCIT_C21007]
         dataType: text
+        example: 
 
       - name: Material used in diagnosis
         description: This diagnosis c.q. clinical examination is based on one or more sampled materials.
@@ -1762,8 +1830,8 @@ tables:
         datatype: decimal
 
       - name: Omim Inheritance # Inheritance pattern. In the variantDB, this is chromosomeType
-         dataType: xref
-         reference: lookups/Inheritance.tsv
+        dataType: xref
+        reference: lookups/Inheritance.tsv
         # MERGE WITH :::
         # not in FairGenomes
         # need lookup for: Autosomal,Dominant,X-linked,Y-linked,Codominant,Mitchondrial,Inherited_Unresolved
