@@ -644,7 +644,7 @@ tables:
 
   - name: Materials
     description: A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.
-    tags: NCIT:C43376 [http://purl.obolibrary.org/obo/NCIT_C43376], SCDO:0002829 [http://purl.obolibrary.org/obo/SCDO_0002829], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
+    tags: NCIT:C43376 [http://purl.obolibrary.org/obo/NCIT_C43376], SCDO:0002829 [http://purl.obolibrary.org/obo/SCDO_0002829], NCIT:C13236 [http://purl.obolibrary.org/obo/NCIT_C13236], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
     relationWith:
       - table: Personal
         relation: HSO:0000242 [http://purl.obolibrary.org/obo/HSO_0000242]
@@ -1513,6 +1513,13 @@ tables:
         description: Reference to the source material from which this sample was prepared.
         tags: NCIT:C93400 [http://purl.obolibrary.org/obo/NCIT_C93400], NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
 
+      - name: Processing type
+        description: A planned process which results in physical changes in a specified input material.
+        tags: OBI:0000094 [http://purl.obolibrary.org/obo/OBI_0000094]
+        dataType: xref
+        reference: lookups/MtbxMaterialProcessing.tsv
+        referenceTypeTag: OBI:0000094 [http://purl.obolibrary.org/obo/OBI_0000094]
+
       - name: Sample extraction
         description: The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it.
         tags: CHMO:0001577 [http://purl.obolibrary.org/obo/CHMO_0001577]
@@ -1539,7 +1546,7 @@ tables:
         tags: OBI:0302888 [http://purl.obolibrary.org/obo/OBI_0302888]
         dataType: text
 
-  - name: Metabolomic assay
+  - name: Metabolomic mass spec assay
     description: A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug.
     tags: NCIT:C60819 [http://purl.obolibrary.org/obo/NCIT_C60819]
     columns:
@@ -1554,6 +1561,13 @@ tables:
         reference: Metabolomic material processing
         description: This metabolomic assay is part of a metabolomic material processing.
         tags: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
+
+      - name: Assay type
+        description: Spectrometry where the sample is converted into gaseous ions which are characterised by their mass-to-charge ratio and relative abundance.
+        tags: CHMO:0000470 [http://purl.obolibrary.org/obo/CHMO_0000470]
+        dataType: xref
+        reference: lookups/MtbxMassSpecAssays.tsv
+        referenceTypeTag: CHMO:0000470 [http://purl.obolibrary.org/obo/CHMO_0000470]
 
       - name: Inlet
         description: A valve that controls the flow of fluids in through the wall of a chamber.
@@ -1600,6 +1614,13 @@ tables:
         reference: Metabolomic assay
         description: This metabolomic analysis is part of a metabolomic assay.
         tags: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
+
+      - name: Analysis type
+        description: Apply analytical methods to existing data of a specific type.
+        tags: EDAM:operation_2945 [http://edamontology.org/operation_2945]
+        dataType: xref
+        reference: lookups/MtbxAnalyses.tsv
+        referenceTypeTag: EDAM:operation_2945 [http://edamontology.org/operation_2945]
 
       - name: Workflow definition
         description: File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives.
