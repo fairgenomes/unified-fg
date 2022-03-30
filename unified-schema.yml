@@ -46,7 +46,7 @@ tables:
         exactMatch: OBI:0001622 [http://purl.obolibrary.org/obo/OBI_0001622]
         broadMatch: SIO:000185 [https://semanticscience.org/resource/SIO_000185]
         dataType: string
-        example: Neuro Data Bank
+        example: University Hospital Neuro Data Bank
 
       - name: Acronym
         description: The non-unique initials or abbreviated name used for identification.
@@ -60,7 +60,7 @@ tables:
         exactMatch: OBI:0001615 [http://purl.obolibrary.org/obo/OBI_0001615]
         broadMatch: SIO:000136 [https://semanticscience.org/resource/SIO_000136]
         dataType: text
-        example: Longitudinal biobank of samples collected from patients with neurodegenerative diseases
+        example: Biobank of samples collected from patients in the neurology clinic
 
       - name: Inclusion criteria
         description: The conditions which, if met, make an person eligible for participation in this study.
@@ -136,6 +136,7 @@ tables:
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+        example: DR01
 
   - name: Person
     description: researcher or contactperson involved in the study and/or affliated with organisation
@@ -194,13 +195,51 @@ tables:
         dataType: identifier
         description: One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.
         tags: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
-        example: NEURODB_R00001
+        example: DR01
 
       - name: name
         description: The words or language units by which a thing is known.
         tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
         dataType: string
-        example: NeuroDB Initial Release (Year 1 Deliverable)
+        example: NeuroDB Data Release 1
+        
+      - name: description
+        description: A written or verbal account, representation, statement, or explanation of something.
+        tags: http://purl.obolibrary.org/obo/NCIT_C25365
+        dataType: text
+        example: Included patients seen in the clinical between 1 January 2022 and 31 March 2022.
+      
+      - name: date
+        description: A date of database submission refers to the moment in time in which some information was submitted/received to a database system.
+        tags: http://semanticscience.org/resource/SIO_001083
+        dataType: date
+        example: 2022-04-01
+      
+      - name: createdBy
+        description: Indicates the person or authoritative body who brought the item into existence.
+        tags: http://purl.obolibrary.org/obo/NCIT_C42628
+        dataType: xref
+        reference: Person
+        example: rosemarie.vandale@neurocenter.nl
+      
+      - name: numberOfEntriesAdded
+        description: Combined or joined to increase in size or quantity or scope.
+        tags: http://purl.obolibrary.org/obo/NCIT_C45330
+        dataType: int
+        example: 100
+      
+      # TODO: Should this be an xref to `Organisation` or `Person`?
+      - name: dataSource
+        description: The person or authoritative body who provided the information.
+        tags: http://purl.obolibrary.org/obo/NCIT_C16493
+        dataType: string
+        example: Bioinformatic database team
+      
+      - name: releaseComments
+        description: A notation regarding the decisions, and/or clarification of any information pertaining to data management.
+        tags: http://purl.obolibrary.org/obo/NCIT_C115505
+        dataType: text
+        example:
 
   - name: Subjects
     description: Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study.
@@ -214,13 +253,13 @@ tables:
         description: A unique proper name or character sequence that identifies this particular individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
         tags: NCIT:C164337 [http://purl.obolibrary.org/obo/NCIT_C164337], NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495]
         dataType: identifier
-        example: NEURODB_P00001
+        example: P00001
 
       - name: Alternative identifiers
         description: A backup sequence of characters used to identify an entity.
         tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
         dataType: string
-        example: HOSPITAL_099999
+        example:
 
       - name: Gender identity
         description: A person's concept of self as being male and masculine or female and feminine, or ambivalent, based in part on physical characteristics, parental responses, and psychological and social pressures. It is the internal experience of gender role. For practical reasons the lookups are limited to first and second-level entries, but can be expanded when needed. Note that 'Gender at birth', 'Genotypic sex' and any (gender-related) hormone therapies in 'Medication' are usually medically more relevant than this term.
@@ -275,13 +314,13 @@ tables:
         tags: NCIT:C83164 [http://purl.obolibrary.org/obo/NCIT_C83164]
         dataType: integer
         unit: NCIT:C159612 [http://purl.obolibrary.org/obo/NCIT_C159612]
-        example: 1969
+        example: 1970
 
       - name: Date of birth
         dataType: date
         description: The calendar date on which a person was born.
         tags: NCIT:C68615 [http://purl.obolibrary.org/obo/NCIT_C68615]
-        example: 1969-03-14
+        example: 1970-01-01
 
       - name: Inclusion status
         description: A findings domain that contains general subject characteristics that are evaluated periodically to determine if they have changed.
@@ -350,28 +389,28 @@ tables:
         description: A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption.
         tags: NCIT:C25173 [http://purl.obolibrary.org/obo/NCIT_C25173]
         dataType: string
-        example: NEURODB_F00001
+        example: F1000
 
       - name: Belongs to mother
         dataType: xref
         reference: Subjects
         description: A designation that has some relationship to motherhood.
         tags: NCIT:C89336 [http://purl.obolibrary.org/obo/NCIT_C89336]
-        example: NEURODB_P00002
+        example: P00002
 
       - name: Belongs to father
         dataType: xref
         reference: Subjects
         description: Having to do with the father, coming from the father, or related through the father.
         tags: NCIT:C94324 [http://purl.obolibrary.org/obo/NCIT_C94324]
-        example: NEURODB_P00003
+        example: P00003
 
       - name: Belongs with family members
         dataType: mref
         reference: Subjects
         description: Any individual related biologically or legally to another individual.
         tags: NCIT:C21480 [http://purl.obolibrary.org/obo/NCIT_C21480]
-        example: NEURODB_P00002,NEURODB_P00003,NEURODB_P00004,NEURODB_P00005 
+        example: P00002,P00003,P00004
 
       - name: Belongs with twin
         dataType: bool
@@ -404,14 +443,14 @@ tables:
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
-        example:
+        example: DR01
 
       - name: Belongs to cohort
         dataType: mref
         reference: Cohorts
         description: A group of individuals, identified by a common characteristic.
         tags: NCIT:C61512 [http://purl.obolibrary.org/obo/NCIT_C61512]
-        example
+        example:
 
   - name: Clinical
     description: Findings and circumstances relating to the examination and treatment of a patient.
@@ -425,7 +464,7 @@ tables:
         description: A unique proper name or character sequence that identifies this particular clinical examination.
         tags: NCIT:C87853 [http://purl.obolibrary.org/obo/NCIT_C87853]
         dataType: identifier
-        example: NEURODB_P00001_C1
+        example: DX36310
 
       - name: Belongs to subject
         dataType: xref
@@ -433,7 +472,7 @@ tables:
         #description: Reference to the person whom this clinical information is about.
         description: An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
         tags: NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495], IAO:0000136 [http://purl.obolibrary.org/obo/IAO_0000136]
-        example: NEURODB_P00001
+        example: P00001
 
       - name: Affected status
         dataType: bool
@@ -474,7 +513,7 @@ tables:
         referenceTypeTag: Wikidata:P3841 [https://www.wikidata.org/wiki/Property:P3841]
         description: The outward appearance of the individual. In medical context, these are often the symptoms caused by a disease.
         tags: NCIT:C16977 [http://purl.obolibrary.org/obo/NCIT_C16977]
-        example: Motor deterioration
+        example: Schizophrenia
 
       - name: Unobserved phenotype
         dataType: mref
@@ -482,7 +521,7 @@ tables:
         referenceTypeTag: Wikidata:P3841 [https://www.wikidata.org/wiki/Property:P3841]
         description: Phenotypes or symptoms that were looked for but not observed, which may help in differential diagnosis or establish incomplete penetrance.
         tags: HL7:C0442737 [http://purl.bioontology.org/ontology/HL7/C0442737]
-        example: Memory impairment
+        example: 
 
       - name: Provisional phenotype
         dataType: mref
@@ -490,7 +529,7 @@ tables:
         referenceTypeTag: Wikidata:P3841 [https://www.wikidata.org/wiki/Property:P3841]
         description: The test or procedure was successfully performed, but the results are borderline and can neither be declared positive / negative nor detected / not detected according to the current established criteria.
         tags: HL7:C0332241 [http://purl.bioontology.org/ontology/HL7/C0332241]
-        example: Cognitive impairment,Procedural memory loss
+        example: Myopia
 
       - name: Clinical diagnosis
         dataType: mref
@@ -498,7 +537,7 @@ tables:
         referenceTypeTag: EDAM:data_3667 [http://edamontology.org/data_3667] #Note that lookup type EDAM:data_2800 would best match the default Orpha codes, but EDAM:data_3667 was chosen to allow alternative disease coding systems (e.g. ICD or SNOMED).
         description: A diagnosis made from a study of the signs and symptoms of a disease.
         tags: NCIT:C15607 [http://purl.obolibrary.org/obo/NCIT_C15607]
-        example:
+        example: "NON RARE IN EUROPE: Schizophrenia"
 
       - name: Molecular diagnosis gene
         dataType: mref
@@ -526,7 +565,7 @@ tables:
         description: The specific way a therapeutic drug is to be taken, including formulation, route of administration, dose, dosing interval, and treatment duration.
         tags: NCIT:C142516 [http://purl.obolibrary.org/obo/NCIT_C142516]
         dataType: text
-        example: 
+        example: No medications perscribed
 
       - name: Medical history
         description: A record of a person's background regarding health, occurrence of disease events and surgical procedures.
@@ -550,7 +589,7 @@ tables:
         referenceTypeTag: NCIT:C48655 [http://purl.obolibrary.org/obo/NCIT_C48655]
         description: A condition or state at a particular time.
         tags: NCIT:C25688 [http://purl.obolibrary.org/obo/NCIT_C25688]
-        example: Not Identified
+        example: Confirmed
 
       - name: First contact
         description: First contact of the patient with a specialised center in context of disease or study inclusion.
@@ -562,14 +601,7 @@ tables:
         dataType: date
         description: The particular day, month and year an event has happened or will happen.
         tags: NCIT:C25164 [http://purl.obolibrary.org/obo/NCIT_C25164]
-        example: 
-
-      - name: Belongs to data release
-        dataType: mref
-        reference: Data releases
-        description: The act of making data or other structured information accessible to the public or to the user group of a database.
-        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
-        example: NEURODB_R00001
+        example: 2022-01-05
 
       - name: Family members affected
         description: Family members related by descent rather than by marriage or law who were diagnosed with the same condition as the individual who is the primary focus of investigation (i.e. the proband).
@@ -603,6 +635,13 @@ tables:
 #        description: Name or other identifier of an entry from a biosample database.
 #        tags: http://edamontology.org/data_3273
 
+      - name: Belongs to data release
+        dataType: mref
+        reference: Data releases
+        description: The act of making data or other structured information accessible to the public or to the user group of a database.
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+        example: DR01
+
   - name: Materials
     description: A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.
     tags: NCIT:C43376 [http://purl.obolibrary.org/obo/NCIT_C43376], SCDO:0002829 [http://purl.obolibrary.org/obo/SCDO_0002829], dcat:Dataset [https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset]
@@ -617,11 +656,13 @@ tables:
         #description: A unique proper name or character sequence that identifies this particular material.
         tags: EDAM:data_3273 [http://edamontology.org/data_3273], NCIT:C93400 [http://purl.obolibrary.org/obo/NCIT_C93400]
         dataType: identifier
+        example: M28139
 
       - name: Alternative identifiers
         description: A backup sequence of characters used to identify an entity.
         tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
         dataType: string
+        example: 
 
       - name: Collected from subject
         dataType: xref
@@ -629,28 +670,26 @@ tables:
         description: Reference to the subject from whom this material was collected.
         #description: An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.
         tags: SIO:000244 [http://semanticscience.org/resource/SIO_000244], NCIT:C142495 [http://purl.obolibrary.org/obo/NCIT_C142495]
+        example: P00001
 
       - name: Belongs to request
         description: A sequence of letters, numbers, or other characters that specifically identifies a particular order.
         tags: NCIT:C164567 [http://purl.obolibrary.org/obo/NCIT_C164567]
         dataType: string
-
-      - name: Belongs to data release
-        dataType: mref
-        reference: Data releases
-        description: The act of making data or other structured information accessible to the public or to the user group of a database.
-        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+        example: REQ693264
 
       - name: Belongs to diagnosis
         description: Reference to a diagnosis c.q. clinical examination of which this material may be a part of. There can be multiple diagnoses when a non-tumor material is reused as reference.
         tags: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
         dataType: mref
         reference: Clinical
+        example: DX36310
 
       - name: Date of request
         dataType: date
         description: The date on which the activity or entity was ordered.
         tags: NCIT:C164566 [http://purl.obolibrary.org/obo/NCIT_C164566]
+        example: 2022-01-03
 
       - name: Reason for sampling
         dataType: mref
@@ -658,42 +697,50 @@ tables:
         referenceTypeTag: NCIT:C171003 [http://purl.obolibrary.org/obo/NCIT_C171003]
         description: The explanation for why a test, measurement, or assessment is executed.
         tags: NCIT:C171003 [http://purl.obolibrary.org/obo/NCIT_C171003]
+        example: Diagnostic
 
       - name: Sampling date
         dataType: date
         description: The date that a sample was collected or obtained.
         tags: NCIT:C164024 [http://purl.obolibrary.org/obo/NCIT_C164024]
+        example: 2022-01-04
 
       - name: Sampling timestamp
         dataType: datetime
         description: Date and time at which this material was collected.
         tags: EFO:0000689 [http://www.ebi.ac.uk/efo/EFO_0000689]
+        example: 2022-01-04
 
       - name: Registration timestamp
         description: Date and time at which this material was listed or recorded officially, i.e. officially qualified or enrolled.
         tags: NCIT:C25646 [http://purl.obolibrary.org/obo/NCIT_C25646]
         dataType: datetime
+        example: 2022-01-04T07:16:04Z
 
       - name: Sampling protocol text
         description: The procedure whereby this material was sampled for an analysis.
         tags: EFO:0005518 [http://www.ebi.ac.uk/efo/EFO_0005518]
         dataType: text
+        example: 
 
       - name: Sampling protocol reference
         dataType: mref
         reference: Sampling protocols
         description: The procedure whereby this material was sampled for an analysis.
         tags: EFO:0005518 [http://www.ebi.ac.uk/efo/EFO_0005518]
+        example: SP026
 
       - name: Sampling protocol deviation
         dataType: text
         description: A variation from processes or procedures defined in the sampling protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor.
         tags: NCIT:C50996 [http://purl.obolibrary.org/obo/NCIT_C50996]
+        example: No sampling protocol deviations occurred
 
       - name: Reason for sampling protocol deviation
         dataType: text
         description: The rationale for why a deviation from the sampling protocol has occurred.
         tags: NCIT:C93529 [http://purl.obolibrary.org/obo/NCIT_C93529]
+        example: 
 
       - name: Biospecimen type
         description: The type of material taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes.
@@ -701,6 +748,7 @@ tables:
         dataType: xref
         reference: lookups/BiospecimenTypes.tsv
         referenceTypeTag: NCIT:C70699 [http://purl.obolibrary.org/obo/NCIT_C70699]
+        example: Whole Blood
 
       - name: Anatomical source
         dataType: xref
@@ -708,6 +756,7 @@ tables:
         referenceTypeTag: UBERON:0001062 [http://purl.obolibrary.org/obo/UBERON_0001062]
         description: Biological entity that constitutes the structural organization of an individual member of a biological species from which this material was taken.
         tags: NCIT:C103264 [http://purl.obolibrary.org/obo/NCIT_C103264]
+        example: principal vein of forelimb
 
       - name: Pathological state
         dataType: xref
@@ -715,11 +764,13 @@ tables:
         referenceTypeTag: NCIT:C164617 [http://purl.obolibrary.org/obo/NCIT_C164617]
         description: The pathological state of the tissue from which this material was derived.
         tags: GO:0001894 [http://purl.obolibrary.org/obo/GO_0001894]
+        example: Normal
 
       - name: Biospecimen usability
         dataType: bool
         description: An indication as to whether a biospecimen is suitable for testing purposes.
         tags: NCIT:C171004 [http://purl.obolibrary.org/obo/NCIT_C171004]
+        example: true
 
       - name: Storage conditions
         description: The conditions under which this biological material was stored.
@@ -727,21 +778,25 @@ tables:
         dataType: xref
         reference: lookups/StorageConditions.tsv
         referenceTypeTag: NCIT:C96145 [http://purl.obolibrary.org/obo/NCIT_C96145]
+        example: "PP tube ≥5mL (-85) to (-60)°C"
 
       - name: Expiration date
         description: The date beyond which this material is no longer regarded as fit for use.
         tags: NCIT:C164516 [http://purl.obolibrary.org/obo/NCIT_C164516]
         dataType: date
+        example: 2026-08-07
 
       - name: Percentage tumor cells
         description: The percentage of tumor cells compared to total cells present in this material.
         tags: NCIT:C127771 [http://purl.obolibrary.org/obo/NCIT_C127771]
         dataType: decimal
+        example: 
 
       - name: Physical location
         description: A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).
         tags: GAZ:00000448 [http://purl.obolibrary.org/obo/GAZ_00000448]
         dataType: string
+        example: "NeuroDB; Freezer-position: 0819-3500; Biomedical Services Department"
 
       - name: Analyses performed
         description: Reports the existence of any analyses performed on this material other than genomics (e.g. transcriptomics, metabolomics, proteomics).
@@ -749,11 +804,19 @@ tables:
         dataType: mref
         reference: lookups/AnalysesPerformed.tsv
         referenceTypeTag: EDAM:topic_3391 [http://edamontology.org/topic_3391]
+        example: Genomics
 
       - name: Derived from
         description: Indicate if this material was produced from or related to another.
         tags: NCIT:C28355 [http://purl.obolibrary.org/obo/NCIT_C28355]
         dataType: string #[WORK IN PROGRESS. This field should be proper xref to Material, but this is technically problematic due to circular dependencies.]
+
+      - name: Belongs to data release
+        dataType: mref
+        reference: Data releases
+        description: The act of making data or other structured information accessible to the public or to the user group of a database.
+        tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
+        exampe: DR1
 
   - name: Sampling protocols
     description: Describes the procedure whereby biological samples for an experiment are sourced.
@@ -764,26 +827,31 @@ tables:
         dataType: identifier
         description: One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.
         tags: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
+        example: SP026
 
       - name: Name
         dataType: string
         description: The words or language units by which a thing is known.
         tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
+        example: Neuro Data Bank Sampling Protocol
 
       - name: Description
         dataType: text
         description: A written or verbal account, representation, statement, or explanation of something.
         tags: NCIT:C25365 [http://purl.obolibrary.org/obo/NCIT_C25365]
+        example: Sampling procedures and methods for the Neuro data bank
 
       - name: Version
         dataType: string
         description: A form or variant of a type or original; one of a sequence of copies of a program, each incorporating new modifications.
         tags: NCIT:C25714 [http://purl.obolibrary.org/obo/NCIT_C25714]
+        example: 1.1.0
 
       - name: IRI
         dataType: hyperlink
         description: A unique symbol that establishes identity of the resource.
         tags: NCIT:C165071 [http://purl.obolibrary.org/obo/NCIT_C165071]
+        example: https://github.com/fairgenomes
 
   - name: NGS sample preparations
     description: A sample preparation for a nucleic acids sequencing assay.
@@ -797,6 +865,7 @@ tables:
         description: A unique proper name or character sequence that identifies this particular sample preparation.
         tags: NCIT:C132299 [http://purl.obolibrary.org/obo/NCIT_C132299]
         dataType: identifier
+        example: MP2364
 
       - name: Belongs to materials
         dataType: xref
@@ -804,23 +873,27 @@ tables:
         #description: Name or other identifier of an entry from a biosample database.
         description: Reference to the source material from which this sample was prepared.
         tags: NCIT:C93400 [http://purl.obolibrary.org/obo/NCIT_C93400], NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+        example: M28139
 
       - name: Belongs to lab procedure
         dataType: xref
         reference: Laboratory Procedures
         description: Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.
         tags: NCIT:C25294 [http://purl.obolibrary.org/obo/NCIT_C25294]
+        example: LP2558
 
       - name: Belongs to request
         description: A sequence of letters, numbers, or other characters that specifically identifies a particular order.
         tags: NCIT:C164567 [http://purl.obolibrary.org/obo/NCIT_C164567]
         dataType: string
+        example: REQ693264
 
       - name: Input amount
         dataType: integer
         description: Amount of input material in nanogram (ng).
         tags: AFRL:0000010 [http://purl.allotrope.org/ontologies/role#AFRL_0000010]
         unit: UO:0000024 [http://purl.obolibrary.org/obo/UO_0000024]
+        example: 50
 
       - name: Library preparation kit
         dataType: xref
@@ -828,11 +901,13 @@ tables:
         referenceTypeTag: GENEPIO:0000081 [http://purl.obolibrary.org/obo/GENEPIO_0000081]
         description: Pre-filled, ready-to-use reagent cartridges intented to improve chemistry, cluster density and read length as well as improve quality (Q) scores for this sample. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications.
         tags: GENEPIO:0000085 [http://purl.obolibrary.org/obo/GENEPIO_0000085]
+        example: Illumina TruSeq DNA PCR-Free
 
       - name: PCR free
         dataType: bool
         description: Indicates whether a polymerase chain reaction (PCR) was used to prepare this sample. PCR is a method for amplifying a DNA base sequence using multiple rounds of heat denaturation of the DNA and annealing of oligonucleotide primers complementary to flanking regions in the presence of a heat-stable polymerase.
         tags: NCIT:C17003 [http://purl.obolibrary.org/obo/NCIT_C17003]
+        example: true
 
       - name: Target enrichment kit
         dataType: xref
@@ -845,6 +920,7 @@ tables:
         dataType: bool
         description: Indicates whether any unique molecular identifiers (UMIs) are present. An UMI barcode is a short nucleotide sequence that is used to identify reads originating from an individual mRNA molecule.
         tags: EFO:0010199 [http://www.ebi.ac.uk/efo/EFO_0010199]
+        example: true
 
       - name: Intended insert size
         dataType: integer
@@ -860,19 +936,20 @@ tables:
         description: A machine-readable representation of information in a visual format on a surface.
         dataType: string
         tags: NCIT:C43361 [http://purl.obolibrary.org/obo/NCIT_C43361]
+        example: B357913884948
 
       - name: Belongs to batch
         description: A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group.
         tags: NCIT:C67073 [http://purl.obolibrary.org/obo/NCIT_C67073]
         dataType: string
+        example: B-165
 
       - name: Belongs to data release
         dataType: mref
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
-
-
+        example: DR01
 
   - name: Laboratory Procedures
     description: Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.
