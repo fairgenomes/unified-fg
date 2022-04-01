@@ -1544,7 +1544,7 @@ tables:
         tags: OBI:0302888 [http://purl.obolibrary.org/obo/OBI_0302888]
         dataType: text
 
-  - name: Metabolomic mass spec assay
+  - name: Metabolomic mass spec assays
     description: A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug.
     tags: NCIT:C60819 [http://purl.obolibrary.org/obo/NCIT_C60819]
     columns:
@@ -1597,7 +1597,7 @@ tables:
         tags: ZECO:0000104 [http://purl.obolibrary.org/obo/ZECO_0000104]
         dataType: string
 
-  - name: Metabolomic analysis
+  - name: Metabolomic analyses
     description: Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).
     tags: EDAM:data_0949 [http://edamontology.org/data_0949]
     columns:
@@ -1607,9 +1607,9 @@ tables:
         tags: EDAM:data_1083 [http://edamontology.org/data_1083]
         dataType: identifier
 
-      - name: Belongs metabolomic assay
+      - name: Belongs metabolomic mass spec assay
         dataType: xref
-        reference: Metabolomic assay
+        reference: Metabolomic mass spec assays
         description: This metabolomic analysis is part of a metabolomic assay.
         tags: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
 
@@ -1718,6 +1718,7 @@ tables:
         dataType: xref
         reference: lookups/HumanChromosomes.tsv
         tags: NCIT:C13203 [http://purl.obolibrary.org/obo/NCIT_C13203]
+        referenceTypeTag: NCIT:C13203 [http://purl.obolibrary.org/obo/NCIT_C13203]
 
       - name: variantType
         description: An attribute describing a type of variation inhering in a sequence feature or collection.
@@ -1811,23 +1812,24 @@ tables:
     tags: NCIT:C164404 [http://purl.obolibrary.org/obo/NCIT_C164404]
     columns:
 
-      - name: Belongs to genetic variation description
+      - name: Belongs to genomic variant description
         dataType: xref
-        reference: Genetic variation description
-        description:
-        tags:
+        reference: Genomic variant descriptions
+        description: Belongs to genomic variant description
+        tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248] # TODO: all table xrefs should probably consist of "refers to" + "referred table tag"
 
       - name: Allele 1
         description: One of a set of sequence features known to exist at a particular genomic location.
         dataType: xref
-        reference: lookups/Nucleobase.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000512
+        reference: lookups/Nucleobases.tsv
+        referenceTypeTag:
+        tags: GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Allele 2
         description: One of a set of sequence features known to exist at a particular genomic location.
         dataType: xref
-        reference: lookups/Nucleobase.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000512
+        reference: lookups/Nucleobases.tsv
+        tags: GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Zygosity
         description: The genetic condition of a zygote, especially with respect to its being a homozygote or a heterozygote.
@@ -1873,13 +1875,13 @@ tables:
         description: One of a set of sequence features known to exist at a particular genomic location.
         dataType: xref
         reference: lookups/Nucleobase.txt
-        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], GENO_0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Paternal allele 2
         description: One of a set of sequence features known to exist at a particular genomic location.
         dataType: xref
         reference: lookups/Nucleobase.txt
-        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], GENO_0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Father Read Depth
         dataType: integer
@@ -1907,18 +1909,18 @@ tables:
         description: A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell's genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent.
         dataType: xref
         reference: lookups/AlleleOrigin.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000877
+        tags: GENO:0000877 [http://purl.obolibrary.org/obo/GENO_0000877]
 
   - name: Genomic variant annotations
     description: In-context information that has been associated with genomic variants.
     tags: NCIT:C44272 [http://purl.obolibrary.org/obo/NCIT_C44272]
     columns:
 
-      - name: Belongs to genetic variation description
+      - name: Belongs to genomic variant description
         dataType: xref
-        reference: Genetic variation description
-        description:
-        tags:
+        reference: Genomic variant description
+        description: Belongs to genomic variant description
+        tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248] # TODO: all table xrefs should probably consist of "refers to" + "referred table tag"
 
       # TODO: get clarification of this attribute. Should be a lookup like Genes? will be big
       - name: Transcript
@@ -1963,7 +1965,7 @@ tables:
 
       - name: Gnomad # ???
         description: An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD.
-        tags: http://ensembl.org/glossary/ENSGLOSSARY_0000238
+        tags: ENSGLOSSARY:0000238 [http://ensembl.org/glossary/ENSGLOSSARY_0000238]
         dataType: string
 
       - name: Gnomad link # ???
@@ -1989,6 +1991,8 @@ tables:
       - name: Omim Inheritance # Inheritance pattern. In the variantDB, this is chromosomeType
         dataType: xref
         reference: lookups/Inheritance.tsv
+        referenceTypeTag: NCIT:C45827 [http://purl.obolibrary.org/obo/NCIT_C45827]
+        tags: ENSGLOSSARY:0000244 [http://ensembl.org/glossary/ENSGLOSSARY_0000244]
         # MERGE WITH :::
         # not in FairGenomes
         # need lookup for: Autosomal,Dominant,X-linked,Y-linked,Codominant,Mitchondrial,Inherited_Unresolved
@@ -2035,21 +2039,21 @@ tables:
         tags: VariO:0229 [http://purl.obolibrary.org/obo/VariO_0229]
 
   - name: Genomic variant interpretations
-    description:
-    tags:
+    description: The determination of the meaning of a variant in clinical context.
+    tags: NCIT:C125009 [http://purl.obolibrary.org/obo/NCIT_C125009]
     columns:
 
-      - name: Belongs to genetic variation annotation
+      - name: Belongs to genomic variant annotation
         dataType: xref
-        reference: Genetic variation description
-        description:
-        tags:
+        reference: Genomic variant annotations
+        description: Belongs to genomic variant annotation
+        tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C44272 [http://purl.obolibrary.org/obo/NCIT_C44272]
 
-      - name: Belongs to genetic variation observation
+      - name: Belongs to genomic variant observation
         dataType: xref
-        reference: Genetic variation description
-        description:
-        tags:
+        reference: Genomic variant descriptions
+        description: Belongs to genomic variant observation
+        tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C164404 [http://purl.obolibrary.org/obo/NCIT_C164404]
 
       # need clarification. Gene panel? make lookups?
       - name: Panel
@@ -2058,7 +2062,7 @@ tables:
         dataType: string
 
       - name: Pipeline version
-        tags: http://purl.obolibrary.org/obo/GENEPIO_0000152
+        tags: GENEPIO:0000152 [http://purl.obolibrary.org/obo/GENEPIO_0000152]
         dataType: string
         description: Pipeline version
 
@@ -2076,7 +2080,7 @@ tables:
 
       # this is an enum in EMX1
       - name: Pipeline name
-        tags: http://purl.obolibrary.org/obo/GENEPIO_0000151
+        tags: GENEPIO:0000151 [http://purl.obolibrary.org/obo/GENEPIO_0000151]
         dataType: string
         description: Pipeline name
 
@@ -2112,7 +2116,7 @@ tables:
       - name: Date of curation
         description: A classification datum is a facet that classifies some entity.
         dataType: date
-        tags: http://purl.allotrope.org/ontologies/result#AFR_0001277
+        tags: AFR:0001277 [http://purl.allotrope.org/ontologies/result#AFR_0001277]
 
       - name: Curator
         description: The person in charge of the care and superintendence of something, especially a collection.
