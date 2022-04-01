@@ -39,7 +39,7 @@ public class LookupList {
                 continue;
             }
             String nextLine = s.nextLine();
-            Lookup l = new Lookup(nextLine);
+            Lookup l = new Lookup(nextLine, name);
 
             if(lookups.containsKey(l.value))
             {

@@ -203,6 +203,9 @@ public class YamlModel {
         allModuleOntologies = new HashSet<Ontology>();
         allElementOntologies = new HashSet<Ontology>();
         for (Table m : tables) {
+            if(m.tags == null){
+                throw new Exception("No tag for table " + m.name);
+            }
             m.parsedTags = Ontology.toOntoList(m.tags);
             allModuleOntologies.addAll(m.parsedTags);
             for (Column e : m.columns) {
