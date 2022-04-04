@@ -1,9 +1,0 @@
-name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
-identifier	Identifier	A unique proper name or character sequence that identifies this particular metabolomics assay. (NCIT:C171266 )	metabolomicassay	string	TRUE	TRUE	TRUE	FALSE	
-belongsmetabolomicmaterialprocessing	Belongs metabolomic material processing	This metabolomic assay is part of a metabolomic material processing. (SIO:000068 )	metabolomicassay	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_metabolomicmaterialprocessing
-inlet	Inlet	A valve that controls the flow of fluids in through the wall of a chamber. (NCIT:C50251 )	metabolomicassay	string	FALSE	FALSE	TRUE	TRUE	
-massspectrometer	Mass spectrometer	A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra. (CHMO:0000982 )	metabolomicassay	string	FALSE	FALSE	TRUE	TRUE	
-ionizationsource	Ionization source	A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis. (CHMO:0000960 )	metabolomicassay	string	FALSE	FALSE	TRUE	TRUE	
-chromatographycolumn	Chromatography column	A piece of apparatus that has the form of a tube with a diameter between 5 to 50 mm and hosts the stationary bed in chromatography. (CHMO:0000997 )	metabolomicassay	string	FALSE	FALSE	TRUE	TRUE	
-phaseseparationprotocol	Phase separation protocol	Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase. (CHMO:0002214 )	metabolomicassay	text	FALSE	FALSE	TRUE	TRUE	
-massspecsourceconditions	Mass spec source conditions	Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition. (ZECO:0000104 )	metabolomicassay	string	FALSE	FALSE	TRUE	TRUE	

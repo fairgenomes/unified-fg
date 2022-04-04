@@ -20,6 +20,8 @@ public class Column {
     public String relatedMatch;
     public String broadMatch;
     public String narrowMatch;
+    public String example;
+
     /*
     Variables that may be loaded afterwards
      */

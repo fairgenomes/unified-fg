@@ -2,13 +2,14 @@ package org.unifiedschema.generated;
 
 import java.util.List;
 
-public class Genomicvariation {
+public class Genomicvariantdescriptions {
 	public String variantinternalid;
 	public String belongstosubject;
 	public String belongstomaterial;
 	public List<String> producedbysequencingrun;
 	public String alternatebases;
 	public String referencebases;
+	public String humanchromosome;
 	public String varianttype;
 	public int position_start;
 	public int position_end;

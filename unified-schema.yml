@@ -140,51 +140,50 @@ tables:
 
   - name: Person
     description: researcher or contactperson involved in the study and/or affliated with organisation
-    tags: http://purl.obolibrary.org/obo/NCIT_C25461, http://purl.obolibrary.org/obo/NCIT_C25936
-    attributes:
+    tags: NCIT:C25461 [http://purl.obolibrary.org/obo/NCIT_C25461], NCIT:C25936 [http://purl.obolibrary.org/obo/NCIT_C25936]
+
+    columns:
       - name: identifier
         description: identifier
-        nillable: false
-        idAttribute: true
-        lookupAttribute: true
-        tags: http://purl.obolibrary.org/obo/NCIT_C25364
+        dataType: identifier
+        tags: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
         example: rosemarie.vandale@neurocenter.nl
 
-      - name: fullName
-        label: Full Name
+      - name: Full Name
         description: full name. E.g. Morris Swertz
-        tags: http://purl.obolibrary.org/obo/GSSO_001755
+        tags: GSSO:001755 [http://purl.obolibrary.org/obo/GSSO_001755]
         example: Rosemarie Vandale
+        dataType: string
 
-      - name: alternativeIdentifier
-        label: Alternative ID
+      - name: Alternative identifier
         description: alternative identifier. E.g. ORCID:1234
-        tags: http://purl.obolibrary.org/obo/NCIT_C90353
+        tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
         example: ORCID:0000-0000-0000-0000
+        dataType: string
 
       - name: firstName
-        tags: http://purl.obolibrary.org/obo/NCIT_C40974
+        description: A word or group of words indicating a person's first (personal or given) name
+        tags: NCIT:C40974 [http://purl.obolibrary.org/obo/NCIT_C40974]
         example: Rosemarie
+        dataType: string
 
-      - name: middleInitials
-        label: Initials
+      - name: Middle initials
         description: middle initiatials. E.g. A.
-        tags: http://purl.obolibrary.org/obo/NCIT_C166237
-        example:
+        tags: NCIT:C166237 [http://purl.obolibrary.org/obo/NCIT_C166237]
+        example: A.
+        dataType: string
 
-      - name: lastName
-        label: Lastname
+      - name: Last name
         description: last name. E.g. Swertz
-        tags: http://purl.obolibrary.org/obo/NCIT_C40975
+        tags: NCIT:C40975 [http://purl.obolibrary.org/obo/NCIT_C40975]
         example: Vandale
+        dataType: string
 
-      - name: email
-        label: Email
+      - name: Email
         description: email address. E.g. m.a.swertz@rug.nl
-        nillable: false
-        labelAttribute: true
-        tags: http://purl.obolibrary.org/obo/NCIT_C42775
+        tags: NCIT:C42775 [http://purl.obolibrary.org/obo/NCIT_C42775]
         example: rosemarie.vandale@neurocenter.nl
+        dataType: string
 
   - name: Data releases
     description: The act of making data or other structured information accessible to the public or to the user group of a database.
@@ -202,42 +201,42 @@ tables:
         tags: NCIT:C42614 [http://purl.obolibrary.org/obo/NCIT_C42614]
         dataType: string
         example: NeuroDB Data Release 1
-        
+
       - name: description
         description: A written or verbal account, representation, statement, or explanation of something.
-        tags: http://purl.obolibrary.org/obo/NCIT_C25365
+        tags: NCIT:C25365 [http://purl.obolibrary.org/obo/NCIT_C25365]
         dataType: text
         example: Included patients seen in the clinical between 1 January 2022 and 31 March 2022.
-      
+
       - name: date
         description: A date of database submission refers to the moment in time in which some information was submitted/received to a database system.
-        tags: http://semanticscience.org/resource/SIO_001083
+        tags: SIO:001083 [http://semanticscience.org/resource/SIO_001083]
         dataType: date
         example: 2022-04-01
-      
+
       - name: createdBy
         description: Indicates the person or authoritative body who brought the item into existence.
-        tags: http://purl.obolibrary.org/obo/NCIT_C42628
+        tags: NCIT:C42628 [http://purl.obolibrary.org/obo/NCIT_C42628]
         dataType: xref
         reference: Person
         example: rosemarie.vandale@neurocenter.nl
-      
+
       - name: numberOfEntriesAdded
         description: Combined or joined to increase in size or quantity or scope.
-        tags: http://purl.obolibrary.org/obo/NCIT_C45330
-        dataType: int
+        tags: NCIT:C45330 [http://purl.obolibrary.org/obo/NCIT_C45330]
+        dataType: integer
         example: 100
-      
+
       # TODO: Should this be an xref to `Organisation` or `Person`?
       - name: dataSource
         description: The person or authoritative body who provided the information.
-        tags: http://purl.obolibrary.org/obo/NCIT_C16493
+        tags: NCIT:C16493 [http://purl.obolibrary.org/obo/NCIT_C16493]
         dataType: string
         example: Bioinformatic database team
-      
+
       - name: releaseComments
         description: A notation regarding the decisions, and/or clarification of any information pertaining to data management.
-        tags: http://purl.obolibrary.org/obo/NCIT_C115505
+        tags: NCIT:C115505 [http://purl.obolibrary.org/obo/NCIT_C115505]
         dataType: text
         example:
 
@@ -365,10 +364,10 @@ tables:
         reference: Person
         example: rosemarie.vandale@neurocenter.nl
 
-     # - name: Affiliated institute contact email --> part of Person
-     #   dataType: email
-     #   description: Email address of the contact person or organization
-     #   tags: MS:1000589 [http://purl.obolibrary.org/obo/MS_1000589]
+      # - name: Affiliated institute contact email --> part of Person
+      #   dataType: email
+      #   description: Email address of the contact person or organization
+      #   tags: MS:1000589 [http://purl.obolibrary.org/obo/MS_1000589]
 
       - name: Resources in other institutes
         description: Material or data related to this person that is not captured by this system though known to be available in other institutes such as biobanks or hospitals.
@@ -521,7 +520,7 @@ tables:
         referenceTypeTag: Wikidata:P3841 [https://www.wikidata.org/wiki/Property:P3841]
         description: Phenotypes or symptoms that were looked for but not observed, which may help in differential diagnosis or establish incomplete penetrance.
         tags: HL7:C0442737 [http://purl.bioontology.org/ontology/HL7/C0442737]
-        example: 
+        example:
 
       - name: Provisional phenotype
         dataType: mref
@@ -545,13 +544,13 @@ tables:
         referenceTypeTag: NCIT:C16612 [http://purl.obolibrary.org/obo/NCIT_C16612]
         description: Gene affected by pathogenic variation that is causal for disease of the patient.
         tags: NCIT:C20826 [http://purl.obolibrary.org/obo/NCIT_C20826]
-        example: 
+        example:
 
       - name: Molecular diagnosis other
         dataType: text
         description: Causal variant in HGVS notation with optional classification or free text explaining any other molecular mechanisms involved.
         tags: NCIT:C20826 [http://purl.obolibrary.org/obo/NCIT_C20826]
-        example: 
+        example:
 
       - name: Medication
         description: A drug product that contains one or more active and/or inactive ingredients used by the patient intended to treat, prevent or alleviate the symptoms of disease. Any hormone therapies, gender-related or otherwise, should also be recorded here.
@@ -559,7 +558,7 @@ tables:
         dataType: mref
         reference: lookups/Drugs.tsv
         referenceTypeTag: EDAM:data_3103 [http://edamontology.org/data_3103]
-        example: 
+        example:
 
       - name: Drug regimen
         description: The specific way a therapeutic drug is to be taken, including formulation, route of administration, dose, dosing interval, and treatment duration.
@@ -623,17 +622,17 @@ tables:
         description: Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF).
         tags: NCIT:C21007 [http://purl.obolibrary.org/obo/NCIT_C21007]
         dataType: text
-        example: 
+        example:
 
       - name: Material used in diagnosis
         description: This diagnosis c.q. clinical examination is based on one or more sampled materials.
         tags: SIO:000641 [http://semanticscience.org/resource/SIO_000641]
         dataType: string #Placeholder. This field should be proper MREF to Material, but this is technically problematic due to circular dependencies.]
-#      - name: belongsToSample
-#        dataType: mref
-#        refEntity: umdm_samples
-#        description: Name or other identifier of an entry from a biosample database.
-#        tags: http://edamontology.org/data_3273
+      #      - name: belongsToSample
+      #        dataType: mref
+      #        refEntity: umdm_samples
+      #        description: Name or other identifier of an entry from a biosample database.
+      #        tags: http://edamontology.org/data_3273
 
       - name: Part of data release
         dataType: mref
@@ -662,7 +661,7 @@ tables:
         description: A backup sequence of characters used to identify an entity.
         tags: NCIT:C90353 [http://purl.obolibrary.org/obo/NCIT_C90353]
         dataType: string
-        example: 
+        example:
 
       - name: Collected from subject
         dataType: xref
@@ -721,7 +720,7 @@ tables:
         description: The procedure whereby this material was sampled for an analysis.
         tags: EFO:0005518 [http://www.ebi.ac.uk/efo/EFO_0005518]
         dataType: text
-        example: 
+        example:
 
       - name: Sampling protocol reference
         dataType: mref
@@ -740,7 +739,7 @@ tables:
         dataType: text
         description: The rationale for why a deviation from the sampling protocol has occurred.
         tags: NCIT:C93529 [http://purl.obolibrary.org/obo/NCIT_C93529]
-        example: 
+        example:
 
       - name: Biospecimen type
         description: The type of material taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes.
@@ -790,7 +789,7 @@ tables:
         description: The percentage of tumor cells compared to total cells present in this material.
         tags: NCIT:C127771 [http://purl.obolibrary.org/obo/NCIT_C127771]
         dataType: decimal
-        example: 
+        example:
 
       - name: Physical location
         description: A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).
@@ -816,7 +815,7 @@ tables:
         reference: Data releases
         description: The act of making data or other structured information accessible to the public or to the user group of a database.
         tags: NCIT:C172217 [http://purl.obolibrary.org/obo/NCIT_C172217]
-        exampe: DR1
+        example: DR1
 
   - name: Sampling protocols
     description: Describes the procedure whereby biological samples for an experiment are sourced.
@@ -1095,19 +1094,19 @@ tables:
         dataType: decimal
         description: Percentage of the target sequence on which 20 or more unique reads were successfully mapped.
         tags: FG:0000003 [https://w3id.org/fair-genomes/resource/FG_0000003]
-        example: 
+        example:
 
       - name: Other quality metrics
         dataType: text
         description: Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check.
         tags: EDAM:data_3914 [http://edamontology.org/data_3914]
-        example: 
+        example:
 
-    #  - name: referenceGenomeUsed
-    #    dataType: xref
-    #    refEntity: umdm_lookups_genomeAccessions
-    #    description: The specific build of the human genome used as reference for sequence alignment and variant calling.
-    #    tags: http://edamontology.org/data_2340
+      #  - name: referenceGenomeUsed
+      #    dataType: xref
+      #    refEntity: umdm_lookups_genomeAccessions
+      #    description: The specific build of the human genome used as reference for sequence alignment and variant calling.
+      #    tags: http://edamontology.org/data_2340
 
       - name: Part of data release
         dataType: mref
@@ -1239,7 +1238,7 @@ tables:
         dataType: text
         description: The description of the characteristics that define a cohort.
         tags: NCIT:C166209 [http://purl.obolibrary.org/obo/NCIT_C166209]
-        example: 
+        example:
 
       - name: Principle investigator
         description: The principle investigator or responsible person for this study.
@@ -1254,10 +1253,10 @@ tables:
         reference: Person
         example: rosemarie.vandale@neurocenter.nl
 
-    #  - name: Contact email --> part of Person
-    #    dataType: email
-    #    description: An email address for the purpose of contacting the study contact person.
-    #    tags: OMIABIS:0000035 [http://purl.obolibrary.org/obo/OMIABIS_0000035]
+      #  - name: Contact email --> part of Person
+      #    dataType: email
+      #    description: An email address for the purpose of contacting the study contact person.
+      #    tags: OMIABIS:0000035 [http://purl.obolibrary.org/obo/OMIABIS_0000035]
 
       - name: Size of cohort
         dataType: integer
@@ -1295,13 +1294,13 @@ tables:
         dataType: xref
         reference: Leaflet and consent form
         example: CF912
-        
+
 
       - name: Collected by
         description: Indicates the person, group, or institution who performed the collection act.
         tags: NCIT:C45262 [http://purl.obolibrary.org/obo/NCIT_C45262]
         dataType: string
-#       dataType: LookupOne [lookups/Institutes.txt], ofType [http://semanticscience.org/resource/SIO_000688]
+        #       dataType: LookupOne [lookups/Institutes.txt], ofType [http://semanticscience.org/resource/SIO_000688]
         example: Rosemarie Vandale
 
       - name: Signing date
@@ -1328,7 +1327,7 @@ tables:
         dataType: xref
         reference: lookups/RepresentedBy.tsv
         referenceTypeTag: BFO:0000023 [http://purl.obolibrary.org/obo/BFO_0000023]
-        example: 
+        example:
 
       - name: Consent withdrawn
         dataType: bool
@@ -1356,7 +1355,7 @@ tables:
         dataType: text
         description: Further specification of applied data use permissions and modifiers. For example, a list of countries in case of geographic restrictions or a list of diseases when restricted to disease-specific research.
         tags: SIO:000090 [http://semanticscience.org/resource/SIO_000090]
-        example: No further data use specifications 
+        example: No further data use specifications
 
       - name: Allow matchmaker
         dataType: bool
@@ -1546,7 +1545,7 @@ tables:
         tags: OBI:0302888 [http://purl.obolibrary.org/obo/OBI_0302888]
         dataType: text
 
-  - name: Metabolomic mass spec assay
+  - name: Metabolomic mass spec assays
     description: A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug.
     tags: NCIT:C60819 [http://purl.obolibrary.org/obo/NCIT_C60819]
     columns:
@@ -1599,7 +1598,7 @@ tables:
         tags: ZECO:0000104 [http://purl.obolibrary.org/obo/ZECO_0000104]
         dataType: string
 
-  - name: Metabolomic analysis
+  - name: Metabolomic analyses
     description: Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).
     tags: EDAM:data_0949 [http://edamontology.org/data_0949]
     columns:
@@ -1609,9 +1608,9 @@ tables:
         tags: EDAM:data_1083 [http://edamontology.org/data_1083]
         dataType: identifier
 
-      - name: Belongs metabolomic assay
+      - name: Belongs metabolomic mass spec assay
         dataType: xref
-        reference: Metabolomic assay
+        reference: Metabolomic mass spec assays
         description: This metabolomic analysis is part of a metabolomic assay.
         tags: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
 
@@ -1675,7 +1674,7 @@ tables:
   # caseLevelData (n = 11)
   # frequencyInPopulations (n = 4)
   #
-  - name: Genomic variation description
+  - name: Genomic variant descriptions
     description: Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence.
     tags: NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248], GENO:0000476 [http://purl.obolibrary.org/obo/GENO_0000476]
     columns:
@@ -1718,8 +1717,9 @@ tables:
       - name: Human chromosome
         description: A structure found in the nucleus of human cells that is comprised of a strand of linearized double-stranded DNA plus proteins that package the DNA in a condensed coil form and regulate chromosomal function.
         dataType: xref
-        refEntity: lookups/Humanchromosome.txt
-        tags: http://purl.obolibrary.org/obo/NCIT_C13203
+        reference: lookups/HumanChromosomes.tsv
+        tags: NCIT:C13203 [http://purl.obolibrary.org/obo/NCIT_C13203]
+        referenceTypeTag: NCIT:C13203 [http://purl.obolibrary.org/obo/NCIT_C13203]
 
       - name: variantType
         description: An attribute describing a type of variation inhering in a sequence feature or collection.
@@ -1808,184 +1808,198 @@ tables:
         tags: NCIT:C168796 [http://purl.obolibrary.org/obo/NCIT_C168796]
         dataType: string
 
-  - name: Genomic variation observation
+  - name: Genomic variant observations
     description: Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment.
     tags: NCIT:C164404 [http://purl.obolibrary.org/obo/NCIT_C164404]
     columns:
 
-      - name: Belongs to genetic variation description
+      - name: Belongs to genomic variant description
         dataType: xref
-        reference: Genetic variation description
-        description:
-        tags:
+        reference: Genomic variant descriptions
+        description: Belongs to genomic variant description
+        tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248] # TODO: all table xrefs should probably consist of "refers to" + "referred table tag"
 
       - name: Allele 1
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        refEntity: lookups/Nucleobase.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000512
+        dataType: string
+        tags: GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Allele 2
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        refEntity: lookups/Nucleobase.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000512
+        dataType: string
+        tags: GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Zygosity
         description: The genetic condition of a zygote, especially with respect to its being a homozygote or a heterozygote.
         #description: An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different).
         dataType: xref
         reference: lookups/Zygosity.tsv
-        referenceTypeTag: NCIT:C45824 [http://purl.obolibrary.org/obo/NCIT_C45824]
+        referenceTypeTag: GENO:0000133 [http://purl.obolibrary.org/obo/GENO_0000133]
         tags: NCIT:C45824 [http://purl.obolibrary.org/obo/NCIT_C45824], GENO:0000133 [http://purl.obolibrary.org/obo/GENO_0000133]
 
       - name: Maternal allele 1
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        refEntity: lookups/Nucleobase.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000512
+        dataType: string
+        tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Maternal allele 2
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        refEntity: lookups/Nucleobase.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000512
+        dataType: string
+        tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
-      - name: MotherDepth
-        label: Mother Read Depth
-        dataType: int
-        partOfAttribute: mother
-        tags: http://purl.obolibrary.org/obo/GENO_0000878 # "maternal allele origin", OK ? used in original Mother AllelInfo compound
+      - name: Mother Read Depth
+        description: Read depth of maternal allele
+        dataType: integer
+        tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
 
-      - name: MotherfreqAllel1 # calculated from read count?
-        label: Mother Allele Frequency Allele 1
+      - name: Mother Allele Frequency Allele 1 # calculated from read count? "allelic ratio" ?
+        description: Frequency of maternal allele 1
         dataType: decimal
-        partOfAttribute: mother
+        tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
 
-      - name: MotherfreqAllel2 # calculated from read count?
-        label: Mother Allele Frequency Allele 2
+      - name: Mother Allele Frequency Allele 2 # calculated from read count?
+        description: Frequency of maternal allele 2
+        tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
-        partOfAttribute: mother
 
-      - name: MotherdepthAllel1 # read count?
-        label: Mother Allelic Depth Allele 1
-        dataType: int
-        partOfAttribute: mother
+      - name: Mother Allelic Depth Allele 1 # read count?
+        description: Mother Allelic Depth Allele 1
+        tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
+        dataType: integer
 
-      - name: MotherdepthAllel2 # read count?
-        label: Mother Allelic Depth Allele 2
-        dataType: int
-        partOfAttribute: mother
+      - name: Mother Allelic Depth Allele 2 # read count?
+        description: Mother Allelic Depth Allele 2
+        tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
+        dataType: integer
 
       - name: Paternal allele 1
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        refEntity: lookups/Nucleobase.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000512
+        dataType: string
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Paternal allele 2
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        refEntity: lookups/Nucleobase.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000512
+        dataType: string
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
-      - name: FatherDepth
-        label: Father Read Depth
-        dataType: int
-        partOfAttribute: father
-        tags: http://purl.obolibrary.org/obo/GENO_0000879 # "paternal allele origin", OK ? used in original Father AllelInfo compound
+      - name: Father Read Depth
+        description: Father Read Depth
+        dataType: integer
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
 
-      - name: FatherfreqAllel1
-        label: Father Allele Frequency Allele 1
+      - name: Father Allele Frequency Allele 1
+        description: Father Allele Frequency Allele 1
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
-        partOfAttribute: father
 
-      - name: FatherfreqAllel2
-        label: Father Allele Frequency Allele 2
+      - name: Father Allele Frequency Allele 2
+        description: Father Allele Frequency Allele 2
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
-        partOfAttribute: father
 
-      - name: FatherdepthAllel1
-        label: Father Allelic Depth Allele 1
-        dataType: int
-        partOfAttribute: father
+      - name: Father Allelic Depth Allele 1
+        description: Father Allelic Depth Allele 1
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
+        dataType: integer
 
-      - name: FatherdepthAllel2
-        label: Father Allelic Depth Allele 2
-        dataType: int
-        partOfAttribute: father
+      - name: Father Allelic Depth Allele 2
+        description: Father Allelic Depth Allele 2
+        tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
+        dataType: integer
 
       # we mainly need Father, Mother, DeNovo, but it would be better to create the full reference list
       - name: Allele origin
         description: A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell's genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent.
         dataType: xref
-        refEntity: lookups/AlleleOrigin.txt
-        tags: http://purl.obolibrary.org/obo/GENO_0000877
+        reference: lookups/AlleleOrigin.tsv
+        referenceTypeTag: GENO:0000877 [http://purl.obolibrary.org/obo/GENO_0000877]
+        tags: GENO:0000877 [http://purl.obolibrary.org/obo/GENO_0000877]
 
-  - name: Genomic variation annotation
+  - name: Genomic variant annotations
     description: In-context information that has been associated with genomic variants.
     tags: NCIT:C44272 [http://purl.obolibrary.org/obo/NCIT_C44272]
     columns:
 
-      - name: Belongs to genetic variation description
+      - name: Belongs to genomic variant description
         dataType: xref
-        reference: Genetic variation description
-        description:
-        tags:
+        reference: Genomic variant descriptions
+        description: Belongs to genomic variant description
+        tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248] # TODO: all table xrefs should probably consist of "refers to" + "referred table tag"
 
-      # TODO: get clarification of this attribute
+      # TODO: get clarification of this attribute. Should be a lookup like Genes? will be big
       - name: Transcript
         description: The initial RNA molecule produced by transcription.
-        tags: http://purl.obolibrary.org/obo/NCIT_C1936
+        tags: NCIT:C1936 [http://purl.obolibrary.org/obo/NCIT_C1936]
+        dataType: string
 
       # TODO: get clarification of this attribute
       - name: Cdna
         description: Single-stranded DNA that is complementary to messenger RNA or DNA that has been synthesized from messenger RNA by reverse transcriptase.
-        tags: http://purl.obolibrary.org/obo/NCIT_C324
+        tags: NCIT:C324 [http://purl.obolibrary.org/obo/NCIT_C324]
+        dataType: string
 
+        # should be a lookup of standardized protein records like Genes? will be big
       - name: Protein
         description: A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons. Proteins are fundamental genetically encoded components of living cells with specific structures and functions dictated by amino acid sequence.
-        tags: http://purl.obolibrary.org/obo/NCIT_C17021
+        tags: NCIT:C17021 [http://purl.obolibrary.org/obo/NCIT_C17021]
+        dataType: string
 
       - name: Gene
         description: A unique gene name within a specific repository, database, or collection.
         dataType: mref
-        reference: lookups/Gene.tsv
+        reference: lookups/Genes.tsv
         referenceTypeTag: EDAM:data_2298 [http://edamontology.org/data_2298]
         tags: NCIT:C16612 [http://purl.obolibrary.org/obo/NCIT_C16612]
 
+        # instead of "exon number", should be a lookup of standardized exon records like Genes? will be big
       - name: Exon
         description: The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene.
         dataType: integer
-        tags: http://purl.obolibrary.org/obo/NCIT_C13231
+        tags: NCIT:C13231 [http://purl.obolibrary.org/obo/NCIT_C13231]
 
       - name: Variant comment
         description: A written explanation, observation or criticism added to textual material.
-        tags: http://purl.obolibrary.org/obo/NCIT_C25393
+        tags: NCIT:C25393 [http://purl.obolibrary.org/obo/NCIT_C25393]
+        dataType: text
 
       - name: CADD score
         dataType: decimal
+        description: CADD score
+        tags: ENSGLOSSARY:0000360 [http://ensembl.org/glossary/ENSGLOSSARY_0000360]
 
-      - name: Gnomad
+      - name: Gnomad # ???
         description: An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD.
-        tags: http://ensembl.org/glossary/ENSGLOSSARY_0000238
+        tags: ENSGLOSSARY:0000238 [http://ensembl.org/glossary/ENSGLOSSARY_0000238]
+        dataType: string
 
-      - name: Gnomad link
-        dataType: xref
-        refEntity: Link
+      - name: Gnomad link # ???
+        dataType: string
+        description: Gnomad link
+        tags: ENSGLOSSARY:0000238 [http://ensembl.org/glossary/ENSGLOSSARY_0000238]
 
       - name: HGMD
-        dataType: enum
-        enumOptions: Yes,No,Non-contributory
+        dataType: xref
+        description: HGMD
+        reference: lookups/HGMDOptions.tsv
+        referenceTypeTag: NCIT:C25755 [http://purl.obolibrary.org/obo/NCIT_C25755]
+        tags: ENSGLOSSARY:0000250 [http://ensembl.org/glossary/ENSGLOSSARY_0000250]
 
-      - name: HGMD link
+      - name: HGMD link # ???
+        dataType: string
+        description: HGMD link
+        tags: ENSGLOSSARY:0000250 [http://ensembl.org/glossary/ENSGLOSSARY_0000250]
 
       - name: Phylop score
-        datatype: decimal
+        dataType: decimal
+        description: Phylop score
+        tags: VariO:0229 [http://purl.obolibrary.org/obo/VariO_0229]
 
       - name: Omim Inheritance # Inheritance pattern. In the variantDB, this is chromosomeType
+        description: Omim Inheritance
         dataType: xref
         reference: lookups/Inheritance.tsv
+        referenceTypeTag: NCIT:C45827 [http://purl.obolibrary.org/obo/NCIT_C45827]
+        tags: ENSGLOSSARY:0000244 [http://ensembl.org/glossary/ENSGLOSSARY_0000244]
         # MERGE WITH :::
         # not in FairGenomes
         # need lookup for: Autosomal,Dominant,X-linked,Y-linked,Codominant,Mitchondrial,Inherited_Unresolved
@@ -1994,121 +2008,146 @@ tables:
         #   description: The pattern in which a genetic trait or condition is passed from one generation to the next, as determined by genetic interactions between alleles of the causal gene, and interactions between these alleles and the environment.
         #   tags: http://purl.obolibrary.org/obo/GENO_0000141
 
-      - name: Omim morbid
-        dataType: xref
-        refEntity: link
+      - name: OMIM morbid # ???
+        dataType: string
+        tags: ENSGLOSSARY:0000244 [http://ensembl.org/glossary/ENSGLOSSARY_0000244]
+        description: OMIM morbid
 
-      - name: Clinvar
+      - name: Clinvar # ???
         description: NCBI resource that aggregates information about genomic variation and its relationship to human health. Ensembl display clinical significance and phenotypes from ClinVar. https://www.ncbi.nlm.nih.gov/clinvar/
-        dataType: xref
-        refEntity: link
-        tags: http://ensembl.org/glossary/ENSGLOSSARY_0000242
+        dataType: string
+        tags: ENSGLOSSARY:0000242 [http://ensembl.org/glossary/ENSGLOSSARY_0000242]
 
-      - name: Pubmed
+      - name: Pubmed # ???
         description: A web application from the National Library of Medicine (NLM). It provides a single query interface to over 15 million citations for biomedical articles back to the 1950's. These citations are from MEDLINE and additional life science journals. PubMed includes links to many sites providing full text articles and other related resources.
-        tags: http://purl.obolibrary.org/obo/NCIT_C42881
+        tags: NCIT:C42881 [http://purl.obolibrary.org/obo/NCIT_C42881]
+        dataType: string
 
-      - name: Vkgl
-        dataType: xref
-        refEntity: link
+      - name: VKGL # ???
+        dataType: string
+        description: VKGL
+        tags: MAXO:0000698 [http://purl.obolibrary.org/obo/MAXO_0000698]
 
-      - name: dbSNP
-        dataType: xref
-        refEntity: link
+      - name: dbSNP # dbSNP ID ? i.e. rsID ?
+        dataType: string
+        description: dbSNP
+        tags: ENSGLOSSARY:0000233 [http://ensembl.org/glossary/ENSGLOSSARY_0000233]
 
       - name: Polyphen 2 prediction
-        dataType: enum
-        enumOptions: benign,possibly_damaging,probably_damaging
+        description: Polyphen 2 prediction
+        dataType: xref
+        tags: VariO:0229 [http://purl.obolibrary.org/obo/VariO_0229]
+        reference: lookups/PolyPhen2Classifications.tsv
+        referenceTypeTag: TXPO:0002566 [http://purl.obolibrary.org/obo/TXPO_0002566]
 
       # ???
       - name: Mutation taster
+        description: Mutation taster
+        dataType: string
+        tags: VariO:0229 [http://purl.obolibrary.org/obo/VariO_0229]
 
-  - name: Genomic variation interpretation
-    description:
-    tags:
+  - name: Genomic variant interpretations
+    description: The determination of the meaning of a variant in clinical context.
+    tags: NCIT:C125009 [http://purl.obolibrary.org/obo/NCIT_C125009]
     columns:
 
-      - name: Belongs to genetic variation annotation
+      - name: Belongs to genomic variant annotation
         dataType: xref
-        reference: Genetic variation description
-        description:
-        tags:
-          -
-      - name: Belongs to genetic variation observation
-        dataType: xref
-        reference: Genetic variation description
-        description:
-        tags:
+        reference: Genomic variant annotations
+        description: Belongs to genomic variant annotation
+        tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C44272 [http://purl.obolibrary.org/obo/NCIT_C44272]
 
-      # need clarification
-      - name: panel
+      - name: Belongs to genomic variant observation
+        dataType: xref
+        reference: Genomic variant descriptions
+        description: Belongs to genomic variant observation
+        tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C164404 [http://purl.obolibrary.org/obo/NCIT_C164404]
+
+      # need clarification. Gene panel? make lookups?
+      - name: Panel
+        description: Gene panel
+        tags: NCIT:C173599 [http://purl.obolibrary.org/obo/NCIT_C173599]
+        dataType: string
 
       - name: Pipeline version
-        tags: http://purl.obolibrary.org/obo/GENEPIO_0000152
-
-      # is this an appropriate term? Original "classification (by algorithm)"
-      - name: Variant classification
-        description:
-        tags: http://edamontology.org/operation_3225
+        tags: GENEPIO:0000152 [http://purl.obolibrary.org/obo/GENEPIO_0000152]
+        dataType: string
+        description: Pipeline version
 
       - name: Date of analysis
         description: The particular day, month and year an event has happened or will happen.
         dataType: date
-        tags: http://purl.obolibrary.org/obo/NCIT_C25164
+        tags: NCIT:C25164 [http://purl.obolibrary.org/obo/NCIT_C25164]
 
       # this is an enum in EMX1
       - name: Pipeline name
-        tags: http://purl.obolibrary.org/obo/GENEPIO_0000151
+        tags: GENEPIO:0000151 [http://purl.obolibrary.org/obo/GENEPIO_0000151]
+        dataType: string
+        description: Pipeline name
 
-      - name: Assessment
+      - name: Assessment # ??
         description: The final result of a determination of the value, significance, or extent of.
-        tags: http://purl.obolibrary.org/obo/NCIT_C25217
+        tags: NCIT:C25217 [http://purl.obolibrary.org/obo/NCIT_C25217]
+        dataType: string
 
       - name: Date of Assessment
         description: The date (and time) on which an assessment is completed.
         dataType: date
-        tags: http://purl.obolibrary.org/obo/NCIT_C93511
+        tags: NCIT:C93511 [http://purl.obolibrary.org/obo/NCIT_C93511]
 
       - name: Reviewed by
         description: Indicates the person or authoritative body who appraised, evaluated, or analyzed the item.
-        tags: http://purl.obolibrary.org/obo/NCIT_C42728
+        tags: NCIT:C42728 [http://purl.obolibrary.org/obo/NCIT_C42728]
         dataType: xref
         reference: Person
 
-      # need clarification
+      # need clarification todo
       - name: assesmentLab
+        description: assesmentLab
+        dataType: string
+        tags: NCIT:C37984 [http://purl.obolibrary.org/obo/NCIT_C37984]
 
-      - name: curatedText
+      # need clarification todo
+      - name: Curated text
+        dataType: text
+        description: Curated text
+        tags: NCIT:C48292 [http://purl.obolibrary.org/obo/NCIT_C48292]
 
       # Or maybe the NCIT Date term?
       - name: Date of curation
         description: A classification datum is a facet that classifies some entity.
         dataType: date
-        tags: http://purl.allotrope.org/ontologies/result#AFR_0001277
+        tags: AFR:0001277 [http://purl.allotrope.org/ontologies/result#AFR_0001277]
 
       - name: Curator
         description: The person in charge of the care and superintendence of something, especially a collection.
         dataType: xref
         reference: Person
-        tags: http://purl.obolibrary.org/obo/NCIT_C69141
+        tags: NCIT:C69141 [http://purl.obolibrary.org/obo/NCIT_C69141]
 
-      - name: Classification # Clinical classification ?
-        description: A method of generalization, the systematic arrangement of entities into classes or groups based on mutual similarity and certain differing characteristics.
+      - name: Clinical variant classification
+        description: Classify variants based on their potential effect on genes, especially functional effects on the expressed proteins.
+        tags: operation:3225 [http://edamontology.org/operation_3225], NCIT:C118969 [http://purl.obolibrary.org/obo/NCIT_C118969]
         dataType: xref
-        refEntity: Classification
-        tags: NCIT:C118969 [http://purl.obolibrary.org/obo/NCIT_C118969] # better than http://purl.obolibrary.org/obo/NCIT_C25161 ('Classification')
+        reference: lookups/VariantClassification.tsv
+        referenceTypeTag: NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248]
 
-      - name: Vus plus
+      - name: VUS plus
+        description: VUS plus
         dataType: bool
+        tags: NCIT:C94187 [http://purl.obolibrary.org/obo/NCIT_C94187]
 
       - name: Classification changed
-        datatype: bool
+        description: Classification changed
+        dataType: bool
+        tags: EDAM:operation_3225 [http://edamontology.org/operation_3225], DC:modified [http://purl.org/dc/terms/modified]
 
-
-      - name: Modulaire pipeline
-        dataType: compound
+      - name: Modular pipeline
+        description: Modular pipeline
+        dataType: string
+        tags: OBI:0001943 [http://purl.obolibrary.org/obo/OBI_0001943]
 
       - name: Url to report
         description: A Uniform Resource Locator (URL)
         dataType: hyperlink
-        tags: http://edamontology.org/data_1052
+        tags: data:1052 [http://edamontology.org/data_1052]

@@ -19,7 +19,6 @@ public class Subjects {
 	public int yearofdeath;
 	public String primaryaffiliatedinstitute;
 	public String affiliatedinstitutecontactperson;
-	public String affiliatedinstitutecontactemail;
 	public List<String> resourcesinotherinstitutes;
 	public List<String> participatesinstudy;
 	public String belongstofamily;
@@ -30,7 +29,6 @@ public class Subjects {
 	public String firstvisitdate;
 	public boolean fetalstatus;
 	public boolean consanguinity;
-	public List<String> belongstostudy;
-	public List<String> belongstodatarelease;
+	public List<String> partofdatarelease;
 	public List<String> belongstocohort;
 }

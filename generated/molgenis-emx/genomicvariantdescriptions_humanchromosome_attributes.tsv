@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	genomicvariantdescriptions_humanchromosome	Value (English)	String	TRUE	FALSE
+description	genomicvariantdescriptions_humanchromosome	Description (English)	Text	FALSE	TRUE
+codesystem	genomicvariantdescriptions_humanchromosome	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	genomicvariantdescriptions_humanchromosome	The code within the code system	String	FALSE	TRUE
+iri	genomicvariantdescriptions_humanchromosome	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

@@ -18,5 +18,5 @@ public class Sequencingruns {
 	public double percentageq30;
 	public double percentagetr20;
 	public String otherqualitymetrics;
-	public List<String> belongstodatarelease;
+	public List<String> partofdatarelease;
 }

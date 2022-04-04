@@ -4,6 +4,7 @@ import java.util.Map;
 
 public class UnifiedschemaRoot {
 	public Map<String, Studies> Studies;
+	public Map<String, Person> Person;
 	public Map<String, Datareleases> Datareleases;
 	public Map<String, Subjects> Subjects;
 	public Map<String, Clinical> Clinical;
@@ -18,7 +19,10 @@ public class UnifiedschemaRoot {
 	public Map<String, Leafletandconsentform> Leafletandconsentform;
 	public Map<String, Ngsanalysis> Ngsanalysis;
 	public Map<String, Metabolomicmaterialprocessing> Metabolomicmaterialprocessing;
-	public Map<String, Metabolomicassay> Metabolomicassay;
-	public Map<String, Metabolomicanalysis> Metabolomicanalysis;
-	public Map<String, Genomicvariation> Genomicvariation;
+	public Map<String, Metabolomicmassspecassays> Metabolomicmassspecassays;
+	public Map<String, Metabolomicanalyses> Metabolomicanalyses;
+	public Map<String, Genomicvariantdescriptions> Genomicvariantdescriptions;
+	public Map<String, Genomicvariantobservations> Genomicvariantobservations;
+	public Map<String, Genomicvariantannotations> Genomicvariantannotations;
+	public Map<String, Genomicvariantinterpretations> Genomicvariantinterpretations;
 }

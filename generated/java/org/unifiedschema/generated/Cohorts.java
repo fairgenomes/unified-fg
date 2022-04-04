@@ -9,6 +9,5 @@ public class Cohorts {
 	public String description;
 	public String principleinvestigator;
 	public String contactperson;
-	public String contactemail;
 	public int sizeofcohort;
 }

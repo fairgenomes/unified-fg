@@ -1,0 +1,4 @@
+value	description	codesystem	code	iri
+Yes	The affirmative response to a question.	NCIT	C49488	http://purl.obolibrary.org/obo/NCIT_C49488
+No	The non-affirmative response to a question.	NCIT	C49487	http://purl.obolibrary.org/obo/NCIT_C49487
+Non-contributory	Not of contributory benefit	SNOMED	229060004	http://snomed.info/id/229060004

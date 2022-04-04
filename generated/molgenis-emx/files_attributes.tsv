@@ -12,4 +12,4 @@ md5checksum	MD5 checksum	A 32-character hexadecimal number that is computed on a
 filestatus	File status	The condition for an electronic file relative to the current data or file processing step. (NCIT:C171193 )	files	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_files_filestatus
 creationdate	Creation date	The date a digital resource was created. (NCIT:C69199 )	files	date	FALSE	FALSE	TRUE	TRUE	
 alternativeidentifiers	Alternative identifiers	A backup sequence of characters used to identify an entity. (NCIT:C90353 )	files	string	FALSE	FALSE	TRUE	TRUE	
-belongstodatarelease	Belongs to data release	The act of making data or other structured information accessible to the public or to the user group of a database. (NCIT:C172217 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_datareleases
+partofdatarelease	Part of data release	The act of making data or other structured information accessible to the public or to the user group of a database. (NCIT:C172217 )	files	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_datareleases

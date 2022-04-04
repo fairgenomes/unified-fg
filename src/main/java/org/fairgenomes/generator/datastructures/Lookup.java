@@ -16,11 +16,11 @@ public class Lookup {
      * - value_en equal to description_en
      * @param lineFromFile
      */
-    public Lookup(String lineFromFile) throws Exception {
+    public Lookup(String lineFromFile, String name) throws Exception {
         String[] s = lineFromFile.split("\t", -1);
         if(s.length != 5)
         {
-            throw new Exception("Expected lines with 5 tab-separated elements each. Found: " + lineFromFile);
+            throw new Exception("Error in lookup '"+name+"'. Expected lines with 5 tab-separated elements each. Found: " + lineFromFile);
         }
 
         this.value = s[0];

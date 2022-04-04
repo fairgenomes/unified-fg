@@ -42,5 +42,16 @@ curl -X POST --data-binary @allowrecontacting.csv http://localhost:8080/unifiedm
 curl -X POST --data-binary @consentformcreator.csv http://localhost:8080/unifiedmodel/api/csv/consentformcreator
 curl -X POST --data-binary @dataformatsstored.csv http://localhost:8080/unifiedmodel/api/csv/dataformatsstored
 curl -X POST --data-binary @referencegenomeused.csv http://localhost:8080/unifiedmodel/api/csv/referencegenomeused
+curl -X POST --data-binary @processingtype.csv http://localhost:8080/unifiedmodel/api/csv/processingtype
+curl -X POST --data-binary @assaytype.csv http://localhost:8080/unifiedmodel/api/csv/assaytype
+curl -X POST --data-binary @analysistype.csv http://localhost:8080/unifiedmodel/api/csv/analysistype
 curl -X POST --data-binary @dataformatsstored.csv http://localhost:8080/unifiedmodel/api/csv/dataformatsstored
+curl -X POST --data-binary @humanchromosome.csv http://localhost:8080/unifiedmodel/api/csv/humanchromosome
 curl -X POST --data-binary @position_assemblyid.csv http://localhost:8080/unifiedmodel/api/csv/position_assemblyid
+curl -X POST --data-binary @zygosity.csv http://localhost:8080/unifiedmodel/api/csv/zygosity
+curl -X POST --data-binary @alleleorigin.csv http://localhost:8080/unifiedmodel/api/csv/alleleorigin
+curl -X POST --data-binary @gene.csv http://localhost:8080/unifiedmodel/api/csv/gene
+curl -X POST --data-binary @hgmd.csv http://localhost:8080/unifiedmodel/api/csv/hgmd
+curl -X POST --data-binary @omiminheritance.csv http://localhost:8080/unifiedmodel/api/csv/omiminheritance
+curl -X POST --data-binary @polyphen2prediction.csv http://localhost:8080/unifiedmodel/api/csv/polyphen2prediction
+curl -X POST --data-binary @clinicalvariantclassification.csv http://localhost:8080/unifiedmodel/api/csv/clinicalvariantclassification

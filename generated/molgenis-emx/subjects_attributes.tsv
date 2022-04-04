@@ -14,8 +14,7 @@ ageatdeath	Age at death	The age at which death occurred. (NCIT:C135383 )	subject
 dateofdeath	Date of death	The calendar date of subject's death. (NCIT:C70810 )	subjects	date	FALSE	FALSE	TRUE	TRUE	
 yearofdeath	Year of death	The year in which an individual derived. (NCIT:C156426 )	subjects	int	FALSE	FALSE	TRUE	TRUE	
 primaryaffiliatedinstitute	Primary affiliated institute	The most significant institute for medical consultation and/or study inclusion in context of the genetic disease of this person. (NCIT:C25412 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_primaryaffiliatedinstitute
-affiliatedinstitutecontactperson	Affiliated institute contact person	A person acting as a channel for communication between groups or on behalf of a group. (NCIT:C25461 )	subjects	string	FALSE	FALSE	TRUE	TRUE	
-affiliatedinstitutecontactemail	Affiliated institute contact email	Email address of the contact person or organization (MS:1000589 )	subjects	string	FALSE	FALSE	TRUE	TRUE	
+affiliatedinstitutecontactperson	Affiliated institute contact person	A person acting as a channel for communication between groups or on behalf of a group. (NCIT:C25461 )	subjects	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_person
 resourcesinotherinstitutes	Resources in other institutes	Material or data related to this person that is not captured by this system though known to be available in other institutes such as biobanks or hospitals. (NCIT:C19012 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_subjects_resourcesinotherinstitutes
 participatesinstudy	Participates in study	Reference to the study or studies in which this person participates. (RO:0000056 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_studies
 belongstofamily	Belongs to family	A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption. (NCIT:C25173 )	subjects	string	FALSE	FALSE	TRUE	TRUE	
@@ -26,6 +25,5 @@ belongswithtwin	Belongs with twin	Either of two offspring born from the same pre
 firstvisitdate	First visit date	The date for the first patient visit. (NCIT:C164021 )	subjects	date	FALSE	FALSE	TRUE	TRUE	
 fetalstatus	Fetal status	Any tissue from a fetus. (NCIT:C17730 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
 consanguinity	Consanguinity	Information on whether the patient is a child from two family members who are second cousins or closer. (OMIT:0004546, SNOMED:842009 )	subjects	bool	FALSE	FALSE	TRUE	TRUE	
-belongstostudy	Belongs to study	Reference to the study or studies in which this person participates. (RO:0000056 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_studies
-belongstodatarelease	Belongs to data release	The act of making data or other structured information accessible to the public or to the user group of a database. (NCIT:C172217 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_datareleases
+partofdatarelease	Part of data release	The act of making data or other structured information accessible to the public or to the user group of a database. (NCIT:C172217 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_datareleases
 belongstocohort	Belongs to cohort	A group of individuals, identified by a common characteristic. (NCIT:C61512 )	subjects	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_cohorts

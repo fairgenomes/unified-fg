@@ -1,11 +1,15 @@
 value	description	codesystem	code	iri
-Hemizygosity
-Heterozygosity
-Homozygosity
-Nullizygosity
-
-https://www.ebi.ac.uk/ols/ontologies/ncit/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FNCIT_C45824
-
-better??
-https://www.ebi.ac.uk/ols/ontologies/geno/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FGENO_0000133&viewMode=All&siblings=false
-
+hemizygous	hemizygous	GENO	0000134	http://purl.obolibrary.org/obo/GENO_0000134
+heterozygous	heterozygous	GENO	0000135	http://purl.obolibrary.org/obo/GENO_0000135
+homozygous	homozygous	GENO	0000136	http://purl.obolibrary.org/obo/GENO_0000136
+unspecified zygosity	unspecified zygosity	GENO	0000137	http://purl.obolibrary.org/obo/GENO_0000137
+disomic zygosity	disomic zygosity	GENO	0000391	http://purl.obolibrary.org/obo/GENO_0000391
+aneusomic zygosity	aneusomic zygosity	GENO	0000392	http://purl.obolibrary.org/obo/GENO_0000392
+trisomic homozygous	trisomic homozygous	GENO	0000393	http://purl.obolibrary.org/obo/GENO_0000393
+trisomic heterozygous	trisomic heterozygous	GENO	0000394	http://purl.obolibrary.org/obo/GENO_0000394
+compound heterozygous	compound heterozygous	GENO	0000402	http://purl.obolibrary.org/obo/GENO_0000402
+simple heterozygous	simple heterozygous	GENO	0000458	http://purl.obolibrary.org/obo/GENO_0000458
+hemizygous X-linked	hemizygous X-linked	GENO	0000604	http://purl.obolibrary.org/obo/GENO_0000604
+hemizygous Y-linked	hemizygous Y-linked	GENO	0000605	http://purl.obolibrary.org/obo/GENO_0000605
+hemizygous insertion-linked	hemizygous insertion-linked	GENO	0000606	http://purl.obolibrary.org/obo/GENO_0000606
+nullizygosity	nullizygosity	NCIT	C148063	http://purl.obolibrary.org/obo/NCIT_C148063

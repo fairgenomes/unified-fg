@@ -402,6 +402,11 @@ Nasopharyngeal Wash Specimen	Nasopharyngeal Wash Specimen	NCIT	http://purl.oboli
 Nasal Swab or Nose Specimen	Nasal Swab or Nose Specimen	NCIT	http://purl.obolibrary.org/obo/NCIT_C155833	Nasal Swab or Nose Specimen
 Nasal Wash Specimen	Nasal Wash Specimen	NCIT	http://purl.obolibrary.org/obo/NCIT_C155834	Nasal Wash Specimen
 Oropharyngeal Swab Specimen	Oropharyngeal Swab Specimen	NCIT	http://purl.obolibrary.org/obo/NCIT_C155835	Oropharyngeal Swab Specimen
+Blood	Blood	NCIT	http://purl.obolibrary.org/obo/NCIT_C12434	Blood
+Plasma	Plasma	NCIT	http://purl.obolibrary.org/obo/NCIT_C13356	Plasma
+Cerebrospinal Fluid	Cerebrospinal Fluid	NCIT	http://purl.obolibrary.org/obo/NCIT_C12692	Cerebrospinal Fluid
+Feces	Feces	NCIT	http://purl.obolibrary.org/obo/NCIT_C13234	Feces
+Urine	Urine	NCIT	http://purl.obolibrary.org/obo/NCIT_C13283	Urine
 NoInformation (NI, nullflavor)	The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI	NoInformation (NI, nullflavor)
 Invalid (INV, nullflavor)	The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV	Invalid (INV, nullflavor)
 Derived (DER, nullflavor)	An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .	HL7	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER	Derived (DER, nullflavor)

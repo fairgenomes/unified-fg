@@ -1,0 +1,22 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+belongstogenomicvariantdescription	Belongs to genomic variant description	Belongs to genomic variant description (SIO:000628, NCIT:C17248 )	genomicvariantannotations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantdescriptions
+transcript	Transcript	The initial RNA molecule produced by transcription. (NCIT:C1936 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+cdna	Cdna	Single-stranded DNA that is complementary to messenger RNA or DNA that has been synthesized from messenger RNA by reverse transcriptase. (NCIT:C324 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+protein	Protein	A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons. Proteins are fundamental genetically encoded components of living cells with specific structures and functions dictated by amino acid sequence. (NCIT:C17021 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+gene	Gene	A unique gene name within a specific repository, database, or collection. (NCIT:C16612 )	genomicvariantannotations	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantannotations_gene
+exon	Exon	The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene. (NCIT:C13231 )	genomicvariantannotations	int	FALSE	FALSE	TRUE	TRUE	
+variantcomment	Variant comment	A written explanation, observation or criticism added to textual material. (NCIT:C25393 )	genomicvariantannotations	text	FALSE	FALSE	TRUE	TRUE	
+caddscore	CADD score	CADD score (ENSGLOSSARY:0000360 )	genomicvariantannotations	decimal	FALSE	FALSE	TRUE	TRUE	
+gnomad	Gnomad	An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD. (ENSGLOSSARY:0000238 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+gnomadlink	Gnomad link	Gnomad link (ENSGLOSSARY:0000238 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+hgmd	HGMD	HGMD (ENSGLOSSARY:0000250 )	genomicvariantannotations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantannotations_hgmd
+hgmdlink	HGMD link	HGMD link (ENSGLOSSARY:0000250 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+phylopscore	Phylop score	Phylop score (VariO:0229 )	genomicvariantannotations	decimal	FALSE	FALSE	TRUE	TRUE	
+omiminheritance	Omim Inheritance	Omim Inheritance (ENSGLOSSARY:0000244 )	genomicvariantannotations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantannotations_omiminheritance
+omimmorbid	OMIM morbid	OMIM morbid (ENSGLOSSARY:0000244 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+clinvar	Clinvar	NCBI resource that aggregates information about genomic variation and its relationship to human health. Ensembl display clinical significance and phenotypes from ClinVar. https://www.ncbi.nlm.nih.gov/clinvar/ (ENSGLOSSARY:0000242 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+pubmed	Pubmed	A web application from the National Library of Medicine (NLM). It provides a single query interface to over 15 million citations for biomedical articles back to the 1950's. These citations are from MEDLINE and additional life science journals. PubMed includes links to many sites providing full text articles and other related resources. (NCIT:C42881 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+vkgl	VKGL	VKGL (MAXO:0000698 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+dbsnp	dbSNP	dbSNP (ENSGLOSSARY:0000233 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
+polyphen2prediction	Polyphen 2 prediction	Polyphen 2 prediction (VariO:0229 )	genomicvariantannotations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantannotations_polyphen2prediction
+mutationtaster	Mutation taster	Mutation taster (VariO:0229 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	

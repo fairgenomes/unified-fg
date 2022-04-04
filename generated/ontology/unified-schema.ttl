@@ -58,23 +58,17 @@ fg:Studies_Inclusion_criteria a owl:ObjectProperty;
   dc:description "The conditions which, if met, make an person eligible for participation in this study.";
   rdfs:range obo:OBI_0500027 .
 
-fg:Studies_Principal_investigator a owl:DatatypeProperty;
+fg:Studies_Principal_investigator a owl:ObjectProperty;
   rdfs:label "Principal investigator";
   rdfs:domain fg:Studies;
   rdfs:isDefinedBy obo:OMIABIS_0000100, obo:NCIT_C19924;
   dc:description "An investigator who is responsible for all aspects of the conduct of a study." .
 
-fg:Studies_Contact_person a owl:DatatypeProperty;
+fg:Studies_Contact_person a owl:ObjectProperty;
   rdfs:label "Contact person";
   rdfs:domain fg:Studies;
   rdfs:isDefinedBy obo:NCIT_C176373;
   dc:description "Name of study contact." .
-
-fg:Studies_Contact_email a owl:DatatypeProperty;
-  rdfs:label "Contact email";
-  rdfs:domain fg:Studies;
-  rdfs:isDefinedBy obo:OMIABIS_0000035, obo:NCIT_C176375;
-  dc:description "An email address for the purpose of contacting the study contact person." .
 
 fg:Studies_Study_design a owl:DatatypeProperty;
   rdfs:label "Study design";
@@ -119,6 +113,53 @@ fg:Studies_belongsToDataRelease a owl:ObjectProperty;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
 
+fg:Person a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C25461, obo:NCIT_C25936;
+  rdfs:label "Person";
+  dc:description "researcher or contactperson involved in the study and/or affliated with organisation" .
+
+fg:Person_identifier a owl:DatatypeProperty;
+  rdfs:label "identifier";
+  rdfs:domain fg:Person;
+  rdfs:isDefinedBy obo:NCIT_C25364;
+  dc:description "identifier" .
+
+fg:Person_Full_Name a owl:DatatypeProperty;
+  rdfs:label "Full Name";
+  rdfs:domain fg:Person;
+  rdfs:isDefinedBy obo:GSSO_001755;
+  dc:description "full name. E.g. Morris Swertz" .
+
+fg:Person_Alternative_identifier a owl:DatatypeProperty;
+  rdfs:label "Alternative identifier";
+  rdfs:domain fg:Person;
+  rdfs:isDefinedBy obo:NCIT_C90353;
+  dc:description "alternative identifier. E.g. ORCID:1234" .
+
+fg:Person_firstName a owl:DatatypeProperty;
+  rdfs:label "firstName";
+  rdfs:domain fg:Person;
+  rdfs:isDefinedBy obo:NCIT_C40974;
+  dc:description "A word or group of words indicating a person's first (personal or given) name" .
+
+fg:Person_Middle_initials a owl:DatatypeProperty;
+  rdfs:label "Middle initials";
+  rdfs:domain fg:Person;
+  rdfs:isDefinedBy obo:NCIT_C166237;
+  dc:description "middle initiatials. E.g. A." .
+
+fg:Person_Last_name a owl:DatatypeProperty;
+  rdfs:label "Last name";
+  rdfs:domain fg:Person;
+  rdfs:isDefinedBy obo:NCIT_C40975;
+  dc:description "last name. E.g. Swertz" .
+
+fg:Person_Email a owl:DatatypeProperty;
+  rdfs:label "Email";
+  rdfs:domain fg:Person;
+  rdfs:isDefinedBy obo:NCIT_C42775;
+  dc:description "email address. E.g. m.a.swertz@rug.nl" .
+
 fg:Data_releases a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C172217, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
   rdfs:label "Data releases";
@@ -135,6 +176,42 @@ fg:Data_releases_name a owl:DatatypeProperty;
   rdfs:domain fg:Data_releases;
   rdfs:isDefinedBy obo:NCIT_C42614;
   dc:description "The words or language units by which a thing is known." .
+
+fg:Data_releases_description a owl:DatatypeProperty;
+  rdfs:label "description";
+  rdfs:domain fg:Data_releases;
+  rdfs:isDefinedBy obo:NCIT_C25365;
+  dc:description "A written or verbal account, representation, statement, or explanation of something." .
+
+fg:Data_releases_date a owl:DatatypeProperty;
+  rdfs:label "date";
+  rdfs:domain fg:Data_releases;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_001083>;
+  dc:description "A date of database submission refers to the moment in time in which some information was submitted/received to a database system." .
+
+fg:Data_releases_createdBy a owl:ObjectProperty;
+  rdfs:label "createdBy";
+  rdfs:domain fg:Data_releases;
+  rdfs:isDefinedBy obo:NCIT_C42628;
+  dc:description "Indicates the person or authoritative body who brought the item into existence." .
+
+fg:Data_releases_numberOfEntriesAdded a owl:DatatypeProperty;
+  rdfs:label "numberOfEntriesAdded";
+  rdfs:domain fg:Data_releases;
+  rdfs:isDefinedBy obo:NCIT_C45330;
+  dc:description "Combined or joined to increase in size or quantity or scope." .
+
+fg:Data_releases_dataSource a owl:DatatypeProperty;
+  rdfs:label "dataSource";
+  rdfs:domain fg:Data_releases;
+  rdfs:isDefinedBy obo:NCIT_C16493;
+  dc:description "The person or authoritative body who provided the information." .
+
+fg:Data_releases_releaseComments a owl:DatatypeProperty;
+  rdfs:label "releaseComments";
+  rdfs:domain fg:Data_releases;
+  rdfs:isDefinedBy obo:NCIT_C115505;
+  dc:description "A notation regarding the decisions, and/or clarification of any information pertaining to data management." .
 
 fg:Subjects a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C90492, obo:ExO_0000127, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
@@ -242,17 +319,11 @@ fg:Subjects_Primary_affiliated_institute a owl:ObjectProperty;
   dc:description "The most significant institute for medical consultation and/or study inclusion in context of the genetic disease of this person.";
   rdfs:range <http://semanticscience.org/resource/SIO_000688> .
 
-fg:Subjects_Affiliated_institute_contact_person a owl:DatatypeProperty;
+fg:Subjects_Affiliated_institute_contact_person a owl:ObjectProperty;
   rdfs:label "Affiliated institute contact person";
   rdfs:domain fg:Subjects;
   rdfs:isDefinedBy obo:NCIT_C25461;
   dc:description "A person acting as a channel for communication between groups or on behalf of a group." .
-
-fg:Subjects_Affiliated_institute_contact_email a owl:DatatypeProperty;
-  rdfs:label "Affiliated institute contact email";
-  rdfs:domain fg:Subjects;
-  rdfs:isDefinedBy obo:MS_1000589;
-  dc:description "Email address of the contact person or organization" .
 
 fg:Subjects_Resources_in_other_institutes a owl:ObjectProperty;
   rdfs:label "Resources in other institutes";
@@ -315,14 +386,8 @@ fg:Subjects_Consanguinity a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:OMIT_0004546, <http://snomed.info/id/842009>;
   dc:description "Information on whether the patient is a child from two family members who are second cousins or closer." .
 
-fg:Subjects_Belongs_to_study a owl:ObjectProperty;
-  rdfs:label "Belongs to study";
-  rdfs:domain fg:Subjects;
-  rdfs:isDefinedBy obo:RO_0000056;
-  dc:description "Reference to the study or studies in which this person participates." .
-
-fg:Subjects_Belongs_to_data_release a owl:ObjectProperty;
-  rdfs:label "Belongs to data release";
+fg:Subjects_Part_of_data_release a owl:ObjectProperty;
+  rdfs:label "Part of data release";
   rdfs:domain fg:Subjects;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
@@ -471,12 +536,6 @@ fg:Clinical_Date_diagnosis_confirmed a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:NCIT_C25164;
   dc:description "The particular day, month and year an event has happened or will happen." .
 
-fg:Clinical_Belongs_to_data_release a owl:ObjectProperty;
-  rdfs:label "Belongs to data release";
-  rdfs:domain fg:Clinical;
-  rdfs:isDefinedBy obo:NCIT_C172217;
-  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
-
 fg:Clinical_Family_members_affected a owl:ObjectProperty;
   rdfs:label "Family members affected";
   rdfs:domain fg:Clinical;
@@ -503,8 +562,14 @@ fg:Clinical_Material_used_in_diagnosis a owl:DatatypeProperty;
   rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000641>;
   dc:description "This diagnosis c.q. clinical examination is based on one or more sampled materials." .
 
+fg:Clinical_Part_of_data_release a owl:ObjectProperty;
+  rdfs:label "Part of data release";
+  rdfs:domain fg:Clinical;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
 fg:Materials a owl:Class;
-  rdfs:isDefinedBy obo:NCIT_C43376, obo:SCDO_0002829, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
+  rdfs:isDefinedBy obo:NCIT_C43376, obo:SCDO_0002829, obo:NCIT_C13236, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
   rdfs:label "Materials";
   dc:description "A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.";
   obo:HSO_0000242 fg:Personal .
@@ -521,8 +586,8 @@ fg:Materials_Alternative_identifiers a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:NCIT_C90353;
   dc:description "A backup sequence of characters used to identify an entity." .
 
-fg:Materials_Collected_from_person a owl:ObjectProperty;
-  rdfs:label "Collected from person";
+fg:Materials_Collected_from_subject a owl:ObjectProperty;
+  rdfs:label "Collected from subject";
   rdfs:domain fg:Materials;
   rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000244>, obo:NCIT_C142495;
   dc:description "Reference to the subject from whom this material was collected." .
@@ -532,12 +597,6 @@ fg:Materials_Belongs_to_request a owl:DatatypeProperty;
   rdfs:domain fg:Materials;
   rdfs:isDefinedBy obo:NCIT_C164567;
   dc:description "A sequence of letters, numbers, or other characters that specifically identifies a particular order." .
-
-fg:Materials_Belongs_to_data_release a owl:ObjectProperty;
-  rdfs:label "Belongs to data release";
-  rdfs:domain fg:Materials;
-  rdfs:isDefinedBy obo:NCIT_C172217;
-  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
 
 fg:Materials_Belongs_to_diagnosis a owl:ObjectProperty;
   rdfs:label "Belongs to diagnosis";
@@ -665,6 +724,12 @@ fg:Materials_Derived_from a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:NCIT_C28355;
   dc:description "Indicate if this material was produced from or related to another." .
 
+fg:Materials_Part_of_data_release a owl:ObjectProperty;
+  rdfs:label "Part of data release";
+  rdfs:domain fg:Materials;
+  rdfs:isDefinedBy obo:NCIT_C172217;
+  dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
+
 fg:Sampling_protocols a owl:Class;
   rdfs:isDefinedBy <http://www.ebi.ac.uk/efo/EFO_0005518>, <https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset>;
   rdfs:label "Sampling protocols";
@@ -787,8 +852,8 @@ fg:NGS_sample_preparations_Belongs_to_batch a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:NCIT_C67073;
   dc:description "A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group." .
 
-fg:NGS_sample_preparations_Belongs_to_data_release a owl:ObjectProperty;
-  rdfs:label "Belongs to data release";
+fg:NGS_sample_preparations_Part_of_data_release a owl:ObjectProperty;
+  rdfs:label "Part of data release";
   rdfs:domain fg:NGS_sample_preparations;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
@@ -935,8 +1000,8 @@ fg:Sequencing_runs_Other_quality_metrics a owl:DatatypeProperty;
   rdfs:isDefinedBy <http://edamontology.org/data_3914>;
   dc:description "Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check." .
 
-fg:Sequencing_runs_Belongs_to_data_release a owl:ObjectProperty;
-  rdfs:label "Belongs to data release";
+fg:Sequencing_runs_Part_of_data_release a owl:ObjectProperty;
+  rdfs:label "Part of data release";
   rdfs:domain fg:Sequencing_runs;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
@@ -1025,8 +1090,8 @@ fg:Files_Alternative_identifiers a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:NCIT_C90353;
   dc:description "A backup sequence of characters used to identify an entity." .
 
-fg:Files_Belongs_to_data_release a owl:ObjectProperty;
-  rdfs:label "Belongs to data release";
+fg:Files_Part_of_data_release a owl:ObjectProperty;
+  rdfs:label "Part of data release";
   rdfs:domain fg:Files;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
@@ -1066,17 +1131,11 @@ fg:Cohorts_Principle_investigator a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:OMIABIS_0000100;
   dc:description "The principle investigator or responsible person for this study." .
 
-fg:Cohorts_Contact_person a owl:DatatypeProperty;
+fg:Cohorts_Contact_person a owl:ObjectProperty;
   rdfs:label "Contact person";
   rdfs:domain fg:Cohorts;
   rdfs:isDefinedBy obo:NCIT_C25461;
   dc:description "A person acting as a channel for communication between groups or on behalf of a group." .
-
-fg:Cohorts_Contact_email a owl:DatatypeProperty;
-  rdfs:label "Contact email";
-  rdfs:domain fg:Cohorts;
-  rdfs:isDefinedBy obo:OMIABIS_0000035;
-  dc:description "An email address for the purpose of contacting the study contact person." .
 
 fg:Cohorts_Size_of_cohort a owl:DatatypeProperty;
   rdfs:label "Size of cohort";
@@ -1101,7 +1160,7 @@ fg:Signed_consent_Belongs_to_subject a owl:ObjectProperty;
   rdfs:label "Belongs to subject";
   rdfs:domain fg:Signed_consent;
   rdfs:isDefinedBy obo:IAO_0000136, obo:NCIT_C142495;
-  dc:description "Reference to the person (i.e. subject) to whom this individual consent applies." .
+  dc:description "Reference to the subject to whom this individual consent applies." .
 
 fg:Signed_consent_Consent_form_used a owl:ObjectProperty;
   rdfs:label "Consent form used";
@@ -1179,8 +1238,8 @@ fg:Signed_consent_Allow_recontacting a owl:ObjectProperty;
   dc:description "The procedure of recontacting the patient for specified reasons. This means the patient agrees to be re-identifiable under those circumstances.";
   rdfs:range obo:NCIT_C176244 .
 
-fg:Signed_consent_Belongs_to_data_release a owl:ObjectProperty;
-  rdfs:label "Belongs to data release";
+fg:Signed_consent_Part_of_data_release a owl:ObjectProperty;
+  rdfs:label "Part of data release";
   rdfs:domain fg:Signed_consent;
   rdfs:isDefinedBy obo:NCIT_C172217;
   dc:description "The act of making data or other structured information accessible to the public or to the user group of a database." .
@@ -1336,6 +1395,13 @@ fg:Metabolomic_material_processing_Belongs_to_materials a owl:ObjectProperty;
   rdfs:isDefinedBy obo:NCIT_C93400, obo:NCIT_C25683;
   dc:description "Reference to the source material from which this sample was prepared." .
 
+fg:Metabolomic_material_processing_Processing_type a owl:ObjectProperty;
+  rdfs:label "Processing type";
+  rdfs:domain fg:Metabolomic_material_processing;
+  rdfs:isDefinedBy obo:OBI_0000094;
+  dc:description "A planned process which results in physical changes in a specified input material.";
+  rdfs:range obo:OBI_0000094 .
+
 fg:Metabolomic_material_processing_Sample_extraction a owl:DatatypeProperty;
   rdfs:label "Sample extraction";
   rdfs:domain fg:Metabolomic_material_processing;
@@ -1367,278 +1433,671 @@ fg:Metabolomic_material_processing_Washing_protocol a owl:DatatypeProperty;
   rdfs:isDefinedBy obo:OBI_0302888;
   dc:description "Washing is a process by which a material entity acting as contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow." .
 
-fg:Metabolomic_assay a owl:Class;
+fg:Metabolomic_mass_spec_assays a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C60819;
-  rdfs:label "Metabolomic assay";
+  rdfs:label "Metabolomic mass spec assays";
   dc:description "A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug." .
 
-fg:Metabolomic_assay_Identifier a owl:DatatypeProperty;
+fg:Metabolomic_mass_spec_assays_Identifier a owl:DatatypeProperty;
   rdfs:label "Identifier";
-  rdfs:domain fg:Metabolomic_assay;
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
   rdfs:isDefinedBy obo:NCIT_C171266;
   dc:description "A unique proper name or character sequence that identifies this particular metabolomics assay." .
 
-fg:Metabolomic_assay_Belongs_metabolomic_material_processing a owl:ObjectProperty;
+fg:Metabolomic_mass_spec_assays_Belongs_metabolomic_material_processing a owl:ObjectProperty;
   rdfs:label "Belongs metabolomic material processing";
-  rdfs:domain fg:Metabolomic_assay;
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
   rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000068>;
   dc:description "This metabolomic assay is part of a metabolomic material processing." .
 
-fg:Metabolomic_assay_Inlet a owl:DatatypeProperty;
+fg:Metabolomic_mass_spec_assays_Assay_type a owl:ObjectProperty;
+  rdfs:label "Assay type";
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
+  rdfs:isDefinedBy obo:CHMO_0000470;
+  dc:description "Spectrometry where the sample is converted into gaseous ions which are characterised by their mass-to-charge ratio and relative abundance.";
+  rdfs:range obo:CHMO_0000470 .
+
+fg:Metabolomic_mass_spec_assays_Inlet a owl:DatatypeProperty;
   rdfs:label "Inlet";
-  rdfs:domain fg:Metabolomic_assay;
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
   rdfs:isDefinedBy obo:NCIT_C50251;
   dc:description "A valve that controls the flow of fluids in through the wall of a chamber." .
 
-fg:Metabolomic_assay_Mass_spectrometer a owl:DatatypeProperty;
+fg:Metabolomic_mass_spec_assays_Mass_spectrometer a owl:DatatypeProperty;
   rdfs:label "Mass spectrometer";
-  rdfs:domain fg:Metabolomic_assay;
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
   rdfs:isDefinedBy obo:CHMO_0000982;
   dc:description "A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra." .
 
-fg:Metabolomic_assay_Ionization_source a owl:DatatypeProperty;
+fg:Metabolomic_mass_spec_assays_Ionization_source a owl:DatatypeProperty;
   rdfs:label "Ionization source";
-  rdfs:domain fg:Metabolomic_assay;
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
   rdfs:isDefinedBy obo:CHMO_0000960;
   dc:description "A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis." .
 
-fg:Metabolomic_assay_Chromatography_column a owl:DatatypeProperty;
+fg:Metabolomic_mass_spec_assays_Chromatography_column a owl:DatatypeProperty;
   rdfs:label "Chromatography column";
-  rdfs:domain fg:Metabolomic_assay;
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
   rdfs:isDefinedBy obo:CHMO_0000997;
   dc:description "A piece of apparatus that has the form of a tube with a diameter between 5 to 50 mm and hosts the stationary bed in chromatography." .
 
-fg:Metabolomic_assay_Phase_separation_protocol a owl:DatatypeProperty;
+fg:Metabolomic_mass_spec_assays_Phase_separation_protocol a owl:DatatypeProperty;
   rdfs:label "Phase separation protocol";
-  rdfs:domain fg:Metabolomic_assay;
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
   rdfs:isDefinedBy obo:CHMO_0002214;
   dc:description "Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase." .
 
-fg:Metabolomic_assay_Mass_spec_source_conditions a owl:DatatypeProperty;
+fg:Metabolomic_mass_spec_assays_Mass_spec_source_conditions a owl:DatatypeProperty;
   rdfs:label "Mass spec source conditions";
-  rdfs:domain fg:Metabolomic_assay;
+  rdfs:domain fg:Metabolomic_mass_spec_assays;
   rdfs:isDefinedBy obo:ZECO_0000104;
   dc:description "Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition." .
 
-fg:Metabolomic_analysis a owl:Class;
+fg:Metabolomic_analyses a owl:Class;
   rdfs:isDefinedBy <http://edamontology.org/data_0949>;
-  rdfs:label "Metabolomic analysis";
+  rdfs:label "Metabolomic analyses";
   dc:description "Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself)." .
 
-fg:Metabolomic_analysis_Identifier a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Identifier a owl:DatatypeProperty;
   rdfs:label "Identifier";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy <http://edamontology.org/data_1083>;
   dc:description "A unique proper name or character sequence that identifies this particular metabolomics assay." .
 
-fg:Metabolomic_analysis_Belongs_metabolomic_assay a owl:ObjectProperty;
-  rdfs:label "Belongs metabolomic assay";
-  rdfs:domain fg:Metabolomic_analysis;
+fg:Metabolomic_analyses_Belongs_metabolomic_mass_spec_assay a owl:ObjectProperty;
+  rdfs:label "Belongs metabolomic mass spec assay";
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000068>;
   dc:description "This metabolomic analysis is part of a metabolomic assay." .
 
-fg:Metabolomic_analysis_Workflow_definition a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Analysis_type a owl:ObjectProperty;
+  rdfs:label "Analysis type";
+  rdfs:domain fg:Metabolomic_analyses;
+  rdfs:isDefinedBy <http://edamontology.org/operation_2945>;
+  dc:description "Apply analytical methods to existing data of a specific type.";
+  rdfs:range <http://edamontology.org/operation_2945> .
+
+fg:Metabolomic_analyses_Workflow_definition a owl:DatatypeProperty;
   rdfs:label "Workflow definition";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000127>;
   dc:description "File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives." .
 
-fg:Metabolomic_analysis_Workflow_engine a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Workflow_engine a owl:DatatypeProperty;
   rdfs:label "Workflow engine";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy obo:NCIT_C48293;
   dc:description "The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow." .
 
-fg:Metabolomic_analysis_Workflow_published a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Workflow_published a owl:DatatypeProperty;
   rdfs:label "Workflow published";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy obo:NCIT_C48471;
   dc:description "A printed or electronic work offered for distribution." .
 
-fg:Metabolomic_analysis_Containerized_by a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Containerized_by a owl:DatatypeProperty;
   rdfs:label "Containerized by";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy obo:NCIT_C43186;
   dc:description "The analysis has been boxed by a container engine such as Singularity or Docker." .
 
-fg:Metabolomic_analysis_Software_tools a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Software_tools a owl:DatatypeProperty;
   rdfs:label "Software tools";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy obo:ERO_0000071;
   dc:description "A general term primarily used for digitally stored data such as computer programs and other kinds of information read and written by computers." .
 
-fg:Metabolomic_analysis_Parameters a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Parameters a owl:DatatypeProperty;
   rdfs:label "Parameters";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy obo:NCIT_C44175;
   dc:description "Any factor that defines a system and determines (or limits) its performance." .
 
-fg:Metabolomic_analysis_Data_formats_stored a owl:ObjectProperty;
+fg:Metabolomic_analyses_Data_formats_stored a owl:ObjectProperty;
   rdfs:label "Data formats stored";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy obo:NCIT_C142494;
   dc:description "Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.";
   rdfs:range <http://edamontology.org/format_1915> .
 
-fg:Metabolomic_analysis_Standards_used a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Standards_used a owl:DatatypeProperty;
   rdfs:label "Standards used";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000618>;
   dc:description "Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc." .
 
-fg:Metabolomic_analysis_Statistical_methods_applied a owl:DatatypeProperty;
+fg:Metabolomic_analyses_Statistical_methods_applied a owl:DatatypeProperty;
   rdfs:label "Statistical methods applied";
-  rdfs:domain fg:Metabolomic_analysis;
+  rdfs:domain fg:Metabolomic_analyses;
   rdfs:isDefinedBy obo:NCIT_C19044;
   dc:description "A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc." .
 
-fg:Genomic_Variation a owl:Class;
-  rdfs:isDefinedBy obo:SO_0001060;
-  rdfs:label "Genomic Variation";
-  dc:description "Schema for a Beacon genomic variant entry." .
+fg:Genomic_variant_descriptions a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C17248, obo:GENO_0000476;
+  rdfs:label "Genomic variant descriptions";
+  dc:description "Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence." .
 
-fg:Genomic_Variation_variantInternalId a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_variantInternalId a owl:DatatypeProperty;
   rdfs:label "variantInternalId";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C164813;
   dc:description "A unique proper name or character sequence that identifies this particular variation." .
 
-fg:Genomic_Variation_Belongs_to_subject a owl:ObjectProperty;
+fg:Genomic_variant_descriptions_Belongs_to_subject a owl:ObjectProperty;
   rdfs:label "Belongs to subject";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C142495, obo:IAO_0000136;
   dc:description "An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored." .
 
-fg:Genomic_Variation_Belongs_to_material a owl:ObjectProperty;
+fg:Genomic_variant_descriptions_Belongs_to_material a owl:ObjectProperty;
   rdfs:label "Belongs to material";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C93400, obo:NCIT_C25683;
   dc:description "Reference to the source material from which this sample was prepared." .
 
-fg:Genomic_Variation_Produced_by_sequencing_run a owl:ObjectProperty;
+fg:Genomic_variant_descriptions_Produced_by_sequencing_run a owl:ObjectProperty;
   rdfs:label "Produced by sequencing run";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C171337;
   dc:description "A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay." .
 
-fg:Genomic_Variation_alternateBases a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_alternateBases a owl:DatatypeProperty;
   rdfs:label "alternateBases";
-  rdfs:domain fg:Genomic_Variation;
-  rdfs:isDefinedBy obo:GENO_0000002;
+  rdfs:domain fg:Genomic_variant_descriptions;
+  rdfs:isDefinedBy obo:GENO_0000002, <http://ensembl.org/glossary/ENSGLOSSARY_0000109>;
   dc:description "An allele that varies in it sequence from what is considered the reference or canonical sequence at that location." .
 
-fg:Genomic_Variation_referenceBases a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_referenceBases a owl:DatatypeProperty;
   rdfs:label "referenceBases";
-  rdfs:domain fg:Genomic_Variation;
-  rdfs:isDefinedBy obo:GENO_0000152;
+  rdfs:domain fg:Genomic_variant_descriptions;
+  rdfs:isDefinedBy obo:GENO_0000036;
   dc:description "An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared." .
 
-fg:Genomic_Variation_variantType a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_Human_chromosome a owl:ObjectProperty;
+  rdfs:label "Human chromosome";
+  rdfs:domain fg:Genomic_variant_descriptions;
+  rdfs:isDefinedBy obo:NCIT_C13203;
+  dc:description "A structure found in the nucleus of human cells that is comprised of a strand of linearized double-stranded DNA plus proteins that package the DNA in a condensed coil form and regulate chromosomal function.";
+  rdfs:range obo:NCIT_C13203 .
+
+fg:Genomic_variant_descriptions_variantType a owl:DatatypeProperty;
   rdfs:label "variantType";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:GENO_0000773;
   dc:description "An attribute describing a type of variation inhering in a sequence feature or collection." .
 
-fg:Genomic_Variation_position_start a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_position_start a owl:DatatypeProperty;
   rdfs:label "position_start";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:GENO_0000894;
   dc:description "The starting position of a sequence feature or interval." .
 
-fg:Genomic_Variation_position_end a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_position_end a owl:DatatypeProperty;
   rdfs:label "position_end";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:GENO_0000895;
   dc:description "The ending position of a sequence feature or interval." .
 
-fg:Genomic_Variation_position_assemblyId a owl:ObjectProperty;
+fg:Genomic_variant_descriptions_position_assemblyId a owl:ObjectProperty;
   rdfs:label "position_assemblyId";
-  rdfs:domain fg:Genomic_Variation;
-  rdfs:isDefinedBy <http://edamontology.org/data_2340>;
+  rdfs:domain fg:Genomic_variant_descriptions;
+  rdfs:isDefinedBy <http://edamontology.org/data_2340>, obo:NCIT_C164388;
   dc:description "The specific build of the human genome used as reference for this variant.";
   rdfs:range <http://edamontology.org/data_2787> .
 
-fg:Genomic_Variation_position_refseqId a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_position_refseqId a owl:DatatypeProperty;
   rdfs:label "position_refseqId";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C45335;
   dc:description "TODO unsure what is ment here - Refseq accession number of a transcript?" .
 
-fg:Genomic_Variation_identifiers_clinVarIds a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_identifiers_clinVarIds a owl:DatatypeProperty;
   rdfs:label "identifiers_clinVarIds";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000242>;
   dc:description "NCBI resource that aggregates information about genomic variation and its relationship to human health." .
 
-fg:Genomic_Variation_identifiers_genomicHGVSId a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_identifiers_genomicHGVSId a owl:DatatypeProperty;
   rdfs:label "identifiers_genomicHGVSId";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000274>;
   dc:description "HGVS genomic sequence variant nomenclature" .
 
-fg:Genomic_Variation_identifiers_proteinHGVSIds a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_identifiers_proteinHGVSIds a owl:DatatypeProperty;
   rdfs:label "identifiers_proteinHGVSIds";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000274>;
   dc:description "HGVS protein sequence variant nomenclature" .
 
-fg:Genomic_Variation_identifiers_transcriptHGVSIds a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_identifiers_transcriptHGVSIds a owl:DatatypeProperty;
   rdfs:label "identifiers_transcriptHGVSIds";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000274>;
   dc:description "HGVS transcript sequence variant nomenclature" .
 
-fg:Genomic_Variation_identifiers_variantAlternativeIds a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_identifiers_variantAlternativeIds a owl:DatatypeProperty;
   rdfs:label "identifiers_variantAlternativeIds";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C90353;
   dc:description "A backup sequence of characters used to identify an entity." .
 
-fg:Genomic_Variation_molecularAttributes_aminoacidChanges a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_molecularAttributes_aminoacidChanges a owl:DatatypeProperty;
   rdfs:label "molecularAttributes_aminoacidChanges";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C97928;
   dc:description "A variation in the amino acid sequence of a specific gene product." .
 
-fg:Genomic_Variation_molecularAttributes_geneIds a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_molecularAttributes_geneIds a owl:DatatypeProperty;
   rdfs:label "molecularAttributes_geneIds";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C48664;
   dc:description "A unique gene name within a specific repository, database, or collection." .
 
-fg:Genomic_Variation_molecularAttributes_genomicFeatures a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_molecularAttributes_genomicFeatures a owl:DatatypeProperty;
   rdfs:label "molecularAttributes_genomicFeatures";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:GENO_0000481;
   dc:description "A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)" .
 
-fg:Genomic_Variation_molecularAttributes_molecularEffects a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_molecularAttributes_molecularEffects a owl:DatatypeProperty;
   rdfs:label "molecularAttributes_molecularEffects";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000134>;
   dc:description "The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps." .
 
-fg:Genomic_Variation_variantLevelData_clinicalInterpretations a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_variantLevelData_clinicalInterpretations a owl:DatatypeProperty;
   rdfs:label "variantLevelData_clinicalInterpretations";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C125009;
   dc:description "The determination of the meaning of a clinical result." .
 
-fg:Genomic_Variation_variantLevelData_phenotypicEffects a owl:DatatypeProperty;
+fg:Genomic_variant_descriptions_variantLevelData_phenotypicEffects a owl:DatatypeProperty;
   rdfs:label "variantLevelData_phenotypicEffects";
-  rdfs:domain fg:Genomic_Variation;
+  rdfs:domain fg:Genomic_variant_descriptions;
   rdfs:isDefinedBy obo:NCIT_C168796;
   dc:description "The likelihood of an entity to produce pathologic changes or disease." .
+
+fg:Genomic_variant_observations a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C164404;
+  rdfs:label "Genomic variant observations";
+  dc:description "Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment." .
+
+fg:Genomic_variant_observations_Belongs_to_genomic_variant_description a owl:ObjectProperty;
+  rdfs:label "Belongs to genomic variant description";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000628>, obo:NCIT_C17248;
+  dc:description "Belongs to genomic variant description" .
+
+fg:Genomic_variant_observations_Allele_1 a owl:DatatypeProperty;
+  rdfs:label "Allele 1";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000512;
+  dc:description "One of a set of sequence features known to exist at a particular genomic location." .
+
+fg:Genomic_variant_observations_Allele_2 a owl:DatatypeProperty;
+  rdfs:label "Allele 2";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000512;
+  dc:description "One of a set of sequence features known to exist at a particular genomic location." .
+
+fg:Genomic_variant_observations_Zygosity a owl:ObjectProperty;
+  rdfs:label "Zygosity";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:NCIT_C45824, obo:GENO_0000133;
+  dc:description "The genetic condition of a zygote, especially with respect to its being a homozygote or a heterozygote.";
+  rdfs:range obo:GENO_0000133 .
+
+fg:Genomic_variant_observations_Maternal_allele_1 a owl:DatatypeProperty;
+  rdfs:label "Maternal allele 1";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000878, obo:GENO_0000512;
+  dc:description "One of a set of sequence features known to exist at a particular genomic location." .
+
+fg:Genomic_variant_observations_Maternal_allele_2 a owl:DatatypeProperty;
+  rdfs:label "Maternal allele 2";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000878, obo:GENO_0000512;
+  dc:description "One of a set of sequence features known to exist at a particular genomic location." .
+
+fg:Genomic_variant_observations_Mother_Read_Depth a owl:DatatypeProperty;
+  rdfs:label "Mother Read Depth";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000878, obo:NCIT_C155320;
+  dc:description "Read depth of maternal allele" .
+
+fg:Genomic_variant_observations_Mother_Allele_Frequency_Allele_1 a owl:DatatypeProperty;
+  rdfs:label "Mother Allele Frequency Allele 1";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000878, obo:NCIT_C173545;
+  dc:description "Frequency of maternal allele 1" .
+
+fg:Genomic_variant_observations_Mother_Allele_Frequency_Allele_2 a owl:DatatypeProperty;
+  rdfs:label "Mother Allele Frequency Allele 2";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000878, obo:NCIT_C173545;
+  dc:description "Frequency of maternal allele 2" .
+
+fg:Genomic_variant_observations_Mother_Allelic_Depth_Allele_1 a owl:DatatypeProperty;
+  rdfs:label "Mother Allelic Depth Allele 1";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000878, obo:NCIT_C155320;
+  dc:description "Mother Allelic Depth Allele 1" .
+
+fg:Genomic_variant_observations_Mother_Allelic_Depth_Allele_2 a owl:DatatypeProperty;
+  rdfs:label "Mother Allelic Depth Allele 2";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000878, obo:NCIT_C155320;
+  dc:description "Mother Allelic Depth Allele 2" .
+
+fg:Genomic_variant_observations_Paternal_allele_1 a owl:DatatypeProperty;
+  rdfs:label "Paternal allele 1";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000879, obo:GENO_0000512;
+  dc:description "One of a set of sequence features known to exist at a particular genomic location." .
+
+fg:Genomic_variant_observations_Paternal_allele_2 a owl:DatatypeProperty;
+  rdfs:label "Paternal allele 2";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000879, obo:GENO_0000512;
+  dc:description "One of a set of sequence features known to exist at a particular genomic location." .
+
+fg:Genomic_variant_observations_Father_Read_Depth a owl:DatatypeProperty;
+  rdfs:label "Father Read Depth";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000879, obo:NCIT_C155320;
+  dc:description "Father Read Depth" .
+
+fg:Genomic_variant_observations_Father_Allele_Frequency_Allele_1 a owl:DatatypeProperty;
+  rdfs:label "Father Allele Frequency Allele 1";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000879, obo:NCIT_C173545;
+  dc:description "Father Allele Frequency Allele 1" .
+
+fg:Genomic_variant_observations_Father_Allele_Frequency_Allele_2 a owl:DatatypeProperty;
+  rdfs:label "Father Allele Frequency Allele 2";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000879, obo:NCIT_C173545;
+  dc:description "Father Allele Frequency Allele 2" .
+
+fg:Genomic_variant_observations_Father_Allelic_Depth_Allele_1 a owl:DatatypeProperty;
+  rdfs:label "Father Allelic Depth Allele 1";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000879, obo:NCIT_C155320;
+  dc:description "Father Allelic Depth Allele 1" .
+
+fg:Genomic_variant_observations_Father_Allelic_Depth_Allele_2 a owl:DatatypeProperty;
+  rdfs:label "Father Allelic Depth Allele 2";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000879, obo:NCIT_C155320;
+  dc:description "Father Allelic Depth Allele 2" .
+
+fg:Genomic_variant_observations_Allele_origin a owl:ObjectProperty;
+  rdfs:label "Allele origin";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:GENO_0000877;
+  dc:description "A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell's genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent.";
+  rdfs:range obo:GENO_0000877 .
+
+fg:Genomic_variant_annotations a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C44272;
+  rdfs:label "Genomic variant annotations";
+  dc:description "In-context information that has been associated with genomic variants." .
+
+fg:Genomic_variant_annotations_Belongs_to_genomic_variant_description a owl:ObjectProperty;
+  rdfs:label "Belongs to genomic variant description";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000628>, obo:NCIT_C17248;
+  dc:description "Belongs to genomic variant description" .
+
+fg:Genomic_variant_annotations_Transcript a owl:DatatypeProperty;
+  rdfs:label "Transcript";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C1936;
+  dc:description "The initial RNA molecule produced by transcription." .
+
+fg:Genomic_variant_annotations_Cdna a owl:DatatypeProperty;
+  rdfs:label "Cdna";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C324;
+  dc:description "Single-stranded DNA that is complementary to messenger RNA or DNA that has been synthesized from messenger RNA by reverse transcriptase." .
+
+fg:Genomic_variant_annotations_Protein a owl:DatatypeProperty;
+  rdfs:label "Protein";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C17021;
+  dc:description "A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons. Proteins are fundamental genetically encoded components of living cells with specific structures and functions dictated by amino acid sequence." .
+
+fg:Genomic_variant_annotations_Gene a owl:ObjectProperty;
+  rdfs:label "Gene";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C16612;
+  dc:description "A unique gene name within a specific repository, database, or collection.";
+  rdfs:range <http://edamontology.org/data_2298> .
+
+fg:Genomic_variant_annotations_Exon a owl:DatatypeProperty;
+  rdfs:label "Exon";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C13231;
+  dc:description "The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene." .
+
+fg:Genomic_variant_annotations_Variant_comment a owl:DatatypeProperty;
+  rdfs:label "Variant comment";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C25393;
+  dc:description "A written explanation, observation or criticism added to textual material." .
+
+fg:Genomic_variant_annotations_CADD_score a owl:DatatypeProperty;
+  rdfs:label "CADD score";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000360>;
+  dc:description "CADD score" .
+
+fg:Genomic_variant_annotations_Gnomad a owl:DatatypeProperty;
+  rdfs:label "Gnomad";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000238>;
+  dc:description "An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD." .
+
+fg:Genomic_variant_annotations_Gnomad_link a owl:DatatypeProperty;
+  rdfs:label "Gnomad link";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000238>;
+  dc:description "Gnomad link" .
+
+fg:Genomic_variant_annotations_HGMD a owl:ObjectProperty;
+  rdfs:label "HGMD";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000250>;
+  dc:description "HGMD";
+  rdfs:range obo:NCIT_C25755 .
+
+fg:Genomic_variant_annotations_HGMD_link a owl:DatatypeProperty;
+  rdfs:label "HGMD link";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000250>;
+  dc:description "HGMD link" .
+
+fg:Genomic_variant_annotations_Phylop_score a owl:DatatypeProperty;
+  rdfs:label "Phylop score";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:VariO_0229;
+  dc:description "Phylop score" .
+
+fg:Genomic_variant_annotations_Omim_Inheritance a owl:ObjectProperty;
+  rdfs:label "Omim Inheritance";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000244>;
+  dc:description "Omim Inheritance";
+  rdfs:range obo:NCIT_C45827 .
+
+fg:Genomic_variant_annotations_OMIM_morbid a owl:DatatypeProperty;
+  rdfs:label "OMIM morbid";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000244>;
+  dc:description "OMIM morbid" .
+
+fg:Genomic_variant_annotations_Clinvar a owl:DatatypeProperty;
+  rdfs:label "Clinvar";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000242>;
+  dc:description "NCBI resource that aggregates information about genomic variation and its relationship to human health. Ensembl display clinical significance and phenotypes from ClinVar. https://www.ncbi.nlm.nih.gov/clinvar/" .
+
+fg:Genomic_variant_annotations_Pubmed a owl:DatatypeProperty;
+  rdfs:label "Pubmed";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C42881;
+  dc:description "A web application from the National Library of Medicine (NLM). It provides a single query interface to over 15 million citations for biomedical articles back to the 1950's. These citations are from MEDLINE and additional life science journals. PubMed includes links to many sites providing full text articles and other related resources." .
+
+fg:Genomic_variant_annotations_VKGL a owl:DatatypeProperty;
+  rdfs:label "VKGL";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:MAXO_0000698;
+  dc:description "VKGL" .
+
+fg:Genomic_variant_annotations_dbSNP a owl:DatatypeProperty;
+  rdfs:label "dbSNP";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://ensembl.org/glossary/ENSGLOSSARY_0000233>;
+  dc:description "dbSNP" .
+
+fg:Genomic_variant_annotations_Polyphen_2_prediction a owl:ObjectProperty;
+  rdfs:label "Polyphen 2 prediction";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:VariO_0229;
+  dc:description "Polyphen 2 prediction";
+  rdfs:range obo:TXPO_0002566 .
+
+fg:Genomic_variant_annotations_Mutation_taster a owl:DatatypeProperty;
+  rdfs:label "Mutation taster";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:VariO_0229;
+  dc:description "Mutation taster" .
+
+fg:Genomic_variant_interpretations a owl:Class;
+  rdfs:isDefinedBy obo:NCIT_C125009;
+  rdfs:label "Genomic variant interpretations";
+  dc:description "The determination of the meaning of a variant in clinical context." .
+
+fg:Genomic_variant_interpretations_Belongs_to_genomic_variant_annotation a owl:ObjectProperty;
+  rdfs:label "Belongs to genomic variant annotation";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000628>, obo:NCIT_C44272;
+  dc:description "Belongs to genomic variant annotation" .
+
+fg:Genomic_variant_interpretations_Belongs_to_genomic_variant_observation a owl:ObjectProperty;
+  rdfs:label "Belongs to genomic variant observation";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_000628>, obo:NCIT_C164404;
+  dc:description "Belongs to genomic variant observation" .
+
+fg:Genomic_variant_interpretations_Panel a owl:DatatypeProperty;
+  rdfs:label "Panel";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C173599;
+  dc:description "Gene panel" .
+
+fg:Genomic_variant_interpretations_Pipeline_version a owl:DatatypeProperty;
+  rdfs:label "Pipeline version";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:GENEPIO_0000152;
+  dc:description "Pipeline version" .
+
+fg:Genomic_variant_interpretations_Date_of_analysis a owl:DatatypeProperty;
+  rdfs:label "Date of analysis";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C25164;
+  dc:description "The particular day, month and year an event has happened or will happen." .
+
+fg:Genomic_variant_interpretations_Pipeline_name a owl:DatatypeProperty;
+  rdfs:label "Pipeline name";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:GENEPIO_0000151;
+  dc:description "Pipeline name" .
+
+fg:Genomic_variant_interpretations_Assessment a owl:DatatypeProperty;
+  rdfs:label "Assessment";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C25217;
+  dc:description "The final result of a determination of the value, significance, or extent of." .
+
+fg:Genomic_variant_interpretations_Date_of_Assessment a owl:DatatypeProperty;
+  rdfs:label "Date of Assessment";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C93511;
+  dc:description "The date (and time) on which an assessment is completed." .
+
+fg:Genomic_variant_interpretations_Reviewed_by a owl:ObjectProperty;
+  rdfs:label "Reviewed by";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C42728;
+  dc:description "Indicates the person or authoritative body who appraised, evaluated, or analyzed the item." .
+
+fg:Genomic_variant_interpretations_assesmentLab a owl:DatatypeProperty;
+  rdfs:label "assesmentLab";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C37984;
+  dc:description "assesmentLab" .
+
+fg:Genomic_variant_interpretations_Curated_text a owl:DatatypeProperty;
+  rdfs:label "Curated text";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C48292;
+  dc:description "Curated text" .
+
+fg:Genomic_variant_interpretations_Date_of_curation a owl:DatatypeProperty;
+  rdfs:label "Date of curation";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy <http://purl.allotrope.org/ontologies/result#AFR_0001277>;
+  dc:description "A classification datum is a facet that classifies some entity." .
+
+fg:Genomic_variant_interpretations_Curator a owl:ObjectProperty;
+  rdfs:label "Curator";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C69141;
+  dc:description "The person in charge of the care and superintendence of something, especially a collection." .
+
+fg:Genomic_variant_interpretations_Clinical_variant_classification a owl:ObjectProperty;
+  rdfs:label "Clinical variant classification";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy <http://edamontology.org/operation_3225>, obo:NCIT_C118969;
+  dc:description "Classify variants based on their potential effect on genes, especially functional effects on the expressed proteins.";
+  rdfs:range obo:NCIT_C17248 .
+
+fg:Genomic_variant_interpretations_VUS_plus a owl:DatatypeProperty;
+  rdfs:label "VUS plus";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C94187;
+  dc:description "VUS plus" .
+
+fg:Genomic_variant_interpretations_Classification_changed a owl:DatatypeProperty;
+  rdfs:label "Classification changed";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy <http://edamontology.org/operation_3225>, <http://purl.org/dc/terms/modified>;
+  dc:description "Classification changed" .
+
+fg:Genomic_variant_interpretations_Modular_pipeline a owl:DatatypeProperty;
+  rdfs:label "Modular pipeline";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:OBI_0001943;
+  dc:description "Modular pipeline" .
+
+fg:Genomic_variant_interpretations_Url_to_report a owl:DatatypeProperty;
+  rdfs:label "Url to report";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy <http://edamontology.org/data_1052>;
+  dc:description "A Uniform Resource Locator (URL)" .
 
 <https://w3id.org/fair-genomes/ontology/> dc:contributor <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-drugs.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusioncriteria.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-familymembers.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-mtbxmassspecassays.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-filestatus.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-datausemodifiers.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-countries.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-medicalhistory.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-institutes.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inheritance.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genderatbirth.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencingplatform.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencinginstrumentmodels.ttl>,
@@ -1646,12 +2105,16 @@ fg:Genomic_Variation_variantLevelData_phenotypicEffects a owl:DatatypeProperty;
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-datausepermissions.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dataformats.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genomeaccessions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-humanchromosomes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-mtbxanalyses.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dcmitypes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-samplingreason.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ancestry.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-variantclassification.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-inclusionstatus.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-mtbxmaterialprocessing.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-pathologicalstate.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-phenotypes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-recontacting.ttl>,
@@ -1661,6 +2124,10 @@ fg:Genomic_Variation_variantLevelData_phenotypicEffects a owl:DatatypeProperty;
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diseases.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-anatomicalsources.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-sequencingmethods.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-alleleorigin.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-storageconditions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-zygosity.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-ngskits.ttl>,
-    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-analysesperformed.ttl> .
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-analysesperformed.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-hgmdoptions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-polyphen2classifications.ttl> .

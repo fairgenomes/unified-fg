@@ -10,7 +10,6 @@ public class Studies {
 	public List<String> inclusioncriteria;
 	public String principalinvestigator;
 	public String contactperson;
-	public String contactemail;
 	public String studydesign;
 	public String startdate;
 	public String completiondate;

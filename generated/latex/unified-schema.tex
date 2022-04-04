@@ -6,30 +6,34 @@
 \textbf{Unified metadata schema}
 \newline
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 18 modules that contain 243 metadata elements and 101832 lookups in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 22 modules that contain 314 metadata elements and 121140 lookups in total (excluding null flavors).
 
 \begin{table}[htb]
 \begin{tabular}{lll}
 Name & Ontology & Nr. of elements \\
 \hline
-Studies & NCIT:C63536  & 15 \\
-Data releases & NCIT:C172217, dcat:Dataset  & 2 \\
-Subjects & NCIT:C90492, ExO:0000127, dcat:Dataset  & 30 \\
+Studies & NCIT:C63536  & 14 \\
+Person & NCIT:C25461, NCIT:C25936  & 7 \\
+Data releases & NCIT:C172217, dcat:Dataset  & 8 \\
+Subjects & NCIT:C90492, ExO:0000127, dcat:Dataset  & 28 \\
 Clinical & NCIT:C25398, dcat:Dataset  & 25 \\
-Materials & NCIT:C43376, SCDO:0002829, dcat:Dataset  & 25 \\
+Materials & NCIT:C43376, SCDO:0002829, NCIT:C13236, dcat:Dataset  & 25 \\
 Sampling protocols & EFO:0005518, dcat:Dataset  & 5 \\
 NGS sample preparations & OBI:0001902, dcat:Dataset  & 14 \\
 Laboratory Procedures & NCIT:C25294, dcat:Dataset  & 6 \\
 Sequencing runs & EDAM:topic\_3168, dcat:Dataset  & 16 \\
 Files & NCIT:C42883, dcat:Dataset  & 14 \\
-Cohorts & NCIT:C61512, dcat:Dataset  & 8 \\
+Cohorts & NCIT:C61512, dcat:Dataset  & 7 \\
 Signed consent & NCIT:C16735, dcat:Dataset  & 15 \\
 Leaflet and consent form & NCIT:C16468  & 9 \\
 NGS analysis & EDAM:operation\_2945  & 11 \\
-Metabolomic material processing & OBI:0000073  & 7 \\
-Metabolomic assay & NCIT:C60819  & 8 \\
-Metabolomic analysis & EDAM:data\_0949  & 11 \\
-Genomic Variation & SO:0001060  & 22 \\
+Metabolomic material processing & OBI:0000073  & 8 \\
+Metabolomic mass spec assays & NCIT:C60819  & 9 \\
+Metabolomic analyses & EDAM:data\_0949  & 12 \\
+Genomic variant descriptions & NCIT:C17248, GENO:0000476  & 23 \\
+Genomic variant observations & NCIT:C164404  & 19 \\
+Genomic variant annotations & NCIT:C44272  & 21 \\
+Genomic variant interpretations & NCIT:C125009  & 18 \\
 \hline
 \end{tabular}
 \caption[Module overview]{\label{table:table1} Unified metadata schema v0.1-SNAPSHOT overview of all modules.}
@@ -44,9 +48,8 @@ Name & OMIABIS:0000037  & string \\
 Acronym & NCIT:C93495  & string \\
 Description & OMIABIS:0000036, NCIT:C142704  & text \\
 Inclusion criteria & OBI:0500027  & InclusionCriteria.tsv lookup (14 choices) \\
-Principal investigator & OMIABIS:0000100, NCIT:C19924  & string \\
-Contact person & NCIT:C176373  & string \\
-Contact email & OMIABIS:0000035, NCIT:C176375  & email \\
+Principal investigator & OMIABIS:0000100, NCIT:C19924  & Reference to Person \\
+Contact person & NCIT:C176373  & Reference to Person \\
 Study design & OBI:0500000  & text \\
 Start date & NCIT:C69208  & date \\
 Completion date & NCIT:C142702  & date \\
@@ -63,11 +66,33 @@ belongsToDataRelease & NCIT:C172217  & Reference to Data releases \\
 \begin{tabular}{lll}
 Name & Ontology & Values \\
 \hline
-id & NCIT:C25364  & identifier \\
-name & NCIT:C42614  & string \\
+identifier & NCIT:C25364  & identifier \\
+Full Name & GSSO:001755  & string \\
+Alternative identifier & NCIT:C90353  & string \\
+firstName & NCIT:C40974  & string \\
+Middle initials & NCIT:C166237  & string \\
+Last name & NCIT:C40975  & string \\
+Email & NCIT:C42775  & string \\
 \hline
 \end{tabular}
-\caption[Module: Data releases]{\label{table:table3} Module: Data releases. The act of making data or other structured information accessible to the public or to the user group of a database. Ontology: NCIT:C172217, dcat:Dataset . }
+\caption[Module: Person]{\label{table:table3} Module: Person. researcher or contactperson involved in the study and/or affliated with organisation Ontology: NCIT:C25461, NCIT:C25936 . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+id & NCIT:C25364  & identifier \\
+name & NCIT:C42614  & string \\
+description & NCIT:C25365  & text \\
+date & SIO:001083  & date \\
+createdBy & NCIT:C42628  & Reference to Person \\
+numberOfEntriesAdded & NCIT:C45330  & integer \\
+dataSource & NCIT:C16493  & string \\
+releaseComments & NCIT:C115505  & text \\
+\hline
+\end{tabular}
+\caption[Module: Data releases]{\label{table:table4} Module: Data releases. The act of making data or other structured information accessible to the public or to the user group of a database. Ontology: NCIT:C172217, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -89,8 +114,7 @@ Age at death & NCIT:C135383  & integer \\
 Date of death & NCIT:C70810  & date \\
 Year of death & NCIT:C156426  & integer \\
 Primary affiliated institute & NCIT:C25412  & Institutes.tsv lookup (218 choices) \\
-Affiliated institute contact person & NCIT:C25461  & string \\
-Affiliated institute contact email & MS:1000589  & email \\
+Affiliated institute contact person & NCIT:C25461  & Reference to Person \\
 Resources in other institutes & NCIT:C19012  & Institutes.tsv lookup (218 choices) \\
 Participates in study & RO:0000056  & Reference to Studies \\
 Belongs to family & NCIT:C25173  & string \\
@@ -101,12 +125,11 @@ Belongs with twin & NCIT:C73427  & bool \\
 First visit date & NCIT:C164021  & date \\
 Fetal status & NCIT:C17730  & bool \\
 Consanguinity & OMIT:0004546, SNOMED:842009  & bool \\
-Belongs to study & RO:0000056  & Reference to Studies \\
-Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+Part of data release & NCIT:C172217  & Reference to Data releases \\
 Belongs to cohort & NCIT:C61512  & Reference to Cohorts \\
 \hline
 \end{tabular}
-\caption[Module: Subjects]{\label{table:table4} Module: Subjects. Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. Ontology: NCIT:C90492, ExO:0000127, dcat:Dataset . }
+\caption[Module: Subjects]{\label{table:table5} Module: Subjects. Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. Ontology: NCIT:C90492, ExO:0000127, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -133,14 +156,14 @@ Phenotypic data available & NCIT:C15783  & DCMITypes.tsv lookup (6 choices) \\
 Status of diagnosis & NCIT:C25688  & DiagnosisConfirmationStatus.tsv lookup (20 choices) \\
 First contact & LOINC:MTHU048806  & date \\
 Date diagnosis confirmed & NCIT:C25164  & date \\
-Belongs to data release & NCIT:C172217  & Reference to Data releases \\
 Family members affected & HP:0032320  & FamilyMembers.tsv lookup (41 choices) \\
 Family members sequenced & NCIT:C79916  & FamilyMembers.tsv lookup (41 choices) \\
 Functioning & NCIT:C21007  & text \\
 Material used in diagnosis & SIO:000641  & string \\
+Part of data release & NCIT:C172217  & Reference to Data releases \\
 \hline
 \end{tabular}
-\caption[Module: Clinical]{\label{table:table5} Module: Clinical. Findings and circumstances relating to the examination and treatment of a patient. Ontology: NCIT:C25398, dcat:Dataset . }
+\caption[Module: Clinical]{\label{table:table6} Module: Clinical. Findings and circumstances relating to the examination and treatment of a patient. Ontology: NCIT:C25398, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -149,9 +172,8 @@ Name & Ontology & Values \\
 \hline
 Identifier & EDAM:data\_3273, NCIT:C93400  & identifier \\
 Alternative identifiers & NCIT:C90353  & string \\
-Collected from person & SIO:000244, NCIT:C142495  & Reference to Subjects \\
+Collected from subject & SIO:000244, NCIT:C142495  & Reference to Subjects \\
 Belongs to request & NCIT:C164567  & string \\
-Belongs to data release & NCIT:C172217  & Reference to Data releases \\
 Belongs to diagnosis & SIO:000068  & Reference to Clinical \\
 Date of request & NCIT:C164566  & date \\
 Reason for sampling & NCIT:C171003  & samplingReason.tsv lookup (10 choices) \\
@@ -162,7 +184,7 @@ Sampling protocol text & EFO:0005518  & text \\
 Sampling protocol reference & EFO:0005518  & Reference to Sampling protocols \\
 Sampling protocol deviation & NCIT:C50996  & text \\
 Reason for sampling protocol deviation & NCIT:C93529  & text \\
-Biospecimen type & NCIT:C70713  & BiospecimenTypes.tsv lookup (403 choices) \\
+Biospecimen type & NCIT:C70713  & BiospecimenTypes.tsv lookup (408 choices) \\
 Anatomical source & NCIT:C103264  & AnatomicalSources.tsv lookup (13827 choices) \\
 Pathological state & GO:0001894  & PathologicalState.tsv lookup (4 choices) \\
 Biospecimen usability & NCIT:C171004  & bool \\
@@ -172,9 +194,10 @@ Percentage tumor cells & NCIT:C127771  & decimal \\
 Physical location & GAZ:00000448  & string \\
 Analyses performed & IAO:0000702  & AnalysesPerformed.tsv lookup (20 choices) \\
 Derived from & NCIT:C28355  & string \\
+Part of data release & NCIT:C172217  & Reference to Data releases \\
 \hline
 \end{tabular}
-\caption[Module: Materials]{\label{table:table6} Module: Materials. A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. Ontology: NCIT:C43376, SCDO:0002829, dcat:Dataset . }
+\caption[Module: Materials]{\label{table:table7} Module: Materials. A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. Ontology: NCIT:C43376, SCDO:0002829, NCIT:C13236, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -188,7 +211,7 @@ Version & NCIT:C25714  & string \\
 IRI & NCIT:C165071  & hyperlink \\
 \hline
 \end{tabular}
-\caption[Module: Sampling protocols]{\label{table:table7} Module: Sampling protocols. Describes the procedure whereby biological samples for an experiment are sourced. Ontology: EFO:0005518, dcat:Dataset . }
+\caption[Module: Sampling protocols]{\label{table:table8} Module: Sampling protocols. Describes the procedure whereby biological samples for an experiment are sourced. Ontology: EFO:0005518, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -208,10 +231,10 @@ Intended insert size & FG:0000001  & integer \\
 Intended read length & NCIT:C153362  & integer \\
 Barcode & NCIT:C43361  & string \\
 Belongs to batch & NCIT:C67073  & string \\
-Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+Part of data release & NCIT:C172217  & Reference to Data releases \\
 \hline
 \end{tabular}
-\caption[Module: NGS sample preparations]{\label{table:table8} Module: NGS sample preparations. A sample preparation for a nucleic acids sequencing assay. Ontology: OBI:0001902, dcat:Dataset . }
+\caption[Module: NGS sample preparations]{\label{table:table9} Module: NGS sample preparations. A sample preparation for a nucleic acids sequencing assay. Ontology: OBI:0001902, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -226,7 +249,7 @@ Subcategory & NCIT:C83142  & string \\
 Gene list & OBI:0000118  & text \\
 \hline
 \end{tabular}
-\caption[Module: Laboratory Procedures]{\label{table:table9} Module: Laboratory Procedures. Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. Ontology: NCIT:C25294, dcat:Dataset . }
+\caption[Module: Laboratory Procedures]{\label{table:table10} Module: Laboratory Procedures. Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. Ontology: NCIT:C25294, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -248,10 +271,10 @@ Observed insert size & FG:0000002  & integer \\
 Percentage Q30 & GENEPIO:0000089  & decimal \\
 Percentage TR20 & FG:0000003  & decimal \\
 Other quality metrics & EDAM:data\_3914  & text \\
-Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+Part of data release & NCIT:C172217  & Reference to Data releases \\
 \hline
 \end{tabular}
-\caption[Module: Sequencing runs]{\label{table:table10} Module: Sequencing runs. The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. Ontology: EDAM:topic\_3168, dcat:Dataset . }
+\caption[Module: Sequencing runs]{\label{table:table11} Module: Sequencing runs. The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. Ontology: EDAM:topic\_3168, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -271,10 +294,10 @@ MD5 checksum & NCIT:C171276  & string \\
 File status & NCIT:C171193  & FileStatus.tsv lookup (7 choices) \\
 Creation date & NCIT:C69199  & date \\
 Alternative identifiers & NCIT:C90353  & string \\
-Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+Part of data release & NCIT:C172217  & Reference to Data releases \\
 \hline
 \end{tabular}
-\caption[Module: Files]{\label{table:table11} Module: Files. A set of related records (either written or electronic) kept together. Ontology: NCIT:C42883, dcat:Dataset . }
+\caption[Module: Files]{\label{table:table12} Module: Files. A set of related records (either written or electronic) kept together. Ontology: NCIT:C42883, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -286,12 +309,11 @@ Acronym & NCIT:C93495  & string \\
 Name & NCIT:C42614  & string \\
 Description & NCIT:C166209  & text \\
 Principle investigator & OMIABIS:0000100  & string \\
-Contact person & NCIT:C25461  & string \\
-Contact email & OMIABIS:0000035  & email \\
+Contact person & NCIT:C25461  & Reference to Person \\
 Size of cohort & NCIT:C53190  & integer \\
 \hline
 \end{tabular}
-\caption[Module: Cohorts]{\label{table:table12} Module: Cohorts. A group of individuals, identified by a common characteristic. Ontology: NCIT:C61512, dcat:Dataset . }
+\caption[Module: Cohorts]{\label{table:table13} Module: Cohorts. A group of individuals, identified by a common characteristic. Ontology: NCIT:C61512, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -312,10 +334,10 @@ Data use modifiers & DUO:0000017  & DataUseModifiers.tsv lookup (23 choices) \\
 Data use specification & SIO:000090  & text \\
 Allow matchmaker & NCIT:C54116  & bool \\
 Allow recontacting & NCIT:C25737  & Recontacting.tsv lookup (3 choices) \\
-Belongs to data release & NCIT:C172217  & Reference to Data releases \\
+Part of data release & NCIT:C172217  & Reference to Data releases \\
 \hline
 \end{tabular}
-\caption[Module: Signed consent]{\label{table:table13} Module: Signed consent. Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. Ontology: NCIT:C16735, dcat:Dataset . }
+\caption[Module: Signed consent]{\label{table:table14} Module: Signed consent. Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. Ontology: NCIT:C16735, dcat:Dataset . }
 \end{table}
 
 \begin{table}[htb]
@@ -333,7 +355,7 @@ Consent form creator & DC:creator  & Institutes.tsv lookup (218 choices) \\
 Consent form version & DC:hasVersion  & string \\
 \hline
 \end{tabular}
-\caption[Module: Leaflet and consent form]{\label{table:table14} Module: Leaflet and consent form. A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. Ontology: NCIT:C16468 . }
+\caption[Module: Leaflet and consent form]{\label{table:table15} Module: Leaflet and consent form. A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. Ontology: NCIT:C16468 . }
 \end{table}
 
 \begin{table}[htb]
@@ -353,7 +375,7 @@ Reason for bioinformatic protocol deviation & NCIT:C93529  & string \\
 WGS guideline followed & NCIT:C17564  & string \\
 \hline
 \end{tabular}
-\caption[Module: NGS analysis]{\label{table:table15} Module: NGS analysis. An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output. Ontology: EDAM:operation\_2945 . }
+\caption[Module: NGS analysis]{\label{table:table16} Module: NGS analysis. An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output. Ontology: EDAM:operation\_2945 . }
 \end{table}
 
 \begin{table}[htb]
@@ -362,6 +384,7 @@ Name & Ontology & Values \\
 \hline
 Identifier & NCIT:C132299  & identifier \\
 Belongs to materials & NCIT:C93400, NCIT:C25683  & Reference to Materials \\
+Processing type & OBI:0000094  & MtbxMaterialProcessing.tsv lookup (4 choices) \\
 Sample extraction & CHMO:0001577  & string \\
 Filter used & CHMO:0001640  & string \\
 Passing rate & CHMO:0002751  & integer \\
@@ -369,7 +392,7 @@ SPE cartridge & OMIT:0025161  & string \\
 Washing protocol & OBI:0302888  & text \\
 \hline
 \end{tabular}
-\caption[Module: Metabolomic material processing]{\label{table:table16} Module: Metabolomic material processing. A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. Ontology: OBI:0000073 . }
+\caption[Module: Metabolomic material processing]{\label{table:table17} Module: Metabolomic material processing. A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. Ontology: OBI:0000073 . }
 \end{table}
 
 \begin{table}[htb]
@@ -378,6 +401,7 @@ Name & Ontology & Values \\
 \hline
 Identifier & NCIT:C171266  & identifier \\
 Belongs metabolomic material processing & SIO:000068  & Reference to Metabolomic material processing \\
+Assay type & CHMO:0000470  & MtbxMassSpecAssays.tsv lookup (3 choices) \\
 Inlet & NCIT:C50251  & string \\
 Mass spectrometer & CHMO:0000982  & string \\
 Ionization source & CHMO:0000960  & string \\
@@ -386,7 +410,7 @@ Phase separation protocol & CHMO:0002214  & text \\
 Mass spec source conditions & ZECO:0000104  & string \\
 \hline
 \end{tabular}
-\caption[Module: Metabolomic assay]{\label{table:table17} Module: Metabolomic assay. A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. Ontology: NCIT:C60819 . }
+\caption[Module: Metabolomic mass spec assays]{\label{table:table18} Module: Metabolomic mass spec assays. A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. Ontology: NCIT:C60819 . }
 \end{table}
 
 \begin{table}[htb]
@@ -394,7 +418,8 @@ Mass spec source conditions & ZECO:0000104  & string \\
 Name & Ontology & Values \\
 \hline
 Identifier & EDAM:data\_1083  & identifier \\
-Belongs metabolomic assay & SIO:000068  & Reference to Metabolomic assay \\
+Belongs metabolomic mass spec assay & SIO:000068  & Reference to Metabolomic mass spec assays \\
+Analysis type & EDAM:operation\_2945  & MtbxAnalyses.tsv lookup (3 choices) \\
 Workflow definition & SIO:000127  & text \\
 Workflow engine & NCIT:C48293  & string \\
 Workflow published & NCIT:C48471  & string \\
@@ -406,7 +431,7 @@ Standards used & SIO:000618  & string \\
 Statistical methods applied & NCIT:C19044  & string \\
 \hline
 \end{tabular}
-\caption[Module: Metabolomic analysis]{\label{table:table18} Module: Metabolomic analysis. Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). Ontology: EDAM:data\_0949 . }
+\caption[Module: Metabolomic analyses]{\label{table:table19} Module: Metabolomic analyses. Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). Ontology: EDAM:data\_0949 . }
 \end{table}
 
 \begin{table}[htb]
@@ -417,12 +442,13 @@ variantInternalId & NCIT:C164813  & identifier \\
 Belongs to subject & NCIT:C142495, IAO:0000136  & Reference to Subjects \\
 Belongs to material & NCIT:C93400, NCIT:C25683  & Reference to Materials \\
 Produced by sequencing run & NCIT:C171337  & Reference to Sequencing runs \\
-alternateBases & GENO:0000002  & string \\
-referenceBases & GENO:0000152  & string \\
+alternateBases & GENO:0000002, ENSGLOSSARY:0000109  & string \\
+referenceBases & GENO:0000036  & string \\
+Human chromosome & NCIT:C13203  & HumanChromosomes.tsv lookup (24 choices) \\
 variantType & GENO:0000773  & string \\
 position_start & GENO:0000894  & integer \\
 position_end & GENO:0000895  & integer \\
-position_assemblyId & EDAM:data\_2340  & GenomeAccessions.tsv lookup (29 choices) \\
+position_assemblyId & EDAM:data\_2340, NCIT:C164388  & GenomeAccessions.tsv lookup (29 choices) \\
 position_refseqId & NCIT:C45335  & string \\
 identifiers_clinVarIds & ENSGLOSSARY:0000242  & string \\
 identifiers_genomicHGVSId & ENSGLOSSARY:0000274  & string \\
@@ -437,7 +463,92 @@ variantLevelData_clinicalInterpretations & NCIT:C125009  & string \\
 variantLevelData_phenotypicEffects & NCIT:C168796  & string \\
 \hline
 \end{tabular}
-\caption[Module: Genomic Variation]{\label{table:table19} Module: Genomic Variation. Schema for a Beacon genomic variant entry. Ontology: SO:0001060 . }
+\caption[Module: Genomic variant descriptions]{\label{table:table20} Module: Genomic variant descriptions. Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence. Ontology: NCIT:C17248, GENO:0000476 . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Belongs to genomic variant description & SIO:000628, NCIT:C17248  & Reference to Genomic variant descriptions \\
+Allele 1 & GENO:0000512  & string \\
+Allele 2 & GENO:0000512  & string \\
+Zygosity & NCIT:C45824, GENO:0000133  & Zygosity.tsv lookup (14 choices) \\
+Maternal allele 1 & GENO:0000878, GENO:0000512  & string \\
+Maternal allele 2 & GENO:0000878, GENO:0000512  & string \\
+Mother Read Depth & GENO:0000878, NCIT:C155320  & integer \\
+Mother Allele Frequency Allele 1 & GENO:0000878, NCIT:C173545  & decimal \\
+Mother Allele Frequency Allele 2 & GENO:0000878, NCIT:C173545  & decimal \\
+Mother Allelic Depth Allele 1 & GENO:0000878, NCIT:C155320  & integer \\
+Mother Allelic Depth Allele 2 & GENO:0000878, NCIT:C155320  & integer \\
+Paternal allele 1 & GENO:0000879, GENO:0000512  & string \\
+Paternal allele 2 & GENO:0000879, GENO:0000512  & string \\
+Father Read Depth & GENO:0000879, NCIT:C155320  & integer \\
+Father Allele Frequency Allele 1 & GENO:0000879, NCIT:C173545  & decimal \\
+Father Allele Frequency Allele 2 & GENO:0000879, NCIT:C173545  & decimal \\
+Father Allelic Depth Allele 1 & GENO:0000879, NCIT:C155320  & integer \\
+Father Allelic Depth Allele 2 & GENO:0000879, NCIT:C155320  & integer \\
+Allele origin & GENO:0000877  & AlleleOrigin.tsv lookup (5 choices) \\
+\hline
+\end{tabular}
+\caption[Module: Genomic variant observations]{\label{table:table21} Module: Genomic variant observations. Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment. Ontology: NCIT:C164404 . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Belongs to genomic variant description & SIO:000628, NCIT:C17248  & Reference to Genomic variant descriptions \\
+Transcript & NCIT:C1936  & string \\
+Cdna & NCIT:C324  & string \\
+Protein & NCIT:C17021  & string \\
+Gene & NCIT:C16612  & Genes.tsv lookup (19202 choices) \\
+Exon & NCIT:C13231  & integer \\
+Variant comment & NCIT:C25393  & text \\
+CADD score & ENSGLOSSARY:0000360  & decimal \\
+Gnomad & ENSGLOSSARY:0000238  & string \\
+Gnomad link & ENSGLOSSARY:0000238  & string \\
+HGMD & ENSGLOSSARY:0000250  & HGMDOptions.tsv lookup (3 choices) \\
+HGMD link & ENSGLOSSARY:0000250  & string \\
+Phylop score & VariO:0229  & decimal \\
+Omim Inheritance & ENSGLOSSARY:0000244  & Inheritance.tsv lookup (33 choices) \\
+OMIM morbid & ENSGLOSSARY:0000244  & string \\
+Clinvar & ENSGLOSSARY:0000242  & string \\
+Pubmed & NCIT:C42881  & string \\
+VKGL & MAXO:0000698  & string \\
+dbSNP & ENSGLOSSARY:0000233  & string \\
+Polyphen 2 prediction & VariO:0229  & PolyPhen2Classifications.tsv lookup (3 choices) \\
+Mutation taster & VariO:0229  & string \\
+\hline
+\end{tabular}
+\caption[Module: Genomic variant annotations]{\label{table:table22} Module: Genomic variant annotations. In-context information that has been associated with genomic variants. Ontology: NCIT:C44272 . }
+\end{table}
+
+\begin{table}[htb]
+\begin{tabular}{lll}
+Name & Ontology & Values \\
+\hline
+Belongs to genomic variant annotation & SIO:000628, NCIT:C44272  & Reference to Genomic variant annotations \\
+Belongs to genomic variant observation & SIO:000628, NCIT:C164404  & Reference to Genomic variant descriptions \\
+Panel & NCIT:C173599  & string \\
+Pipeline version & GENEPIO:0000152  & string \\
+Date of analysis & NCIT:C25164  & date \\
+Pipeline name & GENEPIO:0000151  & string \\
+Assessment & NCIT:C25217  & string \\
+Date of Assessment & NCIT:C93511  & date \\
+Reviewed by & NCIT:C42728  & Reference to Person \\
+assesmentLab & NCIT:C37984  & string \\
+Curated text & NCIT:C48292  & text \\
+Date of curation & AFR:0001277  & date \\
+Curator & NCIT:C69141  & Reference to Person \\
+Clinical variant classification & operation:3225, NCIT:C118969  & VariantClassification.tsv lookup (9 choices) \\
+VUS plus & NCIT:C94187  & bool \\
+Classification changed & EDAM:operation\_3225, DC:modified  & bool \\
+Modular pipeline & OBI:0001943  & string \\
+Url to report & data:1052  & hyperlink \\
+\hline
+\end{tabular}
+\caption[Module: Genomic variant interpretations]{\label{table:table23} Module: Genomic variant interpretations. The determination of the meaning of a variant in clinical context. Ontology: NCIT:C125009 . }
 \end{table}
 
 \begin{table}[htb]
@@ -462,7 +573,7 @@ Sufficient quantity & HL7:QS \\
 Trace & HL7:TRC \\
 \hline
 \end{tabular}
-\caption[NullFlavors]{\label{table:table20} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
+\caption[NullFlavors]{\label{table:table24} Overview of null flavors. Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty. }
 \end{table}
 
 \end{document}

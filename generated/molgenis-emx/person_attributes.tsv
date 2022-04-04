@@ -1,0 +1,8 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+identifier	identifier	identifier (NCIT:C25364 )	person	string	TRUE	TRUE	TRUE	FALSE	
+fullname	Full Name	full name. E.g. Morris Swertz (GSSO:001755 )	person	string	FALSE	FALSE	TRUE	TRUE	
+alternativeidentifier	Alternative identifier	alternative identifier. E.g. ORCID:1234 (NCIT:C90353 )	person	string	FALSE	FALSE	TRUE	TRUE	
+firstname	firstName	A word or group of words indicating a person's first (personal or given) name (NCIT:C40974 )	person	string	FALSE	FALSE	TRUE	TRUE	
+middleinitials	Middle initials	middle initiatials. E.g. A. (NCIT:C166237 )	person	string	FALSE	FALSE	TRUE	TRUE	
+lastname	Last name	last name. E.g. Swertz (NCIT:C40975 )	person	string	FALSE	FALSE	TRUE	TRUE	
+email	Email	email address. E.g. m.a.swertz@rug.nl (NCIT:C42775 )	person	string	FALSE	FALSE	TRUE	TRUE	

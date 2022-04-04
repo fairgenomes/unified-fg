@@ -2,9 +2,10 @@ package org.unifiedschema.generated;
 
 import java.util.List;
 
-public class Metabolomicassay {
+public class Metabolomicmassspecassays {
 	public String identifier;
 	public String belongsmetabolomicmaterialprocessing;
+	public String assaytype;
 	public String inlet;
 	public String massspectrometer;
 	public String ionizationsource;

@@ -1,0 +1,280 @@
+@prefix fg: <https://w3id.org/fair-genomes/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sio: <https://semanticscience.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ordo: <http://www.orpha.net/ORDO/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Sex-limited_autosomal_recessive_inheritance
+  a obo:NCIT_C45827;
+  rdfs:label "Sex-limited autosomal recessive inheritance";
+  dc:description "Sex-limited autosomal recessive inheritance";
+  rdfs:isDefinedBy obo:HP_0031362 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_dominant_inheritance a obo:NCIT_C45827;
+  rdfs:label "Autosomal dominant inheritance";
+  dc:description "Autosomal dominant inheritance";
+  rdfs:isDefinedBy obo:HP_0000006 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_recessive_inheritance a
+    obo:NCIT_C45827;
+  rdfs:label "Autosomal recessive inheritance";
+  dc:description "Autosomal recessive inheritance";
+  rdfs:isDefinedBy obo:HP_0000007 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_X-linked_inheritance a obo:NCIT_C45827;
+  rdfs:label "X-linked inheritance";
+  dc:description "X-linked inheritance";
+  rdfs:isDefinedBy obo:HP_0001417 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_X-linked_recessive_inheritance a obo:NCIT_C45827;
+  rdfs:label "X-linked recessive inheritance";
+  dc:description "X-linked recessive inheritance";
+  rdfs:isDefinedBy obo:HP_0001419 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_X-linked_dominant_inheritance a obo:NCIT_C45827;
+  rdfs:label "X-linked dominant inheritance";
+  dc:description "X-linked dominant inheritance";
+  rdfs:isDefinedBy obo:HP_0001423 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Heterogeneous a obo:NCIT_C45827;
+  rdfs:label "Heterogeneous";
+  dc:description "Heterogeneous";
+  rdfs:isDefinedBy obo:HP_0001425 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Multifactorial_inheritance a obo:NCIT_C45827;
+  rdfs:label "Multifactorial inheritance";
+  dc:description "Multifactorial inheritance";
+  rdfs:isDefinedBy obo:HP_0001426 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Mitochondrial_inheritance a obo:NCIT_C45827;
+  rdfs:label "Mitochondrial inheritance";
+  dc:description "Mitochondrial inheritance";
+  rdfs:isDefinedBy obo:HP_0001427 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Somatic_mutation a obo:NCIT_C45827;
+  rdfs:label "Somatic mutation";
+  dc:description "Somatic mutation";
+  rdfs:isDefinedBy obo:HP_0001428 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Somatic_mosaicism a obo:NCIT_C45827;
+  rdfs:label "Somatic mosaicism";
+  dc:description "Somatic mosaicism";
+  rdfs:isDefinedBy obo:HP_0001442 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_dominant_somatic_cell_mutation
+  a obo:NCIT_C45827;
+  rdfs:label "Autosomal dominant somatic cell mutation";
+  dc:description "Autosomal dominant somatic cell mutation";
+  rdfs:isDefinedBy obo:HP_0001444 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Y-linked_inheritance a obo:NCIT_C45827;
+  rdfs:label "Y-linked inheritance";
+  dc:description "Y-linked inheritance";
+  rdfs:isDefinedBy obo:HP_0001450 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_dominant_contiguous_gene_syndrome
+  a obo:NCIT_C45827;
+  rdfs:label "Autosomal dominant contiguous gene syndrome";
+  dc:description "Autosomal dominant contiguous gene syndrome";
+  rdfs:isDefinedBy obo:HP_0001452 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Contiguous_gene_syndrome a obo:NCIT_C45827;
+  rdfs:label "Contiguous gene syndrome";
+  dc:description "Contiguous gene syndrome";
+  rdfs:isDefinedBy obo:HP_0001466 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Sex-limited_autosomal_dominant a obo:NCIT_C45827;
+  rdfs:label "Sex-limited autosomal dominant";
+  dc:description "Sex-limited autosomal dominant";
+  rdfs:isDefinedBy obo:HP_0001470 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Male-limited_autosomal_dominant a
+    obo:NCIT_C45827;
+  rdfs:label "Male-limited autosomal dominant";
+  dc:description "Male-limited autosomal dominant";
+  rdfs:isDefinedBy obo:HP_0001475 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Genetic_anticipation a obo:NCIT_C45827;
+  rdfs:label "Genetic anticipation";
+  dc:description "Genetic anticipation";
+  rdfs:isDefinedBy obo:HP_0003743 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Genetic_anticipation_with_paternal_anticipation_bias
+  a obo:NCIT_C45827;
+  rdfs:label "Genetic anticipation with paternal anticipation bias";
+  dc:description "Genetic anticipation with paternal anticipation bias";
+  rdfs:isDefinedBy obo:HP_0003744 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Sporadic a obo:NCIT_C45827;
+  rdfs:label "Sporadic";
+  dc:description "Sporadic";
+  rdfs:isDefinedBy obo:HP_0003745 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Gonosomal_inheritance a obo:NCIT_C45827;
+  rdfs:label "Gonosomal inheritance";
+  dc:description "Gonosomal inheritance";
+  rdfs:isDefinedBy obo:HP_0010985 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_Recessive_Compound_Heterozygous
+  a obo:NCIT_C45827;
+  rdfs:label "Autosomal Recessive Compound Heterozygous";
+  dc:description "Autosomal Recessive Compound Heterozygous";
+  rdfs:isDefinedBy obo:SCDO_1000243 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Polygenic_inheritance a obo:NCIT_C45827;
+  rdfs:label "Polygenic inheritance";
+  dc:description "Polygenic inheritance";
+  rdfs:isDefinedBy obo:HP_0010982 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Oligogenic_inheritance a obo:NCIT_C45827;
+  rdfs:label "Oligogenic inheritance";
+  dc:description "Oligogenic inheritance";
+  rdfs:isDefinedBy obo:HP_0010983 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Digenic_inheritance a obo:NCIT_C45827;
+  rdfs:label "Digenic inheritance";
+  dc:description "Digenic inheritance";
+  rdfs:isDefinedBy obo:HP_0010984 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_dominant_inheritance_with_paternal_imprinting
+  a obo:NCIT_C45827;
+  rdfs:label "Autosomal dominant inheritance with paternal imprinting";
+  dc:description "Autosomal dominant inheritance with paternal imprinting";
+  rdfs:isDefinedBy obo:HP_0012274 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_dominant_inheritance_with_maternal_imprinting
+  a obo:NCIT_C45827;
+  rdfs:label "Autosomal dominant inheritance with maternal imprinting";
+  dc:description "Autosomal dominant inheritance with maternal imprinting";
+  rdfs:isDefinedBy obo:HP_0012275 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_Recessive_Homozygous a obo:NCIT_C45827;
+  rdfs:label "Autosomal Recessive Homozygous";
+  dc:description "Autosomal Recessive Homozygous";
+  rdfs:isDefinedBy obo:SCDO_1000242 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Autosomal_dominant_germline_de_novo_mutation
+  a obo:NCIT_C45827;
+  rdfs:label "Autosomal dominant germline de novo mutation";
+  dc:description "Autosomal dominant germline de novo mutation";
+  rdfs:isDefinedBy obo:HP_0025352 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Semidominant_inheritance a obo:NCIT_C45827;
+  rdfs:label "Semidominant inheritance";
+  dc:description "Semidominant inheritance";
+  rdfs:isDefinedBy obo:HP_0032113 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Uniparental_disomy a obo:NCIT_C45827;
+  rdfs:label "Uniparental disomy";
+  dc:description "Uniparental disomy";
+  rdfs:isDefinedBy obo:HP_0032382 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Uniparental_heterodisomy a obo:NCIT_C45827;
+  rdfs:label "Uniparental heterodisomy";
+  dc:description "Uniparental heterodisomy";
+  rdfs:isDefinedBy obo:HP_0032383 .
+
+fg:Genomic_variant_annotations_Omim_Inheritance_Uniparental_isodisomy a obo:NCIT_C45827;
+  rdfs:label "Uniparental isodisomy";
+  dc:description "Uniparental isodisomy";
+  rdfs:isDefinedBy obo:HP_0032384 .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_NoInformation_(NI,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "NoInformation (NI, nullflavor)";
+  dc:description "The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Invalid_(INV,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Invalid (INV, nullflavor)";
+  dc:description "The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Derived_(DER,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Derived (DER, nullflavor)";
+  dc:description "An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Other_(OTH,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Other (OTH, nullflavor)";
+  dc:description "The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Negative_infinity_(NINF,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Negative infinity (NINF, nullflavor)";
+  dc:description "Negative infinity of numbers.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NINF> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Positive_infinity_(PINF,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Positive infinity (PINF, nullflavor)";
+  dc:description "Positive infinity of numbers.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#PINF> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Un-encoded_(UNC,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Un-encoded (UNC, nullflavor)";
+  dc:description "The actual value has not yet been encoded within the approved value domain.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNC> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Masked_(MSK,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Masked (MSK, nullflavor)";
+  dc:description "There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons. There may be an alternate mechanism for gaining access to this information.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#MSK> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Not_applicable_(NA,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Not applicable (NA, nullflavor)";
+  dc:description "Known to have no proper value (e.g., last menstrual period for a male).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Unknown_(UNK,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Unknown (UNK, nullflavor)";
+  dc:description "A proper value is applicable, but not known.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Asked_but_unknown_(ASKU,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Asked but unknown (ASKU, nullflavor)";
+  dc:description "Information was sought but not found (e.g., patient was asked but didn't know)";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Temporarily_unavailable_(NAV,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Temporarily unavailable (NAV, nullflavor)";
+  dc:description "Information is not available at this time but it is expected that it will be available later.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAV> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Not_asked_(NASK,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Not asked (NASK, nullflavor)";
+  dc:description "This information has not been sought. (e.g., patient was not asked)";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NASK> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Not_available_(NAVU,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Not available (NAVU, nullflavor)";
+  dc:description "Information is not available at this time (with no expectation regarding whether it will or will not be available in the future).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAVU> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Sufficient_quantity_(QS,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Sufficient quantity (QS, nullflavor)";
+  dc:description "The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material. e.g. 'Add 10mg of ingredient X, 50mg of ingredient Y, and sufficient quantity of water to 100mL.' The null flavor would be used to express the quantity of water.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#QS> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_annotations_Omim_Inheritance_Trace_(TRC,_nullflavor)>
+  a obo:NCIT_C45827;
+  rdfs:label "Trace (TRC, nullflavor)";
+  dc:description "The content is greater than zero, but too small to be quantified.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#TRC> .

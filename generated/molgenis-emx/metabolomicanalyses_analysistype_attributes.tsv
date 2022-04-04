@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	metabolomicanalyses_analysistype	Value (English)	String	TRUE	FALSE
+description	metabolomicanalyses_analysistype	Description (English)	Text	FALSE	TRUE
+codesystem	metabolomicanalyses_analysistype	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	metabolomicanalyses_analysistype	The code within the code system	String	FALSE	TRUE
+iri	metabolomicanalyses_analysistype	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

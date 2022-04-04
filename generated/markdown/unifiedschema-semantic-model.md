@@ -1,29 +1,33 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __18 modules__ that contain __243 metadata elements__ and __101832 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __22 modules__ that contain __314 metadata elements__ and __121140 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
 | Name | Description | Ontology | Nr. of elements |
 |---|---|---|---|
-| [Studies](#module-studies) | A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. | [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536)  | 15 |
-| [Data releases](#module-data-releases) | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 2 |
-| [Subjects](#module-subjects) | Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. | [NCIT:C90492](http://purl.obolibrary.org/obo/NCIT_C90492), [ExO:0000127](http://purl.obolibrary.org/obo/ExO_0000127), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 30 |
+| [Studies](#module-studies) | A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. | [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536)  | 14 |
+| [Person](#module-person) | researcher or contactperson involved in the study and/or affliated with organisation | [NCIT:C25461](http://purl.obolibrary.org/obo/NCIT_C25461), [NCIT:C25936](http://purl.obolibrary.org/obo/NCIT_C25936)  | 7 |
+| [Data releases](#module-data-releases) | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 8 |
+| [Subjects](#module-subjects) | Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. | [NCIT:C90492](http://purl.obolibrary.org/obo/NCIT_C90492), [ExO:0000127](http://purl.obolibrary.org/obo/ExO_0000127), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 28 |
 | [Clinical](#module-clinical) | Findings and circumstances relating to the examination and treatment of a patient. | [NCIT:C25398](http://purl.obolibrary.org/obo/NCIT_C25398), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
-| [Materials](#module-materials) | A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. | [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
+| [Materials](#module-materials) | A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. | [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [NCIT:C13236](http://purl.obolibrary.org/obo/NCIT_C13236), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 25 |
 | [Sampling protocols](#module-sampling-protocols) | Describes the procedure whereby biological samples for an experiment are sourced. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 5 |
 | [NGS sample preparations](#module-ngs-sample-preparations) | A sample preparation for a nucleic acids sequencing assay. | [OBI:0001902](http://purl.obolibrary.org/obo/OBI_0001902), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
 | [Laboratory Procedures](#module-laboratory-procedures) | Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. | [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 6 |
 | [Sequencing runs](#module-sequencing-runs) | The determination of complete (typically nucleotide) sequences, including those of genomes (full genome sequencing, de novo sequencing and resequencing), amplicons and transcriptomes. | [EDAM:topic_3168](http://edamontology.org/topic_3168), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 16 |
 | [Files](#module-files) | A set of related records (either written or electronic) kept together. | [NCIT:C42883](http://purl.obolibrary.org/obo/NCIT_C42883), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 14 |
-| [Cohorts](#module-cohorts) | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 8 |
+| [Cohorts](#module-cohorts) | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 7 |
 | [Signed consent](#module-signed-consent) | Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved. | [NCIT:C16735](http://purl.obolibrary.org/obo/NCIT_C16735), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset)  | 15 |
 | [Leaflet and consent form](#module-leaflet-and-consent-form) | A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. | [NCIT:C16468](http://purl.obolibrary.org/obo/NCIT_C16468)  | 9 |
 | [NGS analysis](#module-ngs-analysis) | An analysis applies analytical (often computational) methods to existing data of a specific type to produce some desired output. | [EDAM:operation_2945](http://edamontology.org/operation_2945)  | 11 |
-| [Metabolomic material processing](#module-metabolomic-material-processing) | A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. | [OBI:0000073](http://purl.obolibrary.org/obo/OBI_0000073)  | 7 |
-| [Metabolomic assay](#module-metabolomic-assay) | A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. | [NCIT:C60819](http://purl.obolibrary.org/obo/NCIT_C60819)  | 8 |
-| [Metabolomic analysis](#module-metabolomic-analysis) | Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). | [EDAM:data_0949](http://edamontology.org/data_0949)  | 11 |
-| [Genomic Variation](#module-genomic-variation) | Schema for a Beacon genomic variant entry. | [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060)  | 22 |
+| [Metabolomic material processing](#module-metabolomic-material-processing) | A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations. | [OBI:0000073](http://purl.obolibrary.org/obo/OBI_0000073)  | 8 |
+| [Metabolomic mass spec assays](#module-metabolomic-mass-spec-assays) | A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. | [NCIT:C60819](http://purl.obolibrary.org/obo/NCIT_C60819)  | 9 |
+| [Metabolomic analyses](#module-metabolomic-analyses) | Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). | [EDAM:data_0949](http://edamontology.org/data_0949)  | 12 |
+| [Genomic variant descriptions](#module-genomic-variant-descriptions) | Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence. | [NCIT:C17248](http://purl.obolibrary.org/obo/NCIT_C17248), [GENO:0000476](http://purl.obolibrary.org/obo/GENO_0000476)  | 23 |
+| [Genomic variant observations](#module-genomic-variant-observations) | Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment. | [NCIT:C164404](http://purl.obolibrary.org/obo/NCIT_C164404)  | 19 |
+| [Genomic variant annotations](#module-genomic-variant-annotations) | In-context information that has been associated with genomic variants. | [NCIT:C44272](http://purl.obolibrary.org/obo/NCIT_C44272)  | 21 |
+| [Genomic variant interpretations](#module-genomic-variant-interpretations) | The determination of the meaning of a variant in clinical context. | [NCIT:C125009](http://purl.obolibrary.org/obo/NCIT_C125009)  | 18 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -35,9 +39,8 @@ A detailed examination, analysis, or critical inspection of one or multiple subj
 | Acronym | The non-unique initials or abbreviated name used for identification. | [NCIT:C93495](http://purl.obolibrary.org/obo/NCIT_C93495)  | string |
 | Description | A statement or piece of writing that provides details on this study. | [OMIABIS:0000036](http://purl.obolibrary.org/obo/OMIABIS_0000036), [NCIT:C142704](http://purl.obolibrary.org/obo/NCIT_C142704)  | text |
 | Inclusion criteria | The conditions which, if met, make an person eligible for participation in this study. | [OBI:0500027](http://purl.obolibrary.org/obo/OBI_0500027)  | [InclusionCriteria.tsv](../../lookups/InclusionCriteria.tsv) lookup (14 choices [of type](http://purl.obolibrary.org/obo/OBI_0500027)) |
-| Principal investigator | An investigator who is responsible for all aspects of the conduct of a study. | [OMIABIS:0000100](http://purl.obolibrary.org/obo/OMIABIS_0000100), [NCIT:C19924](http://purl.obolibrary.org/obo/NCIT_C19924)  | string |
-| Contact person | Name of study contact. | [NCIT:C176373](http://purl.obolibrary.org/obo/NCIT_C176373)  | string |
-| Contact email | An email address for the purpose of contacting the study contact person. | [OMIABIS:0000035](http://purl.obolibrary.org/obo/OMIABIS_0000035), [NCIT:C176375](http://purl.obolibrary.org/obo/NCIT_C176375)  | email |
+| Principal investigator | An investigator who is responsible for all aspects of the conduct of a study. | [OMIABIS:0000100](http://purl.obolibrary.org/obo/OMIABIS_0000100), [NCIT:C19924](http://purl.obolibrary.org/obo/NCIT_C19924)  | Reference to instances of Person |
+| Contact person | Name of study contact. | [NCIT:C176373](http://purl.obolibrary.org/obo/NCIT_C176373)  | Reference to instances of Person |
 | Study design | A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of this study. | [OBI:0500000](http://purl.obolibrary.org/obo/OBI_0500000)  | text |
 | Start date | The date on which this study began. | [NCIT:C69208](http://purl.obolibrary.org/obo/NCIT_C69208)  | date |
 | Completion date | The date on which the concluding information for this study is completed. Usually, this is when the last subject has a final visit, or the main analysis has finished, or any other protocol-defined completion date. | [NCIT:C142702](http://purl.obolibrary.org/obo/NCIT_C142702)  | date |
@@ -46,6 +49,19 @@ A detailed examination, analysis, or critical inspection of one or multiple subj
 | Numer of samples collected | An integer specifying the quantity of samples collected at the current time. | [KISAO:0000326](http://www.biomodels.net/kisao/KISAO#KISAO_0000326)  | integer |
 | belongsToDataRelease | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 
+## Module: Person
+researcher or contactperson involved in the study and/or affliated with organisation Ontology: [NCIT:C25461](http://purl.obolibrary.org/obo/NCIT_C25461), [NCIT:C25936](http://purl.obolibrary.org/obo/NCIT_C25936) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| identifier | identifier | [NCIT:C25364](http://purl.obolibrary.org/obo/NCIT_C25364)  | identifier |
+| Full Name | full name. E.g. Morris Swertz | [GSSO:001755](http://purl.obolibrary.org/obo/GSSO_001755)  | string |
+| Alternative identifier | alternative identifier. E.g. ORCID:1234 | [NCIT:C90353](http://purl.obolibrary.org/obo/NCIT_C90353)  | string |
+| firstName | A word or group of words indicating a person's first (personal or given) name | [NCIT:C40974](http://purl.obolibrary.org/obo/NCIT_C40974)  | string |
+| Middle initials | middle initiatials. E.g. A. | [NCIT:C166237](http://purl.obolibrary.org/obo/NCIT_C166237)  | string |
+| Last name | last name. E.g. Swertz | [NCIT:C40975](http://purl.obolibrary.org/obo/NCIT_C40975)  | string |
+| Email | email address. E.g. m.a.swertz@rug.nl | [NCIT:C42775](http://purl.obolibrary.org/obo/NCIT_C42775)  | string |
+
 ## Module: Data releases
 The act of making data or other structured information accessible to the public or to the user group of a database. Ontology: [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
 
@@ -53,6 +69,12 @@ The act of making data or other structured information accessible to the public 
 |---|---|---|---|
 | id | One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing. | [NCIT:C25364](http://purl.obolibrary.org/obo/NCIT_C25364)  | identifier |
 | name | The words or language units by which a thing is known. | [NCIT:C42614](http://purl.obolibrary.org/obo/NCIT_C42614)  | string |
+| description | A written or verbal account, representation, statement, or explanation of something. | [NCIT:C25365](http://purl.obolibrary.org/obo/NCIT_C25365)  | text |
+| date | A date of database submission refers to the moment in time in which some information was submitted/received to a database system. | [SIO:001083](http://semanticscience.org/resource/SIO_001083)  | date |
+| createdBy | Indicates the person or authoritative body who brought the item into existence. | [NCIT:C42628](http://purl.obolibrary.org/obo/NCIT_C42628)  | Reference to instances of Person |
+| numberOfEntriesAdded | Combined or joined to increase in size or quantity or scope. | [NCIT:C45330](http://purl.obolibrary.org/obo/NCIT_C45330)  | integer |
+| dataSource | The person or authoritative body who provided the information. | [NCIT:C16493](http://purl.obolibrary.org/obo/NCIT_C16493)  | string |
+| releaseComments | A notation regarding the decisions, and/or clarification of any information pertaining to data management. | [NCIT:C115505](http://purl.obolibrary.org/obo/NCIT_C115505)  | text |
 
 ## Module: Subjects
 Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study. Ontology: [NCIT:C90492](http://purl.obolibrary.org/obo/NCIT_C90492), [ExO:0000127](http://purl.obolibrary.org/obo/ExO_0000127), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
@@ -74,8 +96,7 @@ Persons who are observed, analyzed, examined, investigated, experimented upon, o
 | Date of death | The calendar date of subject's death. | [NCIT:C70810](http://purl.obolibrary.org/obo/NCIT_C70810)  | date |
 | Year of death | The year in which an individual derived. | [NCIT:C156426](http://purl.obolibrary.org/obo/NCIT_C156426)  | integer |
 | Primary affiliated institute | The most significant institute for medical consultation and/or study inclusion in context of the genetic disease of this person. | [NCIT:C25412](http://purl.obolibrary.org/obo/NCIT_C25412)  | [Institutes.tsv](../../lookups/Institutes.tsv) lookup (218 choices [of type](http://semanticscience.org/resource/SIO_000688)) |
-| Affiliated institute contact person | A person acting as a channel for communication between groups or on behalf of a group. | [NCIT:C25461](http://purl.obolibrary.org/obo/NCIT_C25461)  | string |
-| Affiliated institute contact email | Email address of the contact person or organization | [MS:1000589](http://purl.obolibrary.org/obo/MS_1000589)  | email |
+| Affiliated institute contact person | A person acting as a channel for communication between groups or on behalf of a group. | [NCIT:C25461](http://purl.obolibrary.org/obo/NCIT_C25461)  | Reference to instances of Person |
 | Resources in other institutes | Material or data related to this person that is not captured by this system though known to be available in other institutes such as biobanks or hospitals. | [NCIT:C19012](http://purl.obolibrary.org/obo/NCIT_C19012)  | [Institutes.tsv](../../lookups/Institutes.tsv) lookup (218 choices [of type](http://semanticscience.org/resource/SIO_000688)) |
 | Participates in study | Reference to the study or studies in which this person participates. | [RO:0000056](http://purl.obolibrary.org/obo/RO_0000056)  | Reference to instances of Studies |
 | Belongs to family | A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption. | [NCIT:C25173](http://purl.obolibrary.org/obo/NCIT_C25173)  | string |
@@ -86,8 +107,7 @@ Persons who are observed, analyzed, examined, investigated, experimented upon, o
 | First visit date | The date for the first patient visit. | [NCIT:C164021](http://purl.obolibrary.org/obo/NCIT_C164021)  | date |
 | Fetal status | Any tissue from a fetus. | [NCIT:C17730](http://purl.obolibrary.org/obo/NCIT_C17730)  | bool |
 | Consanguinity | Information on whether the patient is a child from two family members who are second cousins or closer. | [OMIT:0004546](http://purl.obolibrary.org/obo/OMIT_0004546), [SNOMED:842009](http://snomed.info/id/842009)  | bool |
-| Belongs to study | Reference to the study or studies in which this person participates. | [RO:0000056](http://purl.obolibrary.org/obo/RO_0000056)  | Reference to instances of Studies |
-| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+| Part of data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 | Belongs to cohort | A group of individuals, identified by a common characteristic. | [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512)  | Reference to instances of Cohorts |
 
 ## Module: Clinical
@@ -115,22 +135,21 @@ Findings and circumstances relating to the examination and treatment of a patien
 | Status of diagnosis | A condition or state at a particular time. | [NCIT:C25688](http://purl.obolibrary.org/obo/NCIT_C25688)  | [DiagnosisConfirmationStatus.tsv](../../lookups/DiagnosisConfirmationStatus.tsv) lookup (20 choices [of type](http://purl.obolibrary.org/obo/NCIT_C48655)) |
 | First contact | First contact of the patient with a specialised center in context of disease or study inclusion. | [LOINC:MTHU048806](http://purl.bioontology.org/ontology/LNC/MTHU048806)  | date |
 | Date diagnosis confirmed | The particular day, month and year an event has happened or will happen. | [NCIT:C25164](http://purl.obolibrary.org/obo/NCIT_C25164)  | date |
-| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 | Family members affected | Family members related by descent rather than by marriage or law who were diagnosed with the same condition as the individual who is the primary focus of investigation (i.e. the proband). | [HP:0032320](http://purl.obolibrary.org/obo/HP_0032320)  | [FamilyMembers.tsv](../../lookups/FamilyMembers.tsv) lookup (41 choices [of type](http://purl.obolibrary.org/obo/NCIT_C71384)) |
 | Family members sequenced | Family members related by descent rather than by marriage or law who were also tested by next-generation sequencing. | [NCIT:C79916](http://purl.obolibrary.org/obo/NCIT_C79916)  | [FamilyMembers.tsv](../../lookups/FamilyMembers.tsv) lookup (41 choices [of type](http://purl.obolibrary.org/obo/NCIT_C71384)) |
 | Functioning | Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF). | [NCIT:C21007](http://purl.obolibrary.org/obo/NCIT_C21007)  | text |
 | Material used in diagnosis | This diagnosis c.q. clinical examination is based on one or more sampled materials. | [SIO:000641](http://semanticscience.org/resource/SIO_000641)  | string |
+| Part of data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 
 ## Module: Materials
-A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. Ontology: [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
+A natural substance derived from living organisms such as cells, tissues, proteins, and DNA. Ontology: [NCIT:C43376](http://purl.obolibrary.org/obo/NCIT_C43376), [SCDO:0002829](http://purl.obolibrary.org/obo/SCDO_0002829), [NCIT:C13236](http://purl.obolibrary.org/obo/NCIT_C13236), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
 
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | Identifier | Name or other identifier of an entry from a biosample database. | [EDAM:data_3273](http://edamontology.org/data_3273), [NCIT:C93400](http://purl.obolibrary.org/obo/NCIT_C93400)  | identifier |
 | Alternative identifiers | A backup sequence of characters used to identify an entity. | [NCIT:C90353](http://purl.obolibrary.org/obo/NCIT_C90353)  | string |
-| Collected from person | Reference to the subject from whom this material was collected. | [SIO:000244](http://semanticscience.org/resource/SIO_000244), [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495)  | Reference to instances of Subjects |
+| Collected from subject | Reference to the subject from whom this material was collected. | [SIO:000244](http://semanticscience.org/resource/SIO_000244), [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495)  | Reference to instances of Subjects |
 | Belongs to request | A sequence of letters, numbers, or other characters that specifically identifies a particular order. | [NCIT:C164567](http://purl.obolibrary.org/obo/NCIT_C164567)  | string |
-| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 | Belongs to diagnosis | Reference to a diagnosis c.q. clinical examination of which this material may be a part of. There can be multiple diagnoses when a non-tumor material is reused as reference. | [SIO:000068](http://semanticscience.org/resource/SIO_000068)  | Reference to instances of Clinical |
 | Date of request | The date on which the activity or entity was ordered. | [NCIT:C164566](http://purl.obolibrary.org/obo/NCIT_C164566)  | date |
 | Reason for sampling | The explanation for why a test, measurement, or assessment is executed. | [NCIT:C171003](http://purl.obolibrary.org/obo/NCIT_C171003)  | [samplingReason.tsv](../../lookups/samplingReason.tsv) lookup (10 choices [of type](http://purl.obolibrary.org/obo/NCIT_C171003)) |
@@ -141,7 +160,7 @@ A natural substance derived from living organisms such as cells, tissues, protei
 | Sampling protocol reference | The procedure whereby this material was sampled for an analysis. | [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518)  | Reference to instances of Sampling protocols |
 | Sampling protocol deviation | A variation from processes or procedures defined in the sampling protocol. Deviations usually do not preclude the overall evaluability of subject data for either efficacy or safety, and are often acknowledged and accepted in advance by the sponsor. | [NCIT:C50996](http://purl.obolibrary.org/obo/NCIT_C50996)  | text |
 | Reason for sampling protocol deviation | The rationale for why a deviation from the sampling protocol has occurred. | [NCIT:C93529](http://purl.obolibrary.org/obo/NCIT_C93529)  | text |
-| Biospecimen type | The type of material taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes. | [NCIT:C70713](http://purl.obolibrary.org/obo/NCIT_C70713)  | [BiospecimenTypes.tsv](../../lookups/BiospecimenTypes.tsv) lookup (403 choices [of type](http://purl.obolibrary.org/obo/NCIT_C70699)) |
+| Biospecimen type | The type of material taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes. | [NCIT:C70713](http://purl.obolibrary.org/obo/NCIT_C70713)  | [BiospecimenTypes.tsv](../../lookups/BiospecimenTypes.tsv) lookup (408 choices [of type](http://purl.obolibrary.org/obo/NCIT_C70699)) |
 | Anatomical source | Biological entity that constitutes the structural organization of an individual member of a biological species from which this material was taken. | [NCIT:C103264](http://purl.obolibrary.org/obo/NCIT_C103264)  | [AnatomicalSources.tsv](../../lookups/AnatomicalSources.tsv) lookup (13827 choices [of type](http://purl.obolibrary.org/obo/UBERON_0001062)) |
 | Pathological state | The pathological state of the tissue from which this material was derived. | [GO:0001894](http://purl.obolibrary.org/obo/GO_0001894)  | [PathologicalState.tsv](../../lookups/PathologicalState.tsv) lookup (4 choices [of type](http://purl.obolibrary.org/obo/NCIT_C164617)) |
 | Biospecimen usability | An indication as to whether a biospecimen is suitable for testing purposes. | [NCIT:C171004](http://purl.obolibrary.org/obo/NCIT_C171004)  | bool |
@@ -151,6 +170,7 @@ A natural substance derived from living organisms such as cells, tissues, protei
 | Physical location | A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent). | [GAZ:00000448](http://purl.obolibrary.org/obo/GAZ_00000448)  | string |
 | Analyses performed | Reports the existence of any analyses performed on this material other than genomics (e.g. transcriptomics, metabolomics, proteomics). | [IAO:0000702](http://purl.obolibrary.org/obo/IAO_0000702)  | [AnalysesPerformed.tsv](../../lookups/AnalysesPerformed.tsv) lookup (20 choices [of type](http://edamontology.org/topic_3391)) |
 | Derived from | Indicate if this material was produced from or related to another. | [NCIT:C28355](http://purl.obolibrary.org/obo/NCIT_C28355)  | string |
+| Part of data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 
 ## Module: Sampling protocols
 Describes the procedure whereby biological samples for an experiment are sourced. Ontology: [EFO:0005518](http://www.ebi.ac.uk/efo/EFO_0005518), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
@@ -181,7 +201,7 @@ A sample preparation for a nucleic acids sequencing assay. Ontology: [OBI:000190
 | Intended read length | The number of nucleotides intended to be ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process. | [NCIT:C153362](http://purl.obolibrary.org/obo/NCIT_C153362)  | integer |
 | Barcode | A machine-readable representation of information in a visual format on a surface. | [NCIT:C43361](http://purl.obolibrary.org/obo/NCIT_C43361)  | string |
 | Belongs to batch | A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group. | [NCIT:C67073](http://purl.obolibrary.org/obo/NCIT_C67073)  | string |
-| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+| Part of data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 
 ## Module: Laboratory Procedures
 Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting. Ontology: [NCIT:C25294](http://purl.obolibrary.org/obo/NCIT_C25294), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
@@ -215,7 +235,7 @@ The determination of complete (typically nucleotide) sequences, including those 
 | Percentage Q30 | Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly. | [GENEPIO:0000089](http://purl.obolibrary.org/obo/GENEPIO_0000089)  | decimal |
 | Percentage TR20 | Percentage of the target sequence on which 20 or more unique reads were successfully mapped. | [FG:0000003](https://w3id.org/fair-genomes/resource/FG_0000003)  | decimal |
 | Other quality metrics | Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check. | [EDAM:data_3914](http://edamontology.org/data_3914)  | text |
-| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+| Part of data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 
 ## Module: Files
 A set of related records (either written or electronic) kept together. Ontology: [NCIT:C42883](http://purl.obolibrary.org/obo/NCIT_C42883), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
@@ -235,7 +255,7 @@ A set of related records (either written or electronic) kept together. Ontology:
 | File status | The condition for an electronic file relative to the current data or file processing step. | [NCIT:C171193](http://purl.obolibrary.org/obo/NCIT_C171193)  | [FileStatus.tsv](../../lookups/FileStatus.tsv) lookup (7 choices [of type](http://purl.obolibrary.org/obo/NCIT_C171193)) |
 | Creation date | The date a digital resource was created. | [NCIT:C69199](http://purl.obolibrary.org/obo/NCIT_C69199)  | date |
 | Alternative identifiers | A backup sequence of characters used to identify an entity. | [NCIT:C90353](http://purl.obolibrary.org/obo/NCIT_C90353)  | string |
-| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+| Part of data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 
 ## Module: Cohorts
 A group of individuals, identified by a common characteristic. Ontology: [NCIT:C61512](http://purl.obolibrary.org/obo/NCIT_C61512), [dcat:Dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) .
@@ -247,8 +267,7 @@ A group of individuals, identified by a common characteristic. Ontology: [NCIT:C
 | Name | The words or language units by which a thing is known. | [NCIT:C42614](http://purl.obolibrary.org/obo/NCIT_C42614)  | string |
 | Description | The description of the characteristics that define a cohort. | [NCIT:C166209](http://purl.obolibrary.org/obo/NCIT_C166209)  | text |
 | Principle investigator | The principle investigator or responsible person for this study. | [OMIABIS:0000100](http://purl.obolibrary.org/obo/OMIABIS_0000100)  | string |
-| Contact person | A person acting as a channel for communication between groups or on behalf of a group. | [NCIT:C25461](http://purl.obolibrary.org/obo/NCIT_C25461)  | string |
-| Contact email | An email address for the purpose of contacting the study contact person. | [OMIABIS:0000035](http://purl.obolibrary.org/obo/OMIABIS_0000035)  | email |
+| Contact person | A person acting as a channel for communication between groups or on behalf of a group. | [NCIT:C25461](http://purl.obolibrary.org/obo/NCIT_C25461)  | Reference to instances of Person |
 | Size of cohort | A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population. | [NCIT:C53190](http://purl.obolibrary.org/obo/NCIT_C53190)  | integer |
 
 ## Module: Signed consent
@@ -257,7 +276,7 @@ Consent given by a patient to a surgical or medical procedure or participation i
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | Identifier | A unique proper name or character sequence that identifies this particular signed individual consent. | [ICO:0000044](http://purl.obolibrary.org/obo/ICO_0000044)  | identifier |
-| Belongs to subject | Reference to the person (i.e. subject) to whom this individual consent applies. | [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136), [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495)  | Reference to instances of Subjects |
+| Belongs to subject | Reference to the subject to whom this individual consent applies. | [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136), [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495)  | Reference to instances of Subjects |
 | Consent form used | Reference to the informed consent form that was signed. Points to a particular instance of leaflet and consent form that usually exists as a record (i.e. a row) within the same database as this individual consent. | [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136)  | Reference to instances of Leaflet and consent form |
 | Collected by | Indicates the person, group, or institution who performed the collection act. | [NCIT:C45262](http://purl.obolibrary.org/obo/NCIT_C45262)  | string |
 | Signing date | A date specification that designates when this individual consent form was signed. | [ICO:0000036](http://purl.obolibrary.org/obo/ICO_0000036)  | date |
@@ -270,7 +289,7 @@ Consent given by a patient to a surgical or medical procedure or participation i
 | Data use specification | Further specification of applied data use permissions and modifiers. For example, a list of countries in case of geographic restrictions or a list of diseases when restricted to disease-specific research. | [SIO:000090](http://semanticscience.org/resource/SIO_000090)  | text |
 | Allow matchmaker | Permission is given for MatchMaking | [NCIT:C54116](http://purl.obolibrary.org/obo/NCIT_C54116)  | bool |
 | Allow recontacting | The procedure of recontacting the patient for specified reasons. This means the patient agrees to be re-identifiable under those circumstances. | [NCIT:C25737](http://purl.obolibrary.org/obo/NCIT_C25737)  | [Recontacting.tsv](../../lookups/Recontacting.tsv) lookup (3 choices [of type](http://purl.obolibrary.org/obo/NCIT_C176244)) |
-| Belongs to data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
+| Part of data release | The act of making data or other structured information accessible to the public or to the user group of a database. | [NCIT:C172217](http://purl.obolibrary.org/obo/NCIT_C172217)  | Reference to instances of Data releases |
 
 ## Module: Leaflet and consent form
 A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian. Ontology: [NCIT:C16468](http://purl.obolibrary.org/obo/NCIT_C16468) .
@@ -311,19 +330,21 @@ A metabolomics material processing is a protocol application including material 
 |---|---|---|---|
 | Identifier | A unique proper name or character sequence that identifies this particular metabolomics material processing. | [NCIT:C132299](http://purl.obolibrary.org/obo/NCIT_C132299)  | identifier |
 | Belongs to materials | Reference to the source material from which this sample was prepared. | [NCIT:C93400](http://purl.obolibrary.org/obo/NCIT_C93400), [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of Materials |
+| Processing type | A planned process which results in physical changes in a specified input material. | [OBI:0000094](http://purl.obolibrary.org/obo/OBI_0000094)  | [MtbxMaterialProcessing.tsv](../../lookups/MtbxMaterialProcessing.tsv) lookup (4 choices [of type](http://purl.obolibrary.org/obo/OBI_0000094)) |
 | Sample extraction | The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it. | [CHMO:0001577](http://purl.obolibrary.org/obo/CHMO_0001577)  | string |
 | Filter used | The filter used in separating of suspended solids from a liquid or gas, usually by forcing a carrier gas or liquid through a porous medium. | [CHMO:0001640](http://purl.obolibrary.org/obo/CHMO_0001640)  | string |
 | Passing rate | The volume of carrier gas passing through a chromatography column in unit time. | [CHMO:0002751](http://purl.obolibrary.org/obo/CHMO_0002751)  | integer |
 | SPE cartridge | A sample preparation technique using a solid adsorbent contained most commonly in a cartridge device, or on a disk to adsorb select species from solution. | [OMIT:0025161](http://purl.obolibrary.org/obo/OMIT_0025161)  | string |
 | Washing protocol | Washing is a process by which a material entity acting as contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow. | [OBI:0302888](http://purl.obolibrary.org/obo/OBI_0302888)  | text |
 
-## Module: Metabolomic assay
+## Module: Metabolomic mass spec assays
 A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. Ontology: [NCIT:C60819](http://purl.obolibrary.org/obo/NCIT_C60819) .
 
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | Identifier | A unique proper name or character sequence that identifies this particular metabolomics assay. | [NCIT:C171266](http://purl.obolibrary.org/obo/NCIT_C171266)  | identifier |
 | Belongs metabolomic material processing | This metabolomic assay is part of a metabolomic material processing. | [SIO:000068](http://semanticscience.org/resource/SIO_000068)  | Reference to instances of Metabolomic material processing |
+| Assay type | Spectrometry where the sample is converted into gaseous ions which are characterised by their mass-to-charge ratio and relative abundance. | [CHMO:0000470](http://purl.obolibrary.org/obo/CHMO_0000470)  | [MtbxMassSpecAssays.tsv](../../lookups/MtbxMassSpecAssays.tsv) lookup (3 choices [of type](http://purl.obolibrary.org/obo/CHMO_0000470)) |
 | Inlet | A valve that controls the flow of fluids in through the wall of a chamber. | [NCIT:C50251](http://purl.obolibrary.org/obo/NCIT_C50251)  | string |
 | Mass spectrometer | A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra. | [CHMO:0000982](http://purl.obolibrary.org/obo/CHMO_0000982)  | string |
 | Ionization source | A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis. | [CHMO:0000960](http://purl.obolibrary.org/obo/CHMO_0000960)  | string |
@@ -331,13 +352,14 @@ A qualitative or quantitative analysis performed to determine the amount of a pa
 | Phase separation protocol | Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase. | [CHMO:0002214](http://purl.obolibrary.org/obo/CHMO_0002214)  | text |
 | Mass spec source conditions | Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition. | [ZECO:0000104](http://purl.obolibrary.org/obo/ZECO_0000104)  | string |
 
-## Module: Metabolomic analysis
+## Module: Metabolomic analyses
 Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). Ontology: [EDAM:data_0949](http://edamontology.org/data_0949) .
 
 | Element | Description | Ontology | Values |
 |---|---|---|---|
 | Identifier | A unique proper name or character sequence that identifies this particular metabolomics assay. | [EDAM:data_1083](http://edamontology.org/data_1083)  | identifier |
-| Belongs metabolomic assay | This metabolomic analysis is part of a metabolomic assay. | [SIO:000068](http://semanticscience.org/resource/SIO_000068)  | Reference to instances of Metabolomic assay |
+| Belongs metabolomic mass spec assay | This metabolomic analysis is part of a metabolomic assay. | [SIO:000068](http://semanticscience.org/resource/SIO_000068)  | Reference to instances of Metabolomic mass spec assays |
+| Analysis type | Apply analytical methods to existing data of a specific type. | [EDAM:operation_2945](http://edamontology.org/operation_2945)  | [MtbxAnalyses.tsv](../../lookups/MtbxAnalyses.tsv) lookup (3 choices [of type](http://edamontology.org/operation_2945)) |
 | Workflow definition | File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives. | [SIO:000127](http://semanticscience.org/resource/SIO_000127)  | text |
 | Workflow engine | The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow. | [NCIT:C48293](http://purl.obolibrary.org/obo/NCIT_C48293)  | string |
 | Workflow published | A printed or electronic work offered for distribution. | [NCIT:C48471](http://purl.obolibrary.org/obo/NCIT_C48471)  | string |
@@ -348,8 +370,8 @@ Basic information, annotation or documentation concerning a metabolomics analysi
 | Standards used | Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc. | [SIO:000618](http://semanticscience.org/resource/SIO_000618)  | string |
 | Statistical methods applied | A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc. | [NCIT:C19044](http://purl.obolibrary.org/obo/NCIT_C19044)  | string |
 
-## Module: Genomic Variation
-Schema for a Beacon genomic variant entry. Ontology: [SO:0001060](http://purl.obolibrary.org/obo/SO_0001060) .
+## Module: Genomic variant descriptions
+Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence. Ontology: [NCIT:C17248](http://purl.obolibrary.org/obo/NCIT_C17248), [GENO:0000476](http://purl.obolibrary.org/obo/GENO_0000476) .
 
 | Element | Description | Ontology | Values |
 |---|---|---|---|
@@ -357,12 +379,13 @@ Schema for a Beacon genomic variant entry. Ontology: [SO:0001060](http://purl.ob
 | Belongs to subject | An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored. | [NCIT:C142495](http://purl.obolibrary.org/obo/NCIT_C142495), [IAO:0000136](http://purl.obolibrary.org/obo/IAO_0000136)  | Reference to instances of Subjects |
 | Belongs to material | Reference to the source material from which this sample was prepared. | [NCIT:C93400](http://purl.obolibrary.org/obo/NCIT_C93400), [NCIT:C25683](http://purl.obolibrary.org/obo/NCIT_C25683)  | Reference to instances of Materials |
 | Produced by sequencing run | A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay. | [NCIT:C171337](http://purl.obolibrary.org/obo/NCIT_C171337)  | Reference to instances of Sequencing runs |
-| alternateBases | An allele that varies in it sequence from what is considered the reference or canonical sequence at that location. | [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)  | string |
-| referenceBases | An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared. | [GENO:0000152](http://purl.obolibrary.org/obo/GENO_0000152)  | string |
+| alternateBases | An allele that varies in it sequence from what is considered the reference or canonical sequence at that location. | [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002), [ENSGLOSSARY:0000109](http://ensembl.org/glossary/ENSGLOSSARY_0000109)  | string |
+| referenceBases | An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared. | [GENO:0000036](http://purl.obolibrary.org/obo/GENO_0000036)  | string |
+| Human chromosome | A structure found in the nucleus of human cells that is comprised of a strand of linearized double-stranded DNA plus proteins that package the DNA in a condensed coil form and regulate chromosomal function. | [NCIT:C13203](http://purl.obolibrary.org/obo/NCIT_C13203)  | [HumanChromosomes.tsv](../../lookups/HumanChromosomes.tsv) lookup (24 choices [of type](http://purl.obolibrary.org/obo/NCIT_C13203)) |
 | variantType | An attribute describing a type of variation inhering in a sequence feature or collection. | [GENO:0000773](http://purl.obolibrary.org/obo/GENO_0000773)  | string |
 | position_start | The starting position of a sequence feature or interval. | [GENO:0000894](http://purl.obolibrary.org/obo/GENO_0000894)  | integer |
 | position_end | The ending position of a sequence feature or interval. | [GENO:0000895](http://purl.obolibrary.org/obo/GENO_0000895)  | integer |
-| position_assemblyId | The specific build of the human genome used as reference for this variant. | [EDAM:data_2340](http://edamontology.org/data_2340)  | [GenomeAccessions.tsv](../../lookups/GenomeAccessions.tsv) lookup (29 choices [of type](http://edamontology.org/data_2787)) |
+| position_assemblyId | The specific build of the human genome used as reference for this variant. | [EDAM:data_2340](http://edamontology.org/data_2340), [NCIT:C164388](http://purl.obolibrary.org/obo/NCIT_C164388)  | [GenomeAccessions.tsv](../../lookups/GenomeAccessions.tsv) lookup (29 choices [of type](http://edamontology.org/data_2787)) |
 | position_refseqId | TODO unsure what is ment here - Refseq accession number of a transcript? | [NCIT:C45335](http://purl.obolibrary.org/obo/NCIT_C45335)  | string |
 | identifiers_clinVarIds | NCBI resource that aggregates information about genomic variation and its relationship to human health. | [ENSGLOSSARY:0000242](http://ensembl.org/glossary/ENSGLOSSARY_0000242)  | string |
 | identifiers_genomicHGVSId | HGVS genomic sequence variant nomenclature | [ENSGLOSSARY:0000274](http://ensembl.org/glossary/ENSGLOSSARY_0000274)  | string |
@@ -375,6 +398,82 @@ Schema for a Beacon genomic variant entry. Ontology: [SO:0001060](http://purl.ob
 | molecularAttributes_molecularEffects | The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps. | [ENSGLOSSARY:0000134](http://ensembl.org/glossary/ENSGLOSSARY_0000134)  | string |
 | variantLevelData_clinicalInterpretations | The determination of the meaning of a clinical result. | [NCIT:C125009](http://purl.obolibrary.org/obo/NCIT_C125009)  | string |
 | variantLevelData_phenotypicEffects | The likelihood of an entity to produce pathologic changes or disease. | [NCIT:C168796](http://purl.obolibrary.org/obo/NCIT_C168796)  | string |
+
+## Module: Genomic variant observations
+Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment. Ontology: [NCIT:C164404](http://purl.obolibrary.org/obo/NCIT_C164404) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Belongs to genomic variant description | Belongs to genomic variant description | [SIO:000628](http://semanticscience.org/resource/SIO_000628), [NCIT:C17248](http://purl.obolibrary.org/obo/NCIT_C17248)  | Reference to instances of Genomic variant descriptions |
+| Allele 1 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
+| Allele 2 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
+| Zygosity | The genetic condition of a zygote, especially with respect to its being a homozygote or a heterozygote. | [NCIT:C45824](http://purl.obolibrary.org/obo/NCIT_C45824), [GENO:0000133](http://purl.obolibrary.org/obo/GENO_0000133)  | [Zygosity.tsv](../../lookups/Zygosity.tsv) lookup (14 choices [of type](http://purl.obolibrary.org/obo/GENO_0000133)) |
+| Maternal allele 1 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
+| Maternal allele 2 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
+| Mother Read Depth | Read depth of maternal allele | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
+| Mother Allele Frequency Allele 1 | Frequency of maternal allele 1 | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
+| Mother Allele Frequency Allele 2 | Frequency of maternal allele 2 | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
+| Mother Allelic Depth Allele 1 | Mother Allelic Depth Allele 1 | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
+| Mother Allelic Depth Allele 2 | Mother Allelic Depth Allele 2 | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
+| Paternal allele 1 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
+| Paternal allele 2 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
+| Father Read Depth | Father Read Depth | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
+| Father Allele Frequency Allele 1 | Father Allele Frequency Allele 1 | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
+| Father Allele Frequency Allele 2 | Father Allele Frequency Allele 2 | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
+| Father Allelic Depth Allele 1 | Father Allelic Depth Allele 1 | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
+| Father Allelic Depth Allele 2 | Father Allelic Depth Allele 2 | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
+| Allele origin | A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell's genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent. | [GENO:0000877](http://purl.obolibrary.org/obo/GENO_0000877)  | [AlleleOrigin.tsv](../../lookups/AlleleOrigin.tsv) lookup (5 choices [of type](http://purl.obolibrary.org/obo/GENO_0000877)) |
+
+## Module: Genomic variant annotations
+In-context information that has been associated with genomic variants. Ontology: [NCIT:C44272](http://purl.obolibrary.org/obo/NCIT_C44272) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Belongs to genomic variant description | Belongs to genomic variant description | [SIO:000628](http://semanticscience.org/resource/SIO_000628), [NCIT:C17248](http://purl.obolibrary.org/obo/NCIT_C17248)  | Reference to instances of Genomic variant descriptions |
+| Transcript | The initial RNA molecule produced by transcription. | [NCIT:C1936](http://purl.obolibrary.org/obo/NCIT_C1936)  | string |
+| Cdna | Single-stranded DNA that is complementary to messenger RNA or DNA that has been synthesized from messenger RNA by reverse transcriptase. | [NCIT:C324](http://purl.obolibrary.org/obo/NCIT_C324)  | string |
+| Protein | A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons. Proteins are fundamental genetically encoded components of living cells with specific structures and functions dictated by amino acid sequence. | [NCIT:C17021](http://purl.obolibrary.org/obo/NCIT_C17021)  | string |
+| Gene | A unique gene name within a specific repository, database, or collection. | [NCIT:C16612](http://purl.obolibrary.org/obo/NCIT_C16612)  | [Genes.tsv](../../lookups/Genes.tsv) lookup (19202 choices [of type](http://edamontology.org/data_2298)) |
+| Exon | The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene. | [NCIT:C13231](http://purl.obolibrary.org/obo/NCIT_C13231)  | integer |
+| Variant comment | A written explanation, observation or criticism added to textual material. | [NCIT:C25393](http://purl.obolibrary.org/obo/NCIT_C25393)  | text |
+| CADD score | CADD score | [ENSGLOSSARY:0000360](http://ensembl.org/glossary/ENSGLOSSARY_0000360)  | decimal |
+| Gnomad | An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD. | [ENSGLOSSARY:0000238](http://ensembl.org/glossary/ENSGLOSSARY_0000238)  | string |
+| Gnomad link | Gnomad link | [ENSGLOSSARY:0000238](http://ensembl.org/glossary/ENSGLOSSARY_0000238)  | string |
+| HGMD | HGMD | [ENSGLOSSARY:0000250](http://ensembl.org/glossary/ENSGLOSSARY_0000250)  | [HGMDOptions.tsv](../../lookups/HGMDOptions.tsv) lookup (3 choices [of type](http://purl.obolibrary.org/obo/NCIT_C25755)) |
+| HGMD link | HGMD link | [ENSGLOSSARY:0000250](http://ensembl.org/glossary/ENSGLOSSARY_0000250)  | string |
+| Phylop score | Phylop score | [VariO:0229](http://purl.obolibrary.org/obo/VariO_0229)  | decimal |
+| Omim Inheritance | Omim Inheritance | [ENSGLOSSARY:0000244](http://ensembl.org/glossary/ENSGLOSSARY_0000244)  | [Inheritance.tsv](../../lookups/Inheritance.tsv) lookup (33 choices [of type](http://purl.obolibrary.org/obo/NCIT_C45827)) |
+| OMIM morbid | OMIM morbid | [ENSGLOSSARY:0000244](http://ensembl.org/glossary/ENSGLOSSARY_0000244)  | string |
+| Clinvar | NCBI resource that aggregates information about genomic variation and its relationship to human health. Ensembl display clinical significance and phenotypes from ClinVar. https://www.ncbi.nlm.nih.gov/clinvar/ | [ENSGLOSSARY:0000242](http://ensembl.org/glossary/ENSGLOSSARY_0000242)  | string |
+| Pubmed | A web application from the National Library of Medicine (NLM). It provides a single query interface to over 15 million citations for biomedical articles back to the 1950's. These citations are from MEDLINE and additional life science journals. PubMed includes links to many sites providing full text articles and other related resources. | [NCIT:C42881](http://purl.obolibrary.org/obo/NCIT_C42881)  | string |
+| VKGL | VKGL | [MAXO:0000698](http://purl.obolibrary.org/obo/MAXO_0000698)  | string |
+| dbSNP | dbSNP | [ENSGLOSSARY:0000233](http://ensembl.org/glossary/ENSGLOSSARY_0000233)  | string |
+| Polyphen 2 prediction | Polyphen 2 prediction | [VariO:0229](http://purl.obolibrary.org/obo/VariO_0229)  | [PolyPhen2Classifications.tsv](../../lookups/PolyPhen2Classifications.tsv) lookup (3 choices [of type](http://purl.obolibrary.org/obo/TXPO_0002566)) |
+| Mutation taster | Mutation taster | [VariO:0229](http://purl.obolibrary.org/obo/VariO_0229)  | string |
+
+## Module: Genomic variant interpretations
+The determination of the meaning of a variant in clinical context. Ontology: [NCIT:C125009](http://purl.obolibrary.org/obo/NCIT_C125009) .
+
+| Element | Description | Ontology | Values |
+|---|---|---|---|
+| Belongs to genomic variant annotation | Belongs to genomic variant annotation | [SIO:000628](http://semanticscience.org/resource/SIO_000628), [NCIT:C44272](http://purl.obolibrary.org/obo/NCIT_C44272)  | Reference to instances of Genomic variant annotations |
+| Belongs to genomic variant observation | Belongs to genomic variant observation | [SIO:000628](http://semanticscience.org/resource/SIO_000628), [NCIT:C164404](http://purl.obolibrary.org/obo/NCIT_C164404)  | Reference to instances of Genomic variant descriptions |
+| Panel | Gene panel | [NCIT:C173599](http://purl.obolibrary.org/obo/NCIT_C173599)  | string |
+| Pipeline version | Pipeline version | [GENEPIO:0000152](http://purl.obolibrary.org/obo/GENEPIO_0000152)  | string |
+| Date of analysis | The particular day, month and year an event has happened or will happen. | [NCIT:C25164](http://purl.obolibrary.org/obo/NCIT_C25164)  | date |
+| Pipeline name | Pipeline name | [GENEPIO:0000151](http://purl.obolibrary.org/obo/GENEPIO_0000151)  | string |
+| Assessment | The final result of a determination of the value, significance, or extent of. | [NCIT:C25217](http://purl.obolibrary.org/obo/NCIT_C25217)  | string |
+| Date of Assessment | The date (and time) on which an assessment is completed. | [NCIT:C93511](http://purl.obolibrary.org/obo/NCIT_C93511)  | date |
+| Reviewed by | Indicates the person or authoritative body who appraised, evaluated, or analyzed the item. | [NCIT:C42728](http://purl.obolibrary.org/obo/NCIT_C42728)  | Reference to instances of Person |
+| assesmentLab | assesmentLab | [NCIT:C37984](http://purl.obolibrary.org/obo/NCIT_C37984)  | string |
+| Curated text | Curated text | [NCIT:C48292](http://purl.obolibrary.org/obo/NCIT_C48292)  | text |
+| Date of curation | A classification datum is a facet that classifies some entity. | [AFR:0001277](http://purl.allotrope.org/ontologies/result#AFR_0001277)  | date |
+| Curator | The person in charge of the care and superintendence of something, especially a collection. | [NCIT:C69141](http://purl.obolibrary.org/obo/NCIT_C69141)  | Reference to instances of Person |
+| Clinical variant classification | Classify variants based on their potential effect on genes, especially functional effects on the expressed proteins. | [operation:3225](http://edamontology.org/operation_3225), [NCIT:C118969](http://purl.obolibrary.org/obo/NCIT_C118969)  | [VariantClassification.tsv](../../lookups/VariantClassification.tsv) lookup (9 choices [of type](http://purl.obolibrary.org/obo/NCIT_C17248)) |
+| VUS plus | VUS plus | [NCIT:C94187](http://purl.obolibrary.org/obo/NCIT_C94187)  | bool |
+| Classification changed | Classification changed | [EDAM:operation_3225](http://edamontology.org/operation_3225), [DC:modified](http://purl.org/dc/terms/modified)  | bool |
+| Modular pipeline | Modular pipeline | [OBI:0001943](http://purl.obolibrary.org/obo/OBI_0001943)  | string |
+| Url to report | A Uniform Resource Locator (URL) | [data:1052](http://edamontology.org/data_1052)  | hyperlink |
 
 ## Null flavors
 Each lookup is supplemented with so-called 'null flavors' from HL7. These can be used to indicate precisely why a particular value could not be entered into the system, providing substantially more insight than simply leaving a field empty.

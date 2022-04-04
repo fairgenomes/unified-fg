@@ -72,6 +72,9 @@ public class YamlModel {
      */
     public void checkAllowedTableAndColumnNames() throws Exception {
         for(Table m: tables) {
+            if(m.description == null){
+                throw new Exception("no description for " + m.name);
+            }
             if(!m.name.matches("^[a-zA-Z][a-zA-Z0-9_\\s]*$")){
                 throw new Exception("Table name must start with a letter, followed by letters,\n" +
                         "     * underscores, a space or numbers, i.e. [a-zA-Z][a-zA-Z0-9_\\s]*. Offending table name: '" + m.name +"'");
@@ -82,6 +85,9 @@ public class YamlModel {
             }
             for(Column e : m.columns)
             {
+                if(e.description == null){
+                    throw new Exception("no description for " + e.name + " in " + m.name);
+                }
                 if(!e.name.matches("^[a-zA-Z][a-zA-Z0-9_\\s]*$")){
                     throw new Exception("Column name must start with a letter, followed by letters,\n" +
                             "     * underscores, a space or numbers, i.e. [a-zA-Z][a-zA-Z0-9_\\s]*. Offending column name: '" + e.name +"'");
@@ -203,6 +209,9 @@ public class YamlModel {
         allModuleOntologies = new HashSet<Ontology>();
         allElementOntologies = new HashSet<Ontology>();
         for (Table m : tables) {
+            if(m.tags == null){
+                throw new Exception("No tag for table " + m.name);
+            }
             m.parsedTags = Ontology.toOntoList(m.tags);
             allModuleOntologies.addAll(m.parsedTags);
             for (Column e : m.columns) {

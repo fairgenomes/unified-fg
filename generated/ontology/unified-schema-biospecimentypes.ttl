@@ -2051,6 +2051,31 @@ fg:Materials_Biospecimen_type_Oropharyngeal_Swab_Specimen a obo:NCIT_C70699;
   dc:description "Oropharyngeal Swab Specimen";
   rdfs:isDefinedBy obo:NCIT_C155835 .
 
+fg:Materials_Biospecimen_type_Blood a obo:NCIT_C70699;
+  rdfs:label "Blood";
+  dc:description "Blood";
+  rdfs:isDefinedBy obo:NCIT_C12434 .
+
+fg:Materials_Biospecimen_type_Plasma a obo:NCIT_C70699;
+  rdfs:label "Plasma";
+  dc:description "Plasma";
+  rdfs:isDefinedBy obo:NCIT_C13356 .
+
+fg:Materials_Biospecimen_type_Cerebrospinal_Fluid a obo:NCIT_C70699;
+  rdfs:label "Cerebrospinal Fluid";
+  dc:description "Cerebrospinal Fluid";
+  rdfs:isDefinedBy obo:NCIT_C12692 .
+
+fg:Materials_Biospecimen_type_Feces a obo:NCIT_C70699;
+  rdfs:label "Feces";
+  dc:description "Feces";
+  rdfs:isDefinedBy obo:NCIT_C13234 .
+
+fg:Materials_Biospecimen_type_Urine a obo:NCIT_C70699;
+  rdfs:label "Urine";
+  dc:description "Urine";
+  rdfs:isDefinedBy obo:NCIT_C13283 .
+
 <https://w3id.org/fair-genomes/ontology/Materials_Biospecimen_type_NoInformation_(NI,_nullflavor)>
   a obo:NCIT_C70699;
   rdfs:label "NoInformation (NI, nullflavor)";

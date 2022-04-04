@@ -1,0 +1,19 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+belongstogenomicvariantannotation	Belongs to genomic variant annotation	Belongs to genomic variant annotation (SIO:000628, NCIT:C44272 )	genomicvariantinterpretations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantannotations
+belongstogenomicvariantobservation	Belongs to genomic variant observation	Belongs to genomic variant observation (SIO:000628, NCIT:C164404 )	genomicvariantinterpretations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantdescriptions
+panel	Panel	Gene panel (NCIT:C173599 )	genomicvariantinterpretations	string	FALSE	FALSE	TRUE	TRUE	
+pipelineversion	Pipeline version	Pipeline version (GENEPIO:0000152 )	genomicvariantinterpretations	string	FALSE	FALSE	TRUE	TRUE	
+dateofanalysis	Date of analysis	The particular day, month and year an event has happened or will happen. (NCIT:C25164 )	genomicvariantinterpretations	date	FALSE	FALSE	TRUE	TRUE	
+pipelinename	Pipeline name	Pipeline name (GENEPIO:0000151 )	genomicvariantinterpretations	string	FALSE	FALSE	TRUE	TRUE	
+assessment	Assessment	The final result of a determination of the value, significance, or extent of. (NCIT:C25217 )	genomicvariantinterpretations	string	FALSE	FALSE	TRUE	TRUE	
+dateofassessment	Date of Assessment	The date (and time) on which an assessment is completed. (NCIT:C93511 )	genomicvariantinterpretations	date	FALSE	FALSE	TRUE	TRUE	
+reviewedby	Reviewed by	Indicates the person or authoritative body who appraised, evaluated, or analyzed the item. (NCIT:C42728 )	genomicvariantinterpretations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_person
+assesmentlab	assesmentLab	assesmentLab (NCIT:C37984 )	genomicvariantinterpretations	string	FALSE	FALSE	TRUE	TRUE	
+curatedtext	Curated text	Curated text (NCIT:C48292 )	genomicvariantinterpretations	text	FALSE	FALSE	TRUE	TRUE	
+dateofcuration	Date of curation	A classification datum is a facet that classifies some entity. (AFR:0001277 )	genomicvariantinterpretations	date	FALSE	FALSE	TRUE	TRUE	
+curator	Curator	The person in charge of the care and superintendence of something, especially a collection. (NCIT:C69141 )	genomicvariantinterpretations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_person
+clinicalvariantclassification	Clinical variant classification	Classify variants based on their potential effect on genes, especially functional effects on the expressed proteins. (operation:3225, NCIT:C118969 )	genomicvariantinterpretations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantinterpretations_clinicalvariantclassification
+vusplus	VUS plus	VUS plus (NCIT:C94187 )	genomicvariantinterpretations	bool	FALSE	FALSE	TRUE	TRUE	
+classificationchanged	Classification changed	Classification changed (EDAM:operation_3225, DC:modified )	genomicvariantinterpretations	bool	FALSE	FALSE	TRUE	TRUE	
+modularpipeline	Modular pipeline	Modular pipeline (OBI:0001943 )	genomicvariantinterpretations	string	FALSE	FALSE	TRUE	TRUE	
+urltoreport	Url to report	A Uniform Resource Locator (URL) (data:1052 )	genomicvariantinterpretations	string	FALSE	FALSE	TRUE	TRUE	
