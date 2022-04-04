@@ -162,6 +162,7 @@ tables:
         dataType: string
 
       - name: firstName
+        description: A word or group of words indicating a person's first (personal or given) name
         tags: NCIT:C40974 [http://purl.obolibrary.org/obo/NCIT_C40974]
         example: Rosemarie
         dataType: string
@@ -1820,15 +1821,12 @@ tables:
 
       - name: Allele 1
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        reference: lookups/Nucleobases.tsv
-        referenceTypeTag:
+        dataType: string
         tags: GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Allele 2
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        reference: lookups/Nucleobases.tsv
+        dataType: string
         tags: GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Zygosity
@@ -1836,62 +1834,66 @@ tables:
         #description: An allelic state that describes the degree of similarity of features at a particular location in the genome (i.e. whether the alleles or haplotypes are the same or different).
         dataType: xref
         reference: lookups/Zygosity.tsv
-        referenceTypeTag: NCIT:C45824 [http://purl.obolibrary.org/obo/NCIT_C45824]
+        referenceTypeTag: GENO:0000133 [http://purl.obolibrary.org/obo/GENO_0000133]
         tags: NCIT:C45824 [http://purl.obolibrary.org/obo/NCIT_C45824], GENO:0000133 [http://purl.obolibrary.org/obo/GENO_0000133]
 
       - name: Maternal allele 1
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        reference: lookups/Nucleobase.txt
+        dataType: string
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Maternal allele 2
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        reference: lookups/Nucleobase.txt
+        dataType: string
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Mother Read Depth
+        description: Read depth of maternal allele
         dataType: integer
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
 
       - name: Mother Allele Frequency Allele 1 # calculated from read count? "allelic ratio" ?
+        description: Frequency of maternal allele 1
         dataType: decimal
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
 
       - name: Mother Allele Frequency Allele 2 # calculated from read count?
+        description: Frequency of maternal allele 2
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
 
       - name: Mother Allelic Depth Allele 1 # read count?
+        description: Mother Allelic Depth Allele 1
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
         dataType: integer
 
       - name: Mother Allelic Depth Allele 2 # read count?
+        description: Mother Allelic Depth Allele 2
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
         dataType: integer
 
       - name: Paternal allele 1
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        reference: lookups/Nucleobase.txt
+        dataType: string
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Paternal allele 2
         description: One of a set of sequence features known to exist at a particular genomic location.
-        dataType: xref
-        reference: lookups/Nucleobase.txt
+        dataType: string
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], GENO:0000512 [http://purl.obolibrary.org/obo/GENO_0000512]
 
       - name: Father Read Depth
+        description: Father Read Depth
         dataType: integer
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
 
       - name: Father Allele Frequency Allele 1
+        description: Father Allele Frequency Allele 1
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
 
       - name: Father Allele Frequency Allele 2
+        description: Father Allele Frequency Allele 2
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
 
@@ -1901,6 +1903,7 @@ tables:
         dataType: integer
 
       - name: Father Allelic Depth Allele 2
+        description: Father Allelic Depth Allele 2
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
         dataType: integer
 
@@ -1908,7 +1911,8 @@ tables:
       - name: Allele origin
         description: A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell's genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent.
         dataType: xref
-        reference: lookups/AlleleOrigin.txt
+        reference: lookups/AlleleOrigin.tsv
+        referenceTypeTag: GENO:0000877 [http://purl.obolibrary.org/obo/GENO_0000877]
         tags: GENO:0000877 [http://purl.obolibrary.org/obo/GENO_0000877]
 
   - name: Genomic variant annotations
@@ -1918,7 +1922,7 @@ tables:
 
       - name: Belongs to genomic variant description
         dataType: xref
-        reference: Genomic variant description
+        reference: Genomic variant descriptions
         description: Belongs to genomic variant description
         tags: SIO:000628 [http://semanticscience.org/resource/SIO_000628], NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248] # TODO: all table xrefs should probably consist of "refers to" + "referred table tag"
 
@@ -1943,7 +1947,7 @@ tables:
       - name: Gene
         description: A unique gene name within a specific repository, database, or collection.
         dataType: mref
-        reference: lookups/Gene.tsv
+        reference: lookups/Genes.tsv
         referenceTypeTag: EDAM:data_2298 [http://edamontology.org/data_2298]
         tags: NCIT:C16612 [http://purl.obolibrary.org/obo/NCIT_C16612]
 
@@ -1975,7 +1979,9 @@ tables:
 
       - name: HGMD
         dataType: xref
+        description: HGMD
         reference: lookups/HGMDOptions.tsv
+        referenceTypeTag: NCIT:C25755 [http://purl.obolibrary.org/obo/NCIT_C25755]
         tags: ENSGLOSSARY:0000250 [http://ensembl.org/glossary/ENSGLOSSARY_0000250]
 
       - name: HGMD link # ???
@@ -1989,6 +1995,7 @@ tables:
         tags: VariO:0229 [http://purl.obolibrary.org/obo/VariO_0229]
 
       - name: Omim Inheritance # Inheritance pattern. In the variantDB, this is chromosomeType
+        description: Omim Inheritance
         dataType: xref
         reference: lookups/Inheritance.tsv
         referenceTypeTag: NCIT:C45827 [http://purl.obolibrary.org/obo/NCIT_C45827]
@@ -2031,6 +2038,7 @@ tables:
         dataType: xref
         tags: VariO:0229 [http://purl.obolibrary.org/obo/VariO_0229]
         reference: lookups/PolyPhen2Classifications.tsv
+        referenceTypeTag: TXPO:0002566 [http://purl.obolibrary.org/obo/TXPO_0002566]
 
       # ???
       - name: Mutation taster
@@ -2065,13 +2073,6 @@ tables:
         tags: GENEPIO:0000152 [http://purl.obolibrary.org/obo/GENEPIO_0000152]
         dataType: string
         description: Pipeline version
-
-      # is this an appropriate term? Original "classification (by algorithm)"
-      - name: Variant classification
-        description: Variant classification
-        tags: operation:3225 [http://edamontology.org/operation_3225], NCIT:C118969 [http://purl.obolibrary.org/obo/NCIT_C118969]
-        dataType: xref
-        reference: lookups/VariantClassification.tsv
 
       - name: Date of analysis
         description: The particular day, month and year an event has happened or will happen.
@@ -2124,11 +2125,12 @@ tables:
         reference: Person
         tags: NCIT:C69141 [http://purl.obolibrary.org/obo/NCIT_C69141]
 
-      - name: Classification # Clinical classification ?
-        description: A method of generalization, the systematic arrangement of entities into classes or groups based on mutual similarity and certain differing characteristics.
+      - name: Clinical variant classification
+        description: Classify variants based on their potential effect on genes, especially functional effects on the expressed proteins.
+        tags: operation:3225 [http://edamontology.org/operation_3225], NCIT:C118969 [http://purl.obolibrary.org/obo/NCIT_C118969]
         dataType: xref
         reference: lookups/VariantClassification.tsv
-        tags: NCIT:C118969 [http://purl.obolibrary.org/obo/NCIT_C118969] # better than http://purl.obolibrary.org/obo/NCIT_C25161 ('Classification')
+        referenceTypeTag: NCIT:C17248 [http://purl.obolibrary.org/obo/NCIT_C17248]
 
       - name: VUS plus
         description: VUS plus
@@ -2136,6 +2138,7 @@ tables:
         tags: NCIT:C94187 [http://purl.obolibrary.org/obo/NCIT_C94187]
 
       - name: Classification changed
+        description: Classification changed
         dataType: bool
         tags: EDAM:operation_3225 [http://edamontology.org/operation_3225], DC:modified [http://purl.org/dc/terms/modified]
 

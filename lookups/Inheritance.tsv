@@ -1,21 +1,34 @@
 value	description	codesystem	code	iri
-X-linked dominant   Pattern of inheritance in which a single mutated allele on the X chromosome is sufficient to express the phenotype. The phenotype is more consistently and severely expressed in hemizygous boys (having only one copy of the gene) than in heterozygous girls.     Orphanet    409934   http://www.orpha.net/ORDO/Orphanet_409934
-X-linked recessive
-Y-linked
-autosomal dominant
-autosomal recessive
-mitochondrial
-multigenic/multifactorial
-no inheritance data available
-not genetically inherited
-oligogenic
-semi-dominant
-unknown inheritance
-
-orpha:
-https://www.ebi.ac.uk/ols/ontologies/ordo/terms?iri=http%3A%2F%2Fwww.orpha.net%2FORDO%2FOrphanet_C005&viewMode=All&siblings=false
-
-HPO (better..)
-https://www.ebi.ac.uk/ols/ontologies/hp/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0000005&viewMode=PreferredRoots&siblings=false
-
-
+Sex-limited autosomal recessive inheritance	Sex-limited autosomal recessive inheritance	HP	0031362	http://purl.obolibrary.org/obo/HP_0031362
+Autosomal dominant inheritance	Autosomal dominant inheritance	HP	0000006	http://purl.obolibrary.org/obo/HP_0000006
+Autosomal recessive inheritance	Autosomal recessive inheritance	HP	0000007	http://purl.obolibrary.org/obo/HP_0000007
+X-linked inheritance	X-linked inheritance	HP	0001417	http://purl.obolibrary.org/obo/HP_0001417
+X-linked recessive inheritance	X-linked recessive inheritance	HP	0001419	http://purl.obolibrary.org/obo/HP_0001419
+X-linked dominant inheritance	X-linked dominant inheritance	HP	0001423	http://purl.obolibrary.org/obo/HP_0001423
+Heterogeneous	Heterogeneous	HP	0001425	http://purl.obolibrary.org/obo/HP_0001425
+Multifactorial inheritance	Multifactorial inheritance	HP	0001426	http://purl.obolibrary.org/obo/HP_0001426
+Mitochondrial inheritance	Mitochondrial inheritance	HP	0001427	http://purl.obolibrary.org/obo/HP_0001427
+Somatic mutation	Somatic mutation	HP	0001428	http://purl.obolibrary.org/obo/HP_0001428
+Somatic mosaicism	Somatic mosaicism	HP	0001442	http://purl.obolibrary.org/obo/HP_0001442
+Autosomal dominant somatic cell mutation	Autosomal dominant somatic cell mutation	HP	0001444	http://purl.obolibrary.org/obo/HP_0001444
+Y-linked inheritance	Y-linked inheritance	HP	0001450	http://purl.obolibrary.org/obo/HP_0001450
+Autosomal dominant contiguous gene syndrome	Autosomal dominant contiguous gene syndrome	HP	0001452	http://purl.obolibrary.org/obo/HP_0001452
+Contiguous gene syndrome	Contiguous gene syndrome	HP	0001466	http://purl.obolibrary.org/obo/HP_0001466
+Sex-limited autosomal dominant	Sex-limited autosomal dominant	HP	0001470	http://purl.obolibrary.org/obo/HP_0001470
+Male-limited autosomal dominant	Male-limited autosomal dominant	HP	0001475	http://purl.obolibrary.org/obo/HP_0001475
+Genetic anticipation	Genetic anticipation	HP	0003743	http://purl.obolibrary.org/obo/HP_0003743
+Genetic anticipation with paternal anticipation bias	Genetic anticipation with paternal anticipation bias	HP	0003744	http://purl.obolibrary.org/obo/HP_0003744
+Sporadic	Sporadic	HP	0003745	http://purl.obolibrary.org/obo/HP_0003745
+Gonosomal inheritance	Gonosomal inheritance	HP	0010985	http://purl.obolibrary.org/obo/HP_0010985
+Autosomal Recessive Compound Heterozygous	Autosomal Recessive Compound Heterozygous	SCDO	1000243	http://purl.obolibrary.org/obo/SCDO_1000243
+Polygenic inheritance	Polygenic inheritance	HP	0010982	http://purl.obolibrary.org/obo/HP_0010982
+Oligogenic inheritance	Oligogenic inheritance	HP	0010983	http://purl.obolibrary.org/obo/HP_0010983
+Digenic inheritance	Digenic inheritance	HP	0010984	http://purl.obolibrary.org/obo/HP_0010984
+Autosomal dominant inheritance with paternal imprinting	Autosomal dominant inheritance with paternal imprinting	HP	0012274	http://purl.obolibrary.org/obo/HP_0012274
+Autosomal dominant inheritance with maternal imprinting	Autosomal dominant inheritance with maternal imprinting	HP	0012275	http://purl.obolibrary.org/obo/HP_0012275
+Autosomal Recessive Homozygous	Autosomal Recessive Homozygous	SCDO	1000242	http://purl.obolibrary.org/obo/SCDO_1000242
+Autosomal dominant germline de novo mutation	Autosomal dominant germline de novo mutation	HP	0025352	http://purl.obolibrary.org/obo/HP_0025352
+Semidominant inheritance	Semidominant inheritance	HP	0032113	http://purl.obolibrary.org/obo/HP_0032113
+Uniparental disomy	Uniparental disomy	HP	0032382	http://purl.obolibrary.org/obo/HP_0032382
+Uniparental heterodisomy	Uniparental heterodisomy	HP	0032383	http://purl.obolibrary.org/obo/HP_0032383
+Uniparental isodisomy	Uniparental isodisomy	HP	0032384	http://purl.obolibrary.org/obo/HP_0032384
