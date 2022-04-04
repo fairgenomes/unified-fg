@@ -1,0 +1,13 @@
+name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+identifier	Identifier	A unique proper name or character sequence that identifies this particular metabolomics assay. (EDAM:data_1083 )	metabolomicanalyses	string	TRUE	TRUE	TRUE	FALSE	
+belongsmetabolomicmassspecassay	Belongs metabolomic mass spec assay	This metabolomic analysis is part of a metabolomic assay. (SIO:000068 )	metabolomicanalyses	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_metabolomicmassspecassays
+analysistype	Analysis type	Apply analytical methods to existing data of a specific type. (EDAM:operation_2945 )	metabolomicanalyses	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_metabolomicanalyses_analysistype
+workflowdefinition	Workflow definition	File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives. (SIO:000127 )	metabolomicanalyses	text	FALSE	FALSE	TRUE	TRUE	
+workflowengine	Workflow engine	The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow. (NCIT:C48293 )	metabolomicanalyses	string	FALSE	FALSE	TRUE	TRUE	
+workflowpublished	Workflow published	A printed or electronic work offered for distribution. (NCIT:C48471 )	metabolomicanalyses	string	FALSE	FALSE	TRUE	TRUE	
+containerizedby	Containerized by	The analysis has been boxed by a container engine such as Singularity or Docker. (NCIT:C43186 )	metabolomicanalyses	string	FALSE	FALSE	TRUE	TRUE	
+softwaretools	Software tools	A general term primarily used for digitally stored data such as computer programs and other kinds of information read and written by computers. (ERO:0000071 )	metabolomicanalyses	string	FALSE	FALSE	TRUE	TRUE	
+parameters	Parameters	Any factor that defines a system and determines (or limits) its performance. (NCIT:C44175 )	metabolomicanalyses	string	FALSE	FALSE	TRUE	TRUE	
+dataformatsstored	Data formats stored	Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available. (NCIT:C142494 )	metabolomicanalyses	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_metabolomicanalyses_dataformatsstored
+standardsused	Standards used	Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc. (SIO:000618 )	metabolomicanalyses	string	FALSE	FALSE	TRUE	TRUE	
+statisticalmethodsapplied	Statistical methods applied	A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc. (NCIT:C19044 )	metabolomicanalyses	string	FALSE	FALSE	TRUE	TRUE	

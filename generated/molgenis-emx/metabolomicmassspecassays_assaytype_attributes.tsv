@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	metabolomicmassspecassays_assaytype	Value (English)	String	TRUE	FALSE
+description	metabolomicmassspecassays_assaytype	Description (English)	Text	FALSE	TRUE
+codesystem	metabolomicmassspecassays_assaytype	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	metabolomicmassspecassays_assaytype	The code within the code system	String	FALSE	TRUE
+iri	metabolomicmassspecassays_assaytype	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

@@ -4,9 +4,8 @@ name	Name	A name that designates this study. (OMIABIS:0000037 )	studies	string	F
 acronym	Acronym	The non-unique initials or abbreviated name used for identification. (NCIT:C93495 )	studies	string	FALSE	FALSE	TRUE	TRUE	
 description	Description	A statement or piece of writing that provides details on this study. (OMIABIS:0000036, NCIT:C142704 )	studies	text	FALSE	FALSE	TRUE	TRUE	
 inclusioncriteria	Inclusion criteria	The conditions which, if met, make an person eligible for participation in this study. (OBI:0500027 )	studies	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_studies_inclusioncriteria
-principalinvestigator	Principal investigator	An investigator who is responsible for all aspects of the conduct of a study. (OMIABIS:0000100, NCIT:C19924 )	studies	string	FALSE	FALSE	TRUE	TRUE	
-contactperson	Contact person	Name of study contact. (NCIT:C176373 )	studies	string	FALSE	FALSE	TRUE	TRUE	
-contactemail	Contact email	An email address for the purpose of contacting the study contact person. (OMIABIS:0000035, NCIT:C176375 )	studies	string	FALSE	FALSE	TRUE	TRUE	
+principalinvestigator	Principal investigator	An investigator who is responsible for all aspects of the conduct of a study. (OMIABIS:0000100, NCIT:C19924 )	studies	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_person
+contactperson	Contact person	Name of study contact. (NCIT:C176373 )	studies	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_person
 studydesign	Study design	A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of this study. (OBI:0500000 )	studies	text	FALSE	FALSE	TRUE	TRUE	
 startdate	Start date	The date on which this study began. (NCIT:C69208 )	studies	date	FALSE	FALSE	TRUE	TRUE	
 completiondate	Completion date	The date on which the concluding information for this study is completed. Usually, this is when the last subject has a final visit, or the main analysis has finished, or any other protocol-defined completion date. (NCIT:C142702 )	studies	date	FALSE	FALSE	TRUE	TRUE	

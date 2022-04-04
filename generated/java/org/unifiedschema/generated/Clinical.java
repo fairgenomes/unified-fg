@@ -23,9 +23,9 @@ public class Clinical {
 	public String statusofdiagnosis;
 	public String firstcontact;
 	public String datediagnosisconfirmed;
-	public List<String> belongstodatarelease;
 	public List<String> familymembersaffected;
 	public List<String> familymemberssequenced;
 	public String functioning;
 	public String materialusedindiagnosis;
+	public List<String> partofdatarelease;
 }

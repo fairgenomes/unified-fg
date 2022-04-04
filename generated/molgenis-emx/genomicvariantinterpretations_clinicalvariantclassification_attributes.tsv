@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	genomicvariantinterpretations_clinicalvariantclassification	Value (English)	String	TRUE	FALSE
+description	genomicvariantinterpretations_clinicalvariantclassification	Description (English)	Text	FALSE	TRUE
+codesystem	genomicvariantinterpretations_clinicalvariantclassification	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	genomicvariantinterpretations_clinicalvariantclassification	The code within the code system	String	FALSE	TRUE
+iri	genomicvariantinterpretations_clinicalvariantclassification	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

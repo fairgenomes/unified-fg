@@ -1,6 +1,7 @@
 name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
 identifier	Identifier	A unique proper name or character sequence that identifies this particular metabolomics material processing. (NCIT:C132299 )	metabolomicmaterialprocessing	string	TRUE	TRUE	TRUE	FALSE	
 belongstomaterials	Belongs to materials	Reference to the source material from which this sample was prepared. (NCIT:C93400, NCIT:C25683 )	metabolomicmaterialprocessing	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_materials
+processingtype	Processing type	A planned process which results in physical changes in a specified input material. (OBI:0000094 )	metabolomicmaterialprocessing	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_metabolomicmaterialprocessing_processingtype
 sampleextraction	Sample extraction	The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it. (CHMO:0001577 )	metabolomicmaterialprocessing	string	FALSE	FALSE	TRUE	TRUE	
 filterused	Filter used	The filter used in separating of suspended solids from a liquid or gas, usually by forcing a carrier gas or liquid through a porous medium. (CHMO:0001640 )	metabolomicmaterialprocessing	string	FALSE	FALSE	TRUE	TRUE	
 passingrate	Passing rate	The volume of carrier gas passing through a chromatography column in unit time. (CHMO:0002751 )	metabolomicmaterialprocessing	int	FALSE	FALSE	TRUE	TRUE	

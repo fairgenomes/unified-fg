@@ -1,3 +1,9 @@
 name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
 id	id	One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing. (NCIT:C25364 )	datareleases	string	TRUE	TRUE	TRUE	FALSE	
 name	name	The words or language units by which a thing is known. (NCIT:C42614 )	datareleases	string	FALSE	FALSE	TRUE	TRUE	
+description	description	A written or verbal account, representation, statement, or explanation of something. (NCIT:C25365 )	datareleases	text	FALSE	FALSE	TRUE	TRUE	
+date	date	A date of database submission refers to the moment in time in which some information was submitted/received to a database system. (SIO:001083 )	datareleases	date	FALSE	FALSE	TRUE	TRUE	
+createdby	createdBy	Indicates the person or authoritative body who brought the item into existence. (NCIT:C42628 )	datareleases	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_person
+numberofentriesadded	numberOfEntriesAdded	Combined or joined to increase in size or quantity or scope. (NCIT:C45330 )	datareleases	int	FALSE	FALSE	TRUE	TRUE	
+datasource	dataSource	The person or authoritative body who provided the information. (NCIT:C16493 )	datareleases	string	FALSE	FALSE	TRUE	TRUE	
+releasecomments	releaseComments	A notation regarding the decisions, and/or clarification of any information pertaining to data management. (NCIT:C115505 )	datareleases	text	FALSE	FALSE	TRUE	TRUE	

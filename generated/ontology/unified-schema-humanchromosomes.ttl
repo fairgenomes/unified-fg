@@ -1,0 +1,225 @@
+@prefix fg: <https://w3id.org/fair-genomes/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sio: <https://semanticscience.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ordo: <http://www.orpha.net/ORDO/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_1 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 1";
+  dc:description "Chromosome 1";
+  rdfs:isDefinedBy obo:NCIT_C13204 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_20 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 20";
+  dc:description "Chromosome 20";
+  rdfs:isDefinedBy obo:NCIT_C13216 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_5 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 5";
+  dc:description "Chromosome 5";
+  rdfs:isDefinedBy obo:NCIT_C13221 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_7 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 7";
+  dc:description "Chromosome 7";
+  rdfs:isDefinedBy obo:NCIT_C13223 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_X a obo:NCIT_C13203;
+  rdfs:label "Chromosome X";
+  dc:description "Chromosome X";
+  rdfs:isDefinedBy obo:NCIT_C13285 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_Y a obo:NCIT_C13203;
+  rdfs:label "Chromosome Y";
+  dc:description "Chromosome Y";
+  rdfs:isDefinedBy obo:NCIT_C13286 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_10 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 10";
+  dc:description "Chromosome 10";
+  rdfs:isDefinedBy obo:NCIT_C13205 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_12 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 12";
+  dc:description "Chromosome 12";
+  rdfs:isDefinedBy obo:NCIT_C13207 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_13 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 13";
+  dc:description "Chromosome 13";
+  rdfs:isDefinedBy obo:NCIT_C13208 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_15 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 15";
+  dc:description "Chromosome 15";
+  rdfs:isDefinedBy obo:NCIT_C13210 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_17 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 17";
+  dc:description "Chromosome 17";
+  rdfs:isDefinedBy obo:NCIT_C13212 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_18 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 18";
+  dc:description "Chromosome 18";
+  rdfs:isDefinedBy obo:NCIT_C13213 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_19 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 19";
+  dc:description "Chromosome 19";
+  rdfs:isDefinedBy obo:NCIT_C13214 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_2 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 2";
+  dc:description "Chromosome 2";
+  rdfs:isDefinedBy obo:NCIT_C13215 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_21 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 21";
+  dc:description "Chromosome 21";
+  rdfs:isDefinedBy obo:NCIT_C13217 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_22 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 22";
+  dc:description "Chromosome 22";
+  rdfs:isDefinedBy obo:NCIT_C13218 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_4 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 4";
+  dc:description "Chromosome 4";
+  rdfs:isDefinedBy obo:NCIT_C13220 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_6 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 6";
+  dc:description "Chromosome 6";
+  rdfs:isDefinedBy obo:NCIT_C13222 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_8 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 8";
+  dc:description "Chromosome 8";
+  rdfs:isDefinedBy obo:NCIT_C13224 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_3 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 3";
+  dc:description "Chromosome 3";
+  rdfs:isDefinedBy obo:NCIT_C13219 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_11 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 11";
+  dc:description "Chromosome 11";
+  rdfs:isDefinedBy obo:NCIT_C13206 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_14 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 14";
+  dc:description "Chromosome 14";
+  rdfs:isDefinedBy obo:NCIT_C13209 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_16 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 16";
+  dc:description "Chromosome 16";
+  rdfs:isDefinedBy obo:NCIT_C13211 .
+
+fg:Genomic_variant_descriptions_Human_chromosome_Chromosome_9 a obo:NCIT_C13203;
+  rdfs:label "Chromosome 9";
+  dc:description "Chromosome 9";
+  rdfs:isDefinedBy obo:NCIT_C13225 .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_NoInformation_(NI,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "NoInformation (NI, nullflavor)";
+  dc:description "The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Invalid_(INV,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Invalid (INV, nullflavor)";
+  dc:description "The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Derived_(DER,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Derived (DER, nullflavor)";
+  dc:description "An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Other_(OTH,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Other (OTH, nullflavor)";
+  dc:description "The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Negative_infinity_(NINF,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Negative infinity (NINF, nullflavor)";
+  dc:description "Negative infinity of numbers.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NINF> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Positive_infinity_(PINF,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Positive infinity (PINF, nullflavor)";
+  dc:description "Positive infinity of numbers.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#PINF> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Un-encoded_(UNC,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Un-encoded (UNC, nullflavor)";
+  dc:description "The actual value has not yet been encoded within the approved value domain.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNC> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Masked_(MSK,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Masked (MSK, nullflavor)";
+  dc:description "There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons. There may be an alternate mechanism for gaining access to this information.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#MSK> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Not_applicable_(NA,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Not applicable (NA, nullflavor)";
+  dc:description "Known to have no proper value (e.g., last menstrual period for a male).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Unknown_(UNK,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Unknown (UNK, nullflavor)";
+  dc:description "A proper value is applicable, but not known.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Asked_but_unknown_(ASKU,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Asked but unknown (ASKU, nullflavor)";
+  dc:description "Information was sought but not found (e.g., patient was asked but didn't know)";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Temporarily_unavailable_(NAV,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Temporarily unavailable (NAV, nullflavor)";
+  dc:description "Information is not available at this time but it is expected that it will be available later.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAV> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Not_asked_(NASK,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Not asked (NASK, nullflavor)";
+  dc:description "This information has not been sought. (e.g., patient was not asked)";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NASK> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Not_available_(NAVU,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Not available (NAVU, nullflavor)";
+  dc:description "Information is not available at this time (with no expectation regarding whether it will or will not be available in the future).";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAVU> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Sufficient_quantity_(QS,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Sufficient quantity (QS, nullflavor)";
+  dc:description "The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material. e.g. 'Add 10mg of ingredient X, 50mg of ingredient Y, and sufficient quantity of water to 100mL.' The null flavor would be used to express the quantity of water.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#QS> .
+
+<https://w3id.org/fair-genomes/ontology/Genomic_variant_descriptions_Human_chromosome_Trace_(TRC,_nullflavor)>
+  a obo:NCIT_C13203;
+  rdfs:label "Trace (TRC, nullflavor)";
+  dc:description "The content is greater than zero, but too small to be quantified.";
+  rdfs:isDefinedBy <http://terminology.hl7.org/CodeSystem/v3-NullFlavor#TRC> .

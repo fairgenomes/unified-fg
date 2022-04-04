@@ -257,27 +257,92 @@ referencegenomeused,description,Text,,,,Description (English)
 referencegenomeused,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 referencegenomeused,code,String,,,,The code within the code system
 referencegenomeused,iri,String,,,,The Internationalized Resource Identifier for this term
+processingtype,,,,,,"A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations.",http://purl.obolibrary.org/obo/OBI_0000073
+processingtype,value,String,1,TRUE,,Value (English)
+processingtype,description,Text,,,,Description (English)
+processingtype,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+processingtype,code,String,,,,The code within the code system
+processingtype,iri,String,,,,The Internationalized Resource Identifier for this term
+assaytype,,,,,,"A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug.",http://purl.obolibrary.org/obo/NCIT_C60819
+assaytype,value,String,1,TRUE,,Value (English)
+assaytype,description,Text,,,,Description (English)
+assaytype,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+assaytype,code,String,,,,The code within the code system
+assaytype,iri,String,,,,The Internationalized Resource Identifier for this term
+analysistype,,,,,,"Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).",http://edamontology.org/data_0949
+analysistype,value,String,1,TRUE,,Value (English)
+analysistype,description,Text,,,,Description (English)
+analysistype,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+analysistype,code,String,,,,The code within the code system
+analysistype,iri,String,,,,The Internationalized Resource Identifier for this term
 dataformatsstored,,,,,,"Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).",http://edamontology.org/data_0949
 dataformatsstored,value,String,1,TRUE,,Value (English)
 dataformatsstored,description,Text,,,,Description (English)
 dataformatsstored,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 dataformatsstored,code,String,,,,The code within the code system
 dataformatsstored,iri,String,,,,The Internationalized Resource Identifier for this term
-position_assemblyid,,,,,,"Schema for a Beacon genomic variant entry.",http://purl.obolibrary.org/obo/SO_0001060
+humanchromosome,,,,,,"Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence.",http://purl.obolibrary.org/obo/NCIT_C17248
+humanchromosome,value,String,1,TRUE,,Value (English)
+humanchromosome,description,Text,,,,Description (English)
+humanchromosome,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+humanchromosome,code,String,,,,The code within the code system
+humanchromosome,iri,String,,,,The Internationalized Resource Identifier for this term
+position_assemblyid,,,,,,"Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence.",http://purl.obolibrary.org/obo/NCIT_C17248
 position_assemblyid,value,String,1,TRUE,,Value (English)
 position_assemblyid,description,Text,,,,Description (English)
 position_assemblyid,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
 position_assemblyid,code,String,,,,The code within the code system
 position_assemblyid,iri,String,,,,The Internationalized Resource Identifier for this term
+zygosity,,,,,,"Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment.",http://purl.obolibrary.org/obo/NCIT_C164404
+zygosity,value,String,1,TRUE,,Value (English)
+zygosity,description,Text,,,,Description (English)
+zygosity,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+zygosity,code,String,,,,The code within the code system
+zygosity,iri,String,,,,The Internationalized Resource Identifier for this term
+alleleorigin,,,,,,"Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment.",http://purl.obolibrary.org/obo/NCIT_C164404
+alleleorigin,value,String,1,TRUE,,Value (English)
+alleleorigin,description,Text,,,,Description (English)
+alleleorigin,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+alleleorigin,code,String,,,,The code within the code system
+alleleorigin,iri,String,,,,The Internationalized Resource Identifier for this term
+gene,,,,,,"In-context information that has been associated with genomic variants.",http://purl.obolibrary.org/obo/NCIT_C44272
+gene,value,String,1,TRUE,,Value (English)
+gene,description,Text,,,,Description (English)
+gene,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+gene,code,String,,,,The code within the code system
+gene,iri,String,,,,The Internationalized Resource Identifier for this term
+hgmd,,,,,,"In-context information that has been associated with genomic variants.",http://purl.obolibrary.org/obo/NCIT_C44272
+hgmd,value,String,1,TRUE,,Value (English)
+hgmd,description,Text,,,,Description (English)
+hgmd,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+hgmd,code,String,,,,The code within the code system
+hgmd,iri,String,,,,The Internationalized Resource Identifier for this term
+omiminheritance,,,,,,"In-context information that has been associated with genomic variants.",http://purl.obolibrary.org/obo/NCIT_C44272
+omiminheritance,value,String,1,TRUE,,Value (English)
+omiminheritance,description,Text,,,,Description (English)
+omiminheritance,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+omiminheritance,code,String,,,,The code within the code system
+omiminheritance,iri,String,,,,The Internationalized Resource Identifier for this term
+polyphen2prediction,,,,,,"In-context information that has been associated with genomic variants.",http://purl.obolibrary.org/obo/NCIT_C44272
+polyphen2prediction,value,String,1,TRUE,,Value (English)
+polyphen2prediction,description,Text,,,,Description (English)
+polyphen2prediction,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+polyphen2prediction,code,String,,,,The code within the code system
+polyphen2prediction,iri,String,,,,The Internationalized Resource Identifier for this term
+clinicalvariantclassification,,,,,,"The determination of the meaning of a variant in clinical context.",http://purl.obolibrary.org/obo/NCIT_C125009
+clinicalvariantclassification,value,String,1,TRUE,,Value (English)
+clinicalvariantclassification,description,Text,,,,Description (English)
+clinicalvariantclassification,codesystem,String,,,,The code system (e.g. ontology) this term belongs to
+clinicalvariantclassification,code,String,,,,The code within the code system
+clinicalvariantclassification,iri,String,,,,The Internationalized Resource Identifier for this term
 studies,,,,,,"A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts.",http://purl.obolibrary.org/obo/NCIT_C63536
 studies,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular study.",http://purl.obolibrary.org/obo/OMIABIS_0000006
 studies,name,string,,,,"A name that designates this study.",http://purl.obolibrary.org/obo/OMIABIS_0000037
 studies,acronym,string,,,,"The non-unique initials or abbreviated name used for identification.",http://purl.obolibrary.org/obo/NCIT_C93495
 studies,description,text,,,,"A statement or piece of writing that provides details on this study.",http://purl.obolibrary.org/obo/OMIABIS_0000036
 studies,inclusioncriteria,ref_array,,,inclusioncriteria,"The conditions which, if met, make an person eligible for participation in this study.",http://purl.obolibrary.org/obo/OBI_0500027
-studies,principalinvestigator,string,,,,"An investigator who is responsible for all aspects of the conduct of a study.",http://purl.obolibrary.org/obo/OMIABIS_0000100
-studies,contactperson,string,,,,"Name of study contact.",http://purl.obolibrary.org/obo/NCIT_C176373
-studies,contactemail,string,,,,"An email address for the purpose of contacting the study contact person.",http://purl.obolibrary.org/obo/OMIABIS_0000035
+studies,principalinvestigator,ref,,,person,"An investigator who is responsible for all aspects of the conduct of a study.",http://purl.obolibrary.org/obo/OMIABIS_0000100
+studies,contactperson,ref,,,person,"Name of study contact.",http://purl.obolibrary.org/obo/NCIT_C176373
 studies,studydesign,text,,,,"A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of this study.",http://purl.obolibrary.org/obo/OBI_0500000
 studies,startdate,date,,,,"The date on which this study began.",http://purl.obolibrary.org/obo/NCIT_C69208
 studies,completiondate,date,,,,"The date on which the concluding information for this study is completed. Usually, this is when the last subject has a final visit, or the main analysis has finished, or any other protocol-defined completion date.",http://purl.obolibrary.org/obo/NCIT_C142702
@@ -285,9 +350,23 @@ studies,currentstudystatus,ref_array,,,currentstudystatus,"The status of a study
 studies,numberofsubjectsenrolled,int,,,,"An integer specifying the quantity of study subjects enrolled in the study at the current time.",http://purl.obolibrary.org/obo/NCIT_C153145
 studies,numerofsamplescollected,int,,,,"An integer specifying the quantity of samples collected at the current time.",http://www.biomodels.net/kisao/KISAO#KISAO_0000326
 studies,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+person,,,,,,"researcher or contactperson involved in the study and/or affliated with organisation",http://purl.obolibrary.org/obo/NCIT_C25461
+person,identifier,string,1,TRUE,,"identifier",http://purl.obolibrary.org/obo/NCIT_C25364
+person,fullname,string,,,,"full name. E.g. Morris Swertz",http://purl.obolibrary.org/obo/GSSO_001755
+person,alternativeidentifier,string,,,,"alternative identifier. E.g. ORCID:1234",http://purl.obolibrary.org/obo/NCIT_C90353
+person,firstname,string,,,,"A word or group of words indicating a person's first (personal or given) name",http://purl.obolibrary.org/obo/NCIT_C40974
+person,middleinitials,string,,,,"middle initiatials. E.g. A.",http://purl.obolibrary.org/obo/NCIT_C166237
+person,lastname,string,,,,"last name. E.g. Swertz",http://purl.obolibrary.org/obo/NCIT_C40975
+person,email,string,,,,"email address. E.g. m.a.swertz@rug.nl",http://purl.obolibrary.org/obo/NCIT_C42775
 datareleases,,,,,,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 datareleases,id,string,1,TRUE,,"One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.",http://purl.obolibrary.org/obo/NCIT_C25364
 datareleases,name,string,,,,"The words or language units by which a thing is known.",http://purl.obolibrary.org/obo/NCIT_C42614
+datareleases,description,text,,,,"A written or verbal account, representation, statement, or explanation of something.",http://purl.obolibrary.org/obo/NCIT_C25365
+datareleases,date,date,,,,"A date of database submission refers to the moment in time in which some information was submitted/received to a database system.",http://semanticscience.org/resource/SIO_001083
+datareleases,createdby,ref,,,person,"Indicates the person or authoritative body who brought the item into existence.",http://purl.obolibrary.org/obo/NCIT_C42628
+datareleases,numberofentriesadded,int,,,,"Combined or joined to increase in size or quantity or scope.",http://purl.obolibrary.org/obo/NCIT_C45330
+datareleases,datasource,string,,,,"The person or authoritative body who provided the information.",http://purl.obolibrary.org/obo/NCIT_C16493
+datareleases,releasecomments,text,,,,"A notation regarding the decisions, and/or clarification of any information pertaining to data management.",http://purl.obolibrary.org/obo/NCIT_C115505
 subjects,,,,,,"Persons who are observed, analyzed, examined, investigated, experimented upon, or/and treated in the course of a particular study.",http://purl.obolibrary.org/obo/NCIT_C90492
 subjects,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.",http://purl.obolibrary.org/obo/NCIT_C164337
 subjects,alternativeidentifiers,string,,,,"A backup sequence of characters used to identify an entity.",http://purl.obolibrary.org/obo/NCIT_C90353
@@ -304,8 +383,7 @@ subjects,ageatdeath,int,,,,"The age at which death occurred.",http://purl.obolib
 subjects,dateofdeath,date,,,,"The calendar date of subject's death.",http://purl.obolibrary.org/obo/NCIT_C70810
 subjects,yearofdeath,int,,,,"The year in which an individual derived.",http://purl.obolibrary.org/obo/NCIT_C156426
 subjects,primaryaffiliatedinstitute,ref,,,primaryaffiliatedinstitute,"The most significant institute for medical consultation and/or study inclusion in context of the genetic disease of this person.",http://purl.obolibrary.org/obo/NCIT_C25412
-subjects,affiliatedinstitutecontactperson,string,,,,"A person acting as a channel for communication between groups or on behalf of a group.",http://purl.obolibrary.org/obo/NCIT_C25461
-subjects,affiliatedinstitutecontactemail,string,,,,"Email address of the contact person or organization",http://purl.obolibrary.org/obo/MS_1000589
+subjects,affiliatedinstitutecontactperson,ref,,,person,"A person acting as a channel for communication between groups or on behalf of a group.",http://purl.obolibrary.org/obo/NCIT_C25461
 subjects,resourcesinotherinstitutes,ref_array,,,resourcesinotherinstitutes,"Material or data related to this person that is not captured by this system though known to be available in other institutes such as biobanks or hospitals.",http://purl.obolibrary.org/obo/NCIT_C19012
 subjects,participatesinstudy,ref_array,,,studies,"Reference to the study or studies in which this person participates.",http://purl.obolibrary.org/obo/RO_0000056
 subjects,belongstofamily,string,,,,"A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption.",http://purl.obolibrary.org/obo/NCIT_C25173
@@ -316,8 +394,7 @@ subjects,belongswithtwin,bool,,,,"Either of two offspring born from the same pre
 subjects,firstvisitdate,date,,,,"The date for the first patient visit.",http://purl.obolibrary.org/obo/NCIT_C164021
 subjects,fetalstatus,bool,,,,"Any tissue from a fetus.",http://purl.obolibrary.org/obo/NCIT_C17730
 subjects,consanguinity,bool,,,,"Information on whether the patient is a child from two family members who are second cousins or closer.",http://purl.obolibrary.org/obo/OMIT_0004546
-subjects,belongstostudy,ref_array,,,studies,"Reference to the study or studies in which this person participates.",http://purl.obolibrary.org/obo/RO_0000056
-subjects,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+subjects,partofdatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 subjects,belongstocohort,ref_array,,,cohorts,"A group of individuals, identified by a common characteristic.",http://purl.obolibrary.org/obo/NCIT_C61512
 clinical,,,,,,"Findings and circumstances relating to the examination and treatment of a patient.",http://purl.obolibrary.org/obo/NCIT_C25398
 clinical,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular clinical examination.",http://purl.obolibrary.org/obo/NCIT_C87853
@@ -340,17 +417,16 @@ clinical,phenotypicdataavailable,ref_array,,,phenotypicdataavailable,"Types of p
 clinical,statusofdiagnosis,ref,,,statusofdiagnosis,"A condition or state at a particular time.",http://purl.obolibrary.org/obo/NCIT_C25688
 clinical,firstcontact,date,,,,"First contact of the patient with a specialised center in context of disease or study inclusion.",http://purl.bioontology.org/ontology/LNC/MTHU048806
 clinical,datediagnosisconfirmed,date,,,,"The particular day, month and year an event has happened or will happen.",http://purl.obolibrary.org/obo/NCIT_C25164
-clinical,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 clinical,familymembersaffected,ref_array,,,familymembersaffected,"Family members related by descent rather than by marriage or law who were diagnosed with the same condition as the individual who is the primary focus of investigation (i.e. the proband).",http://purl.obolibrary.org/obo/HP_0032320
 clinical,familymemberssequenced,ref_array,,,familymemberssequenced,"Family members related by descent rather than by marriage or law who were also tested by next-generation sequencing.",http://purl.obolibrary.org/obo/NCIT_C79916
 clinical,functioning,text,,,,"Patient's classification of functioning i.e. disability profile according to International Classification of Functioning and Disability (ICF).",http://purl.obolibrary.org/obo/NCIT_C21007
 clinical,materialusedindiagnosis,string,,,,"This diagnosis c.q. clinical examination is based on one or more sampled materials.",http://semanticscience.org/resource/SIO_000641
+clinical,partofdatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 materials,,,,,,"A natural substance derived from living organisms such as cells, tissues, proteins, and DNA.",http://purl.obolibrary.org/obo/NCIT_C43376
 materials,identifier,string,1,TRUE,,"Name or other identifier of an entry from a biosample database.",http://edamontology.org/data_3273
 materials,alternativeidentifiers,string,,,,"A backup sequence of characters used to identify an entity.",http://purl.obolibrary.org/obo/NCIT_C90353
-materials,collectedfromperson,ref,,,subjects,"Reference to the subject from whom this material was collected.",http://semanticscience.org/resource/SIO_000244
+materials,collectedfromsubject,ref,,,subjects,"Reference to the subject from whom this material was collected.",http://semanticscience.org/resource/SIO_000244
 materials,belongstorequest,string,,,,"A sequence of letters, numbers, or other characters that specifically identifies a particular order.",http://purl.obolibrary.org/obo/NCIT_C164567
-materials,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 materials,belongstodiagnosis,ref_array,,,clinical,"Reference to a diagnosis c.q. clinical examination of which this material may be a part of. There can be multiple diagnoses when a non-tumor material is reused as reference.",http://semanticscience.org/resource/SIO_000068
 materials,dateofrequest,date,,,,"The date on which the activity or entity was ordered.",http://purl.obolibrary.org/obo/NCIT_C164566
 materials,reasonforsampling,ref_array,,,reasonforsampling,"The explanation for why a test, measurement, or assessment is executed.",http://purl.obolibrary.org/obo/NCIT_C171003
@@ -371,6 +447,7 @@ materials,percentagetumorcells,decimal,,,,"The percentage of tumor cells compare
 materials,physicallocation,string,,,,"A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).",http://purl.obolibrary.org/obo/GAZ_00000448
 materials,analysesperformed,ref_array,,,analysesperformed,"Reports the existence of any analyses performed on this material other than genomics (e.g. transcriptomics, metabolomics, proteomics).",http://purl.obolibrary.org/obo/IAO_0000702
 materials,derivedfrom,string,,,,"Indicate if this material was produced from or related to another.",http://purl.obolibrary.org/obo/NCIT_C28355
+materials,partofdatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 samplingprotocols,,,,,,"Describes the procedure whereby biological samples for an experiment are sourced.",http://www.ebi.ac.uk/efo/EFO_0005518
 samplingprotocols,identifier,string,1,TRUE,,"One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.",http://purl.obolibrary.org/obo/NCIT_C25364
 samplingprotocols,name,string,,,,"The words or language units by which a thing is known.",http://purl.obolibrary.org/obo/NCIT_C42614
@@ -391,7 +468,7 @@ ngssamplepreparations,intendedinsertsize,int,,,,"In paired-end sequencing, the D
 ngssamplepreparations,intendedreadlength,int,,,,"The number of nucleotides intended to be ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process.",http://purl.obolibrary.org/obo/NCIT_C153362
 ngssamplepreparations,barcode,string,,,,"A machine-readable representation of information in a visual format on a surface.",http://purl.obolibrary.org/obo/NCIT_C43361
 ngssamplepreparations,belongstobatch,string,,,,"A quantity of people or things treated or regarded as a group, especially when subdivided from a larger group.",http://purl.obolibrary.org/obo/NCIT_C67073
-ngssamplepreparations,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+ngssamplepreparations,partofdatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 laboratoryprocedures,,,,,,"Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.",http://purl.obolibrary.org/obo/NCIT_C25294
 laboratoryprocedures,code,string,1,TRUE,,"A character or string that represents the short code name of the laboratory test.",http://purl.obolibrary.org/obo/NCIT_C83322
 laboratoryprocedures,test,string,,,,"A character or string that represents the full name of the laboratory assessment.",http://purl.obolibrary.org/obo/NCIT_C117142
@@ -415,7 +492,7 @@ sequencingruns,observedinsertsize,int,,,,"In paired-end sequencing, the DNA betw
 sequencingruns,percentageq30,decimal,,,,"Percentage of reads with a Phred quality score over 30, which indicates less than a 1/1000 chance that the base was called incorrectly.",http://purl.obolibrary.org/obo/GENEPIO_0000089
 sequencingruns,percentagetr20,decimal,,,,"Percentage of the target sequence on which 20 or more unique reads were successfully mapped.",https://w3id.org/fair-genomes/resource/FG_0000003
 sequencingruns,otherqualitymetrics,text,,,,"Other NGS quality control metrics, including but not limited to (i) sequencer metrics such as yield, error rate, density (K/mm2), cluster PF (%) and phas/prephas (%), (ii) alignment metrics such as QM insert size, GC content, QM duplicated reads (%), QM error rate, uniformity/evenness of coverage and maternal cell contamination, and (iii) variant call metrics such as number of SNVs/CNVs/SVs called, number of missense/nonsense variants, common variants (%), unique variants (%), gender match and trio inheritance check.",http://edamontology.org/data_3914
-sequencingruns,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+sequencingruns,partofdatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 files,,,,,,"A set of related records (either written or electronic) kept together.",http://purl.obolibrary.org/obo/NCIT_C42883
 files,filename,string,1,TRUE,,"The literal identifier for an electronic file.",http://purl.obolibrary.org/obo/NCIT_C171191
 files,producedbysequencing,ref_array,,,sequencingruns,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
@@ -430,19 +507,18 @@ files,md5checksum,string,,,,"A 32-character hexadecimal number that is computed 
 files,filestatus,ref,,,filestatus,"The condition for an electronic file relative to the current data or file processing step.",http://purl.obolibrary.org/obo/NCIT_C171193
 files,creationdate,date,,,,"The date a digital resource was created.",http://purl.obolibrary.org/obo/NCIT_C69199
 files,alternativeidentifiers,string,,,,"A backup sequence of characters used to identify an entity.",http://purl.obolibrary.org/obo/NCIT_C90353
-files,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+files,partofdatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 cohorts,,,,,,"A group of individuals, identified by a common characteristic.",http://purl.obolibrary.org/obo/NCIT_C61512
 cohorts,identifier,string,1,TRUE,,"One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.",http://purl.obolibrary.org/obo/NCIT_C25364
 cohorts,acronym,string,,,,"The non-unique initials or abbreviated name used for identification.",http://purl.obolibrary.org/obo/NCIT_C93495
 cohorts,name,string,,,,"The words or language units by which a thing is known.",http://purl.obolibrary.org/obo/NCIT_C42614
 cohorts,description,text,,,,"The description of the characteristics that define a cohort.",http://purl.obolibrary.org/obo/NCIT_C166209
 cohorts,principleinvestigator,string,,,,"The principle investigator or responsible person for this study.",http://purl.obolibrary.org/obo/OMIABIS_0000100
-cohorts,contactperson,string,,,,"A person acting as a channel for communication between groups or on behalf of a group.",http://purl.obolibrary.org/obo/NCIT_C25461
-cohorts,contactemail,string,,,,"An email address for the purpose of contacting the study contact person.",http://purl.obolibrary.org/obo/OMIABIS_0000035
+cohorts,contactperson,ref,,,person,"A person acting as a channel for communication between groups or on behalf of a group.",http://purl.obolibrary.org/obo/NCIT_C25461
 cohorts,sizeofcohort,int,,,,"A subset of a larger population, selected for investigation to draw conclusions or make estimates about the larger population.",http://purl.obolibrary.org/obo/NCIT_C53190
 signedconsent,,,,,,"Consent given by a patient to a surgical or medical procedure or participation in a study, examination or analysis after achieving an understanding of the relevant medical facts and the risks involved.",http://purl.obolibrary.org/obo/NCIT_C16735
 signedconsent,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular signed individual consent.",http://purl.obolibrary.org/obo/ICO_0000044
-signedconsent,belongstosubject,ref,,,subjects,"Reference to the person (i.e. subject) to whom this individual consent applies.",http://purl.obolibrary.org/obo/IAO_0000136
+signedconsent,belongstosubject,ref,,,subjects,"Reference to the subject to whom this individual consent applies.",http://purl.obolibrary.org/obo/IAO_0000136
 signedconsent,consentformused,ref,,,leafletandconsentform,"Reference to the informed consent form that was signed. Points to a particular instance of leaflet and consent form that usually exists as a record (i.e. a row) within the same database as this individual consent.",http://purl.obolibrary.org/obo/IAO_0000136
 signedconsent,collectedby,string,,,,"Indicates the person, group, or institution who performed the collection act.",http://purl.obolibrary.org/obo/NCIT_C45262
 signedconsent,signingdate,date,,,,"A date specification that designates when this individual consent form was signed.",http://purl.obolibrary.org/obo/ICO_0000036
@@ -455,7 +531,7 @@ signedconsent,datausemodifiers,ref_array,,,datausemodifiers,"Data use modifiers 
 signedconsent,datausespecification,text,,,,"Further specification of applied data use permissions and modifiers. For example, a list of countries in case of geographic restrictions or a list of diseases when restricted to disease-specific research.",http://semanticscience.org/resource/SIO_000090
 signedconsent,allowmatchmaker,bool,,,,"Permission is given for MatchMaking",http://purl.obolibrary.org/obo/NCIT_C54116
 signedconsent,allowrecontacting,ref_array,,,allowrecontacting,"The procedure of recontacting the patient for specified reasons. This means the patient agrees to be re-identifiable under those circumstances.",http://purl.obolibrary.org/obo/NCIT_C25737
-signedconsent,belongstodatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
+signedconsent,partofdatarelease,ref_array,,,datareleases,"The act of making data or other structured information accessible to the public or to the user group of a database.",http://purl.obolibrary.org/obo/NCIT_C172217
 leafletandconsentform,,,,,,"A document explaining all the relevant information to assist an individual in understanding the expectations and risks in making a decision about a procedure. This document is presented to and signed by the individual or guardian.",http://purl.obolibrary.org/obo/NCIT_C16468
 leafletandconsentform,leaflettitle,string,,,,"A title or name given to the leaflet that belongs to this consent form.",http://purl.org/dc/terms/title
 leafletandconsentform,leafletdate,date,,,,"A point or period of time associated with the publication of this leaflet that belongs to this consent form.",http://purl.org/dc/terms/date
@@ -481,52 +557,117 @@ ngsanalysis,wgsguidelinefollowed,string,,,,"Any followed systematic statement of
 metabolomicmaterialprocessing,,,,,,"A metabolomics material processing is a protocol application including material enrollments and biomaterial transformations.",http://purl.obolibrary.org/obo/OBI_0000073
 metabolomicmaterialprocessing,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular metabolomics material processing.",http://purl.obolibrary.org/obo/NCIT_C132299
 metabolomicmaterialprocessing,belongstomaterials,ref,,,materials,"Reference to the source material from which this sample was prepared.",http://purl.obolibrary.org/obo/NCIT_C93400
+metabolomicmaterialprocessing,processingtype,ref,,,processingtype,"A planned process which results in physical changes in a specified input material.",http://purl.obolibrary.org/obo/OBI_0000094
 metabolomicmaterialprocessing,sampleextraction,string,,,,"The transfer of a solute from a liquid phase to another immiscible or partially-miscible liquid phase in contact with it.",http://purl.obolibrary.org/obo/CHMO_0001577
 metabolomicmaterialprocessing,filterused,string,,,,"The filter used in separating of suspended solids from a liquid or gas, usually by forcing a carrier gas or liquid through a porous medium.",http://purl.obolibrary.org/obo/CHMO_0001640
 metabolomicmaterialprocessing,passingrate,int,,,,"The volume of carrier gas passing through a chromatography column in unit time.",http://purl.obolibrary.org/obo/CHMO_0002751
 metabolomicmaterialprocessing,specartridge,string,,,,"A sample preparation technique using a solid adsorbent contained most commonly in a cartridge device, or on a disk to adsorb select species from solution.",http://purl.obolibrary.org/obo/OMIT_0025161
 metabolomicmaterialprocessing,washingprotocol,text,,,,"Washing is a process by which a material entity acting as contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow.",http://purl.obolibrary.org/obo/OBI_0302888
-metabolomicassay,,,,,,"A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug.",http://purl.obolibrary.org/obo/NCIT_C60819
-metabolomicassay,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular metabolomics assay.",http://purl.obolibrary.org/obo/NCIT_C171266
-metabolomicassay,belongsmetabolomicmaterialprocessing,ref,,,metabolomicmaterialprocessing,"This metabolomic assay is part of a metabolomic material processing.",http://semanticscience.org/resource/SIO_000068
-metabolomicassay,inlet,string,,,,"A valve that controls the flow of fluids in through the wall of a chamber.",http://purl.obolibrary.org/obo/NCIT_C50251
-metabolomicassay,massspectrometer,string,,,,"A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra.",http://purl.obolibrary.org/obo/CHMO_0000982
-metabolomicassay,ionizationsource,string,,,,"A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis.",http://purl.obolibrary.org/obo/CHMO_0000960
-metabolomicassay,chromatographycolumn,string,,,,"A piece of apparatus that has the form of a tube with a diameter between 5 to 50 mm and hosts the stationary bed in chromatography.",http://purl.obolibrary.org/obo/CHMO_0000997
-metabolomicassay,phaseseparationprotocol,text,,,,"Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase.",http://purl.obolibrary.org/obo/CHMO_0002214
-metabolomicassay,massspecsourceconditions,string,,,,"Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition.",http://purl.obolibrary.org/obo/ZECO_0000104
-metabolomicanalysis,,,,,,"Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).",http://edamontology.org/data_0949
-metabolomicanalysis,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular metabolomics assay.",http://edamontology.org/data_1083
-metabolomicanalysis,belongsmetabolomicassay,ref,,,metabolomicassay,"This metabolomic analysis is part of a metabolomic assay.",http://semanticscience.org/resource/SIO_000068
-metabolomicanalysis,workflowdefinition,text,,,,"File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives.",http://semanticscience.org/resource/SIO_000127
-metabolomicanalysis,workflowengine,string,,,,"The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow.",http://purl.obolibrary.org/obo/NCIT_C48293
-metabolomicanalysis,workflowpublished,string,,,,"A printed or electronic work offered for distribution.",http://purl.obolibrary.org/obo/NCIT_C48471
-metabolomicanalysis,containerizedby,string,,,,"The analysis has been boxed by a container engine such as Singularity or Docker.",http://purl.obolibrary.org/obo/NCIT_C43186
-metabolomicanalysis,softwaretools,string,,,,"A general term primarily used for digitally stored data such as computer programs and other kinds of information read and written by computers.",http://purl.obolibrary.org/obo/ERO_0000071
-metabolomicanalysis,parameters,string,,,,"Any factor that defines a system and determines (or limits) its performance.",http://purl.obolibrary.org/obo/NCIT_C44175
-metabolomicanalysis,dataformatsstored,ref_array,,,dataformatsstored,"Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.",http://purl.obolibrary.org/obo/NCIT_C142494
-metabolomicanalysis,standardsused,string,,,,"Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc.",http://semanticscience.org/resource/SIO_000618
-metabolomicanalysis,statisticalmethodsapplied,string,,,,"A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc.",http://purl.obolibrary.org/obo/NCIT_C19044
-genomicvariation,,,,,,"Schema for a Beacon genomic variant entry.",http://purl.obolibrary.org/obo/SO_0001060
-genomicvariation,variantinternalid,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular variation.",http://purl.obolibrary.org/obo/NCIT_C164813
-genomicvariation,belongstosubject,ref,,,subjects,"An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.",http://purl.obolibrary.org/obo/NCIT_C142495
-genomicvariation,belongstomaterial,ref,,,materials,"Reference to the source material from which this sample was prepared.",http://purl.obolibrary.org/obo/NCIT_C93400
-genomicvariation,producedbysequencingrun,ref_array,,,sequencingruns,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
-genomicvariation,alternatebases,string,,,,"An allele that varies in it sequence from what is considered the reference or canonical sequence at that location.",http://purl.obolibrary.org/obo/GENO_0000002
-genomicvariation,referencebases,string,,,,"An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared.",http://purl.obolibrary.org/obo/GENO_0000152
-genomicvariation,varianttype,string,,,,"An attribute describing a type of variation inhering in a sequence feature or collection.",http://purl.obolibrary.org/obo/GENO_0000773
-genomicvariation,position_start,int,,,,"The starting position of a sequence feature or interval.",http://purl.obolibrary.org/obo/GENO_0000894
-genomicvariation,position_end,int,,,,"The ending position of a sequence feature or interval.",http://purl.obolibrary.org/obo/GENO_0000895
-genomicvariation,position_assemblyid,ref,,,position_assemblyid,"The specific build of the human genome used as reference for this variant.",http://edamontology.org/data_2340
-genomicvariation,position_refseqid,string,,,,"TODO unsure what is ment here - Refseq accession number of a transcript?",http://purl.obolibrary.org/obo/NCIT_C45335
-genomicvariation,identifiers_clinvarids,string,,,,"NCBI resource that aggregates information about genomic variation and its relationship to human health.",http://ensembl.org/glossary/ENSGLOSSARY_0000242
-genomicvariation,identifiers_genomichgvsid,string,,,,"HGVS genomic sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
-genomicvariation,identifiers_proteinhgvsids,string,,,,"HGVS protein sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
-genomicvariation,identifiers_transcripthgvsids,string,,,,"HGVS transcript sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
-genomicvariation,identifiers_variantalternativeids,string,,,,"A backup sequence of characters used to identify an entity.",http://purl.obolibrary.org/obo/NCIT_C90353
-genomicvariation,molecularattributes_aminoacidchanges,string,,,,"A variation in the amino acid sequence of a specific gene product.",http://purl.obolibrary.org/obo/NCIT_C97928
-genomicvariation,molecularattributes_geneids,string,,,,"A unique gene name within a specific repository, database, or collection.",http://purl.obolibrary.org/obo/NCIT_C48664
-genomicvariation,molecularattributes_genomicfeatures,string,,,,"A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)",http://purl.obolibrary.org/obo/GENO_0000481
-genomicvariation,molecularattributes_moleculareffects,string,,,,"The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps.",http://ensembl.org/glossary/ENSGLOSSARY_0000134
-genomicvariation,variantleveldata_clinicalinterpretations,string,,,,"The determination of the meaning of a clinical result.",http://purl.obolibrary.org/obo/NCIT_C125009
-genomicvariation,variantleveldata_phenotypiceffects,string,,,,"The likelihood of an entity to produce pathologic changes or disease.",http://purl.obolibrary.org/obo/NCIT_C168796
+metabolomicmassspecassays,,,,,,"A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug.",http://purl.obolibrary.org/obo/NCIT_C60819
+metabolomicmassspecassays,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular metabolomics assay.",http://purl.obolibrary.org/obo/NCIT_C171266
+metabolomicmassspecassays,belongsmetabolomicmaterialprocessing,ref,,,metabolomicmaterialprocessing,"This metabolomic assay is part of a metabolomic material processing.",http://semanticscience.org/resource/SIO_000068
+metabolomicmassspecassays,assaytype,ref,,,assaytype,"Spectrometry where the sample is converted into gaseous ions which are characterised by their mass-to-charge ratio and relative abundance.",http://purl.obolibrary.org/obo/CHMO_0000470
+metabolomicmassspecassays,inlet,string,,,,"A valve that controls the flow of fluids in through the wall of a chamber.",http://purl.obolibrary.org/obo/NCIT_C50251
+metabolomicmassspecassays,massspectrometer,string,,,,"A piece of apparatus that consists of at least an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra.",http://purl.obolibrary.org/obo/CHMO_0000982
+metabolomicmassspecassays,ionizationsource,string,,,,"A piece of apparatus that takes an analyte and generates ions which are passed to the rest of a mass spectrometer for analysis.",http://purl.obolibrary.org/obo/CHMO_0000960
+metabolomicmassspecassays,chromatographycolumn,string,,,,"A piece of apparatus that has the form of a tube with a diameter between 5 to 50 mm and hosts the stationary bed in chromatography.",http://purl.obolibrary.org/obo/CHMO_0000997
+metabolomicmassspecassays,phaseseparationprotocol,text,,,,"Any method for the synthesis of polymer membranes that involves the polymer transforming from the liquid phase of the cast solution to the solid phase.",http://purl.obolibrary.org/obo/CHMO_0002214
+metabolomicmassspecassays,massspecsourceconditions,string,,,,"Condition in which variables of the experiment are manipulated to determine the variables effect by comparing to a control condition.",http://purl.obolibrary.org/obo/ZECO_0000104
+metabolomicanalyses,,,,,,"Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself).",http://edamontology.org/data_0949
+metabolomicanalyses,identifier,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular metabolomics assay.",http://edamontology.org/data_1083
+metabolomicanalyses,belongsmetabolomicmassspecassay,ref,,,metabolomicmassspecassays,"This metabolomic analysis is part of a metabolomic assay.",http://semanticscience.org/resource/SIO_000068
+metabolomicanalyses,analysistype,ref,,,analysistype,"Apply analytical methods to existing data of a specific type.",http://edamontology.org/operation_2945
+metabolomicanalyses,workflowdefinition,text,,,,"File content or location that encapsulates the analysis workflow, i.e. a sequence of operations to achieve one or more objectives.",http://semanticscience.org/resource/SIO_000127
+metabolomicanalyses,workflowengine,string,,,,"The engine used to execute the workflow such as Papermill, Jupyter, Galaxy or Nextflow.",http://purl.obolibrary.org/obo/NCIT_C48293
+metabolomicanalyses,workflowpublished,string,,,,"A printed or electronic work offered for distribution.",http://purl.obolibrary.org/obo/NCIT_C48471
+metabolomicanalyses,containerizedby,string,,,,"The analysis has been boxed by a container engine such as Singularity or Docker.",http://purl.obolibrary.org/obo/NCIT_C43186
+metabolomicanalyses,softwaretools,string,,,,"A general term primarily used for digitally stored data such as computer programs and other kinds of information read and written by computers.",http://purl.obolibrary.org/obo/ERO_0000071
+metabolomicanalyses,parameters,string,,,,"Any factor that defines a system and determines (or limits) its performance.",http://purl.obolibrary.org/obo/NCIT_C44175
+metabolomicanalyses,dataformatsstored,ref_array,,,dataformatsstored,"Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.",http://purl.obolibrary.org/obo/NCIT_C142494
+metabolomicanalyses,standardsused,string,,,,"Any socially-agreed upon specifications used such as Common Workflow Language, mzML, ISA-TAB, FAIR Genomes, etc.",http://semanticscience.org/resource/SIO_000618
+metabolomicanalyses,statisticalmethodsapplied,string,,,,"A method of analyzing or representing statistical data or a procedure for calculating a statistic, such as principal component analysis, affinity propagation clustering, T-test, etc.",http://purl.obolibrary.org/obo/NCIT_C19044
+genomicvariantdescriptions,,,,,,"Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence.",http://purl.obolibrary.org/obo/NCIT_C17248
+genomicvariantdescriptions,variantinternalid,string,1,TRUE,,"A unique proper name or character sequence that identifies this particular variation.",http://purl.obolibrary.org/obo/NCIT_C164813
+genomicvariantdescriptions,belongstosubject,ref,,,subjects,"An individual who is the subject of personal data, persons to whom data refers, and from whom data are collected, processed, and stored.",http://purl.obolibrary.org/obo/NCIT_C142495
+genomicvariantdescriptions,belongstomaterial,ref,,,materials,"Reference to the source material from which this sample was prepared.",http://purl.obolibrary.org/obo/NCIT_C93400
+genomicvariantdescriptions,producedbysequencingrun,ref_array,,,sequencingruns,"A unique proper name or character sequence that identifies this particular nucleic acid sequencing assay.",http://purl.obolibrary.org/obo/NCIT_C171337
+genomicvariantdescriptions,alternatebases,string,,,,"An allele that varies in it sequence from what is considered the reference or canonical sequence at that location.",http://purl.obolibrary.org/obo/GENO_0000002
+genomicvariantdescriptions,referencebases,string,,,,"An attribute inhering in a feature that is designated to serve as a standard against which 'variant' versions of the same location are compared.",http://purl.obolibrary.org/obo/GENO_0000036
+genomicvariantdescriptions,humanchromosome,ref,,,humanchromosome,"A structure found in the nucleus of human cells that is comprised of a strand of linearized double-stranded DNA plus proteins that package the DNA in a condensed coil form and regulate chromosomal function.",http://purl.obolibrary.org/obo/NCIT_C13203
+genomicvariantdescriptions,varianttype,string,,,,"An attribute describing a type of variation inhering in a sequence feature or collection.",http://purl.obolibrary.org/obo/GENO_0000773
+genomicvariantdescriptions,position_start,int,,,,"The starting position of a sequence feature or interval.",http://purl.obolibrary.org/obo/GENO_0000894
+genomicvariantdescriptions,position_end,int,,,,"The ending position of a sequence feature or interval.",http://purl.obolibrary.org/obo/GENO_0000895
+genomicvariantdescriptions,position_assemblyid,ref,,,position_assemblyid,"The specific build of the human genome used as reference for this variant.",http://edamontology.org/data_2340
+genomicvariantdescriptions,position_refseqid,string,,,,"TODO unsure what is ment here - Refseq accession number of a transcript?",http://purl.obolibrary.org/obo/NCIT_C45335
+genomicvariantdescriptions,identifiers_clinvarids,string,,,,"NCBI resource that aggregates information about genomic variation and its relationship to human health.",http://ensembl.org/glossary/ENSGLOSSARY_0000242
+genomicvariantdescriptions,identifiers_genomichgvsid,string,,,,"HGVS genomic sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
+genomicvariantdescriptions,identifiers_proteinhgvsids,string,,,,"HGVS protein sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
+genomicvariantdescriptions,identifiers_transcripthgvsids,string,,,,"HGVS transcript sequence variant nomenclature",http://ensembl.org/glossary/ENSGLOSSARY_0000274
+genomicvariantdescriptions,identifiers_variantalternativeids,string,,,,"A backup sequence of characters used to identify an entity.",http://purl.obolibrary.org/obo/NCIT_C90353
+genomicvariantdescriptions,molecularattributes_aminoacidchanges,string,,,,"A variation in the amino acid sequence of a specific gene product.",http://purl.obolibrary.org/obo/NCIT_C97928
+genomicvariantdescriptions,molecularattributes_geneids,string,,,,"A unique gene name within a specific repository, database, or collection.",http://purl.obolibrary.org/obo/NCIT_C48664
+genomicvariantdescriptions,molecularattributes_genomicfeatures,string,,,,"A sequence feature (continuous extent of biological sequence) that is of genomic origin (i.e. carries sequence from the genome of a cell or organism)",http://purl.obolibrary.org/obo/GENO_0000481
+genomicvariantdescriptions,molecularattributes_moleculareffects,string,,,,"The effect that the variant has on each feature that it overlaps. A variant will have a consequence for each feature that it overlaps.",http://ensembl.org/glossary/ENSGLOSSARY_0000134
+genomicvariantdescriptions,variantleveldata_clinicalinterpretations,string,,,,"The determination of the meaning of a clinical result.",http://purl.obolibrary.org/obo/NCIT_C125009
+genomicvariantdescriptions,variantleveldata_phenotypiceffects,string,,,,"The likelihood of an entity to produce pathologic changes or disease.",http://purl.obolibrary.org/obo/NCIT_C168796
+genomicvariantobservations,,,,,,"Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment.",http://purl.obolibrary.org/obo/NCIT_C164404
+genomicvariantobservations,belongstogenomicvariantdescription,ref,,,genomicvariantdescriptions,"Belongs to genomic variant description",http://semanticscience.org/resource/SIO_000628
+genomicvariantobservations,allele1,string,,,,"One of a set of sequence features known to exist at a particular genomic location.",http://purl.obolibrary.org/obo/GENO_0000512
+genomicvariantobservations,allele2,string,,,,"One of a set of sequence features known to exist at a particular genomic location.",http://purl.obolibrary.org/obo/GENO_0000512
+genomicvariantobservations,zygosity,ref,,,zygosity,"The genetic condition of a zygote, especially with respect to its being a homozygote or a heterozygote.",http://purl.obolibrary.org/obo/NCIT_C45824
+genomicvariantobservations,maternalallele1,string,,,,"One of a set of sequence features known to exist at a particular genomic location.",http://purl.obolibrary.org/obo/GENO_0000878
+genomicvariantobservations,maternalallele2,string,,,,"One of a set of sequence features known to exist at a particular genomic location.",http://purl.obolibrary.org/obo/GENO_0000878
+genomicvariantobservations,motherreaddepth,int,,,,"Read depth of maternal allele",http://purl.obolibrary.org/obo/GENO_0000878
+genomicvariantobservations,motherallelefrequencyallele1,decimal,,,,"Frequency of maternal allele 1",http://purl.obolibrary.org/obo/GENO_0000878
+genomicvariantobservations,motherallelefrequencyallele2,decimal,,,,"Frequency of maternal allele 2",http://purl.obolibrary.org/obo/GENO_0000878
+genomicvariantobservations,motherallelicdepthallele1,int,,,,"Mother Allelic Depth Allele 1",http://purl.obolibrary.org/obo/GENO_0000878
+genomicvariantobservations,motherallelicdepthallele2,int,,,,"Mother Allelic Depth Allele 2",http://purl.obolibrary.org/obo/GENO_0000878
+genomicvariantobservations,paternalallele1,string,,,,"One of a set of sequence features known to exist at a particular genomic location.",http://purl.obolibrary.org/obo/GENO_0000879
+genomicvariantobservations,paternalallele2,string,,,,"One of a set of sequence features known to exist at a particular genomic location.",http://purl.obolibrary.org/obo/GENO_0000879
+genomicvariantobservations,fatherreaddepth,int,,,,"Father Read Depth",http://purl.obolibrary.org/obo/GENO_0000879
+genomicvariantobservations,fatherallelefrequencyallele1,decimal,,,,"Father Allele Frequency Allele 1",http://purl.obolibrary.org/obo/GENO_0000879
+genomicvariantobservations,fatherallelefrequencyallele2,decimal,,,,"Father Allele Frequency Allele 2",http://purl.obolibrary.org/obo/GENO_0000879
+genomicvariantobservations,fatherallelicdepthallele1,int,,,,"Father Allelic Depth Allele 1",http://purl.obolibrary.org/obo/GENO_0000879
+genomicvariantobservations,fatherallelicdepthallele2,int,,,,"Father Allelic Depth Allele 2",http://purl.obolibrary.org/obo/GENO_0000879
+genomicvariantobservations,alleleorigin,ref,,,alleleorigin,"A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell's genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent.",http://purl.obolibrary.org/obo/GENO_0000877
+genomicvariantannotations,,,,,,"In-context information that has been associated with genomic variants.",http://purl.obolibrary.org/obo/NCIT_C44272
+genomicvariantannotations,belongstogenomicvariantdescription,ref,,,genomicvariantdescriptions,"Belongs to genomic variant description",http://semanticscience.org/resource/SIO_000628
+genomicvariantannotations,transcript,string,,,,"The initial RNA molecule produced by transcription.",http://purl.obolibrary.org/obo/NCIT_C1936
+genomicvariantannotations,cdna,string,,,,"Single-stranded DNA that is complementary to messenger RNA or DNA that has been synthesized from messenger RNA by reverse transcriptase.",http://purl.obolibrary.org/obo/NCIT_C324
+genomicvariantannotations,protein,string,,,,"A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons. Proteins are fundamental genetically encoded components of living cells with specific structures and functions dictated by amino acid sequence.",http://purl.obolibrary.org/obo/NCIT_C17021
+genomicvariantannotations,gene,ref_array,,,gene,"A unique gene name within a specific repository, database, or collection.",http://purl.obolibrary.org/obo/NCIT_C16612
+genomicvariantannotations,exon,int,,,,"The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene.",http://purl.obolibrary.org/obo/NCIT_C13231
+genomicvariantannotations,variantcomment,text,,,,"A written explanation, observation or criticism added to textual material.",http://purl.obolibrary.org/obo/NCIT_C25393
+genomicvariantannotations,caddscore,decimal,,,,"CADD score",http://ensembl.org/glossary/ENSGLOSSARY_0000360
+genomicvariantannotations,gnomad,string,,,,"An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD.",http://ensembl.org/glossary/ENSGLOSSARY_0000238
+genomicvariantannotations,gnomadlink,string,,,,"Gnomad link",http://ensembl.org/glossary/ENSGLOSSARY_0000238
+genomicvariantannotations,hgmd,ref,,,hgmd,"HGMD",http://ensembl.org/glossary/ENSGLOSSARY_0000250
+genomicvariantannotations,hgmdlink,string,,,,"HGMD link",http://ensembl.org/glossary/ENSGLOSSARY_0000250
+genomicvariantannotations,phylopscore,decimal,,,,"Phylop score",http://purl.obolibrary.org/obo/VariO_0229
+genomicvariantannotations,omiminheritance,ref,,,omiminheritance,"Omim Inheritance",http://ensembl.org/glossary/ENSGLOSSARY_0000244
+genomicvariantannotations,omimmorbid,string,,,,"OMIM morbid",http://ensembl.org/glossary/ENSGLOSSARY_0000244
+genomicvariantannotations,clinvar,string,,,,"NCBI resource that aggregates information about genomic variation and its relationship to human health. Ensembl display clinical significance and phenotypes from ClinVar. https://www.ncbi.nlm.nih.gov/clinvar/",http://ensembl.org/glossary/ENSGLOSSARY_0000242
+genomicvariantannotations,pubmed,string,,,,"A web application from the National Library of Medicine (NLM). It provides a single query interface to over 15 million citations for biomedical articles back to the 1950's. These citations are from MEDLINE and additional life science journals. PubMed includes links to many sites providing full text articles and other related resources.",http://purl.obolibrary.org/obo/NCIT_C42881
+genomicvariantannotations,vkgl,string,,,,"VKGL",http://purl.obolibrary.org/obo/MAXO_0000698
+genomicvariantannotations,dbsnp,string,,,,"dbSNP",http://ensembl.org/glossary/ENSGLOSSARY_0000233
+genomicvariantannotations,polyphen2prediction,ref,,,polyphen2prediction,"Polyphen 2 prediction",http://purl.obolibrary.org/obo/VariO_0229
+genomicvariantannotations,mutationtaster,string,,,,"Mutation taster",http://purl.obolibrary.org/obo/VariO_0229
+genomicvariantinterpretations,,,,,,"The determination of the meaning of a variant in clinical context.",http://purl.obolibrary.org/obo/NCIT_C125009
+genomicvariantinterpretations,belongstogenomicvariantannotation,ref,,,genomicvariantannotations,"Belongs to genomic variant annotation",http://semanticscience.org/resource/SIO_000628
+genomicvariantinterpretations,belongstogenomicvariantobservation,ref,,,genomicvariantdescriptions,"Belongs to genomic variant observation",http://semanticscience.org/resource/SIO_000628
+genomicvariantinterpretations,panel,string,,,,"Gene panel",http://purl.obolibrary.org/obo/NCIT_C173599
+genomicvariantinterpretations,pipelineversion,string,,,,"Pipeline version",http://purl.obolibrary.org/obo/GENEPIO_0000152
+genomicvariantinterpretations,dateofanalysis,date,,,,"The particular day, month and year an event has happened or will happen.",http://purl.obolibrary.org/obo/NCIT_C25164
+genomicvariantinterpretations,pipelinename,string,,,,"Pipeline name",http://purl.obolibrary.org/obo/GENEPIO_0000151
+genomicvariantinterpretations,assessment,string,,,,"The final result of a determination of the value, significance, or extent of.",http://purl.obolibrary.org/obo/NCIT_C25217
+genomicvariantinterpretations,dateofassessment,date,,,,"The date (and time) on which an assessment is completed.",http://purl.obolibrary.org/obo/NCIT_C93511
+genomicvariantinterpretations,reviewedby,ref,,,person,"Indicates the person or authoritative body who appraised, evaluated, or analyzed the item.",http://purl.obolibrary.org/obo/NCIT_C42728
+genomicvariantinterpretations,assesmentlab,string,,,,"assesmentLab",http://purl.obolibrary.org/obo/NCIT_C37984
+genomicvariantinterpretations,curatedtext,text,,,,"Curated text",http://purl.obolibrary.org/obo/NCIT_C48292
+genomicvariantinterpretations,dateofcuration,date,,,,"A classification datum is a facet that classifies some entity.",http://purl.allotrope.org/ontologies/result#AFR_0001277
+genomicvariantinterpretations,curator,ref,,,person,"The person in charge of the care and superintendence of something, especially a collection.",http://purl.obolibrary.org/obo/NCIT_C69141
+genomicvariantinterpretations,clinicalvariantclassification,ref,,,clinicalvariantclassification,"Classify variants based on their potential effect on genes, especially functional effects on the expressed proteins.",http://edamontology.org/operation_3225
+genomicvariantinterpretations,vusplus,bool,,,,"VUS plus",http://purl.obolibrary.org/obo/NCIT_C94187
+genomicvariantinterpretations,classificationchanged,bool,,,,"Classification changed",http://edamontology.org/operation_3225
+genomicvariantinterpretations,modularpipeline,string,,,,"Modular pipeline",http://purl.obolibrary.org/obo/OBI_0001943
+genomicvariantinterpretations,urltoreport,string,,,,"A Uniform Resource Locator (URL)",http://edamontology.org/data_1052

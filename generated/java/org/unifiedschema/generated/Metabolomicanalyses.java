@@ -2,9 +2,10 @@ package org.unifiedschema.generated;
 
 import java.util.List;
 
-public class Metabolomicanalysis {
+public class Metabolomicanalyses {
 	public String identifier;
-	public String belongsmetabolomicassay;
+	public String belongsmetabolomicmassspecassay;
+	public String analysistype;
 	public String workflowdefinition;
 	public String workflowengine;
 	public String workflowpublished;

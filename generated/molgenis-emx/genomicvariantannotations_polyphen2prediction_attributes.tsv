@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	genomicvariantannotations_polyphen2prediction	Value (English)	String	TRUE	FALSE
+description	genomicvariantannotations_polyphen2prediction	Description (English)	Text	FALSE	TRUE
+codesystem	genomicvariantannotations_polyphen2prediction	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	genomicvariantannotations_polyphen2prediction	The code within the code system	String	FALSE	TRUE
+iri	genomicvariantannotations_polyphen2prediction	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

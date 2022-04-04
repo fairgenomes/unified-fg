@@ -17,5 +17,5 @@ public class Signedconsent {
 	public String datausespecification;
 	public boolean allowmatchmaker;
 	public List<String> allowrecontacting;
-	public List<String> belongstodatarelease;
+	public List<String> partofdatarelease;
 }

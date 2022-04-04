@@ -1,0 +1,50 @@
+value	description	codesystem	code	iri
+Sex-limited autosomal recessive inheritance	Sex-limited autosomal recessive inheritance	HP	0031362	http://purl.obolibrary.org/obo/HP_0031362
+Autosomal dominant inheritance	Autosomal dominant inheritance	HP	0000006	http://purl.obolibrary.org/obo/HP_0000006
+Autosomal recessive inheritance	Autosomal recessive inheritance	HP	0000007	http://purl.obolibrary.org/obo/HP_0000007
+X-linked inheritance	X-linked inheritance	HP	0001417	http://purl.obolibrary.org/obo/HP_0001417
+X-linked recessive inheritance	X-linked recessive inheritance	HP	0001419	http://purl.obolibrary.org/obo/HP_0001419
+X-linked dominant inheritance	X-linked dominant inheritance	HP	0001423	http://purl.obolibrary.org/obo/HP_0001423
+Heterogeneous	Heterogeneous	HP	0001425	http://purl.obolibrary.org/obo/HP_0001425
+Multifactorial inheritance	Multifactorial inheritance	HP	0001426	http://purl.obolibrary.org/obo/HP_0001426
+Mitochondrial inheritance	Mitochondrial inheritance	HP	0001427	http://purl.obolibrary.org/obo/HP_0001427
+Somatic mutation	Somatic mutation	HP	0001428	http://purl.obolibrary.org/obo/HP_0001428
+Somatic mosaicism	Somatic mosaicism	HP	0001442	http://purl.obolibrary.org/obo/HP_0001442
+Autosomal dominant somatic cell mutation	Autosomal dominant somatic cell mutation	HP	0001444	http://purl.obolibrary.org/obo/HP_0001444
+Y-linked inheritance	Y-linked inheritance	HP	0001450	http://purl.obolibrary.org/obo/HP_0001450
+Autosomal dominant contiguous gene syndrome	Autosomal dominant contiguous gene syndrome	HP	0001452	http://purl.obolibrary.org/obo/HP_0001452
+Contiguous gene syndrome	Contiguous gene syndrome	HP	0001466	http://purl.obolibrary.org/obo/HP_0001466
+Sex-limited autosomal dominant	Sex-limited autosomal dominant	HP	0001470	http://purl.obolibrary.org/obo/HP_0001470
+Male-limited autosomal dominant	Male-limited autosomal dominant	HP	0001475	http://purl.obolibrary.org/obo/HP_0001475
+Genetic anticipation	Genetic anticipation	HP	0003743	http://purl.obolibrary.org/obo/HP_0003743
+Genetic anticipation with paternal anticipation bias	Genetic anticipation with paternal anticipation bias	HP	0003744	http://purl.obolibrary.org/obo/HP_0003744
+Sporadic	Sporadic	HP	0003745	http://purl.obolibrary.org/obo/HP_0003745
+Gonosomal inheritance	Gonosomal inheritance	HP	0010985	http://purl.obolibrary.org/obo/HP_0010985
+Autosomal Recessive Compound Heterozygous	Autosomal Recessive Compound Heterozygous	SCDO	1000243	http://purl.obolibrary.org/obo/SCDO_1000243
+Polygenic inheritance	Polygenic inheritance	HP	0010982	http://purl.obolibrary.org/obo/HP_0010982
+Oligogenic inheritance	Oligogenic inheritance	HP	0010983	http://purl.obolibrary.org/obo/HP_0010983
+Digenic inheritance	Digenic inheritance	HP	0010984	http://purl.obolibrary.org/obo/HP_0010984
+Autosomal dominant inheritance with paternal imprinting	Autosomal dominant inheritance with paternal imprinting	HP	0012274	http://purl.obolibrary.org/obo/HP_0012274
+Autosomal dominant inheritance with maternal imprinting	Autosomal dominant inheritance with maternal imprinting	HP	0012275	http://purl.obolibrary.org/obo/HP_0012275
+Autosomal Recessive Homozygous	Autosomal Recessive Homozygous	SCDO	1000242	http://purl.obolibrary.org/obo/SCDO_1000242
+Autosomal dominant germline de novo mutation	Autosomal dominant germline de novo mutation	HP	0025352	http://purl.obolibrary.org/obo/HP_0025352
+Semidominant inheritance	Semidominant inheritance	HP	0032113	http://purl.obolibrary.org/obo/HP_0032113
+Uniparental disomy	Uniparental disomy	HP	0032382	http://purl.obolibrary.org/obo/HP_0032382
+Uniparental heterodisomy	Uniparental heterodisomy	HP	0032383	http://purl.obolibrary.org/obo/HP_0032383
+Uniparental isodisomy	Uniparental isodisomy	HP	0032384	http://purl.obolibrary.org/obo/HP_0032384
+NoInformation (NI, nullflavor)	The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.	HL7	NI	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI
+Invalid (INV, nullflavor)	The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.	HL7	INV	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV
+Derived (DER, nullflavor)	An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .	HL7	DER	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER
+Other (OTH, nullflavor)	The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).	HL7	OTH	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH
+Negative infinity (NINF, nullflavor)	Negative infinity of numbers.	HL7	NINF	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NINF
+Positive infinity (PINF, nullflavor)	Positive infinity of numbers.	HL7	PINF	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#PINF
+Un-encoded (UNC, nullflavor)	The actual value has not yet been encoded within the approved value domain.	HL7	UNC	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNC
+Masked (MSK, nullflavor)	There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons. There may be an alternate mechanism for gaining access to this information.	HL7	MSK	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#MSK
+Not applicable (NA, nullflavor)	Known to have no proper value (e.g., last menstrual period for a male).	HL7	NA	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA
+Unknown (UNK, nullflavor)	A proper value is applicable, but not known.	HL7	UNK	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
+Asked but unknown (ASKU, nullflavor)	Information was sought but not found (e.g., patient was asked but didn't know)	HL7	ASKU	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU
+Temporarily unavailable (NAV, nullflavor)	Information is not available at this time but it is expected that it will be available later.	HL7	NAV	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAV
+Not asked (NASK, nullflavor)	This information has not been sought. (e.g., patient was not asked)	HL7	NASK	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NASK
+Not available (NAVU, nullflavor)	Information is not available at this time (with no expectation regarding whether it will or will not be available in the future).	HL7	NAVU	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAVU
+Sufficient quantity (QS, nullflavor)	The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material. e.g. 'Add 10mg of ingredient X, 50mg of ingredient Y, and sufficient quantity of water to 100mL.' The null flavor would be used to express the quantity of water.	HL7	QS	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#QS
+Trace (TRC, nullflavor)	The content is greater than zero, but too small to be quantified.	HL7	TRC	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#TRC

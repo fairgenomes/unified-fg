@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	genomicvariantannotations_omiminheritance	Value (English)	String	TRUE	FALSE
+description	genomicvariantannotations_omiminheritance	Description (English)	Text	FALSE	TRUE
+codesystem	genomicvariantannotations_omiminheritance	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	genomicvariantannotations_omiminheritance	The code within the code system	String	FALSE	TRUE
+iri	genomicvariantannotations_omiminheritance	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

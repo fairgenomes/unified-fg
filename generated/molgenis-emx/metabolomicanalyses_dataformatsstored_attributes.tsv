@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	metabolomicanalyses_dataformatsstored	Value (English)	String	TRUE	FALSE
+description	metabolomicanalyses_dataformatsstored	Description (English)	Text	FALSE	TRUE
+codesystem	metabolomicanalyses_dataformatsstored	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	metabolomicanalyses_dataformatsstored	The code within the code system	String	FALSE	TRUE
+iri	metabolomicanalyses_dataformatsstored	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

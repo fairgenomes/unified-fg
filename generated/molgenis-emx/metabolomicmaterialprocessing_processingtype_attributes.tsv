@@ -1,0 +1,6 @@
+name	entity	label	dataType	idAttribute	nillable
+value	metabolomicmaterialprocessing_processingtype	Value (English)	String	TRUE	FALSE
+description	metabolomicmaterialprocessing_processingtype	Description (English)	Text	FALSE	TRUE
+codesystem	metabolomicmaterialprocessing_processingtype	The code system (e.g. ontology) this term belongs to	String	FALSE	TRUE
+code	metabolomicmaterialprocessing_processingtype	The code within the code system	String	FALSE	TRUE
+iri	metabolomicmaterialprocessing_processingtype	The Internationalized Resource Identifier for this term	String	FALSE	TRUE

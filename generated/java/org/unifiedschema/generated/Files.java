@@ -16,5 +16,5 @@ public class Files {
 	public String filestatus;
 	public String creationdate;
 	public String alternativeidentifiers;
-	public List<String> belongstodatarelease;
+	public List<String> partofdatarelease;
 }

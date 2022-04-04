@@ -5,9 +5,8 @@ import java.util.List;
 public class Materials {
 	public String identifier;
 	public String alternativeidentifiers;
-	public String collectedfromperson;
+	public String collectedfromsubject;
 	public String belongstorequest;
-	public List<String> belongstodatarelease;
 	public List<String> belongstodiagnosis;
 	public String dateofrequest;
 	public List<String> reasonforsampling;
@@ -28,4 +27,5 @@ public class Materials {
 	public String physicallocation;
 	public List<String> analysesperformed;
 	public String derivedfrom;
+	public List<String> partofdatarelease;
 }

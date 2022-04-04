@@ -1,0 +1,41 @@
+value	description	codesystem	code	iri
+Chromosome 1	Chromosome 1	NCIT	C13204	http://purl.obolibrary.org/obo/NCIT_C13204
+Chromosome 20	Chromosome 20	NCIT	C13216	http://purl.obolibrary.org/obo/NCIT_C13216
+Chromosome 5	Chromosome 5	NCIT	C13221	http://purl.obolibrary.org/obo/NCIT_C13221
+Chromosome 7	Chromosome 7	NCIT	C13223	http://purl.obolibrary.org/obo/NCIT_C13223
+Chromosome X	Chromosome X	NCIT	C13285	http://purl.obolibrary.org/obo/NCIT_C13285
+Chromosome Y	Chromosome Y	NCIT	C13286	http://purl.obolibrary.org/obo/NCIT_C13286
+Chromosome 10	Chromosome 10	NCIT	C13205	http://purl.obolibrary.org/obo/NCIT_C13205
+Chromosome 12	Chromosome 12	NCIT	C13207	http://purl.obolibrary.org/obo/NCIT_C13207
+Chromosome 13	Chromosome 13	NCIT	C13208	http://purl.obolibrary.org/obo/NCIT_C13208
+Chromosome 15	Chromosome 15	NCIT	C13210	http://purl.obolibrary.org/obo/NCIT_C13210
+Chromosome 17	Chromosome 17	NCIT	C13212	http://purl.obolibrary.org/obo/NCIT_C13212
+Chromosome 18	Chromosome 18	NCIT	C13213	http://purl.obolibrary.org/obo/NCIT_C13213
+Chromosome 19	Chromosome 19	NCIT	C13214	http://purl.obolibrary.org/obo/NCIT_C13214
+Chromosome 2	Chromosome 2	NCIT	C13215	http://purl.obolibrary.org/obo/NCIT_C13215
+Chromosome 21	Chromosome 21	NCIT	C13217	http://purl.obolibrary.org/obo/NCIT_C13217
+Chromosome 22	Chromosome 22	NCIT	C13218	http://purl.obolibrary.org/obo/NCIT_C13218
+Chromosome 4	Chromosome 4	NCIT	C13220	http://purl.obolibrary.org/obo/NCIT_C13220
+Chromosome 6	Chromosome 6	NCIT	C13222	http://purl.obolibrary.org/obo/NCIT_C13222
+Chromosome 8	Chromosome 8	NCIT	C13224	http://purl.obolibrary.org/obo/NCIT_C13224
+Chromosome 3	Chromosome 3	NCIT	C13219	http://purl.obolibrary.org/obo/NCIT_C13219
+Chromosome 11	Chromosome 11	NCIT	C13206	http://purl.obolibrary.org/obo/NCIT_C13206
+Chromosome 14	Chromosome 14	NCIT	C13209	http://purl.obolibrary.org/obo/NCIT_C13209
+Chromosome 16	Chromosome 16	NCIT	C13211	http://purl.obolibrary.org/obo/NCIT_C13211
+Chromosome 9	Chromosome 9	NCIT	C13225	http://purl.obolibrary.org/obo/NCIT_C13225
+NoInformation (NI, nullflavor)	The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value.	HL7	NI	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NI
+Invalid (INV, nullflavor)	The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable.	HL7	INV	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#INV
+Derived (DER, nullflavor)	An actual value may exist, but it must be derived from the provided information (usually an EXPR generic data type extension will be used to convey the derivation expression .	HL7	DER	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#DER
+Other (OTH, nullflavor)	The actual value is not a member of the set of permitted data values in the constrained value domain of a variable.The actual value is not a member of the set of permitted data values in the constrained value domain of a variable. (e.g., concept not provided by required code system).	HL7	OTH	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH
+Negative infinity (NINF, nullflavor)	Negative infinity of numbers.	HL7	NINF	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NINF
+Positive infinity (PINF, nullflavor)	Positive infinity of numbers.	HL7	PINF	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#PINF
+Un-encoded (UNC, nullflavor)	The actual value has not yet been encoded within the approved value domain.	HL7	UNC	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNC
+Masked (MSK, nullflavor)	There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons. There may be an alternate mechanism for gaining access to this information.	HL7	MSK	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#MSK
+Not applicable (NA, nullflavor)	Known to have no proper value (e.g., last menstrual period for a male).	HL7	NA	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NA
+Unknown (UNK, nullflavor)	A proper value is applicable, but not known.	HL7	UNK	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
+Asked but unknown (ASKU, nullflavor)	Information was sought but not found (e.g., patient was asked but didn't know)	HL7	ASKU	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU
+Temporarily unavailable (NAV, nullflavor)	Information is not available at this time but it is expected that it will be available later.	HL7	NAV	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAV
+Not asked (NASK, nullflavor)	This information has not been sought. (e.g., patient was not asked)	HL7	NASK	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NASK
+Not available (NAVU, nullflavor)	Information is not available at this time (with no expectation regarding whether it will or will not be available in the future).	HL7	NAVU	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#NAVU
+Sufficient quantity (QS, nullflavor)	The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material. e.g. 'Add 10mg of ingredient X, 50mg of ingredient Y, and sufficient quantity of water to 100mL.' The null flavor would be used to express the quantity of water.	HL7	QS	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#QS
+Trace (TRC, nullflavor)	The content is greater than zero, but too small to be quantified.	HL7	TRC	http://terminology.hl7.org/CodeSystem/v3-NullFlavor#TRC

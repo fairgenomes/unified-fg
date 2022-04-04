@@ -16,5 +16,5 @@ public class Ngssamplepreparations {
 	public int intendedreadlength;
 	public String barcode;
 	public String belongstobatch;
-	public List<String> belongstodatarelease;
+	public List<String> partofdatarelease;
 }
