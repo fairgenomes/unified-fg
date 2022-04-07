@@ -1813,6 +1813,12 @@ tables:
     tags: NCIT:C164404 [http://purl.obolibrary.org/obo/NCIT_C164404]
     columns:
 
+      - name: Identifier
+        description: A unique proper name or character sequence that identifies this particular genomic variant observation.
+        tags: NCIT:C93939 [http://purl.obolibrary.org/obo/NCIT_C93939]
+        dataType: identifier
+        example: todo
+
       - name: Belongs to genomic variant description
         dataType: xref
         reference: Genomic variant descriptions
@@ -1853,12 +1859,12 @@ tables:
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
 
       - name: Mother Allele Frequency Allele 1 # calculated from read count? "allelic ratio" ?
-        description: Frequency of maternal allele 1
+        description: Frequency of maternal allele 1 (not the population allele frequency, but the ratio between allele 1 and 2)
         dataType: decimal
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
 
       - name: Mother Allele Frequency Allele 2 # calculated from read count?
-        description: Frequency of maternal allele 2
+        description: Frequency of maternal allele 2 (not the population allele frequency, but the ratio between allele 1 and 2)
         tags: GENO:0000878 [http://purl.obolibrary.org/obo/GENO_0000878], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
 
@@ -1888,12 +1894,12 @@ tables:
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C155320 [http://purl.obolibrary.org/obo/NCIT_C155320]
 
       - name: Father Allele Frequency Allele 1
-        description: Father Allele Frequency Allele 1
+        description: Father Allele Frequency Allele 1 (not the population allele frequency, but the ratio between allele 1 and 2)
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
 
       - name: Father Allele Frequency Allele 2
-        description: Father Allele Frequency Allele 2
+        description: Father Allele Frequency Allele 2 (not the population allele frequency, but the ratio between allele 1 and 2)
         tags: GENO:0000879 [http://purl.obolibrary.org/obo/GENO_0000879], NCIT:C173545 [http://purl.obolibrary.org/obo/NCIT_C173545]
         dataType: decimal
 
@@ -1919,6 +1925,12 @@ tables:
     description: In-context information that has been associated with genomic variants.
     tags: NCIT:C44272 [http://purl.obolibrary.org/obo/NCIT_C44272]
     columns:
+
+      - name: Identifier
+        description: A unique proper name or character sequence that identifies this particular genomic variant annotation.
+        tags: EDAM:data_1078 [http://edamontology.org/data_1078]
+        dataType: identifier
+        example: todo
 
       - name: Belongs to genomic variant description
         dataType: xref
@@ -1956,6 +1968,25 @@ tables:
         description: The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene.
         dataType: integer
         tags: NCIT:C13231 [http://purl.obolibrary.org/obo/NCIT_C13231]
+
+      # in variantDB code is: Effect
+      # lookup contains two items: synonymous and non-synonymous
+      - name: Coding variant quality
+        description: An attribute of a coding genomic variant.
+        dataType: xref
+        reference: lookups/CodingVariantQuality.tsv
+        referenceTypeTag: SO:0001814 [http://purl.obolibrary.org/obo/SO_0001814]
+        tags: SO:0001814 [http://purl.obolibrary.org/obo/SO_0001814]
+
+      - name: Start chromosome band
+        description: The cytoband that contains the beginning of the range, expressed without the chromosome or arm designation.
+        dataType: integer
+        tags: NCIT:C164626 [http://purl.obolibrary.org/obo/NCIT_C164626]
+
+      - name: End chromosome band
+        description: The cytoband that contains the terminus of the range, expressed without the chromosome or arm designation.
+        dataType: integer
+        tags: NCIT:C164508 [http://purl.obolibrary.org/obo/NCIT_C164508]
 
       - name: Variant comment
         description: A written explanation, observation or criticism added to textual material.
@@ -2050,6 +2081,12 @@ tables:
     description: The determination of the meaning of a variant in clinical context.
     tags: NCIT:C125009 [http://purl.obolibrary.org/obo/NCIT_C125009]
     columns:
+
+      - name: Identifier
+        description: A unique proper name or character sequence that identifies this particular genomic variant interpretation.
+        tags: NCIT:C172253 [http://purl.obolibrary.org/obo/NCIT_C172253]
+        dataType: identifier
+        example: todo
 
       - name: Belongs to genomic variant annotation
         dataType: xref
