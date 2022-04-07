@@ -1,4 +1,5 @@
 name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+identifier	Identifier	A unique proper name or character sequence that identifies this particular genomic variant observation. (NCIT:C93939 )	genomicvariantobservations	string	TRUE	TRUE	TRUE	FALSE	
 belongstogenomicvariantdescription	Belongs to genomic variant description	Belongs to genomic variant description (SIO:000628, NCIT:C17248 )	genomicvariantobservations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantdescriptions
 allele1	Allele 1	One of a set of sequence features known to exist at a particular genomic location. (GENO:0000512 )	genomicvariantobservations	string	FALSE	FALSE	TRUE	TRUE	
 allele2	Allele 2	One of a set of sequence features known to exist at a particular genomic location. (GENO:0000512 )	genomicvariantobservations	string	FALSE	FALSE	TRUE	TRUE	
@@ -6,15 +7,15 @@ zygosity	Zygosity	The genetic condition of a zygote, especially with respect to 
 maternalallele1	Maternal allele 1	One of a set of sequence features known to exist at a particular genomic location. (GENO:0000878, GENO:0000512 )	genomicvariantobservations	string	FALSE	FALSE	TRUE	TRUE	
 maternalallele2	Maternal allele 2	One of a set of sequence features known to exist at a particular genomic location. (GENO:0000878, GENO:0000512 )	genomicvariantobservations	string	FALSE	FALSE	TRUE	TRUE	
 motherreaddepth	Mother Read Depth	Read depth of maternal allele (GENO:0000878, NCIT:C155320 )	genomicvariantobservations	int	FALSE	FALSE	TRUE	TRUE	
-motherallelefrequencyallele1	Mother Allele Frequency Allele 1	Frequency of maternal allele 1 (GENO:0000878, NCIT:C173545 )	genomicvariantobservations	decimal	FALSE	FALSE	TRUE	TRUE	
-motherallelefrequencyallele2	Mother Allele Frequency Allele 2	Frequency of maternal allele 2 (GENO:0000878, NCIT:C173545 )	genomicvariantobservations	decimal	FALSE	FALSE	TRUE	TRUE	
+motherallelefrequencyallele1	Mother Allele Frequency Allele 1	Frequency of maternal allele 1 (not the population allele frequency, but the ratio between allele 1 and 2) (GENO:0000878, NCIT:C173545 )	genomicvariantobservations	decimal	FALSE	FALSE	TRUE	TRUE	
+motherallelefrequencyallele2	Mother Allele Frequency Allele 2	Frequency of maternal allele 2 (not the population allele frequency, but the ratio between allele 1 and 2) (GENO:0000878, NCIT:C173545 )	genomicvariantobservations	decimal	FALSE	FALSE	TRUE	TRUE	
 motherallelicdepthallele1	Mother Allelic Depth Allele 1	Mother Allelic Depth Allele 1 (GENO:0000878, NCIT:C155320 )	genomicvariantobservations	int	FALSE	FALSE	TRUE	TRUE	
 motherallelicdepthallele2	Mother Allelic Depth Allele 2	Mother Allelic Depth Allele 2 (GENO:0000878, NCIT:C155320 )	genomicvariantobservations	int	FALSE	FALSE	TRUE	TRUE	
 paternalallele1	Paternal allele 1	One of a set of sequence features known to exist at a particular genomic location. (GENO:0000879, GENO:0000512 )	genomicvariantobservations	string	FALSE	FALSE	TRUE	TRUE	
 paternalallele2	Paternal allele 2	One of a set of sequence features known to exist at a particular genomic location. (GENO:0000879, GENO:0000512 )	genomicvariantobservations	string	FALSE	FALSE	TRUE	TRUE	
 fatherreaddepth	Father Read Depth	Father Read Depth (GENO:0000879, NCIT:C155320 )	genomicvariantobservations	int	FALSE	FALSE	TRUE	TRUE	
-fatherallelefrequencyallele1	Father Allele Frequency Allele 1	Father Allele Frequency Allele 1 (GENO:0000879, NCIT:C173545 )	genomicvariantobservations	decimal	FALSE	FALSE	TRUE	TRUE	
-fatherallelefrequencyallele2	Father Allele Frequency Allele 2	Father Allele Frequency Allele 2 (GENO:0000879, NCIT:C173545 )	genomicvariantobservations	decimal	FALSE	FALSE	TRUE	TRUE	
+fatherallelefrequencyallele1	Father Allele Frequency Allele 1	Father Allele Frequency Allele 1 (not the population allele frequency, but the ratio between allele 1 and 2) (GENO:0000879, NCIT:C173545 )	genomicvariantobservations	decimal	FALSE	FALSE	TRUE	TRUE	
+fatherallelefrequencyallele2	Father Allele Frequency Allele 2	Father Allele Frequency Allele 2 (not the population allele frequency, but the ratio between allele 1 and 2) (GENO:0000879, NCIT:C173545 )	genomicvariantobservations	decimal	FALSE	FALSE	TRUE	TRUE	
 fatherallelicdepthallele1	Father Allelic Depth Allele 1	Father Allelic Depth Allele 1 (GENO:0000879, NCIT:C155320 )	genomicvariantobservations	int	FALSE	FALSE	TRUE	TRUE	
 fatherallelicdepthallele2	Father Allelic Depth Allele 2	Father Allelic Depth Allele 2 (GENO:0000879, NCIT:C155320 )	genomicvariantobservations	int	FALSE	FALSE	TRUE	TRUE	
 alleleorigin	Allele origin	A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell's genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent. (GENO:0000877 )	genomicvariantobservations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantobservations_alleleorigin

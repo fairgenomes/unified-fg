@@ -1,6 +1,6 @@
 # Unified metadata schema
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __22 modules__ that contain __314 metadata elements__ and __121140 lookups__ in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of __22 modules__ that contain __320 metadata elements__ and __121142 lookups__ in total (excluding null flavors).
 
 ## Module overview
 
@@ -25,9 +25,9 @@ The unified semantic metadata schema to power reuse of NGS data in research and 
 | [Metabolomic mass spec assays](#module-metabolomic-mass-spec-assays) | A qualitative or quantitative analysis performed to determine the amount of a particular constituent in a sample or the biological or pharmacological properties of a drug. | [NCIT:C60819](http://purl.obolibrary.org/obo/NCIT_C60819)  | 9 |
 | [Metabolomic analyses](#module-metabolomic-analyses) | Basic information, annotation or documentation concerning a metabolomics analysis workflow (but not the workflow itself). | [EDAM:data_0949](http://edamontology.org/data_0949)  | 12 |
 | [Genomic variant descriptions](#module-genomic-variant-descriptions) | Description of difference(s) in the nucleotide sequence of a biologic entity relative to a reference sequence. | [NCIT:C17248](http://purl.obolibrary.org/obo/NCIT_C17248), [GENO:0000476](http://purl.obolibrary.org/obo/GENO_0000476)  | 23 |
-| [Genomic variant observations](#module-genomic-variant-observations) | Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment. | [NCIT:C164404](http://purl.obolibrary.org/obo/NCIT_C164404)  | 19 |
-| [Genomic variant annotations](#module-genomic-variant-annotations) | In-context information that has been associated with genomic variants. | [NCIT:C44272](http://purl.obolibrary.org/obo/NCIT_C44272)  | 21 |
-| [Genomic variant interpretations](#module-genomic-variant-interpretations) | The determination of the meaning of a variant in clinical context. | [NCIT:C125009](http://purl.obolibrary.org/obo/NCIT_C125009)  | 18 |
+| [Genomic variant observations](#module-genomic-variant-observations) | Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment. | [NCIT:C164404](http://purl.obolibrary.org/obo/NCIT_C164404)  | 20 |
+| [Genomic variant annotations](#module-genomic-variant-annotations) | In-context information that has been associated with genomic variants. | [NCIT:C44272](http://purl.obolibrary.org/obo/NCIT_C44272)  | 25 |
+| [Genomic variant interpretations](#module-genomic-variant-interpretations) | The determination of the meaning of a variant in clinical context. | [NCIT:C125009](http://purl.obolibrary.org/obo/NCIT_C125009)  | 19 |
 
 ## Module: Studies
 A detailed examination, analysis, or critical inspection of one or multiple subjects designed to discover facts. Ontology: [NCIT:C63536](http://purl.obolibrary.org/obo/NCIT_C63536) .
@@ -404,6 +404,7 @@ Observations of genomic variants in subjects and their relatives within the cont
 
 | Element | Description | Ontology | Values |
 |---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular genomic variant observation. | [NCIT:C93939](http://purl.obolibrary.org/obo/NCIT_C93939)  | identifier |
 | Belongs to genomic variant description | Belongs to genomic variant description | [SIO:000628](http://semanticscience.org/resource/SIO_000628), [NCIT:C17248](http://purl.obolibrary.org/obo/NCIT_C17248)  | Reference to instances of Genomic variant descriptions |
 | Allele 1 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
 | Allele 2 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
@@ -411,15 +412,15 @@ Observations of genomic variants in subjects and their relatives within the cont
 | Maternal allele 1 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
 | Maternal allele 2 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
 | Mother Read Depth | Read depth of maternal allele | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
-| Mother Allele Frequency Allele 1 | Frequency of maternal allele 1 | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
-| Mother Allele Frequency Allele 2 | Frequency of maternal allele 2 | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
+| Mother Allele Frequency Allele 1 | Frequency of maternal allele 1 (not the population allele frequency, but the ratio between allele 1 and 2) | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
+| Mother Allele Frequency Allele 2 | Frequency of maternal allele 2 (not the population allele frequency, but the ratio between allele 1 and 2) | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
 | Mother Allelic Depth Allele 1 | Mother Allelic Depth Allele 1 | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
 | Mother Allelic Depth Allele 2 | Mother Allelic Depth Allele 2 | [GENO:0000878](http://purl.obolibrary.org/obo/GENO_0000878), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
 | Paternal allele 1 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
 | Paternal allele 2 | One of a set of sequence features known to exist at a particular genomic location. | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)  | string |
 | Father Read Depth | Father Read Depth | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
-| Father Allele Frequency Allele 1 | Father Allele Frequency Allele 1 | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
-| Father Allele Frequency Allele 2 | Father Allele Frequency Allele 2 | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
+| Father Allele Frequency Allele 1 | Father Allele Frequency Allele 1 (not the population allele frequency, but the ratio between allele 1 and 2) | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
+| Father Allele Frequency Allele 2 | Father Allele Frequency Allele 2 (not the population allele frequency, but the ratio between allele 1 and 2) | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C173545](http://purl.obolibrary.org/obo/NCIT_C173545)  | decimal |
 | Father Allelic Depth Allele 1 | Father Allelic Depth Allele 1 | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
 | Father Allelic Depth Allele 2 | Father Allelic Depth Allele 2 | [GENO:0000879](http://purl.obolibrary.org/obo/GENO_0000879), [NCIT:C155320](http://purl.obolibrary.org/obo/NCIT_C155320)  | integer |
 | Allele origin | A quality inhering in an allele that describes its genetic origin (how it came to be part of a cell's genome), i.e. whether it occurred de novo through some spontaneous mutation event, or was inherited from a parent. | [GENO:0000877](http://purl.obolibrary.org/obo/GENO_0000877)  | [AlleleOrigin.tsv](../../lookups/AlleleOrigin.tsv) lookup (5 choices [of type](http://purl.obolibrary.org/obo/GENO_0000877)) |
@@ -429,12 +430,16 @@ In-context information that has been associated with genomic variants. Ontology:
 
 | Element | Description | Ontology | Values |
 |---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular genomic variant annotation. | [EDAM:data_1078](http://edamontology.org/data_1078)  | identifier |
 | Belongs to genomic variant description | Belongs to genomic variant description | [SIO:000628](http://semanticscience.org/resource/SIO_000628), [NCIT:C17248](http://purl.obolibrary.org/obo/NCIT_C17248)  | Reference to instances of Genomic variant descriptions |
 | Transcript | The initial RNA molecule produced by transcription. | [NCIT:C1936](http://purl.obolibrary.org/obo/NCIT_C1936)  | string |
 | Cdna | Single-stranded DNA that is complementary to messenger RNA or DNA that has been synthesized from messenger RNA by reverse transcriptase. | [NCIT:C324](http://purl.obolibrary.org/obo/NCIT_C324)  | string |
 | Protein | A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons. Proteins are fundamental genetically encoded components of living cells with specific structures and functions dictated by amino acid sequence. | [NCIT:C17021](http://purl.obolibrary.org/obo/NCIT_C17021)  | string |
 | Gene | A unique gene name within a specific repository, database, or collection. | [NCIT:C16612](http://purl.obolibrary.org/obo/NCIT_C16612)  | [Genes.tsv](../../lookups/Genes.tsv) lookup (19202 choices [of type](http://edamontology.org/data_2298)) |
 | Exon | The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene. | [NCIT:C13231](http://purl.obolibrary.org/obo/NCIT_C13231)  | integer |
+| Coding variant quality | An attribute of a coding genomic variant. | [SO:0001814](http://purl.obolibrary.org/obo/SO_0001814)  | [CodingVariantQuality.tsv](../../lookups/CodingVariantQuality.tsv) lookup (2 choices [of type](http://purl.obolibrary.org/obo/SO_0001814)) |
+| Start chromosome band | The cytoband that contains the beginning of the range, expressed without the chromosome or arm designation. | [NCIT:C164626](http://purl.obolibrary.org/obo/NCIT_C164626)  | integer |
+| End chromosome band | The cytoband that contains the terminus of the range, expressed without the chromosome or arm designation. | [NCIT:C164508](http://purl.obolibrary.org/obo/NCIT_C164508)  | integer |
 | Variant comment | A written explanation, observation or criticism added to textual material. | [NCIT:C25393](http://purl.obolibrary.org/obo/NCIT_C25393)  | text |
 | CADD score | CADD score | [ENSGLOSSARY:0000360](http://ensembl.org/glossary/ENSGLOSSARY_0000360)  | decimal |
 | Gnomad | An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD. | [ENSGLOSSARY:0000238](http://ensembl.org/glossary/ENSGLOSSARY_0000238)  | string |
@@ -456,6 +461,7 @@ The determination of the meaning of a variant in clinical context. Ontology: [NC
 
 | Element | Description | Ontology | Values |
 |---|---|---|---|
+| Identifier | A unique proper name or character sequence that identifies this particular genomic variant interpretation. | [NCIT:C172253](http://purl.obolibrary.org/obo/NCIT_C172253)  | identifier |
 | Belongs to genomic variant annotation | Belongs to genomic variant annotation | [SIO:000628](http://semanticscience.org/resource/SIO_000628), [NCIT:C44272](http://purl.obolibrary.org/obo/NCIT_C44272)  | Reference to instances of Genomic variant annotations |
 | Belongs to genomic variant observation | Belongs to genomic variant observation | [SIO:000628](http://semanticscience.org/resource/SIO_000628), [NCIT:C164404](http://purl.obolibrary.org/obo/NCIT_C164404)  | Reference to instances of Genomic variant descriptions |
 | Panel | Gene panel | [NCIT:C173599](http://purl.obolibrary.org/obo/NCIT_C173599)  | string |

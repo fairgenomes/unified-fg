@@ -3,6 +3,7 @@ package org.unifiedschema.generated;
 import java.util.List;
 
 public class Genomicvariantinterpretations {
+	public String identifier;
 	public String belongstogenomicvariantannotation;
 	public String belongstogenomicvariantobservation;
 	public String panel;

@@ -51,6 +51,7 @@ curl -X POST --data-binary @position_assemblyid.csv http://localhost:8080/unifie
 curl -X POST --data-binary @zygosity.csv http://localhost:8080/unifiedmodel/api/csv/zygosity
 curl -X POST --data-binary @alleleorigin.csv http://localhost:8080/unifiedmodel/api/csv/alleleorigin
 curl -X POST --data-binary @gene.csv http://localhost:8080/unifiedmodel/api/csv/gene
+curl -X POST --data-binary @codingvariantquality.csv http://localhost:8080/unifiedmodel/api/csv/codingvariantquality
 curl -X POST --data-binary @hgmd.csv http://localhost:8080/unifiedmodel/api/csv/hgmd
 curl -X POST --data-binary @omiminheritance.csv http://localhost:8080/unifiedmodel/api/csv/omiminheritance
 curl -X POST --data-binary @polyphen2prediction.csv http://localhost:8080/unifiedmodel/api/csv/polyphen2prediction
