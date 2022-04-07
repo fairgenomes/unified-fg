@@ -1722,6 +1722,12 @@ fg:Genomic_variant_observations a owl:Class;
   rdfs:label "Genomic variant observations";
   dc:description "Observations of genomic variants in subjects and their relatives within the context of a given study that represents a genetic assessment." .
 
+fg:Genomic_variant_observations_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Genomic_variant_observations;
+  rdfs:isDefinedBy obo:NCIT_C93939;
+  dc:description "A unique proper name or character sequence that identifies this particular genomic variant observation." .
+
 fg:Genomic_variant_observations_Belongs_to_genomic_variant_description a owl:ObjectProperty;
   rdfs:label "Belongs to genomic variant description";
   rdfs:domain fg:Genomic_variant_observations;
@@ -1769,13 +1775,13 @@ fg:Genomic_variant_observations_Mother_Allele_Frequency_Allele_1 a owl:DatatypeP
   rdfs:label "Mother Allele Frequency Allele 1";
   rdfs:domain fg:Genomic_variant_observations;
   rdfs:isDefinedBy obo:GENO_0000878, obo:NCIT_C173545;
-  dc:description "Frequency of maternal allele 1" .
+  dc:description "Frequency of maternal allele 1 (not the population allele frequency, but the ratio between allele 1 and 2)" .
 
 fg:Genomic_variant_observations_Mother_Allele_Frequency_Allele_2 a owl:DatatypeProperty;
   rdfs:label "Mother Allele Frequency Allele 2";
   rdfs:domain fg:Genomic_variant_observations;
   rdfs:isDefinedBy obo:GENO_0000878, obo:NCIT_C173545;
-  dc:description "Frequency of maternal allele 2" .
+  dc:description "Frequency of maternal allele 2 (not the population allele frequency, but the ratio between allele 1 and 2)" .
 
 fg:Genomic_variant_observations_Mother_Allelic_Depth_Allele_1 a owl:DatatypeProperty;
   rdfs:label "Mother Allelic Depth Allele 1";
@@ -1811,13 +1817,13 @@ fg:Genomic_variant_observations_Father_Allele_Frequency_Allele_1 a owl:DatatypeP
   rdfs:label "Father Allele Frequency Allele 1";
   rdfs:domain fg:Genomic_variant_observations;
   rdfs:isDefinedBy obo:GENO_0000879, obo:NCIT_C173545;
-  dc:description "Father Allele Frequency Allele 1" .
+  dc:description "Father Allele Frequency Allele 1 (not the population allele frequency, but the ratio between allele 1 and 2)" .
 
 fg:Genomic_variant_observations_Father_Allele_Frequency_Allele_2 a owl:DatatypeProperty;
   rdfs:label "Father Allele Frequency Allele 2";
   rdfs:domain fg:Genomic_variant_observations;
   rdfs:isDefinedBy obo:GENO_0000879, obo:NCIT_C173545;
-  dc:description "Father Allele Frequency Allele 2" .
+  dc:description "Father Allele Frequency Allele 2 (not the population allele frequency, but the ratio between allele 1 and 2)" .
 
 fg:Genomic_variant_observations_Father_Allelic_Depth_Allele_1 a owl:DatatypeProperty;
   rdfs:label "Father Allelic Depth Allele 1";
@@ -1842,6 +1848,12 @@ fg:Genomic_variant_annotations a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C44272;
   rdfs:label "Genomic variant annotations";
   dc:description "In-context information that has been associated with genomic variants." .
+
+fg:Genomic_variant_annotations_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy <http://edamontology.org/data_1078>;
+  dc:description "A unique proper name or character sequence that identifies this particular genomic variant annotation." .
 
 fg:Genomic_variant_annotations_Belongs_to_genomic_variant_description a owl:ObjectProperty;
   rdfs:label "Belongs to genomic variant description";
@@ -1879,6 +1891,25 @@ fg:Genomic_variant_annotations_Exon a owl:DatatypeProperty;
   rdfs:domain fg:Genomic_variant_annotations;
   rdfs:isDefinedBy obo:NCIT_C13231;
   dc:description "The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene." .
+
+fg:Genomic_variant_annotations_Coding_variant_quality a owl:ObjectProperty;
+  rdfs:label "Coding variant quality";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:SO_0001814;
+  dc:description "An attribute of a coding genomic variant.";
+  rdfs:range obo:SO_0001814 .
+
+fg:Genomic_variant_annotations_Start_chromosome_band a owl:DatatypeProperty;
+  rdfs:label "Start chromosome band";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C164626;
+  dc:description "The cytoband that contains the beginning of the range, expressed without the chromosome or arm designation." .
+
+fg:Genomic_variant_annotations_End_chromosome_band a owl:DatatypeProperty;
+  rdfs:label "End chromosome band";
+  rdfs:domain fg:Genomic_variant_annotations;
+  rdfs:isDefinedBy obo:NCIT_C164508;
+  dc:description "The cytoband that contains the terminus of the range, expressed without the chromosome or arm designation." .
 
 fg:Genomic_variant_annotations_Variant_comment a owl:DatatypeProperty;
   rdfs:label "Variant comment";
@@ -1977,6 +2008,12 @@ fg:Genomic_variant_interpretations a owl:Class;
   rdfs:isDefinedBy obo:NCIT_C125009;
   rdfs:label "Genomic variant interpretations";
   dc:description "The determination of the meaning of a variant in clinical context." .
+
+fg:Genomic_variant_interpretations_Identifier a owl:DatatypeProperty;
+  rdfs:label "Identifier";
+  rdfs:domain fg:Genomic_variant_interpretations;
+  rdfs:isDefinedBy obo:NCIT_C172253;
+  dc:description "A unique proper name or character sequence that identifies this particular genomic variant interpretation." .
 
 fg:Genomic_variant_interpretations_Belongs_to_genomic_variant_annotation a owl:ObjectProperty;
   rdfs:label "Belongs to genomic variant annotation";
@@ -2105,6 +2142,7 @@ fg:Genomic_variant_interpretations_Url_to_report a owl:DatatypeProperty;
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-datausepermissions.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-dataformats.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-genomeaccessions.ttl>,
+    <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-codingvariantquality.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-humanchromosomes.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-diagnosisconfirmationstatus.ttl>,
     <https://fairgenomes.github.io/unified-fg/generated/ontology/unified-schema-studystatus.ttl>,

@@ -1,4 +1,5 @@
 name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+identifier	Identifier	A unique proper name or character sequence that identifies this particular genomic variant interpretation. (NCIT:C172253 )	genomicvariantinterpretations	string	TRUE	TRUE	TRUE	FALSE	
 belongstogenomicvariantannotation	Belongs to genomic variant annotation	Belongs to genomic variant annotation (SIO:000628, NCIT:C44272 )	genomicvariantinterpretations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantannotations
 belongstogenomicvariantobservation	Belongs to genomic variant observation	Belongs to genomic variant observation (SIO:000628, NCIT:C164404 )	genomicvariantinterpretations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantdescriptions
 panel	Panel	Gene panel (NCIT:C173599 )	genomicvariantinterpretations	string	FALSE	FALSE	TRUE	TRUE	

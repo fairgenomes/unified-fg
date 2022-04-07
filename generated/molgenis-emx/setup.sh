@@ -51,6 +51,7 @@ mcmd import -p genomicvariantdescriptions_position_assemblyid_attributes.tsv --a
 mcmd import -p genomicvariantobservations_zygosity_attributes.tsv --as attributes --in unified-schema
 mcmd import -p genomicvariantobservations_alleleorigin_attributes.tsv --as attributes --in unified-schema
 mcmd import -p genomicvariantannotations_gene_attributes.tsv --as attributes --in unified-schema
+mcmd import -p genomicvariantannotations_codingvariantquality_attributes.tsv --as attributes --in unified-schema
 mcmd import -p genomicvariantannotations_hgmd_attributes.tsv --as attributes --in unified-schema
 mcmd import -p genomicvariantannotations_omiminheritance_attributes.tsv --as attributes --in unified-schema
 mcmd import -p genomicvariantannotations_polyphen2prediction_attributes.tsv --as attributes --in unified-schema
@@ -107,6 +108,7 @@ mcmd import -p genomicvariantdescriptions_position_assemblyid.tsv --as fair-geno
 mcmd import -p genomicvariantobservations_zygosity.tsv --as fair-genomes_genomicvariantobservations_zygosity --in unified-schema
 mcmd import -p genomicvariantobservations_alleleorigin.tsv --as fair-genomes_genomicvariantobservations_alleleorigin --in unified-schema
 mcmd import -p genomicvariantannotations_gene.tsv --as fair-genomes_genomicvariantannotations_gene --in unified-schema
+mcmd import -p genomicvariantannotations_codingvariantquality.tsv --as fair-genomes_genomicvariantannotations_codingvariantquality --in unified-schema
 mcmd import -p genomicvariantannotations_hgmd.tsv --as fair-genomes_genomicvariantannotations_hgmd --in unified-schema
 mcmd import -p genomicvariantannotations_omiminheritance.tsv --as fair-genomes_genomicvariantannotations_omiminheritance --in unified-schema
 mcmd import -p genomicvariantannotations_polyphen2prediction.tsv --as fair-genomes_genomicvariantannotations_polyphen2prediction --in unified-schema

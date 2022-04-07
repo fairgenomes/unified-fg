@@ -6,7 +6,7 @@
 \textbf{Unified metadata schema}
 \newline
 
-The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 22 modules that contain 314 metadata elements and 121140 lookups in total (excluding null flavors).
+The unified semantic metadata schema to power reuse of NGS data in research and healthcare. Version 0.1-SNAPSHOT, 2022-02-23. This model consists of 22 modules that contain 320 metadata elements and 121142 lookups in total (excluding null flavors).
 
 \begin{table}[htb]
 \begin{tabular}{lll}
@@ -31,9 +31,9 @@ Metabolomic material processing & OBI:0000073  & 8 \\
 Metabolomic mass spec assays & NCIT:C60819  & 9 \\
 Metabolomic analyses & EDAM:data\_0949  & 12 \\
 Genomic variant descriptions & NCIT:C17248, GENO:0000476  & 23 \\
-Genomic variant observations & NCIT:C164404  & 19 \\
-Genomic variant annotations & NCIT:C44272  & 21 \\
-Genomic variant interpretations & NCIT:C125009  & 18 \\
+Genomic variant observations & NCIT:C164404  & 20 \\
+Genomic variant annotations & NCIT:C44272  & 25 \\
+Genomic variant interpretations & NCIT:C125009  & 19 \\
 \hline
 \end{tabular}
 \caption[Module overview]{\label{table:table1} Unified metadata schema v0.1-SNAPSHOT overview of all modules.}
@@ -470,6 +470,7 @@ variantLevelData_phenotypicEffects & NCIT:C168796  & string \\
 \begin{tabular}{lll}
 Name & Ontology & Values \\
 \hline
+Identifier & NCIT:C93939  & identifier \\
 Belongs to genomic variant description & SIO:000628, NCIT:C17248  & Reference to Genomic variant descriptions \\
 Allele 1 & GENO:0000512  & string \\
 Allele 2 & GENO:0000512  & string \\
@@ -498,12 +499,16 @@ Allele origin & GENO:0000877  & AlleleOrigin.tsv lookup (5 choices) \\
 \begin{tabular}{lll}
 Name & Ontology & Values \\
 \hline
+Identifier & EDAM:data\_1078  & identifier \\
 Belongs to genomic variant description & SIO:000628, NCIT:C17248  & Reference to Genomic variant descriptions \\
 Transcript & NCIT:C1936  & string \\
 Cdna & NCIT:C324  & string \\
 Protein & NCIT:C17021  & string \\
 Gene & NCIT:C16612  & Genes.tsv lookup (19202 choices) \\
 Exon & NCIT:C13231  & integer \\
+Coding variant quality & SO:0001814  & CodingVariantQuality.tsv lookup (2 choices) \\
+Start chromosome band & NCIT:C164626  & integer \\
+End chromosome band & NCIT:C164508  & integer \\
 Variant comment & NCIT:C25393  & text \\
 CADD score & ENSGLOSSARY:0000360  & decimal \\
 Gnomad & ENSGLOSSARY:0000238  & string \\
@@ -528,6 +533,7 @@ Mutation taster & VariO:0229  & string \\
 \begin{tabular}{lll}
 Name & Ontology & Values \\
 \hline
+Identifier & NCIT:C172253  & identifier \\
 Belongs to genomic variant annotation & SIO:000628, NCIT:C44272  & Reference to Genomic variant annotations \\
 Belongs to genomic variant observation & SIO:000628, NCIT:C164404  & Reference to Genomic variant descriptions \\
 Panel & NCIT:C173599  & string \\

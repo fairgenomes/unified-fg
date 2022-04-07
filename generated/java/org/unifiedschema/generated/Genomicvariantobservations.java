@@ -3,6 +3,7 @@ package org.unifiedschema.generated;
 import java.util.List;
 
 public class Genomicvariantobservations {
+	public String identifier;
 	public String belongstogenomicvariantdescription;
 	public String allele1;
 	public String allele2;

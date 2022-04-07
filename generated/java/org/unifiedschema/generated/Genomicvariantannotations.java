@@ -3,12 +3,16 @@ package org.unifiedschema.generated;
 import java.util.List;
 
 public class Genomicvariantannotations {
+	public String identifier;
 	public String belongstogenomicvariantdescription;
 	public String transcript;
 	public String cdna;
 	public String protein;
 	public List<String> gene;
 	public int exon;
+	public String codingvariantquality;
+	public int startchromosomeband;
+	public int endchromosomeband;
 	public String variantcomment;
 	public double caddscore;
 	public String gnomad;

@@ -1,10 +1,14 @@
 name	label	description	entity	dataType	idAttribute	labelAttribute	visible	nillable	refEntity
+identifier	Identifier	A unique proper name or character sequence that identifies this particular genomic variant annotation. (EDAM:data_1078 )	genomicvariantannotations	string	TRUE	TRUE	TRUE	FALSE	
 belongstogenomicvariantdescription	Belongs to genomic variant description	Belongs to genomic variant description (SIO:000628, NCIT:C17248 )	genomicvariantannotations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantdescriptions
 transcript	Transcript	The initial RNA molecule produced by transcription. (NCIT:C1936 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
 cdna	Cdna	Single-stranded DNA that is complementary to messenger RNA or DNA that has been synthesized from messenger RNA by reverse transcriptase. (NCIT:C324 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
 protein	Protein	A group of complex organic macromolecules composed of one or more chains (linear polymers) of alpha-L-amino acids linked by peptide bonds and ranging in size from a few thousand to over 1 million Daltons. Proteins are fundamental genetically encoded components of living cells with specific structures and functions dictated by amino acid sequence. (NCIT:C17021 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
 gene	Gene	A unique gene name within a specific repository, database, or collection. (NCIT:C16612 )	genomicvariantannotations	mref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantannotations_gene
 exon	Exon	The sequences of a gene that are present in the final, mature, spliced messenger RNA molecule from that gene. (NCIT:C13231 )	genomicvariantannotations	int	FALSE	FALSE	TRUE	TRUE	
+codingvariantquality	Coding variant quality	An attribute of a coding genomic variant. (SO:0001814 )	genomicvariantannotations	xref	FALSE	FALSE	TRUE	TRUE	unified-schema_genomicvariantannotations_codingvariantquality
+startchromosomeband	Start chromosome band	The cytoband that contains the beginning of the range, expressed without the chromosome or arm designation. (NCIT:C164626 )	genomicvariantannotations	int	FALSE	FALSE	TRUE	TRUE	
+endchromosomeband	End chromosome band	The cytoband that contains the terminus of the range, expressed without the chromosome or arm designation. (NCIT:C164508 )	genomicvariantannotations	int	FALSE	FALSE	TRUE	TRUE	
 variantcomment	Variant comment	A written explanation, observation or criticism added to textual material. (NCIT:C25393 )	genomicvariantannotations	text	FALSE	FALSE	TRUE	TRUE	
 caddscore	CADD score	CADD score (ENSGLOSSARY:0000360 )	genomicvariantannotations	decimal	FALSE	FALSE	TRUE	TRUE	
 gnomad	Gnomad	An aggregation of publicly available whole genome and whole exome variant calling experiments in human. GnomAD was previously known as ExAC, when it contained only exome data. Ensembl display population frequencies from gnomAD. (ENSGLOSSARY:0000238 )	genomicvariantannotations	string	FALSE	FALSE	TRUE	TRUE	
