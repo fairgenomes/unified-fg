@@ -83,6 +83,7 @@ public class YamlModel {
             {
                 throw new Exception("Table name too long, " + m.name.length() + " characters where 31 is allowed. Offending table name: '" + m.name +"'");
             }
+            boolean tableHasIdentifier = false;
             for(Column e : m.columns)
             {
                 if(e.description == null){
@@ -92,11 +93,18 @@ public class YamlModel {
                     throw new Exception("Column name must start with a letter, followed by letters,\n" +
                             "     * underscores, a space or numbers, i.e. [a-zA-Z][a-zA-Z0-9_\\s]*. Offending column name: '" + e.name +"'");
                 }
+                if(e.dataType.equals(DataType.identifier.toString()))
+                {
+                    tableHasIdentifier = true;
+                }
                 // does not apply to colum names?
 //                if(e.name.length() > 31)
 //                {
 //                    throw new Exception("Column name too long, " + e.name.length() + " characters where 31 is allowed. Offending column name: '" + e.name +"'");
 //                }
+            }
+            if(!tableHasIdentifier){
+                throw new Exception("Table " + m.name + " does not have an identifier");
             }
         }
     }
