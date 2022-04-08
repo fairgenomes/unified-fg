@@ -1,0 +1,3 @@
+value	description	codesystem	code	iri
+synonymous	A variant that does not lead to any change in the amino acid sequence.	SO	0001815	http://purl.obolibrary.org/obo/SO_0001815
+non_synonymous	A variant that leads to the change of an amino acid within the protein.	SO	0001816	http://purl.obolibrary.org/obo/SO_0001816
