@@ -880,12 +880,14 @@ tables:
         description: Any procedure that involves testing or manipulating a sample of blood, urine, or other body substance in a laboratory setting.
         tags: NCIT:C25294 [http://purl.obolibrary.org/obo/NCIT_C25294]
         example: LP2558
+        profile: COSAS
 
       - name: Belongs to request
         description: A sequence of letters, numbers, or other characters that specifically identifies a particular order.
         tags: NCIT:C164567 [http://purl.obolibrary.org/obo/NCIT_C164567]
         dataType: string
         example: REQ693264
+        profile: COSAS
 
       - name: Input amount
         dataType: integer
@@ -893,6 +895,7 @@ tables:
         tags: AFRL:0000010 [http://purl.allotrope.org/ontologies/role#AFRL_0000010]
         unit: UO:0000024 [http://purl.obolibrary.org/obo/UO_0000024]
         example: 200
+        profile: FAIR Genomes
 
       - name: Library preparation kit
         dataType: xref
@@ -901,12 +904,14 @@ tables:
         description: Pre-filled, ready-to-use reagent cartridges intented to improve chemistry, cluster density and read length as well as improve quality (Q) scores for this sample. Reagent components are encoded to interact with the sequencing system to validate compatibility with user-defined applications.
         tags: GENEPIO:0000085 [http://purl.obolibrary.org/obo/GENEPIO_0000085]
         example: Illumina TruSeq DNA PCR-Free
+        profile: FAIR Genomes, COSAS
 
       - name: PCR free
         dataType: bool
         description: Indicates whether a polymerase chain reaction (PCR) was used to prepare this sample. PCR is a method for amplifying a DNA base sequence using multiple rounds of heat denaturation of the DNA and annealing of oligonucleotide primers complementary to flanking regions in the presence of a heat-stable polymerase.
         tags: NCIT:C17003 [http://purl.obolibrary.org/obo/NCIT_C17003]
         example: true
+        profile: FAIR Genomes, COSAS
 
       - name: Target enrichment kit
         dataType: xref
@@ -1730,11 +1735,17 @@ tables:
         description: The starting position of a sequence feature or interval.
         tags: GENO:0000894 [http://purl.obolibrary.org/obo/GENO_0000894]
         dataType: integer #long?
+        profile: BeaconV2, COSAS
 
       - name: position_end
         description: The ending position of a sequence feature or interval.
         tags: GENO:0000895 [http://purl.obolibrary.org/obo/GENO_0000895]
         dataType: integer #long?
+        profile: BeaconV2, COSAS
+
+        # todo: type of SV: deletion / insertion / dupli / translocations Lookup
+        # todo: repeat expansion dup number?
+        # nr of affected chrom in FISH ?
 
       - name: position_assemblyId # Genetic reference sequence, referenceGenomeUsed
         # COMMENT: can this not be moved to the variant calling step?

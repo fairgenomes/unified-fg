@@ -21,6 +21,7 @@ public class Column {
     public String broadMatch;
     public String narrowMatch;
     public String example;
+    public String profile;
 
     /*
     Variables that may be loaded afterwards
