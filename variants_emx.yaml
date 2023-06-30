@@ -153,7 +153,9 @@ entities:
       - name: Genetic reference sequence
         description: A published genetic sequence that is used as a reference sequence against which other sequences are compared. 
         tags: http://purl.obolibrary.org/obo/NCIT_C164388
-      
+
+      # "genotype information 'C57BL/6J Hnf1a+/-' in this case, Hnf1a+/- is the allele information"
+      # probably, this better fits in Clinical or Subject
       - name: Allele information
         description: a genetic alteration information that about one of two or more alternative forms of a gene or marker sequence and differing from other alleles at one or more mutational sites based on sequence. Polymorphisms are included in this definition.
         dataType: xref
@@ -311,7 +313,7 @@ entities:
         description: A set of recomendations for variant naming. The nomenclature describes the change a variant allele has on a named (genomic, transcript or protein) sequence. Can be used as an input for the VEP and displayed for known variants. http://varnomen.hgvs.org/
         tags: http://ensembl.org/glossary/ENSGLOSSARY_0000274
         
-      # ???
+      # ??? example: Hnf1a+/- --> wont include, should make additional Annotation records
       - name: Other transcriptions
       
       - name: Gene identifier
@@ -587,6 +589,7 @@ entities:
         description: A unique symbol that establishes identity of the resource.
 
   # I'm not sure this is the correct name/tag
+  # --> cant include because of all indel possibilities
   - name: Nucleobase
     tags: http://purl.obolibrary.org/obo/RNAO_0000017
 

@@ -1,0 +1,33 @@
+source: unified-model.yaml
+name: DEB Register
+description: DEB Register unified schema profile
+todo: fair data point velden zodat je meteen FDP hebt ;D
+authors:
+  - name: Peter C. van den Akker
+    email: p.c.van.den.akker@umcg.nl
+    orcid: 0000-0002-3734-753X
+  - name: Katarzyna Wertheim
+    email: katarzyna.wertheim@imid.med.pl
+    orcid: 0000-0001-9911-3811
+  - name: David C. Ruvolo
+    email: d.c.ruvolo@umcg.nl
+    orcid: 0000-0002-5745-5298
+  - name: K. Joeri van der Velde
+    email: k.j.van.der.velde@umcg.nl
+    orcid: 0000-0002-0934-8375
+  - name: Morris A. Swertz
+    email: m.a.swertz@umcg.nl
+    orcid: 0000-0002-0979-3401
+copyright:
+  holder: University Medical Center Groningen
+  years: 2022
+license:
+  name: Attribution 4.0 International (CC BY 4.0)
+  url: https://creativecommons.org/licenses/by/4.0/
+includes:
+  - table: Subjects
+    columns: Name, DateofBirth
+  - table: Genomic variation
+    columns:
+      - name: variantInternalId
+      - name: Belongs to subject
